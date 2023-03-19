@@ -1,0 +1,108 @@
+/* PROYECTOS //////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////// */
+
+
+.proyectostitulo {
+    padding: 4em var(--padding-left) 2em var(--padding-left);
+
+}
+
+/* //////******  ///cambiarle nombres a todo estoooooooooooooooooooooooo */
+.proyectos-recientes img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+    display: block;
+    transition: all 0.2s ease;
+
+    /* estaba 50 */
+    opacity: 70%;
+
+    /* NORMAL BN, VER COMO PONER COLOR WHEN HOVER */
+    -webkit-filter: grayscale(10%);
+    /* Safari 6.0 - 9.0 */
+
+    /* estaba en 100% gris, ahi que con un poquito de color, xq no me haec lo del color when hover, angular */
+    filter: grayscale(70%);
+    /* filter: grayscale(100%); */
+
+}
+
+
+/* https://ethercycle.com/blog/305
+    IMAGEN BN A COLOR, no anda en angular, queda escala de grises a escala de grises also when hover */
+/* img:hover {
+    -webkit-filter: none;
+    -moz-filter: none;
+    -ms-filter: none;
+    filter: none;
+    opacity: 100%;
+  } */
+
+
+
+
+
+
+
+
+
+.proyectos-contenedor {
+    padding-top: 0;
+    padding-bottom: 8em;
+}
+
+
+
+/* todo d los iconos al hacer hover sobre imagenes------------------------------------ */
+/* ver el efecto de kelly sobre las fotos,
+     tambien arquitecto dinamico,,,color antes y color real when hove */
+.overlay {
+    transition: all 0.2s ease;
+    
+    /* icono al hover over imagen, cero cuando no */
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* .overlay p {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0;
+  } */
+
+.proyecto {
+    position: relative;
+}
+
+.proyecto:hover img {
+    opacity: 0.2;
+}
+
+.proyecto:hover .overlay {
+    opacity: .9;
+
+    /* ESTABA EN 1, VIENDO COMO HACER BN NORMAL Y COLOR WHEN HOVER, PERO CONTENIENDO NOMBRE DE PROYECTO */
+}
+
+.overlay .iconos-contenedor {
+    display: flex;
+}
+
+/* color icono ovelay */
+.overlay i {
+    /* color: black; */
+    color: #a19484;
+    font-size: 2.4em;
+    margin: .2em;
+}
+
+/* fin PROYECTOS //////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////// */

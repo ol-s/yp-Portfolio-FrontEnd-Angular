@@ -1,1 +1,176 @@
-<p>educacion works!</p>
+<!-- educacion + foto con media queries/////////////////////////////
+       //////////////////////////////////////////////////////////////// -->
+<section>
+    <div class="container-fluid seccion-clara" id="educacion">
+        <!-- agrego fluid para que se adapte a cualquier pantalla y se pegue al costado!! queda mejor, se ve horrible si haces zoom 25% en desktop tho, ojo -->
+        <div class="container-fluid ">
+            <div class="row">
+
+
+                <!-- IMAGEN, order-2 para cambiar orden de colapso, si lo pongo asi aca me cambia el orden cuando no estan colapsadas (: ) -->
+
+                <!-- PORQUE TENIA UN BORDERRRRRRRRR AHI??? NO ME ACUAERDO, HACIA UN BORDE BLANCO ALREDEDOR DE LA IMAGEN, NO ME DI CUENTA HASTA QUE PUSE UNA OSCURA -->
+                <!-- <div class="m-0 col-sm-4 border order-sm-first order-last SSSSeducacionFOTO"></div> -->
+                <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO">
+                    <!-- botones edicion seccion ---------------------------------------->
+                    <div class="">
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                        <!-- <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-plus"></i></button> -->
+                        <!-- TENIA class="botonEditSubseccion", muy clarito -->
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <!-- border order-sm-first order-last  y border  agregados para que colapse la foto abajo del texto y no al reves
+                    https://dev.to/codeply/re-order-grid-columns-in-bootstrap-5-135k
+                    https://www.codeply.com/p/T52wfQIdG6 -->
+
+
+
+                <!-- TEXTO -->
+                <div class="m-0 col-sm-8 border SSSSeducacion">
+                    <div>
+
+                        <!-- botones edit seccion ----------------------------------------- -->
+                        <div class="text-end">
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                        <!-- pruebo poner el div con position absolut pegado a la derecha , NO SE PUDO-->
+                        <!-- <div class="divEditRight">
+                                <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                                <button type="button" class="botonEditSeccion"><i class="fa-solid fa-plus"></i></button>
+                                <button type="button" class="botonEditSeccion"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </div> -->
+                        <!-- titulo seccion -->
+
+                        <h2 class="seccion-titulo">Educación</h2>
+                    </div>
+
+
+                    <div class="">
+                        <div class="moduloEducacion">
+                            <div class=" w-l h-l mb-5  logoseducacion">
+                                <img class="logoseducacion" src="./assets/img/educacion/epetPNG.png" alt="logo-epet">
+                            </div>
+                            <div>
+                                <h5>1999-2005. Escuela Provincial de Educación Técnica N°1. Posadas, Misiones,
+                                    Argentina.</h5>
+                            </div>
+                            <p class="seccion-texto">Técnica en construcciones (Polimodal, modalidad Producción de
+                                bienes y servicios).
+                            </p>
+
+
+                            <!-- agregar una flechita o algo para que muestre la foto del titulo o algo? -->
+
+
+                            <!-- opcion 2, botones bajo la subseccion -->
+                            <!-- <div class="  botonesEditBox  text-end "> -->
+
+                            <!-- botones edit subseccion ------------------------------------ -->
+                            <div class="text-end">
+                                <button type="button" class="botonEditSubseccion"><i
+                                        class="fa-solid fa-pen"></i></button>
+                                <button type="button" class="botonEditSubseccion"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="moduloEducacion">
+                            <div class=" w-l h-l mb-5   ">
+                                <img class="logoseducacion" src="./assets/img/educacion/faudPNG.png" alt="logo-faud">
+                            </div>
+                            <div>
+                                <h5>2006-2013. Facultad de Arquitectura, Urbanismo y Diseño. Universidad Nacional de
+                                    Córdoba. Córdoba, Argentina.</h5>
+                            </div>
+                            <p class="seccion-texto">Arquitecta.
+                            </p>
+                            <!-- opcion 2, botones bajo la subseccion -->
+                            <!-- <div class="  botonesEditBox  text-end "> -->
+
+                            <!-- botones edit subseccion ------------------------------------ -->
+                            <div class="text-end">
+                                <button type="button" class="botonEditSubseccion"><i
+                                        class="fa-solid fa-pen"></i></button>
+                                <button type="button" class="botonEditSubseccion"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+
+
+                        <div class="moduloEducacion">
+                            <div class=" w-l h-l mb-5   logoseducacion">
+                                <img class="logoseducacion" src="./assets/img/educacion/poloticPNG.png"
+                                    alt="logo-polotic">
+                            </div>
+                            <div>
+                                <h5>2022. Silicon Misiones-Polotic. Base de Datos desde cero. Modalidad online.</h5>
+                            </div>
+                            <p class="seccion-texto">Administradora de Bases
+                                de Datos Junior (DBA).
+                            </p>
+                            <!-- opcion 2, botones bajo la subseccion -->
+                            <!-- <div class="  botonesEditBox  text-end "> -->
+
+                            <!-- botones edit subseccion ------------------------------------ -->
+                            <div class="text-end">
+                                <button type="button" class="botonEditSubseccion"><i
+                                        class="fa-solid fa-pen"></i></button>
+                                <button type="button" class="botonEditSubseccion"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="moduloEducacion">
+                            <div class=" w-l h-l mb-5   logoseducacion">
+                                <img class="logoseducacion" src="./assets/img/educacion/argentinaprogramaPNG.png"
+                                    alt="logo-ap">
+                            </div>
+                            <div>
+                                <h5>2022-2023. Argentina Programa. Modalidad online.</h5>
+                            </div>
+                            <p class="seccion-texto">#SeProgramar. Primera etapa.
+                            </p>
+                            <p class="seccion-texto">#YoProgramo. Segunda etapa.
+                            </p>
+                            <p class="seccion-texto">Programadora web fullstack junior.
+                            </p>
+                            <!-- opcion 2, botones bajo la subseccion -->
+                            <!-- <div class="  botonesEditBox  text-end "> -->
+
+                            <!-- botones edit subseccion ------------------------------------ -->
+                            <div class="text-end">
+                                <button type="button" class="botonEditSubseccion"><i
+                                        class="fa-solid fa-pen"></i></button>
+                                <button type="button" class="botonEditSubseccion"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <!-- https://www.w3schools.com/css/css_inline-block.asp -->
+                        <!-- <div class="pt-5">
+                                <h2>display: inline-block</h2>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat
+                                    scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="b"><i
+                                            class="fa-solid fa-pencil"></i></span> <span class="b"><i
+                                            class="fa-solid fa-trash-can-arrow-up"></i></span> </div>
+                            </div> -->
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</section>
+<!-- fin educacion + foto con media queries/////////////////////////
+       //////////////////////////////////////////////////////////////// -->

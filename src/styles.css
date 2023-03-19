@@ -1,1 +1,1051 @@
 /* You can add global styles to this file, and also import other style files */
+/* estilos globales/////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////// */
+:root {
+    /* --color-background: #f1f1f1; */
+    /* --color-background-a: #f9f9f9; */
+    --color-primario: #272424;
+    --color-secundario: #7d7c7c;
+  
+    /* navbar offcanvas etc ,,,,,la dejo un poquiiiiito transparente VER-23-2-23*/
+    /* --color-background-navbar: #ffffff; */
+    --color-background-navbar: #ffffffe3;
+  
+    /* half header name */
+    --color-background-navbar2: #ffffff;
+  
+    /* --color-background-oscuro1: #0e0e0e; */
+    /* --color-background-oscuro1: #fd1414; */
+    /* --color-background-oscuro1: #272727; */
+    --color-background-oscuro1: #191919;
+    --color-background-claro: #ffffff;
+  
+    /* --color-links-navbar: rgb(191, 255, 0);  estaba en rgb cabie a # */
+    /* --color-links-navbar: rgb(161, 161, 161); */
+    /* --color-links-navbar: #6b5840; */
+    --color-links-navbar: #edcca3;
+    /* --color-links-navbar: rgb(191, 255, 0);  verdecito, mal contraste */
+    /* --color-links-navbar: #bfff00; verdecito */
+  
+    /* iconitos de redes sociales nomas */
+    --color-links-navbar-hover: var(--color-texto-medio);
+  
+    --color-texto-medio: #9a9a9a;
+  
+    /* --color-texto-medio-navbar: #9a9a9aad;    
+      lo oscurezco un poco porque deje la nav a bit transparente*/
+    --color-texto-medio-navbar: #9a9a9a;
+    --color-texto-medio-navbar: #545454;
+  
+    /* nombre y otros importantes, lo ozcurezco un poquito 22-2-23
+      queda bien en educacion, mal en la portada principal ------------*/
+    --color-texto-grande: #9a9a9a;
+    /* --color-texto-grande: #606060; */
+  
+    /* skills % y bg barra ------------------------------------------*/
+    /* --color-texto-medio-oscuro: #383838; */
+    --color-texto-medio-oscuro: #424242;
+  
+    --padding-left: 3.5em;
+    /* --padding-left: 4em; */
+  
+    /* --color-botones-edit-bg:blue;
+      --color-botones-edit-bg-hover:green; */
+    --color-botones-edit-bg-seccion: #5b5b5b;
+    --color-botones-edit-bg-subseccion: #4e4e4e;
+  
+    /* botones edit sombras ------------------------------------------*/
+    /* --edit-botones-box-shadow:0 .1em .5em .1em #b1b1b14e; */
+    /* --edit-botones-box-shadow:0 .1em .5em .1em #8181812b   acer 1; */
+    --edit-botones-box-shadow: 0 .1em .5em .1em #7f7f7f42;
+    --edit-botones-box-shadow: 0 .1em .5em .1em #7f7f7f26;
+  
+    /* --edit-botones-box-shadow: 0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020; */
+  
+    --color-botones-edit-seccion: #616161;
+    --color-botones-edit-subseccion: #d7d7d7;
+  
+    --color-botones-edit-seccion-oscura: #868686;
+    --color-botones-edit-subseccion-oscura: #3f3f3f;
+  
+    /* estaban en 2.5em, para la cajita no el icono ------------------*/
+    --edit-botones-height: 2em;
+    --edit-botones-width: 2em;
+  
+    /* ver botones edicion -------------------------------------------*/
+    /* --edit-botones-display: none; */
+  
+    /* mostrar o no porcentajes skills -------------------------------*/
+    /* --skills-porcentajes-display: none; */
+  
+    --bs-body-font-size: 1rem;
+  }
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    /* hmmmmm porque le di a todo * margin y padding 0 aca??? */
+  
+    /* padding-top: 2em; */
+  
+    /* esto estaba en 1.5rem y hacia que las columnas no llegaran al borde nunca */
+    --bs-gutter-x: 0rem !important;
+  
+    box-sizing: border-box;
+  
+    /* font-family: "Oswald", sans-serif;*/
+    /*font-family: 'Space Mono', monospace; */
+    /* font-family: 'Roboto Mono', monospace; */
+    /* font-family: 'Poiret One', cursive;   muy finita*/
+  
+    /* OK */
+    /* font-family: 'Nova Round', cursive; */
+  
+    /* OKOK */
+    /* font-family: 'MuseoModerno', cursive; */
+  
+    /* hmmm, primera letra estilada, nope*/
+    /*font-family: 'Major Mono Display', monospace; */
+  
+    /* boring
+      font-family: 'Roboto Flex', sans-serif; */
+  
+    /* muy redondeada para dev web 
+      font-family: 'Montserrat Alternates', sans-serif; */
+  
+    /* cuadradita tecnica ok */
+    font-family: 'Rajdhani', sans-serif;
+  
+    /* font-family: "Century Gothic", 'Lato', sans-serif; */
+  
+    /* LUX */
+    /* font-family: 'Nunito Sans', sans-serif; */
+  
+    /* color: #7d7c7c; */
+    /* si pongo color aca me rompe todo lo del hover de otro color, 
+    ni con important alla arriba se arregla */
+  }
+  
+  body {
+    /* margin: 0; 
+      padding: 0;  no parece necesario aca tmb */
+  
+    /* para q no se vea borde claro en seccion oscura contra oscura*/
+    background-color: rgb(39, 39, 39);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+  }
+  
+  p {
+    color: var(--color-texto-medio);
+  }
+  
+  .h5,
+  h5 {
+    font-size: 1rem;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  /* nombre en half banner */
+  h1,
+  .h1 {
+    font-size: calc(1.325rem + 0.9vw);
+    /* font-size: 2.5rem; */
+    /* font-family: 'Rubik Dirt', cursive; */
+    /* font-family: 'Nova Round', cursive;
+    font-family: 'Nunito Sans', sans-serif;   color cambiar maybe */
+  }
+  
+  h6,
+  .h6,
+  h5,
+  .h5,
+  h4,
+  .h4,
+  h3,
+  .h3,
+  h2,
+  .h2,
+  h1,
+  .h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  
+    /* agregarle solo al nombre/encabezado */
+    /* font-weight: 600; */
+    line-height: 1.2;
+    /* color: #1a1a1a; */
+  }
+  
+  
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  
+    /* sin este en educacion queda mejor, y en otros, maybe sacar , tenia 3px, lo achique*/
+    letter-spacing: .01em;
+  }
+  
+  
+  
+  
+  
+  .seccion-oscura {
+    color: white;
+    background-color: var(--color-background-oscuro1);
+  
+  }
+  
+  .seccion-clara {
+    /* color: rgb(0, 21, 254); */
+    color: var(--color-texto-medio);
+    background-color: var(--color-background-claro);
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  /* fin estilos globales//////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////// */
+
+
+
+
+  /* separar esto o dejarlo en estilos globales? */
+  
+
+/* redes, creo que solo half banner arriba, ver como hacer un componente en angular, cada red capaz? pero se arma lio al agruparlas, como lo cones en app root?////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* le aplico efecto hover a redes2, links de resde under name
+  HACER UNA TRANSICIONNNNNNNN COMO LOS ICONOS DE ABAJO CONTACTO */
+.redes2:hover {
+    color: var(--color-links-navbar-hover) !important;
+    /* OJO QUE ESTOY MANDANDO IMPORTANT A LOS HOVER PRQUE DEBE HABER ALGO ABAJO QUE LOS ANULA */
+  }
+  
+  .redes2 {
+    color: var(--color-links-navbar);
+    height: 2em;
+    padding-right: 1em;
+  }
+  
+  /*  ahi esta, transicion */
+  .redes2 a {
+    transition: all 0.1s ease-in;
+  }
+  
+  
+  /* redes, creo que solo half banner arriba, ver como hacer un componente en angular, cada red capaz? pero se arma lio al agruparlas, como lo cones en app root?////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////// */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* //////////////////////////estilos globales probs//////////////////////////////////////////// */
+  
+  
+  /* ======================================================
+    =========================igualar paddings de secciones
+     y paddings de titulos en todas las secciones
+    ========================================================*/
+  
+  
+  /* subrayado titulo, ANTES */
+  /* .seccion-titulo:before {
+      width: 4rem;
+      background-color: var(--color-links-navbar);
+      content: "";
+      display: block;
+      height: 1px;
+      margin-bottom: .5em;
+    } */
+  
+  /* subrayado titulo DESPUES */
+  .seccion-titulo:after {
+    width: 4rem;
+    background-color: var(--color-links-navbar);
+    content: "";
+    display: block;
+    height: 1px;
+    margin-top: .5em;
+  }
+  
+  .seccion-titulo {
+    font-size: 1.5rem;
+  
+    /* saco padding por el formulario footer, ver como queda entodo el resto */
+    padding: .9em 0 .5em 0;
+    /* padding-bottom:.5em; */
+    /* font-family: 'Rubik Dirt', cursive; */
+    color: var(--color-links-navbar);
+  }
+  
+  .seccion-descripcion {
+    font-size: 1.2rem;
+    color: #584e4e;
+  }
+  
+  .seccion-texto {
+    font-size: 1.2rem;
+  }
+  
+  .btn-info {
+    font-size: 1.1rem;
+    margin: 1.5em;
+  }
+  
+  .texto-negro {
+    color: black;
+  }
+  
+  .texto-blanco {
+    color: white;
+  }
+  
+  /* Seccion Hero */
+  
+  .hero {
+    background-color: #f5f6f7;
+    min-height: 40rem;
+    text-align: center;
+  }
+  
+  .hero-principal {
+    padding: 3rem;
+  }
+  
+  .hero-imagen-desarrollador {
+    /* width: 200px; */
+    /* increible que fcc te siga poniendo las cosas en pixeles!!,
+      y poner las misma dimensiones asi te deforma una foto un poco rectangular  */
+    height: 12.5em;
+    margin: 1.2em;
+  }
+  
+  
+  /* esto no es mio creo------------------------------------------------------------------------------- */
+  .hero-principal h2 {
+    font-size: 1.5rem;
+    color: #615151;
+  }
+  
+  /* //////////////////////////estilos globales probs//////////////////////////////////////////// */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Adaptable (Responsivo)      VA EN NAVBAR O ESTILOS GLOBALES, VER
+    
+    estoooooooooooooooooooooooooooooooooooo SI LO BORRO ME APARECE EL LOGO AP EN PHONE CHIQUITO
+    SOLO NAVBRAN, EL RESTO BORRE, VER OVERLAY PROYECTOS
+    */
+  
+  @media screen and (max-width: 767px) {
+    .navbar-brand {
+      display: none;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*============================================================================
+  ============================================================================
+  bue, me queda todo suelto ahi abajo botones y modales, 
+  meterlo todo en globales y listo? (: 
+  3.22 am 
+  OHHH FFSAKEEEEEEEE,,TMB QUEDA UN POCO DE NAVBAR, MAS BOTOSNES, H5 , P  Y NO SE QUE MAS 
+  HARTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Y YA BORRE ALGO QUE ME ARRUINO TODOS LAS REDES DEL FOOTER
+  Y NO PUEDO RETROCEDERRRRRRRRRRRRRRRRRRRRR PORQUE ACTUALICE LA PAGINA CREYENDO QUE ERA EL PORTFOLIO, FFSAKEEEEEEEEEEEEEEEEEEEEEE*/
+  
+  /* =======cambiados los color link navbar====================================mio  botones loging logout*/
+  .btn-outline-secondary {
+    /* font-size: 1.3rem;
+      padding: 0.1rem; */
+    border-radius: 0;
+    width: 3rem;
+    height: 3rem;
+    /* padding-top: 2em; */
+    /* padding-right: 10rem; */
+    border-color: transparent !important;
+  
+  
+    /* color: var(--color-links-navbar); */
+    color: var(--color-texto-medio);
+  
+  }
+  
+  .btn-outline-secondary:hover {
+    color: var(--color-links-navbar);
+    border-color: transparent;
+    background-color: transparent;
+  }
+  
+  /* para que boton logging no muestre el fondo gris al activarlo */
+  .btn-outline-secondary:active {
+    color: var(--color-links-navbar);
+  
+    border: 2px solid var(--color-links-navbar);
+  
+    /* border-color: transparent; */
+    background-color: transparent !important;
+    /* background-color: var(--color-links-navbar) !important;  saque porque los botones de edicion tienen solo borde*/
+    /* still feo, y transparente es muy meh */
+  }
+  
+  /* ======================================================================= */
+  
+  
+  
+  
+  
+  
+  
+  /* MODAL
+    WELL, NO ME TOMA EL NO REDONDEO, FFSAKEEEEEEEEEE */
+  .modal {
+    --bs-modal-zindex: 1055;
+    --bs-modal-width: 500px;
+    --bs-modal-padding: 1rem;
+    --bs-modal-margin: 0.5rem;
+    --bs-modal-color: ;
+    /* color fondo modal */
+    --bs-modal-bg: var(--color-background-claro);
+    --bs-modal-border-color: var(--bs-border-color-translucent);
+    --bs-modal-border-width: 1px;
+    /* tuve que mandar important ahi porque no se modificaba el redondeo */
+    --bs-modal-border-radius: 0 !important;
+    --bs-modal-box-shadow: 0 0.125rem 0.25remrgba(0, 0, 0, 0.075);
+    /* --bs-modal-inner-border-radius: calc(0.5rem - 1px); */
+    --bs-modal-header-padding-x: 1rem;
+    --bs-modal-header-padding-y: 1rem;
+    --bs-modal-header-padding: 1rem 1rem;
+    --bs-modal-header-border-color: var(--bs-border-color);
+    --bs-modal-header-border-width: 1px;
+    --bs-modal-title-line-height: 1.5;
+    --bs-modal-footer-gap: 0.5rem;
+    --bs-modal-footer-bg: ;
+    --bs-modal-footer-border-color: var(--bs-border-color);
+    --bs-modal-footer-border-width: 1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--bs-modal-zindex);
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* modales------------------------------------------------ */
+  .modal-body {
+    padding-top: 2rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+  }
+  
+  
+  
+  
+  /* no sacar esto, sin esto pasa eso de abajo, se paraliza
+   https://stackoverflow.com/questions/1791 bootstrap-modal-popping-up-but-has-a-tinted-page-and-cant-interact
+   */
+  body.modal-open div.modal-backdrop {
+    z-index: 0;
+  }
+  
+  body.navbar-expand-lg-open div.navbar-backdrop {
+    z-index: 0;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  /* boton X cerrar modales y offcanvas, saco borde sombra azul y redondeo---------- */
+  .btn-close {
+    border-radius: 0;
+    transition: box-shadow 0.15s ease-in-out;
+    opacity: 50%;
+  }
+  
+  .btn-close:focus {
+    /* estee anda */
+    box-shadow: 0em 0em 0em var(--color-background-claro);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* modales sombra y colores etc //////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////// */
+  .modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+    border-bottom: 0.1em solid #ced4da94;
+    /* borde bajo 'login'  en asus y w7 se ve bien 1px, en acer no cos es fhd y el pixel es diminuto */
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+  }
+  
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    /* outline: 0; */
+  
+    box-shadow: .2em .2em 1em .2em #6e6e6e3b;
+    box-shadow: 0.1em 0.1em 1em 0.2em #00000054;
+    /* sombra sobre el fondo, lo de arriba no toque */
+  
+    color: rgb(153, 153, 153);
+    /* PONER COLOR DE LINKS NAVBAR, GRISECITO
+      poner variable color de navbar links cuando esten grises */
+    border-color: var(--color-links-navbar);
+    border: var(--color-links-navbar);
+  }
+  
+  /* fin modales sombra y colores etc ////////////////////////////////////// */
+  
+  
+  
+  
+  
+  
+  
+  /*  BOTONES ///////////////////////////////////////////////////////////*/
+  
+  .btn {
+    /* para botones dentro modales, sin sombra */
+    /* --bs-btn-color: #212529; */
+    --bs-btn-color: var(--color-botones-edit-seccion);
+  
+    --bs-btn-border-radius: 0rem;
+  }
+  
+  /* boton info modificado para el enviar mensaje del footer------------*/
+  .btn-outline-info {
+    /* --bs-btn-color: transparent; */
+    --bs-btn-color: var(--color-links-navbar);
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-color: var(--color-links-navbar-hover);
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: var(--color-links-navbar);
+    --bs-btn-active-border-color: var(--color-links-navbar);
+    --bs-btn-active-color: var(--color-links-navbar);
+  }
+  
+  
+  .btn-group-lg>.btn,
+  .btn-lg {
+    /* PADDING DEL BOTON INICIAR SESION, NO LO MODIFIQUE PERO LO PONGO ACA ABAJO PORQUE AHI ARRIBA ALGO DE LO QUE TOQUETEE LO HACIA MAS CHICO */
+    --bs-btn-padding-y: 0.5rem;
+  
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-font-size: 1.25rem;
+    --bs-btn-border-radius: 0.5rem;
+  }
+  
+  
+  .btn-loginout {
+    /* height: calc(3.5rem + 2px);   alto de los de arriba, pero queda feo */
+    --bs-btn-color: var(--color-links-navbar);
+  
+    /* aca no toma el espesor del borde como en el sector de arriba */
+    --bs-btn-border-color: var(--color-links-navbar) !important;
+    /* --bs-btn-border-color: 300px solid var(--color-links-navbar); lmao no anda */
+  
+    /* color letra when hover */
+    --bs-btn-hover-color: #fff;
+  
+    /* color fondo when hover dejar la variable cuando este grisecito */
+    /* --bs-btn-hover-bg: var(--color-links-navbar); */
+    --bs-btn-hover-bg: #d3d4d5;
+  
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: 220, 53, 69;
+  
+    /* al pulsar, letra */
+    --bs-btn-active-color: #fff;
+    /* al pulsar, fondo */
+    --bs-btn-active-bg: #adadad;
+  
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: transparent;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: transparent;
+    --bs-gradient: none;
+  }
+  
+  /* VARIABLE LLENO EN GRIS CLARITO DE ENTRADA ALSO QUEDA BIEN */
+  /* quedo mas lindo pero hay que hacer variable de colores, sino se pierde uno aca */
+  .btn-loginout2 {
+    /* height: calc(3.5rem + 2px);   alto de los de arriba, pero queda feo */
+  
+    /* letra */
+    --bs-btn-color: #ababab;
+  
+    /* aca no toma el espesor del borde como en el sector de arriba */
+    --bs-btn-border-color: #ababab;
+    /* --bs-btn-border-color: 300px solid var(--color-links-navbar); lmao no anda */
+  
+    /* color letra when hover */
+    --bs-btn-hover-color: #fff;
+  
+    /* color fondo when hover dejar la variable cuando este grisecito */
+    /* --bs-btn-hover-bg: var(--color-links-navbar); */
+    --bs-btn-hover-bg: #d3d4d5;
+  
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: 220, 53, 69;
+  
+    /* al pulsar, letra */
+    --bs-btn-active-color: #fff;
+    /* al pulsar, fondo */
+    --bs-btn-active-bg: #787878;
+  
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: transparent;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: transparent;
+    --bs-gradient: none;
+  }
+  
+  /* VARIABLE LLENO EN GRIS CLARITO DE ENTRADA ALSO QUEDA BIEN */
+  .btn-loginout3 {
+    /* height: calc(3.5rem + 2px);   alto de los de arriba, pero queda feo */
+  
+    /* letra */
+    --bs-btn-color: #fff;
+    /* fondo */
+    --bs-btn-bg: #ababab;
+  
+    /* color letra when hover */
+    --bs-btn-hover-color: #fff;
+    /* color fondo when hover*/
+    --bs-btn-hover-bg: #787878;
+  
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: 220, 53, 69;
+  
+    /* al pulsar, letra */
+    --bs-btn-active-color: #fff;
+    /* al pulsar, fondo */
+    --bs-btn-active-bg: var(--color-links-navbar);
+  
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: transparent;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: transparent;
+    --bs-gradient: none;
+  }
+  
+  /* fin BOTONES ///////////////////////////////////////////////////*/
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* forms-------------------------------------------------------*/
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  
+    color: #7676764a;
+    background-color: #fff;
+    /* poner variable fondo de seccion */
+  
+    transition: .3s border-color;
+    /* color borde recuadro mail y password login */
+    border: 0.1em solid #77777742 !important;
+    transition: .3s border-color;
+    background-clip: padding-box;
+    /* borde del recuadro para mail y pasword, maybe poner borde inferior nomas */
+  }
+  
+  .form-control:focus {
+    border: .1em solid var(--color-links-navbar) !important;
+    /* outline-width: thick; */
+    outline: 1em solid var(--color-background-oscuro1);
+    /* outline: 1em ridge rgba(170, 50, 220, .6); */
+  }
+  
+  .formulariosinput {
+    /* border-radius:10px;
+      border: .1em solid #eee; */
+    transition: .3s border-color;
+    /* border: none;
+      border-bottom: var(--color-links-navbar); */
+    /* podrias probar con border bottom, despuesssssssss */
+  }
+  
+  .formulariosinput:focus {
+    /* espesor linea de color al hacer click en email o password */
+    border: .1em solid var(--color-links-navbar) !important;
+    /* outline-width: thick; */
+    outline: 1em solid var(--color-background-navbar);
+    /* outline: 1em ridge rgba(170, 50, 220, .6); */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* /////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////boton edit seccion////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+  
+  /* botones edit en half banner nombre y arq/programadora etc-------------------------------*/
+  .divEditRight {
+    position: absolute;
+    right: 0;
+  
+    /* para bajar los botones edit seccion al borde con el half banner */
+    top: 17.9em;
+  }
+  
+  
+  /* boton seccion -------------------------------------------------------------------------- */
+  .botonEditSeccion {
+    /* border-radius: 40em;  */
+    border-radius: 0;
+    /* color: white;  */
+    color: var(--color-botones-edit-seccion);
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: var(--edit-botones-box-shadow);
+    height: var(--edit-botones-height);
+    width: var(--edit-botones-width);
+  
+    /* para ocultar botones, 
+      el espacio desaparece, no queda un vacio digamos */
+    display: var(--edit-botones-display);
+  }
+  
+  .botonEditSeccion:hover {
+    color: var(--color-links-navbar);
+  }
+  
+  .botonEditSeccion:active {
+    color: var(--color-links-navbar);
+    border: 1px solid var(--color-links-navbar);
+  }
+  
+  .botonEditSubseccion {
+    /* border-radius: 40em;  */
+    border-radius: 0;
+    /* color: white;  */
+    color: var(--color-botones-edit-subseccion);
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: var(--edit-botones-box-shadow);
+    height: var(--edit-botones-height);
+    width: var(--edit-botones-width);
+  
+    /* para ocultar botones,
+      el espacio desaparece, no queda un vacio digamos */
+    display: var(--edit-botones-display);
+  }
+  
+  .botonEditSubseccion:hover {
+    color: var(--color-links-navbar);
+  }
+  
+  .botonEditSubseccion:active {
+    color: var(--color-links-navbar);
+    border: 1px solid var(--color-links-navbar);
+  }
+  
+  /* boton subseccion -----------------------bue, esta todo mezclado Y SON LAS 2AM, Y IM SINGING HEATHER (((: ---------------------------------------------------------------------------- */
+  .botonEditSeccionOscura {
+    /* border-radius: 40em;  */
+    border-radius: 0;
+    /* color: white;  */
+    color: var(--color-botones-edit-seccion-oscura);
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: var(--edit-botones-box-shadow);
+    height: var(--edit-botones-height);
+    width: var(--edit-botones-width);
+  
+    /* para ocultar botones, 
+      el espacio desaparece, no queda un vacio digamos */
+    display: var(--edit-botones-display);
+  }
+  
+  .botonEditSeccionOscura:hover {
+    color: var(--color-links-navbar);
+  }
+  
+  .botonEditSeccionOscura:active {
+    color: var(--color-links-navbar);
+    border: 1px solid var(--color-links-navbar);
+  }
+  
+  .botonEditSubseccionOscura {
+    /* border-radius: 40em;  */
+    border-radius: 0;
+    /* color: white;  */
+    color: var(--color-botones-edit-subseccion-oscura);
+  
+    /* no se porque a los que estan en la seccion educacion no necesite ponerles esto, y tienen findo transparente alredy, A MESS TENGO ACA SE SU[ERPOSICIONES E IMPORTANTS ...NVM, LES SAQUE BTNY SE PUSO BORDE NEGRO*/
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: var(--edit-botones-box-shadow);
+    height: var(--edit-botones-height);
+    width: var(--edit-botones-width);
+  
+    /* para ocultar botones,
+      el espacio desaparece, no queda un vacio digamos */
+    display: var(--edit-botones-display);
+  }
+  
+  .botonEditSubseccionOscura:hover {
+    color: var(--color-links-navbar);
+  }
+  
+  .botonEditSubseccionOscura:active {
+    color: var(--color-links-navbar);
+    border: 1px solid var(--color-links-navbar);
+  }
+  
+  /* fin seleccion botones edit //////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////// //// */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  h5 {
+    color: var(--color-texto-grande);
+    /* font-weight: 550; */
+  }
+  
+  h4 {
+    color: var(--color-texto-grande);
+    /* font-weight: 550; */
+    /* text-transform: uppercase; */
+    /* color: #fff; */
+    color: var(--color-texto-medio-oscuro);
+  
+  }
+  
+  
+  p {
+    margin-bottom: 0;
+  }

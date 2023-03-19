@@ -1,0 +1,94 @@
+
+/* SOBRE MI + avatar con media queriesokokko///////////////////////////
+  /////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////// */
+  .banneravatartexto {
+    background-color: var(--color-background-oscuro1);
+    background-attachment: fixed;
+    padding: 4em;
+  
+    /* porque desaparecia cuando la foto estaba en paralax, poniendo esto aparecia, pero no podia hubicar la foto */
+    z-index: 4;
+  }
+  
+  .sobremi {
+    background-color: var(--color-background-oscuro1);
+    z-index: 1;
+    padding: 6em var(--padding-left) 6em var(--padding-left);
+    /* color: var(--color-links-navbar); */
+  
+    /* ver si no es mucho en pantalla grande */
+    min-height: 100vh;
+  }
+  
+  .avatarbanner {
+    /* PONER ESTE CUANDO TERMINE DE AJUSTAR COLORES, ES LA PARTE DE ABAJO 
+      DEL HALF BANNER AVATAR QUE SE VE EN IPAD VERTICAL, ESTABA AZUL*/
+    background-color: var(--color-background-oscuro1);
+    /* background-color: rgb(51, 80, 153); */
+    z-index: 1;
+    /* padding: 2em; */
+  
+    /* me vuelve a dar error aca, a pesar que lo escribo bien como me dejo en el primer avatar
+    VER DE DEJAR /ASSETS/  O ../ASSETS/  QUE FUNCIONO EN EL PRIMER BANNER, EN ESTE NO FUNCIONA, SOLO SIN LOS PUNTOS */
+    background-image: url("/assets/img/banner/2banneravataralejado.jpg");
+  
+    /* min-height: 50em; */
+    /* background-repeat: no-repeat; */
+    /* background-size: 100%; */
+    /* background-size: cover; */
+    /* background-attachment: fixed; */
+    /* z-index: 1; */
+  
+    /* maso menos, en phone se hace cica y se mete al costado
+      igual esto es una chapuzaaaaaaaaaa!!!!!!!!!!!!
+      es la foto con bordes gigantes rosas */
+    min-height: 45em;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 80%;
+  }
+  
+  
+  
+  /* MEDIA QUERIES NO SE SI VAN ACA O EN LOS GLOBALES EH-------------------------------------- */
+  
+  /* EL SAMSUNG ACOSTADO EN 915PX SE CORTA TODO, VER DESSP SI ARREGLAS, NO MAS DE 3 MEDIA Q DICEN, EN EL IPHONE ACOSTADO TAMBIEN, QUEDA MUY PARA ARRIBA */
+  @media only screen and (max-device-width: 1000px) {
+    .avatarbanner {
+      background-position: right;
+      /* IPAD MINI QUEDA UN POQUITO ESTRECHADO PERO OK, VER DE HACER UN PNG TRANSPARENTES CON BORDEN TRANSPARENTES, PORQUE SINO EL ROSA SE VE DE A RATOS */
+      background-size: 110%;
+    }
+  }
+  
+  @media only screen and (max-device-width: 566px) {
+    .avatarbanner {
+      background-position: right;
+      background-size: 140%;
+  
+      /* surface duo, no tan alta la foto, queda abajo, en el ipad mini queda al costado y se angosta bastante, pero bue */
+      min-height: 20em;
+    }
+  }
+  
+  /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_parallax_device
+     */
+  @media only screen and (max-device-width: 500px) {
+    .avatarbanner {
+      /* background-attachment: scroll;  no hace falta sacarlo!! ya aprendi a escalar con media queries :')  */
+  
+      background-position: right;
+      background-size: 210%;
+    }
+  }
+  
+  /* fin SOBRE MI + avatar con media queriesokokko///////////////////////
+    /////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////// */
+  

@@ -1,0 +1,163 @@
+
+/* NAVBAR OFFCANVAS LIGHT////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////  */
+  .offcanvas,
+  .offcanvas-lg,
+  .offcanvas-md,
+  .offcanvas-sm,
+  .offcanvas-xl,
+  .offcanvas-xxl {
+    --bs-offcanvas-zindex: 1045;
+    /* menos de mil no anda, mas de mil queda igual que ahora */
+    --bs-offcanvas-width: 300px;
+    /* no se va solo, en phone te lleva a la seccion pero se 
+                queda estatico, entonces lo hice mas angosto para clikear fuera, 
+                400 px tenia */
+    --bs-offcanvas-height: 30vh;
+    --bs-offcanvas-padding-x: 1rem;
+    --bs-offcanvas-padding-y: 1rem;
+    /* no transparente como navbar */
+    --bs-offcanvas-bg: #fff;
+    --bs-offcanvas-border-width: 1px;
+    --bs-offcanvas-border-color: var(--bs-border-color-translucent);
+    --bs-offcanvas-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    /* --background-color: var(--color-background-navbar) !important; */
+  }
+  
+  
+  
+  .navbar a {
+    transition: transform .5s;
+  
+    /* cambio el verde de los links en navbar, el nombre ya no lo cambio mas cos IMPOSIBLE, ETSA 700 VECES ABAJO, hay una forma de reemplazar todos, gaby anteultimo grupo4 encuentro creo */
+    color: var(--color-texto-medio-navbar);
+    font-weight: 500;
+  }
+  
+  .navbar a:hover {
+    /* color: var(--color-links-navbar-hover) !important; */
+    color: var(--color-links-navbar) !important;
+    font-weight: 500;
+  }
+  
+  .navbar-collapse {
+    align-items: center;
+    justify-content: space-between;
+    /* separa los 2 elementos de las nav, logoAP secciones botoneslog */
+    padding-top: 1em;
+    padding-bottom: 1em;
+  
+  }
+  
+  /* color de variable navbar, offcanvas es --bs-offcanvas-bg,
+     toggler no es este */
+  .bg-light {
+    /* --bs-bg-opacity: 1; */
+    /* background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important; */
+    background-color: var(--color-background-navbar) !important;
+  }
+  
+  /* opacidad logo AP */
+  .navbar-brand img {
+    opacity: 60%;
+    /* padding-left: .9em;     
+      estaba antes de ajustar si ajustar la nav completa porque me corre el toggler */
+    padding-left: 1.5rem;
+    /* deberia ponerlo en el html too  pe-3 es padding right,
+    no se cual es el left so lo pongo aca*/
+    /* amplio SOLO EN CASO DE DEJAR EL PADDING RIGHTS AL RESTO DE LINKS DE NAVBAR
+    AHI ACHIQUE UN POQUITO */
+    padding-left: 2rem;
+    height: 1.6em;
+  }
+  
+  /* aumento padding right left de la lista navbar */
+  .navbar-expand-md .navbar-nav .nav-link {
+    /* padding-right: var(--bs-navbar-nav-link-padding-x);
+      padding-left: var(--bs-navbar-nav-link-padding-x); */
+    /* padding-left: .5em;*/
+    padding-right: 0;
+  }
+  
+  .navbar .navbar-expand-md .navbar-light {
+    padding: 0;
+  }
+  
+  
+  /* botones login logout -------------------------------------------*/
+  .bi-box-arrow-in-right,
+  .bi-box-arrow-right {
+    height: 1.5em;
+    opacity: 70%;
+  }
+  
+  
+
+
+
+  
+/* ver si no hay repetidos-------------------------------- */
+
+/* ///////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////
+ ////////////////////////navbar/////////////////////////////////////
+/////////////////////////////////////////////////////////////////// */
+
+.navbar {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    /* svg, cambie color y saque redondeo de puntas, dejo del mismo color y manejo con opacidad
+    para igualr al btn-close */
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(53,53,53)' stroke-width='2' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+  /* navbar toggler, borde------------------------------------------ */
+  .navbar-toggler:focus {
+    /* text-decoration: none; */
+    /* outline: 0; */
+    /* box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width); */
+    box-shadow: 0;
+  }
+  
+  .navbar-toggler {
+    /* border: 3px solid var(--color-background-navbar);  cambio porque hice un pokito transparente la nav, esto es para ocultar el borde del toggler al clikear */
+    border: 3px solid #ffffff24;
+    /* color: rgb(53, 53, 53); */
+    opacity: 50%;
+  }
+  
+  .navbar-toggler:hover {
+    opacity: 90%;
+  }
+  
+  
+  
+  
+  /* separacion de links en navbar*/
+  .nav-item {
+    /* margin-right: 1rem; */
+    margin-right: .3rem;
+  }
+  
+  .navbar {
+  
+  
+    --bs-navbar-toggler-border-color: rgba(72, 255, 0, 0.1);
+    /*  PONER TRANSPARENTE*/
+    --bs-navbar-toggler-border-radius: 0;
+    --bs-navbar-toggler-focus-width: 0.001rem;
+    /*  --bs-navbar-toggler-border-radius: 0.375rem;
+      --bs-navbar-toggler-focus-width: 0.25rem; */
+    --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+  
+  
+  
+    /* creo que este va si o si */
+    --bs-navbar-padding-x: 0;
+  }
+  
+  /* fin NAVBAR OFFCANVAS LIGHT////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////  */
