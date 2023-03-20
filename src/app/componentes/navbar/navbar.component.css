@@ -132,6 +132,8 @@
   
   .navbar-toggler:hover {
     opacity: 90%;
+    /* va uno solo, pero github no me muestra el ultimo commit */
+    opacity: 90%;
   }
   
   
