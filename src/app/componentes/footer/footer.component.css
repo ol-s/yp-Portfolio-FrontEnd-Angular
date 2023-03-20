@@ -7,11 +7,23 @@
 
 /* ver si agrego clase contacto//section-contact-us/// y esto, para que se vea al 100% de altura en pantalla grande, esa area, creo que se corta en cel ojooooooo */
 .section-contactame {
-    min-height: 100vh;
+    min-height: 85vh;
   }
   
-  /* se rompe todo el fondo en cel DEJA NOMAS, ahi esta, min height era*/
+  .foot {
+    min-height: 10vh;
+    /* border-top: 1px solid var(--color-texto-medio-oscuro); */
+    border-top: 1px solid #77777742;
+    
+  }
   
+  .copyrights {
+    font-size: 1em;
+    color: var(--color-texto-medio);
+    /* color: #77777742; */
+    /* padding: 1.7em; */
+    padding: 1.8em 1em 1.8em 1em;
+  }
   
   
   
@@ -38,11 +50,6 @@
     color: var(--color-links-navbar-hover);
   }
   
-  .copyrights {
-    font-size: 1em;
-    color: var(--color-texto-medio);
-    padding: 1.7em;
-  }
   
   
   
@@ -73,7 +80,11 @@
   }
   
   
-  
+
+  /* porque se separa mucho el nombre del fndo en ipad, por en vh 100%, prob quede mal en pc y cel  VER, Y SI, SAQUE */
+  /* .foot{
+    padding-bottom: 20em;
+  } */
   /* FOOTER CONTACTO ////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////////// */

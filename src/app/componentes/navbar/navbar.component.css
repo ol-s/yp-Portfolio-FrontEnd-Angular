@@ -121,9 +121,11 @@
     box-shadow: 0;
   }
   
+  /* borde when toggler activo */
   .navbar-toggler {
     /* border: 3px solid var(--color-background-navbar);  cambio porque hice un pokito transparente la nav, esto es para ocultar el borde del toggler al clikear */
-    border: 3px solid #ffffff24;
+    /* border: 5px solid #ffffff24; */
+        border: 6px solid #ffffff0f;
     /* color: rgb(53, 53, 53); */
     opacity: 50%;
   }
