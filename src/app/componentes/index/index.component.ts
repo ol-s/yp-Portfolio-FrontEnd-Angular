@@ -7,7 +7,7 @@
 // })
 // export class IndexComponent {
 
-// }
+// }        esto estaba, OnInit via kar
 
 
 

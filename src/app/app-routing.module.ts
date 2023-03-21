@@ -7,7 +7,7 @@ const routes: Routes = [
   // {path: 'login', component: LoginComponent},
   // {path: 'aadmin', component:AadminComponent, canActivate:[GuardGuard]},   //, canActivate:[GuardGuard]
   /* {path: '', redirectTo:'/index', pathMatch:'full'}, */
-  // {path:'**', component:ErrorComponent}
+  // {path:'**', component:ErrorComponent}     hacer pagina 404
 ];
 
 @NgModule({
