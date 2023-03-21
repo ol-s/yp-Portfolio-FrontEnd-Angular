@@ -12,6 +12,7 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { BannerfooterComponent } from './componentes/bannerfooter/bannerfooter.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { IndexComponent } from './componentes/index/index.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     ProyectosComponent,
     BannerfooterComponent,
     FooterComponent,
+    IndexComponent,
     ],
   imports: [
     BrowserModule,

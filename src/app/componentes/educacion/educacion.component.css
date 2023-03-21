@@ -89,7 +89,9 @@
     .SSSSeducacionFOTO {
       background-position: left;
       background-size: 140%;
-      min-height: 25em;
+
+      /* ESTABA 25 */
+      min-height: 30em;
     }
   }
   

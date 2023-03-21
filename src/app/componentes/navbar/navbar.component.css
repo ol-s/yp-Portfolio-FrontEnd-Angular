@@ -71,6 +71,10 @@
     padding-left: 2rem;
     height: 1.6em;
   }
+
+  .navbar-brand img:hover {
+    opacity: 90%
+  }
   
   /* aumento padding right left de la lista navbar */
   .navbar-expand-md .navbar-nav .nav-link {
@@ -131,9 +135,7 @@
   }
   
   .navbar-toggler:hover {
-    opacity: 90%;
-    /* va uno solo, pero github no me muestra el ultimo commit */
-    opacity: 90%;
+    opacity: 90%
   }
   
   

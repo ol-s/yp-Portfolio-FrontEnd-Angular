@@ -1,7 +1,7 @@
 <!-- <h1>angular no me anda, 
   no me aparece lo de otros componente solo este</h1> -->
 
-
+<!-- movi todo esto al index componente
 <app-navbar></app-navbar>
 <app-headername></app-headername>
 <app-halfbanner></app-halfbanner>
@@ -10,11 +10,21 @@
 <app-skills></app-skills>
 <app-proyectos></app-proyectos>
 <app-bannerfooter></app-bannerfooter>
-<app-footer></app-footer>
-
+<app-footer></app-footer> -->
 
 <!-- next crear componentes para modales, y no se quemas,,,todos los modales son diferentes tho -->
 
 
-<!-- este creo que no hay que borrar, en clases asincronicas no lo dejaban, nose -->
+<!-- este creo que no hay que borrar, en clases asincronicas no lo dejaban, nose
+parece que para paginas de NO una sola pagina se pone asi y los componentes van a un index o inicio, 
+hay que hacer un routing  para que el servidor 4200puerto te abra ese index y no este
+
+en app-routing.module.ts
+import { IndexComponent } from './componentes/index/index.component';
+
+const routes: Routes = [
+  {path:'', component:IndexComponent},]
+
+  
+-->
 <router-outlet></router-outlet>
