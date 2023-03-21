@@ -1,0 +1,237 @@
+{
+    "nombreyapellido": "soledadfretes",
+    "subtitulo": "arquitecta | programadora web fullstack jr",
+    "redes": [
+        {
+            "id": 1,
+            "nombre": "LinkedIn",
+            "url": "https://www.linkedin.com/",
+            "icoFont": "bi bi-linkedin"
+        },
+        {
+            "id": 2,
+            "nombre": "Github",
+            "url": "https://github.com/ol-s/",
+            "icoFont": "bi bi-github"
+        },
+        {
+            "id": 3,
+            "nombre": "Instagram",
+            "url": "https://www.instagram.com/",
+            "icoFont": "bi bi-instagram----------------no se si agregar el mail que esta en el footer tmb"
+        }
+    ],
+
+    "logoBrand":"../assets/img/logo-argentina-programa.png",
+
+    "banner1": "../assets/img/banner/1banner.jpg",
+
+    "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",
+
+    "sobremi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+
+    "experiencias": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+
+    "bannerEducacion":"../assets/img/banner/3educacion.jpg",
+
+    "estudios": [
+        {
+            "id": 1,
+            "logoInstitucion": "../assets/img/educacion/epetPNG.png",
+            "anioeInstitucion": "1999-2005. Escuela Provincial de Educación Técnica N°1. Posadas, Misiones, Argentina",
+            "titulo": "Técnica en construcciones (Polimodal, modalidad Producción de bienes y servicios)."
+        },
+        {
+            "id": 2,
+            "logoInstitucion": "../assets/img/educacion/faudPNG.png",
+            "anioeInstitucion": "2006-2013. Facultad de Arquitectura, Urbanismo y Diseño. Universidad Nacional de Córdoba. Córdoba, Argentina.",
+            "titulo": "Arquitecta."
+        },
+        {
+            "id": 3,
+            "logoInstitucion": "../assets/img/educacion/poloticPNG.png",
+            "anioeInstitucion": "2022. Silicon Misiones-Polotic. Base de Datos desde cero. Modalidad online.",
+            "titulo": "Administradora de Bases de Datos Junior (DBA)."
+        },
+        {
+            "id": 4,
+            "logoInstitucion": "../assets/img/educacion/argentinaprogramaPNG.png",
+            "anioeInstitucion": "2022-2023. Argentina Programa. Modalidad online.",
+            "titulo": "#SeProgramar, Primera etapa. #YoProgramo, Segunda etapa. Programadora web fullstack junior."
+        }
+    ],
+    "skillsProgramacion": [
+        {
+            "id": 1,
+            "nombre": "Html5",
+            "porcentaje": "90"
+        },
+        {
+            "id": 2,
+            "nombre": "Css3",
+            "porcentaje": "80"
+        },
+        {
+            "id": 3,
+            "nombre": "Bootstrap",
+            "porcentaje": "80"
+        },
+        {
+            "id": 4,
+            "nombre": "JavaScript",
+            "porcentaje": "35"
+        },
+        {
+            "id": 5,
+            "nombre": "Typescript",
+            "porcentaje": "40"
+        },
+        {
+            "id": 6,
+            "nombre": "Angular",
+            "porcentaje": "60"
+        },
+        {
+            "id": 7,
+            "nombre": "MySql",
+            "porcentaje": "70"
+        },
+        {
+            "id": 8,
+            "nombre": "Java",
+            "porcentaje": "35"
+        },
+        {
+            "id": 9,
+            "nombre": "Ruby",
+            "porcentaje": "40"
+        }
+    ],
+    "skillsDisenioArquitectura": [
+        {
+            "id": 10,
+            "nombre": "Figma",
+            "porcentaje": "60"
+        },
+        {
+            "id": 11,
+            "nombre": "CoreDraw",
+            "porcentaje": "90"
+        },
+        {
+            "id": 12,
+            "nombre": "Photoshop",
+            "porcentaje": "85"
+        },
+        {
+            "id": 13,
+            "nombre": "Autocad",
+            "porcentaje": "95"
+        },
+        {
+            "id": 14,
+            "nombre": "Sketchup",
+            "porcentaje": "95"
+        },
+        {
+            "id": 15,
+            "nombre": "Vray",
+            "porcentaje": "70"
+        },
+        {
+            "id": 16,
+            "nombre": "Revit",
+            "porcentaje": "30"
+        }
+    ],
+    "skillsIdiomas": [
+        {
+            "id": 16,
+            "nombre": "Inglés",
+            "porcentaje": "80"
+        },
+        {
+            "id": 17,
+            "nombre": "Portugués",
+            "porcentaje": "60"
+        },
+        {
+            "id": 18,
+            "nombre": "Español",
+            "porcentaje": "100"
+        }
+    ],
+    "skillsHabilidadesBlandasde ----------------------------------------------cambiar agregar en html css": [
+        {
+            "id": 22,
+            "nombre": "Resolución de Problemas",
+            "porcentaje": "95"
+        },
+        {
+            "id": 23,
+            "nombre": "Manejo del tiempo",
+            "porcentaje": "85"
+        },
+        {
+            "id": 20,
+            "nombre": "Trabajo en Equipo",
+            "porcentaje": "75"
+        },
+        {
+            "id": 21,
+            "nombre": "Aprendizaje Rápido",
+            "porcentaje": "80"
+        },
+        {
+            "id": 19,
+            "nombre": "Adaptabilidad",
+            "porcentaje": "80"
+        }
+    ],
+    "proyectos": [
+        {
+            "id": 1,
+            "imgProyecto": "../assets/img/proyectos/proyecto2.jpg",
+            "urlProyecto": "ver target blank a otra pagina  ../assets/img/proyectos/proyecto2.jpg",
+            "tituloProyecto": "Casa Ko, Texas",
+            "descripcion": ""
+        },
+        {
+            "id": 2,
+            "imgProyecto": "../assets/img/proyectos/proyecto5.jpg",
+            "urlProyecto": "../assets/img/proyectos/proyecto5.jpg",
+            "tituloProyecto": "Casa U, Reforma fachada, Texas",
+            "descripcion": ""
+        },
+        {
+            "id": 3,
+            "imgProyecto": "../assets/img/proyectos/proyecto3.jpg",
+            "urlProyecto": "../assets/img/proyectos/proyecto3.jpg    really, como hace target blank, o segun html es?",
+            "tituloProyecto": "Casa T, desde cero. Misiones, Argentina",
+            "descripcion": ""
+        },
+        {
+            "id": 4,
+            "imgProyecto": "../assets/img/proyectos/proyecto4.jpg",
+            "urlProyecto": "../assets/img/proyectos/proyecto4.jpg",
+            "tituloProyecto": "Departamento flia. ampliada, Misiones",
+            "descripcion": ""
+        },
+        {
+            "id": 5,
+            "imgProyecto": "../assets/img/proyectos/proyecto6.jpg",
+            "urlProyecto": "../assets/img/proyectos/proyecto6.jpg",
+            "tituloProyecto": "Casa T, reformas s/ existente",
+            "descripcion": ""
+        },
+        {
+            "id": 6,
+            "imgProyecto": "../assets/img/proyectos/proyecto1+.jpg",
+            "urlProyecto": "../assets/img/proyectos/proyecto1.jpg",
+            "tituloProyecto": "Mi Portfolio Web",
+            "descripcion": ""
+        }
+    ],
+
+    "bannerFooter": "../assets/img/banner/4salida.jpg"
+}
