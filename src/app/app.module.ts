@@ -13,6 +13,8 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { BannerfooterComponent } from './componentes/bannerfooter/bannerfooter.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { IndexComponent } from './componentes/index/index.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { LogoutComponent } from './componentes/logout/logout.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { IndexComponent } from './componentes/index/index.component';
     BannerfooterComponent,
     FooterComponent,
     IndexComponent,
+    LoginComponent,
+    LogoutComponent,
     ],
   imports: [
     BrowserModule,

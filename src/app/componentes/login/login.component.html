@@ -1,0 +1,66 @@
+     <!-- ////////////////////////////////login///////////////////////////////////////////// -->
+     <div class="nav-item ">
+        <!-- button trigger modal login-->
+        <button type="button" class="btn btn-outline-secondary p-0" data-bs-toggle="modal"
+            data-bs-target="#modalLogin">
+            <!-- <i class="bi bi-box-arrow-in-right" style="font-size: 1.5em;"></i> -->
+            <!-- pongo svg porque no se ve offline sino, tendria que hacer lo mismo con todos los iconos :/ -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                class="bi bi-box-arrow-in-right" viewBox="0 0 17 17">
+                <path fill-rule="evenodd"
+                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                <path fill-rule="evenodd"
+                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+            </svg>
+        </button>
+
+
+
+
+        <!--  HICE UN DESASTREEEEEEEEEEE CON LOS NOMBRES DE LOS MODALES -->
+
+        <!--Modal login....tiene que quedar fuera de la navbar sino no funciona creo, poner todos despues del footer-->
+        <form class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <!-- agrego centered para q abra en el medio, arriba contrasta mas mepa, al medio poner mas sombra, ver -->
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- <div class="modal-body p-5 "> le saque el padding para cambiar el top padding, no se como aca -->
+                        <div class=" form-floating mb-3">
+                            <input type="email" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+
+                            <!-- rounded-0 sin redondeo, creo q puse en css mio too, o no-->
+                            <input type="password" class="form-control rounded-0 formulariosinput"
+                                id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+
+                        <!-- <br class="my-4 p-3"> -->
+                        <br class="py-5 my-2">
+
+                        <!-- tenian btn-outline-danger, despues ver si no queda mejor, o secondary -->
+                        <!-- al final hice uno propio btn-loginout con borde color variable verde y btn-loginout2 con borde gris todo gris, le falta color, poner uno de los dos y el mismo al cerrar sesion  
+                        +loginout3 con gris clarito de entrada-->
+                        <button class="w-100 mb-2 btn btn-lg rounded-0 btn-loginout3 "
+                            type="submit">Iniciar
+                            Sesión</button>
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
