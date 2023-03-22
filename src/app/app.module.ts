@@ -15,6 +15,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { LogoutComponent } from './componentes/logout/logout.component';
+import { Pagina404Component } from './componentes/pagina404/pagina404.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { LogoutComponent } from './componentes/logout/logout.component';
     IndexComponent,
     LoginComponent,
     LogoutComponent,
+    Pagina404Component,
     ],
   imports: [
     BrowserModule,
