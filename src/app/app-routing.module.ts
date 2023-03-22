@@ -5,7 +5,7 @@ import { IndexComponent } from './componentes/index/index.component';
 const routes: Routes = [
   {path:'', component:IndexComponent},
 
-  // {path: 'educacion', component: EducacionComponent},        no se bien para que se trae aca todavia
+  //{path: 'educacion', component: EducacionComponent},        //no se bien para que se trae aca todavia
   // {path: 'proyectos', component: ProyectosComponent},
   // {path: '**', component: Pagina404Component} ,
 

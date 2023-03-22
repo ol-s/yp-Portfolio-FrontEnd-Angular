@@ -7,7 +7,7 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./educacion.component.css']
 })
 
-//export class EducacionComponent implements OnInit {       con oninit me tira error               
+//export class EducacionComponent implements OnInit {       //con oninit me tira error               
 export class EducacionComponent {
 
   //instanciamos la variable, para traer un array completo [], 'any'

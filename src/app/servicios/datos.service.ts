@@ -18,7 +18,7 @@ export class DatosService {
   // metodo  observable que devuelve datos, "getDatos getInfo" nombre de funcion, tmb lo ponemos nosobtros(?)
   getDatos():Observable<any>{
 
-    //retorna datos via get httcliente que llama a la base de datos json o a una url, get('usar comillas simples')
+    //retorna datos via get httcliente que llama a la base de datos json o a una url , get('usar comillas simples')
     return this.httpCliente.get('./assets/basedatos/database.json');
   }
 }
