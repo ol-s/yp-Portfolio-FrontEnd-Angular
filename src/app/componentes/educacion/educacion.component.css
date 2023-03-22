@@ -108,6 +108,14 @@
       /* min-height: 20em; */
     }
   }
+
+
+  p{
+    color: var(--color-texto-medio-educacion);
+    /* color: var(--color-texto-medio); */
+    letter-spacing: 2px;
+
+  }
   
   /* fin EDUCACION ///////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////

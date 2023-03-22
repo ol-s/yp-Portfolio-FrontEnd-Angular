@@ -56,8 +56,8 @@
         {
             "id": 4,
             "logoInstitucion": "../assets/img/educacion/argentinaprogramaPNG.png",
-            "anioeInstitucion": "2022-2023. Argentina Programa. Modalidad online.",
-            "titulo": "#SeProgramar, Primera etapa. #YoProgramo, Segunda etapa. Programadora web fullstack junior."
+            "anioeInstitucion": "2022-2023. Argentina Programa. #SeProgramar, Primera etapa. #YoProgramo, Segunda etapa. Modalidad online.",
+            "titulo": "Programadora web fullstack junior."
         }
     ],
     "skillsProgramacion": [

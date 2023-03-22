@@ -4,10 +4,15 @@ import { IndexComponent } from './componentes/index/index.component';
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
-  // {path: 'login', component: LoginComponent},       booooooooorrarrrrrrrrrrrrrrrr todo esto 
+
+  // {path: 'educacion', component: EducacionComponent},        no se bien para que se trae aca todavia
+  // {path: 'proyectos', component: ProyectosComponent},
+  // {path: '**', component: Pagina404Component} ,
+
+  // {path: 'login', component: LoginComponent},       booooooooorrarrrrrrrrrrrrrrrr todo esto, 
   // {path: 'aadmin', component:AadminComponent, canActivate:[GuardGuard]},   //, canActivate:[GuardGuard]
   /* {path: '', redirectTo:'/index', pathMatch:'full'}, */
-  // {path:'**', component:ErrorComponent}     hacer pagina 404
+
 ];
 
 @NgModule({
