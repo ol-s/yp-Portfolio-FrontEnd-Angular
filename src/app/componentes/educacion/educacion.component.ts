@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';
 
 @Component({
@@ -7,8 +7,8 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./educacion.component.css']
 })
 
-//export class EducacionComponent implements OnInit {       //con oninit me tira error               
-export class EducacionComponent {
+export class EducacionComponent implements OnInit {       //con oninit me tira error, faltaba import oninit en linea 1               
+//export class EducacionComponent {
 
   //instanciamos la variable, para traer un array completo [], 'any'
   estudiosTodos : any =[];

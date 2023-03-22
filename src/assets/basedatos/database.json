@@ -38,24 +38,28 @@
         {
             "id": 1,
             "logoInstitucion": "../assets/img/educacion/epetPNG.png",
+            "logoAlt":"Logo Epet",
             "anioeInstitucion": "1999-2005. Escuela Provincial de Educación Técnica N°1. Posadas, Misiones, Argentina",
             "titulo": "Técnica en construcciones (Polimodal, modalidad Producción de bienes y servicios)."
         },
         {
             "id": 2,
             "logoInstitucion": "../assets/img/educacion/faudPNG.png",
+            "logoAlt":"Logo Faud",
             "anioeInstitucion": "2006-2013. Facultad de Arquitectura, Urbanismo y Diseño. Universidad Nacional de Córdoba. Córdoba, Argentina.",
             "titulo": "Arquitecta."
         },
         {
             "id": 3,
             "logoInstitucion": "../assets/img/educacion/poloticPNG.png",
+            "logoAlt":"Logo Polotic",
             "anioeInstitucion": "2022. Silicon Misiones-Polotic. Base de Datos desde cero. Modalidad online.",
             "titulo": "Administradora de Bases de Datos Junior (DBA)."
         },
         {
             "id": 4,
             "logoInstitucion": "../assets/img/educacion/argentinaprogramaPNG.png",
+            "logoAlt":"Logo AP",
             "anioeInstitucion": "2022-2023. Argentina Programa. #SeProgramar, Primera etapa. #YoProgramo, Segunda etapa. Modalidad online.",
             "titulo": "Programadora web fullstack junior."
         }
