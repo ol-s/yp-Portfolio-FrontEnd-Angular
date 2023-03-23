@@ -21,17 +21,21 @@
   --color-background-oscuro1: #191919;
   --color-background-claro: #ffffff;
 
+
   /* --color-links-navbar: rgb(191, 255, 0);  estaba en rgb cabie a # */
   /* --color-links-navbar: rgb(161, 161, 161); */
   /* --color-links-navbar: #6b5840; */
-  --color-links-navbar: #edcca3;
   /* --color-links-navbar: rgb(191, 255, 0);  verdecito, mal contraste */
   /* --color-links-navbar: #bfff00; verdecito */
+  /* principal--------------------------------     --color-links-navbar: #edcca3; */
+  --color-links-navbar: #efc591;
 
   /* iconitos de redes sociales nomas */
   --color-links-navbar-hover: var(--color-texto-medio);
 
-  --color-texto-medio: #9a9a9a;
+  /* titulo skills */
+  /* --color-texto-medio: #9a9a9a; */
+  --color-texto-medio: #7d7d7d;
 
   /* titulo educacion */
   --color-texto-medio-educacion: #808080;

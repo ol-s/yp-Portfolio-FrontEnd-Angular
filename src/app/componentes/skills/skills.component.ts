@@ -13,7 +13,10 @@ export class SkillsComponent implements OnInit {
   //proyectosTodos : any = [];
   //proyectosTodosWeb : any = [];
 
-  skillsTodas: any = [];
+  skillsTodasProgram: any = [];
+  skillsTodasArq: any = [];
+  skillsTodasIdiom: any = [];
+  skillsTodasBlandas: any = [];
 
   //datos: tambien es un alias, nombrar como querramos
   constructor(private datos: DatosService) { }
@@ -21,10 +24,10 @@ export class SkillsComponent implements OnInit {
   //this 'datos' es el datos de la linea 14, el getDatos viene del datos.service.ts,  'data'  es otro alias que ponemos nosotros, puse los mismos alias que en educacion.ts
   ngOnInit(): void {
     this.datos.getDatos().subscribe(data => {
-        this.skillsTodas = data.skillsProgramacion,
-        this.skillsTodas = data.skillsDisenioArquitectura,
-        this.skillsTodas = data.skillsIdiomas,
-        this.skillsTodas = data.skillsHabilidadesBlandas
+        this.skillsTodasProgram = data.skillsProgramacion,
+        this.skillsTodasArq = data.skillsDisenioArquitectura,
+        this.skillsTodasIdiom = data.skillsIdiomas,
+        this.skillsTodasBlandas = data.skillsHabilidadesBlandas
     });
   }
 }

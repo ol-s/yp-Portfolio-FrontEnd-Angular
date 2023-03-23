@@ -18,219 +18,23 @@
             <div class="">
                 <div class="row">
 
-                    <!-- columna 1 -------------------------------------------------------------->
-                    <!-- <div class="col-md-6 p-4 mt-5"> -->
-                    <!-- saco margen, cada vez que toco algo se desacomoda todo -->
-                    <div class="col-md-6 p-4 ">
+                    <!-- columna 1 Programación web -------------------------------------------------------------->
+                    <div class="col-md-6 p-4 mt-5">
 
                         <h4>Programación web</h4><br>
 
-
-                        <!-- skill 1 -->
-                        <div class="moduloSkill">
+                        <!-- modulo skill -->
+                        <div class="moduloSkill" *ngFor="let cadaSkillProgram of skillsTodasProgram">
                             <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">html5</h6>
-                                <h6 class="text-end skills-porcentajes">90%</h6>
+                                <h6 class="skill-title">{{cadaSkillProgram.nombre}}</h6>
+                                <h6 class="text-end skills-porcentajes">{{cadaSkillProgram.porcentaje}}%</h6>
                             </div>
                             <div class="">
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                        aria-valuemax="100" [style.width.%]="cadaSkillProgram.porcentaje"></div>
                                 </div>
-
-
-                                <!-- oficial bootstrap, me faltan un par de aria 
-                                        https://getbootstrap.com/docs/5.2/components/progress/
-                                    <div class="progress" >
-                                        <div class="progress-bar" role="progressbar" aria-label="Example 1px high"
-                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
-                                    </div> -->
-
-                                <!-- 
-                                    <button class="source-button btn btn-primary btn-xs" type="button"
-                                        tabindex="0"></button> -->
-
-                                <!-- botones edit subseccion ------------------------------------ -->
-                                <div class="text-end">
-                                    <br>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- skill 2 -->
-                        <div class="moduloSkill">
-                            <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">css3 </h6>
-                                <span class="text-end skills-porcentajes">80%</span>
-                            </div>
-                            <div class="">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <!-- botones edit subseccion ------------------------------------ -->
-                                <div class="text-end">
-                                    <br>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- skill 3 -->
-                        <div class="moduloSkill">
-                            <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">bootstrap </h6>
-                                <span class="text-end skills-porcentajes">80%</span>
-                            </div>
-                            <div class="">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <!-- botones edit subseccion ------------------------------------ -->
-                                <div class="text-end">
-                                    <br>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- skill 3 -->
-                        <div class="moduloSkill">
-                            <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">javascript </h6>
-                                <span class="text-end skills-porcentajes">40%</span>
-                            </div>
-                            <div class="">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <!-- botones edit subseccion ------------------------------------ -->
-                                <div class="text-end">
-                                    <br>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- skill 3 -->
-                        <div class="moduloSkill">
-                            <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">typescript </h6>
-                                <span class="text-end skills-porcentajes">40%</span>
-                            </div>
-                            <div class="">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <!-- botones edit subseccion ------------------------------------ -->
-                                <div class="text-end">
-                                    <br>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- skill 3 -->
-                        <div class="moduloSkill">
-                            <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">angular </h6>
-                                <span class="text-end skills-porcentajes">60%</span>
-                            </div>
-                            <div class="">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <!-- botones edit subseccion ------------------------------------ -->
-                                <div class="text-end">
-                                    <br>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- skill 3 -->
-                        <div class="moduloSkill">
-                            <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">mysql </h6>
-                                <span class="text-end skills-porcentajes">70%</span>
-                            </div>
-                            <div class="">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <!-- botones edit subseccion ------------------------------------ -->
-                                <div class="text-end">
-                                    <br>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- skill 3 -->
-                        <div class="moduloSkill">
-                            <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">java </h6>
-                                <span class="text-end skills-porcentajes">25%</span>
-                            </div>
-                            <div class="">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <!-- botones edit subseccion ------------------------------------ -->
-                                <div class="text-end">
-                                    <br>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="botonEditSubseccionOscura"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- skill 3 -->
-                        <div class="moduloSkill">
-                            <div class="d-flex justify-content-between skill-text">
-                                <h6 class="skill-title">ruby </h6>
-                                <span class="text-end skills-porcentajes">40%</span>
-                            </div>
-                            <div class="">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <!-- botones edit subseccion ------------------------------------ -->
+                                <!-- botones edit subseccion -->
                                 <div class="text-end">
                                     <br>
                                     <button type="button" class="botonEditSubseccionOscura"><i
@@ -244,252 +48,126 @@
 
 
 
-                    <!-- columna 2 -------------------------------------------------------------->
-                    <div class="col-md-6 p-4">
 
-                        <!-- //////////////////////arquitectura y disenio -->
-                        <div>
-                            <h4>Diseño y Arquitectura</h4><br>
+                    <!-- columna 2  -------------------------------------------------------------->
+                    <div class="col-md-6 p-4 mt-5">
 
-
-                            <!-- skill 2 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">figma </h6>
-                                    <span class="text-end skills-porcentajes">60%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%;"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
+                        <!-- Diseño y Arquitectura ---------------------------->
+                        <h4>Diseño y Arquitectura</h4><br>
+                        <!-- modulo skill -->
+                        <div class="moduloSkill" *ngFor="let cadaSkillArq of skillsTodasArq">
+                            <div class="d-flex justify-content-between skill-text">
+                                <h6 class="skill-title">{{cadaSkillArq.nombre}}</h6>
+                                <h6 class="text-end skills-porcentajes">{{cadaSkillArq.porcentaje}}%</h6>
                             </div>
-
-
-                            <!-- skill 3 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">coreldraw </h6>
-                                    <span class="text-end skills-porcentajes">90%</span>
+                            <div class="">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                        aria-valuemax="100" [style.width.%]="cadaSkillArq.porcentaje"></div>
                                 </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 90%;"
-                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- skill 3 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">photoshop </h6>
-                                    <span class="text-end skills-porcentajes">80%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 80%;"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- skill 3 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">autocad</h6>
-                                    <span class="text-end skills-porcentajes">95%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 95%;"
-                                            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- skill 3 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">sketchup </h6>
-                                    <span class="text-end skills-porcentajes">95%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 95%;"
-                                            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- skill 3 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">vray </h6>
-                                    <span class="text-end skills-porcentajes">70%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 70%;"
-                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <!-- skill 3 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">revit </h6>
-                                    <span class="text-end skills-porcentajes">30%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
+                                <!-- botones edit subseccion -->
+                                <div class="text-end">
+                                    <br>
+                                    <button type="button" class="botonEditSubseccionOscura"><i
+                                            class="fa-solid fa-pen"></i></button>
+                                    <button type="button" class="botonEditSubseccionOscura"><i
+                                            class="fa-solid fa-trash"></i></button>
                                 </div>
                             </div>
                         </div>
 
 
-                        <br><br>
-
-
-                        <!-- //////////////////////idiomas -->
-                        <div>
-                            <h4>Idiomas</h4>
-
-
-                            <!-- skill 3 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">inglés</h6>
-                                    <span class="text-end skills-porcentajes">80%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 80%;"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- skill 3 -->
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">portugués </h6>
-                                    <span class="text-end skills-porcentajes">60%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%;"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="moduloSkill">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">español</h6>
-                                    <span class="text-end skills-porcentajes">100%</span>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 100%;"
-                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <!-- botones edit subseccion ------------------------------------ -->
-                                    <div class="text-end">
-                                        <br>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-pen"></i></button>
-                                        <button type="button" class="botonEditSubseccionOscura"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
 
                     </div>
+
+                    <br><br>
+
+                    <!-- columna 2  -------------------------------------------------------------->
+                    <div class="col-md-6 p-4 mt-5">
+
+                        <!-- Diseño y Arquitectura ---------------------------->
+                        <h4>Idiomas</h4><br>
+                        <!-- modulo skill -->
+                        <div class="moduloSkill" *ngFor="let cadaSkillIdiom of skillsTodasIdiom">
+                            <div class="d-flex justify-content-between skill-text">
+                                <h6 class="skill-title">{{cadaSkillIdiom.nombre}}</h6>
+                                <h6 class="text-end skills-porcentajes">{{cadaSkillIdiom.porcentaje}}%</h6>
+                            </div>
+                            <div class="">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                        aria-valuemax="100" [style.width.%]="cadaSkillIdiom.porcentaje"></div>
+                                </div>
+                                <!-- botones edit subseccion -->
+                                <div class="text-end">
+                                    <br>
+                                    <button type="button" class="botonEditSubseccionOscura"><i
+                                            class="fa-solid fa-pen"></i></button>
+                                    <button type="button" class="botonEditSubseccionOscura"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- columna 2  -------------------------------------------------------------->
+                    <div class="col-md-6 p-4 mt-5">
+
+                        <!-- Diseño y Arquitectura ---------------------------->
+                        <h4>Habilidades Blandas</h4><br>
+                        <!-- modulo skill -->
+                        <div class="moduloSkill" *ngFor="let cadaSkillBland of skillsTodasBlandas">
+                            <div class="d-flex justify-content-between skill-text">
+                                <h6 class="skill-title">{{cadaSkillBland.nombre}}</h6>
+                                <h6 class="text-end skills-porcentajes">{{cadaSkillBland.porcentaje}}%</h6>
+                            </div>
+                            <div class="">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                        aria-valuemax="100" [style.width.%]="cadaSkillBland.porcentaje"></div>
+                                </div>
+                                <!-- botones edit subseccion -->
+                                <div class="text-end">
+                                    <br>
+                                    <button type="button" class="botonEditSubseccionOscura"><i
+                                            class="fa-solid fa-pen"></i></button>
+                                    <button type="button" class="botonEditSubseccionOscura"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
                 </div>
             </div>
         </div>
     </div>
+
+
+
 </section>
 <!-- fin skills ////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////// -->
