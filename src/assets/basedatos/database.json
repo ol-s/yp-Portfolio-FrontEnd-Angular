@@ -192,47 +192,74 @@
             "porcentaje": "80"
         }
     ],
-    "proyectos": [
+    "proyectosArq": [
         {
             "id": 1,
-            "imgProyecto": "../assets/img/proyectos/proyecto2.jpg",
-            "urlProyecto": "ver target blank a otra pagina  ../assets/img/proyectos/proyecto2.jpg",
+            "imgPageProyecto": "../assets/img/proyectos/proyecto2.jpg",
+            "imgPageAlt":"Proyecto 2",
+            "imgTargetBlank": "../assets/img/proyectos/proyecto2.jpg",
+            "targetBlackAlt":"Proyecto 2",
             "tituloProyecto": "Casa Ko, Texas",
             "descripcion": ""
         },
         {
             "id": 2,
-            "imgProyecto": "../assets/img/proyectos/proyecto5.jpg",
-            "urlProyecto": "../assets/img/proyectos/proyecto5.jpg",
+            "imgPageProyecto": "../assets/img/proyectos/proyecto5.jpg",
+            "imgPageAlt":"Proyecto 5",
+            "imgTargetBlank": "../assets/img/proyectos/proyecto5.jpg",
+            "targetBlackAlt":"Proyecto 5",
             "tituloProyecto": "Casa U, Reforma fachada, Texas",
             "descripcion": ""
         },
         {
             "id": 3,
-            "imgProyecto": "../assets/img/proyectos/proyecto3.jpg",
-            "urlProyecto": "../assets/img/proyectos/proyecto3.jpg    really, como hace target blank, o segun html es?",
+            "imgPageProyecto": "../assets/img/proyectos/proyecto3.jpg",
+            "imgPageAlt":"Proyecto 3",
+            "imgTargetBlank": "../assets/img/proyectos/proyecto3.jpg",
+            "targetBlackAlt":"Proyecto 3",
             "tituloProyecto": "Casa T, desde cero. Misiones, Argentina",
             "descripcion": ""
         },
         {
             "id": 4,
-            "imgProyecto": "../assets/img/proyectos/proyecto4.jpg",
-            "urlProyecto": "../assets/img/proyectos/proyecto4.jpg",
+            "imgPageProyecto": "../assets/img/proyectos/proyecto4.jpg",
+            "imgPageAlt":"Proyecto 4",
+            "imgTargetBlank": "../assets/img/proyectos/proyecto4.jpg",
+            "targetBlackAlt":"Proyecto 4",
             "tituloProyecto": "Departamento flia. ampliada, Misiones",
             "descripcion": ""
         },
         {
             "id": 5,
-            "imgProyecto": "../assets/img/proyectos/proyecto6.jpg",
-            "urlProyecto": "../assets/img/proyectos/proyecto6.jpg",
+            "imgPageProyecto": "../assets/img/proyectos/proyecto6.jpg",
+            "imgPageAlt":"Proyecto 6",
+            "imgTargetBlank": "../assets/img/proyectos/proyecto6.jpg",
+            "targetBlackAlt":"Proyecto 6",
             "tituloProyecto": "Casa T, reformas s/ existente",
+            "descripcion": ""
+        }
+    ],
+    "proyectosWeb":[      
+        {
+            "id": 1,
+            "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
+            "imgPageAlt":"Proyecto 1",
+            "imgTargetBlank": "../assets/img/proyectos/proyecto1.jpg",
+            "targetBlackAlt":"Proyecto 1",
+            "link1":"https://github.com/ol-s",
+            "link2":"https://ponerdespues.com",
+            "tituloProyecto": "Mi Portfolio Web",
             "descripcion": ""
         },
         {
-            "id": 6,
-            "imgProyecto": "../assets/img/proyectos/proyecto1+.jpg",
-            "urlProyecto": "../assets/img/proyectos/proyecto1.jpg",
-            "tituloProyecto": "Mi Portfolio Web",
+            "id": 2,
+            "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
+            "imgPageAlt":"Proyecto 1",
+            "imgTargetBlank": "../assets/img/proyectos/proyecto1.jpg",
+            "targetBlackAlt":"Proyecto 1",
+            "link1":"https://github.com/ol-s",
+            "link2":"https://ponerdespues.com",
+            "tituloProyecto": "Web 2, ver modal seccion",
             "descripcion": ""
         }
     ],
