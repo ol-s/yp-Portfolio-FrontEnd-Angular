@@ -197,7 +197,7 @@
             "id": 1,
             "imgPageProyecto": "../assets/img/proyectos/proyecto2.jpg",
             "imgPageAlt":"Proyecto 2",
-            "imgTargetBlank": "../assets/img/proyectos/proyecto2.jpg",
+            "hrefTargetBlank": "../assets/img/proyectos/proyecto2.jpg",
             "targetBlackAlt":"Proyecto 2",
             "tituloProyecto": "Casa Ko, Texas",
             "descripcion": ""
@@ -206,7 +206,7 @@
             "id": 2,
             "imgPageProyecto": "../assets/img/proyectos/proyecto5.jpg",
             "imgPageAlt":"Proyecto 5",
-            "imgTargetBlank": "../assets/img/proyectos/proyecto5.jpg",
+            "hrefTargetBlank": "../assets/img/proyectos/proyecto5.jpg",
             "targetBlackAlt":"Proyecto 5",
             "tituloProyecto": "Casa U, Reforma fachada, Texas",
             "descripcion": ""
@@ -215,7 +215,7 @@
             "id": 3,
             "imgPageProyecto": "../assets/img/proyectos/proyecto3.jpg",
             "imgPageAlt":"Proyecto 3",
-            "imgTargetBlank": "../assets/img/proyectos/proyecto3.jpg",
+            "hrefTargetBlank": "../assets/img/proyectos/proyecto3.jpg",
             "targetBlackAlt":"Proyecto 3",
             "tituloProyecto": "Casa T, desde cero. Misiones, Argentina",
             "descripcion": ""
@@ -224,7 +224,7 @@
             "id": 4,
             "imgPageProyecto": "../assets/img/proyectos/proyecto4.jpg",
             "imgPageAlt":"Proyecto 4",
-            "imgTargetBlank": "../assets/img/proyectos/proyecto4.jpg",
+            "hrefTargetBlank": "../assets/img/proyectos/proyecto4.jpg",
             "targetBlackAlt":"Proyecto 4",
             "tituloProyecto": "Departamento flia. ampliada, Misiones",
             "descripcion": ""
@@ -233,13 +233,26 @@
             "id": 5,
             "imgPageProyecto": "../assets/img/proyectos/proyecto6.jpg",
             "imgPageAlt":"Proyecto 6",
-            "imgTargetBlank": "../assets/img/proyectos/proyecto6.jpg",
+            "hrefTargetBlank": "../assets/img/proyectos/proyecto6.jpg",
             "targetBlackAlt":"Proyecto 6",
             "tituloProyecto": "Casa T, reformas s/ existente",
             "descripcion": ""
+        },
+        {
+            "id": 6,
+            "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
+            "imgPageAlt":"Proyecto 1",
+            "hrefTargetBlank": "https://github.com/ol-s/yp-Portfolio-FrontEnd-Angular",
+            "targetBlackAlt":"Proyecto 1",
+            "tituloProyecto": "Mi Portfolio Web",
+            "descripcion": ""
         }
     ],
-    "proyectosWeb":[      
+
+
+
+
+    "proyectosWeb":[         
         {
             "id": 1,
             "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
@@ -249,20 +262,14 @@
             "link1":"https://github.com/ol-s",
             "link2":"https://ponerdespues.com",
             "tituloProyecto": "Mi Portfolio Web",
-            "descripcion": ""
-        },
-        {
-            "id": 2,
-            "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
-            "imgPageAlt":"Proyecto 1",
-            "imgTargetBlank": "../assets/img/proyectos/proyecto1.jpg",
-            "targetBlackAlt":"Proyecto 1",
-            "link1":"https://github.com/ol-s",
-            "link2":"https://ponerdespues.com",
-            "tituloProyecto": "Web 2, ver modal seccion",
-            "descripcion": ""
+            "descripcion": ""           
         }
     ],
+
+
+
+
+
 
     "bannerFooter": "../assets/img/banner/4salida.jpg"
 }

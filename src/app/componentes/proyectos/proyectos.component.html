@@ -33,8 +33,9 @@
 
                             <!-- asi no da error el alt pero no muestra el alt en la pagina tampoco, so
                                 <a target="_blank" class="" [href]="cadaProyecto.imgTargetBlank" [attr.alt]="cadaProyecto.targetBlackAlt" > -->
-                            <a target="_blank" class="" [href]="cadaProyecto.imgTargetBlank">
-                                <i class="bi bi-card-image"></i>
+                            <a target="_blank" class="" [href]="cadaProyecto.hrefTargetBlank">
+                                <!-- <i class="bi bi-card-image"></i> -->
+                                <i class="bi bi-plus-square"></i>
                             </a>
                         </div>
                     </div>
@@ -52,8 +53,11 @@
             en que orden se cargarian y como elegir arq o web
             SINO CAMBIAR A UN ICONO ''+'' y que te lleve a github o a una imagen externa nomas -->
 
+
+
+
             <!-- modulo proyectos web --------------------------------------------------------------->
-            <div class="col-12 col-md-6 col-lg-4" *ngFor="let cadaProyectoWeb of proyectosTodosWeb">
+            <!-- <div class="col-12 col-md-6 col-lg-4" *ngFor="let cadaProyectoWeb of proyectosTodosWeb">
                 <div class="proyecto">
                     <img [src]="cadaProyectoWeb.imgPageProyecto" [alt]="cadaProyectoWeb.imgPageAlt">
                     <div class="ms-5">
@@ -74,12 +78,17 @@
                         </div>
                     </div>
                 </div>
-                <!-- botones edit subseccion ------------------------------------ -->
+                botones edit subseccion
                 <div class="text-end">
                     <button type="button" class="botonEditSubseccion"><i class="fa-solid fa-pen"></i></button>
                     <button type="button" class="botonEditSubseccion"><i class="fa-solid fa-trash"></i></button>
                 </div>
-            </div>
+            </div> -->
+
+
+
+            <!-- subi a github proyectosArq y proyectosWeb dividos en el json (quedo nombrado asi en el json y ts, para volver atras mas facil) y en proyectos.ts y html, LUEGO VOLVI ATRAS Y LO DEJE CON EL SIGNO +, HACER EL MODAL CON casilla para EL NUMERO DE ID PARA VER POSICION DEL PROYECTO EN LA PAGINA,,DESPUES VER SI PUEDO ARMARLO MEJOR 
+            los deje todos en el mismo array del json con href (+) img para los arq y href github para los web, maybe poner la urlde pagina final-->
 
         </div>
     </div>
