@@ -167,29 +167,33 @@
     ],
     "skillsHabilidadesBlandas": [
         {
-            "id": 22,
-            "nombre": "Resolución de Problemas",
-            "porcentaje": "95"
-        },
-        {
-            "id": 23,
-            "nombre": "Manejo del tiempo",
-            "porcentaje": "85"
+            "id": 19,
+            "nombre": "Trabajo en Equipo",
+            "porcentaje": "75"          
         },
         {
             "id": 20,
-            "nombre": "Trabajo en Equipo",
-            "porcentaje": "75"
+            "nombre": "Resolución de Problemas",
+            "porcentaje": "95"        
         },
-        {
+        {             
             "id": 21,
             "nombre": "Facilidad de aprendizaje",
             "porcentaje": "90"
         },
         {
-            "id": 19,
+            "id": 22,
+            "nombre": "Gestión del tiempo",
+            "porcentaje": "85"
+        },
+        {
+            "id": 23,
             "nombre": "Adaptabilidad",
             "porcentaje": "80"
+        }, {
+            "id": 24,
+            "nombre": "Atención al detalle",
+            "porcentaje": "90"
         }
     ],
     "proyectosArq": [

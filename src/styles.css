@@ -97,6 +97,14 @@
   padding: 0;
   /* hmmmmm porque le di a todo * margin y padding 0 aca??? */
 
+
+  /* agregue esto cos al dia siguiente que no cargabien/luego cargaba bien bootstrap en chrome, volvio a cargar mal, desplazado hacia   el costado, while firefox cargba bien, con este ahora carga bie,  seguir monitoreando
+  hmmmmmm, se rompe todo en el nest hub y nest hub max, pero soloen chrome,,,lo saco y carga bien en phone que recien no cargaba */
+  max-width: 100vh;
+  /* overflow-y: hidden; este hace que no escroleee */
+
+
+
   /* padding-top: 2em; */
 
   /* esto estaba en 1.5rem y hacia que las columnas no llegaran al borde nunca */
