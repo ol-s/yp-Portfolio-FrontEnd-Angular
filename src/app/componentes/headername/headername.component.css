@@ -5,7 +5,7 @@
 /* fondo de seccion nombre, NO el mismo que navbar-----------------*/
 .headername {
     background-color: var(--color-background-navbar2);
-    color: rgb(180, 180, 180);
+    color:  var(--color-texto-header);
   
     height: 15em;
   

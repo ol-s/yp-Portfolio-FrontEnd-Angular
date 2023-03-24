@@ -5,6 +5,9 @@
 :root {
   /* --color-background: #f1f1f1; */
   /* --color-background-a: #f9f9f9; */
+
+  --color-texto-header: #b4b4b4;
+
   --color-primario: #272424;
   --color-secundario: #7d7c7c;
 
@@ -99,9 +102,10 @@
 
 
   /* agregue esto cos al dia siguiente que no cargabien/luego cargaba bien bootstrap en chrome, volvio a cargar mal, desplazado hacia   el costado, while firefox cargba bien, con este ahora carga bie,  seguir monitoreando
-  hmmmmmm, se rompe todo en el nest hub y nest hub max, pero soloen chrome,,,lo saco y carga bien en phone que recien no cargaba */
-  max-width: 100vh;
-  /* overflow-y: hidden; este hace que no escroleee */
+  hmmmmmm, se rompe todo en el nest hub y nest hub max, pero soloen chrome,,,lo saco y carga bien en phone que recien no cargaba, buncionan los dos con     max-width: 100%;  en el  body parece */
+  /* max-width: 100vh; */
+
+  /* overflow-y: hidden; este hace que no escroleee, NO */
 
 
 
@@ -147,8 +151,8 @@
 
 body {
   /* margin: 0; 
-      padding: 0;  no parece necesario aca tmb */
-
+      padding: 0; /* no parece necesario aca tmb ,,, PROBAR CON ESTO TMB,, SINO DEJAR EL MAX WIDTH*/
+      max-width: 100%;
   /* para q no se vea borde claro en seccion oscura contra oscura*/
   background-color: rgb(39, 39, 39);
 }
@@ -292,6 +296,7 @@ p {
   color: var(--color-links-navbar);
   height: 2em;
   padding-right: 1em;
+  
 }
 
 /*  ahi esta, transicion */
@@ -299,6 +304,61 @@ p {
   transition: all 0.1s ease-in;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.iconos-redes-sociales a {
+  /* width: 2.5em;
+    height: 2.5em; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 0em .8em 0em .6em; */
+  padding: 0em .6em 0em .6em;
+  /*margin: 10px; */
+  /* border: 2px solid white; */
+  /* border-radius: 50%; */
+  transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+  color: var(--color-links-navbar);
+  font-size: 1.2em;
+  transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover i {
+  color: var(--color-links-navbar-hover);
+  
+}
+
+
+
+
+/* 
+.redes1 i{
+  display: flex;
+  flex-direction: row !important;
+  color: var(--color-links-navbar);
+  font-size: 1em;
+  transition: all 0.2s ease-in;
+}
+.redes1 a:hover i {
+  color: var(--color-texto-medio);
+  cursor: pointer;
+} */
 
 /* redes, creo que solo half banner arriba, ver como hacer un componente en angular, cada red capaz? pero se arma lio al agruparlas, como lo cones en app root?////////////////////////////
   /////////////////////////////////////////////////////////////////////////////////////////////
@@ -833,7 +893,7 @@ body.navbar-expand-lg-open div.navbar-backdrop {
 
 
 
-/* forms-------------------------------------------------------*/
+/* forms-------------------modales y form mover al componente correspondienteeeeeeeeee------------------------------------*/
 .form-control {
   display: block;
   width: 100%;
@@ -843,8 +903,13 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   line-height: 1.5;
 
   color: #7676764a;
-  background-color: #fff;
+
+
+  background-color: var(--bs-offcanvas-bg);
+
+  /* background-color: #fff; */
   /* poner variable fondo de seccion */
+
 
   transition: .3s border-color;
   /* color borde recuadro mail y password login */
@@ -874,7 +939,9 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   /* espesor linea de color al hacer click en email o password */
   border: .1em solid var(--color-links-navbar) !important;
   /* outline-width: thick; */
-  outline: 1em solid var(--color-background-navbar);
+
+  /* tenia color bg navbar pero lo hice transparente y ya no cubre la sombra azul de bootstrap */
+  outline: 1em solid var(--bs-offcanvas-bg);
   /* outline: 1em ridge rgba(170, 50, 220, .6); */
 }
 

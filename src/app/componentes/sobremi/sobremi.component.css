@@ -72,7 +72,7 @@
       background-size: 140%;
   
       /* surface duo, no tan alta la foto, queda abajo, en el ipad mini queda al costado y se angosta bastante, pero bue */
-      min-height: 20em;
+      min-height: 25em;
     }
   }
   

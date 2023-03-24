@@ -74,6 +74,7 @@
   }
   
   .form-control-footer:focus {
+    
     border-bottom: .1em solid var(--color-links-navbar) !important;
     /* outline-width: thick; */
     outline: .5em solid var(--color-background-oscuro1);

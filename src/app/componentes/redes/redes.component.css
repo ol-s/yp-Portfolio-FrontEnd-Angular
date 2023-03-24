@@ -1,0 +1,12 @@
+
+.redes1 i{
+    display: flex;
+    flex-direction: row !important;
+    color: var(--color-links-navbar);
+    font-size: 1em;
+    transition: all 0.2s ease-in;
+  }
+  .redes1 a:hover i {
+    color: var(--color-texto-medio);
+    cursor: pointer;
+  }

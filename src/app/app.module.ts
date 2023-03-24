@@ -19,6 +19,7 @@ import { IndexComponent } from './componentes/index/index.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { LogoutComponent } from './componentes/logout/logout.component';
 import { Pagina404Component } from './componentes/pagina404/pagina404.component';
+import { RedesComponent } from './componentes/redes/redes.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { Pagina404Component } from './componentes/pagina404/pagina404.component'
     LoginComponent,
     LogoutComponent,
     Pagina404Component,
+    RedesComponent,
     ],
   imports: [
     BrowserModule,

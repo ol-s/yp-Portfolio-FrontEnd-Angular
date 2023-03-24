@@ -1,65 +1,64 @@
 {
-    "nombreyapellido": "soledadfretes",
-    "subtitulo": "arquitecta | programadora web fullstack jr",
+    "header": [
+        {
+            "id": 1,
+            "nombreyapellido": "soledadfretes",
+            "subtitulo": "arquitecta | programadora web fullstack jr"
+        }
+    ],
     "redes": [
         {
             "id": 1,
             "nombre": "LinkedIn",
             "url": "https://www.linkedin.com/",
-            "icoFont": "bi bi-linkedin"
+            "iconred": "bi bi-linkedin"
         },
         {
             "id": 2,
             "nombre": "Github",
             "url": "https://github.com/ol-s/",
-            "icoFont": "bi bi-github"
+            "iconred": "bi bi-github"
         },
         {
-            "id": 3,
+           
+            "id": 4,
             "nombre": "Instagram",
             "url": "https://www.instagram.com/",
-            "icoFont": "bi bi-instagram----------------no se si agregar el mail que esta en el footer tmb"
+            "iconred": "bi bi-instagram"
         }
     ],
-
-    "logoBrand":"../assets/img/logo-argentina-programa.png",
-
+    "logoBrand": "../assets/img/logo-argentina-programa.png",
     "banner1": "../assets/img/banner/1banner.jpg",
-
     "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",
-
     "sobremi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
-
     "experiencias": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
-
-    "bannerEducacion":"../assets/img/banner/3educacion.jpg",
-
+    "bannerEducacion": "../assets/img/banner/3educacion.jpg",
     "estudios": [
         {
             "id": 1,
             "logoInstitucion": "../assets/img/educacion/epetPNG.png",
-            "logoAlt":"Logo Epet",
+            "logoAlt": "Logo Epet",
             "anioeInstitucion": "1999-2005. Escuela Provincial de Educación Técnica N°1. Posadas, Misiones, Argentina",
             "titulo": "Técnica en construcciones (Polimodal, modalidad Producción de bienes y servicios)."
         },
         {
             "id": 2,
             "logoInstitucion": "../assets/img/educacion/faudPNG.png",
-            "logoAlt":"Logo Faud",
+            "logoAlt": "Logo Faud",
             "anioeInstitucion": "2006-2013. Facultad de Arquitectura, Urbanismo y Diseño. Universidad Nacional de Córdoba. Córdoba, Argentina.",
             "titulo": "Arquitecta."
         },
         {
             "id": 3,
             "logoInstitucion": "../assets/img/educacion/poloticPNG.png",
-            "logoAlt":"Logo Polotic",
+            "logoAlt": "Logo Polotic",
             "anioeInstitucion": "2022. Silicon Misiones-Polotic. Base de Datos desde cero. Modalidad online.",
             "titulo": "Administradora de Bases de Datos Junior (DBA)."
         },
         {
             "id": 4,
             "logoInstitucion": "../assets/img/educacion/argentinaprogramaPNG.png",
-            "logoAlt":"Logo AP",
+            "logoAlt": "Logo AP",
             "anioeInstitucion": "2022-2023. Argentina Programa. #SeProgramar, Primera etapa. #YoProgramo, Segunda etapa. Modalidad online.",
             "titulo": "Programadora web fullstack junior."
         }
@@ -169,14 +168,14 @@
         {
             "id": 19,
             "nombre": "Trabajo en Equipo",
-            "porcentaje": "75"          
+            "porcentaje": "75"
         },
         {
             "id": 20,
             "nombre": "Resolución de Problemas",
-            "porcentaje": "95"        
+            "porcentaje": "95"
         },
-        {             
+        {
             "id": 21,
             "nombre": "Facilidad de aprendizaje",
             "porcentaje": "90"
@@ -190,7 +189,8 @@
             "id": 23,
             "nombre": "Adaptabilidad",
             "porcentaje": "80"
-        }, {
+        },
+        {
             "id": 24,
             "nombre": "Atención al detalle",
             "porcentaje": "90"
@@ -200,80 +200,70 @@
         {
             "id": 1,
             "imgPageProyecto": "../assets/img/proyectos/proyecto2.jpg",
-            "imgPageAlt":"Proyecto 2",
+            "imgPageAlt": "Proyecto 2",
             "hrefTargetBlank": "../assets/img/proyectos/proyecto2.jpg",
-            "targetBlackAlt":"Proyecto 2",
+            "targetBlackAlt": "Proyecto 2",
             "tituloProyecto": "Casa Ko, Texas",
             "descripcion": ""
         },
         {
             "id": 2,
             "imgPageProyecto": "../assets/img/proyectos/proyecto5.jpg",
-            "imgPageAlt":"Proyecto 5",
+            "imgPageAlt": "Proyecto 5",
             "hrefTargetBlank": "../assets/img/proyectos/proyecto5.jpg",
-            "targetBlackAlt":"Proyecto 5",
+            "targetBlackAlt": "Proyecto 5",
             "tituloProyecto": "Casa U, Reforma fachada, Texas",
             "descripcion": ""
         },
         {
             "id": 3,
             "imgPageProyecto": "../assets/img/proyectos/proyecto3.jpg",
-            "imgPageAlt":"Proyecto 3",
+            "imgPageAlt": "Proyecto 3",
             "hrefTargetBlank": "../assets/img/proyectos/proyecto3.jpg",
-            "targetBlackAlt":"Proyecto 3",
+            "targetBlackAlt": "Proyecto 3",
             "tituloProyecto": "Casa T, desde cero. Misiones, Argentina",
             "descripcion": ""
         },
         {
             "id": 4,
             "imgPageProyecto": "../assets/img/proyectos/proyecto4.jpg",
-            "imgPageAlt":"Proyecto 4",
+            "imgPageAlt": "Proyecto 4",
             "hrefTargetBlank": "../assets/img/proyectos/proyecto4.jpg",
-            "targetBlackAlt":"Proyecto 4",
+            "targetBlackAlt": "Proyecto 4",
             "tituloProyecto": "Departamento flia. ampliada, Misiones",
             "descripcion": ""
         },
         {
             "id": 5,
             "imgPageProyecto": "../assets/img/proyectos/proyecto6.jpg",
-            "imgPageAlt":"Proyecto 6",
+            "imgPageAlt": "Proyecto 6",
             "hrefTargetBlank": "../assets/img/proyectos/proyecto6.jpg",
-            "targetBlackAlt":"Proyecto 6",
+            "targetBlackAlt": "Proyecto 6",
             "tituloProyecto": "Casa T, reformas s/ existente",
             "descripcion": ""
         },
         {
             "id": 6,
             "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
-            "imgPageAlt":"Proyecto 1",
+            "imgPageAlt": "Proyecto 1",
             "hrefTargetBlank": "https://github.com/ol-s/yp-Portfolio-FrontEnd-Angular",
-            "targetBlackAlt":"Proyecto 1",
+            "targetBlackAlt": "Proyecto 1",
             "tituloProyecto": "Mi Portfolio Web",
             "descripcion": ""
         }
     ],
-
-
-
-
-    "proyectosWeb":[         
+    "proyectosWeb": [
         {
             "id": 1,
             "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
-            "imgPageAlt":"Proyecto 1",
+            "imgPageAlt": "Proyecto 1",
             "imgTargetBlank": "../assets/img/proyectos/proyecto1.jpg",
-            "targetBlackAlt":"Proyecto 1",
-            "link1":"https://github.com/ol-s",
-            "link2":"https://ponerdespues.com",
+            "targetBlackAlt": "Proyecto 1",
+            "link1": "https://github.com/ol-s",
+            "link2": "https://ponerdespues.com",
             "tituloProyecto": "Mi Portfolio Web",
-            "descripcion": ""           
+            "descripcion": ""
         }
     ],
-
-
-
-
-
-
     "bannerFooter": "../assets/img/banner/4salida.jpg"
 }
