@@ -26,7 +26,7 @@
                         <div class="text-end">
                             <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button> -->
                             <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
-                                data-bs-target="#modalEducacionAdd2">
+                                data-bs-target="#modalEducacionAdd">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
 
@@ -35,10 +35,6 @@
 
                         <h2 class="seccion-titulo">Educación</h2>
                     </div>
-
-                    <!-- llamo al modal ----------------------------->
-                    <app-modal-educacion-add2></app-modal-educacion-add2>
-
 
                     <!-- modulo educacion --------------------------------------------------->
                     <div class="moduloEducacion" *ngFor="let cadaEstudio of estudiosTodos">
@@ -62,8 +58,7 @@
                             </button>
                         </div>
                     </div>
-                    <!-- llamo al modal ----------------------------->
-                    <app-modal-educacion-edit></app-modal-educacion-edit>
+
                 </div>
             </div>
         </div>
@@ -73,6 +68,11 @@
 /////////////////////////////////////////////////////////////////////// -->
 
 
+<!-- llamo al modal ----------------------------->
+<!-- <app-modal-educac-add></app-modal-educac-add> -->
+<app-modal-educacion-add></app-modal-educacion-add>
+<!-- llamo al modal ----------------------------->
+<app-modal-educacion-edit></app-modal-educacion-edit>
 
 <!-- modal eliminar, no se si ponerlo asi, aparte, uno para cada uno de los items(??) o donde -->
 <form class="modal fade" id="modalEliminarItem" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">

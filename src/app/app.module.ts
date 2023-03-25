@@ -22,7 +22,7 @@ import { Pagina404Component } from './componentes/pagina404/pagina404.component'
 import { RedesComponent } from './componentes/redes/redes.component';
 import { ModalHeaderComponent } from './modales/modal-header/modal-header.component';
 import { ModalSobremiComponent } from './modales/modal-sobremi/modal-sobremi.component';
-import { ModalEducacionAddComponent } from './modales/modal-educacion-add2/modal-educacion-add.component';
+import { ModalEducacionAddComponent } from './modales/modal-educacion-add/modal-educacion-add.component';
 import { ModalEducacionEditComponent } from './modales/modal-educacion-edit/modal-educacion-edit.component';
 import { ModalSkillEditComponent } from './modales/modal-skill-edit/modal-skill-edit.component';
 import { ModalSkillAddComponent } from './modales/modal-skill-add/modal-skill-add.component';
