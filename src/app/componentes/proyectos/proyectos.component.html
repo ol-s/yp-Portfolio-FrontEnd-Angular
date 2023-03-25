@@ -4,9 +4,11 @@
     <div class="container-fluid proyectostitulo justify-content-start">
         <!-- botones edicion seccion ---------------------------------------->
         <div class="text-end">
-            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
-            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-plus"></i></button>
+            <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button> -->
             <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button> -->
+            <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
+                <i class="fa-solid fa-plus"></i>
+            </button>
         </div>
         <!-- titulo seccion ------------------------------------------------->
         <h2 class="seccion-titulo">Proyectos</h2>
@@ -42,10 +44,20 @@
                 </div>
                 <!-- botones edit subseccion -->
                 <div class="text-end">
-                    <button type="button" class="botonEditSubseccion"><i class="fa-solid fa-pen"></i></button>
-                    <button type="button" class="botonEditSubseccion"><i class="fa-solid fa-trash"></i></button>
+                    <!-- <button type="button" class="botonEditSubseccion"><i class="fa-solid fa-pen"></i></button>
+                    <button type="button" class="botonEditSubseccion"><i class="fa-solid fa-trash"></i></button> -->
+                    <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
+                        data-bs-target="#modalProyectosEdit">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
+                        data-bs-target="#modalEliminarProyecto">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
                 </div>
             </div>
+
+
 
             <!-- creo que voy a tener que poner aparte el portfolio xq no puedo poner un solo link externo
             con icono img para 5 y 3 links para el portfolio con 3 iconos diferentes -->
@@ -95,3 +107,30 @@
 </section>
 <!-- fin proyectos ////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////// -->
+
+
+<!-- llamo a modal -->
+<app-modal-proyectos-add></app-modal-proyectos-add>
+<app-modal-proyectos-edit></app-modal-proyectos-edit>
+
+
+<!-- modal eliminar, no se si ponerlo asi, aparte, uno para cada uno de los items(??) o donde -->
+<form class="modal fade" id="modalEliminarProyecto" tabindex="-1" aria-labelledby="exampleModalLabel2"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel2">Eliminar proyecto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+                <form class="">
+                    <button class="w-100 mb-2 mt-5 btn btn-lg rounded-0 btn-loginout3 " type="submit">
+                        Eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>

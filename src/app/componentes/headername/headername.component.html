@@ -1,233 +1,42 @@
-<!-- half header name + arq programadora + redes ////////////////////
-        //////////////////////////////////////////////////////////////// -->
+<!-- half header name + arq programadora + redes ///////////////////
+/////////////////////////////////////////////////////////////////// -->
 
-
-
-
-        <!-- hacer ts y poner esto en pipessssssssssssssssssssss
-        //////////////////////////////////////////////////////// -->
 <section class="container-fluid headername" id="home">
-    <section class=" m-5 align-items-left" >
-        <div class="d-flex flex-column "  >
+    <section class=" m-5 align-items-left">
+        <div class="d-flex flex-column ">
             <div class="">
-                <!-- titulo seccion ------------------------------------------------->
+                <!-- titulo seccion --------------------------------->
                 <div *ngFor="let elementoHeader of headerTodos">
                     <h1>{{elementoHeader.nombreyapellido}}</h1>
                     <h5>{{elementoHeader.subtitulo}}</h5>
+                    <!-- cambie la | en el json por una mas larga,ver 
+
+                        arquitecta | programadora web fullstack jr
+                        arquitecta | programadora web fullstack jr|
+                        arquitecta • programadora web fullstack jr
+                        
+                        ------volvi al original lol-->
+                    
                 </div>
+                <!-- componente redes-------------------------------->
+                <app-redes></app-redes>
 
-                <!-- inserto componente redes asi -->
-                <app-redes></app-redes>       
-            
-                
-
-
-                <!-- SI VA ABSOLUT TIENE QUE IR ABAJO, SINO EN PHONE SE PONE SOBRE LA LETRA -->
-                <!-- botones edicion seccion ---------------------------------------->
+                <!-- botones edicion seccion------------------------->
                 <div class="divEditRight">
                     <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
-                        data-bs-target="#modalEditName"><i class="fa-solid fa-pen"></i></button>
-                    <!-- <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalAdd"><i class="fa-solid fa-plus"></i></button>
-                            <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalDelete"><i class="fa-solid fa-trash"></i></button> -->
+                        data-bs-target="#modalEditName">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <!-- <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalAdd">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalDelete">
+                        <i class="fa-solifa-trash"></i>
+                    </button> -->
                 </div>
 
-
-
-                <!--Modal Edit,  poner todos despues del footer
-                        Editar con lo que vaya adentro???!!! -->
-                <form class="modal fade" id="modalEditName" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content ">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                </button>
-                            </div>
-                            <div class="modal-body">
-
-
-
-
-
-                                <div class=" form-floating mb-3">
-                                    <input type="email" class="form-control rounded-0 formulariosinput"
-                                        id="floatingInput" placeholder="name@example.com">
-                                    <label for="floatingInput">cambiar nombre, COMO SE HACE ESTO, FALTAN
-                                        BOTONES</label>
-                                </div>
-                                <div class="form-floating mb-3">
-
-                                    <input type="password" class="form-control rounded-0 formulariosinput"
-                                        id="floatingPassword" placeholder="Password">
-                                    <label for="floatingPassword">SUBTITULO, profesion etc</label>
-                                </div>
-
-                                <!-- <div class="form-floating mb-3">
-                                            <input type="password" class="form-control rounded-0 formulariosinput"
-                                                id="floatingPassword" placeholder="Password">
-                                            <label for="floatingPassword">falta agregar o sacar redes de ahi abajo, editar
-                                                link, logo etc, ff</label>
-                                        </div> -->
-
-                                <!-- <br class="my-4 p-3"> -->
-                                <br class="py-5 my-2">
-                                <!-- <button class="w-100 mb-2 btn btn-lg rounded-0 btn-loginout3 "
-                                            type="submit">Aceptar</button> -->
-
-
-
-                                <hr class="w-75 m-auto mB-0">
-
-
-
-
-
-
-
-
-
-
-                                <!-- todoooooooooooooooooooooooooooooooooooooooo roto esto -->
-                                <!-- gaby -->
-                                <!-- <div class="modal-content">
-                                            <div class="modal-header"> -->
-                                <!-- <h1 id="socialModalLabel" class="modal-title fs-5">Social</h1><button type="button"
-                                            data-bs-dismiss="modal" aria-label="Close" class="btn-close"></button> -->
-                            </div>
-
-
-                            <div class="modal-body">
-                                <div class="container text-center justify-content-between">
-                                    <div class="row g-4">
-                                        <div class="col">
-                                            <h5>editar sm half banner</h5>
-                                            <div class="">
-
-
-
-
-
-                                                <div>
-                                                    <div class="row d-flex justify-content-center align-items-center">
-                                                        <div class="col-1"></div>
-                                                        <div class="col-4"><i
-                                                                class="fa-2x pt-4 pb-3 fa-brands bi bi-linkedin"></i>
-                                                        </div>
-                                                        <div class="col-3 mt-3"><button
-                                                                data-bs-target="#editRedHalfBanner1"
-                                                                data-bs-toggle="modal"
-                                                                class="btn btn-black-extra-mini mx-2"><i
-                                                                    class="fa-solid fa-pen"></i></button>
-                                                        </div>
-                                                        <div class="col-2 mt-3"><button
-                                                                data-bs-target="#deleteGeneralSocialModal"
-                                                                data-bs-toggle="modal"
-                                                                class="btn btn-black-extra-mini mx-2"><i
-                                                                    class="fa-solid fa-trash"></i></button>
-                                                        </div>
-                                                        <div class="col-2"></div>
-                                                    </div>
-                                                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                <div>
-                                                    <div class="row d-flex justify-content-center align-items-center">
-                                                        <div class="col-1"></div>
-                                                        <div class="col-4"><i
-                                                                class="fa-2x pt-4 pb-3 fa-brands bi bi-github"></i>
-                                                        </div>
-                                                        <div class="col-3 mt-3"><button
-                                                                data-bs-target="#editGeneralSocialModal"
-                                                                data-bs-toggle="modal"
-                                                                class="btn btn-black-extra-mini mx-2"><i
-                                                                    class="fa-solid fa-pen"></i></button>
-                                                        </div>
-                                                        <div class="col-2 mt-3"><button
-                                                                data-bs-target="#deleteGeneralSocialModal"
-                                                                data-bs-toggle="modal"
-                                                                class="btn btn-black-extra-mini mx-2"><i
-                                                                    class="fa-solid fa-trash"></i></button>
-                                                        </div>
-                                                        <div class="col-2"></div>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="row d-flex justify-content-center align-items-center">
-                                                        <div class="col-1"></div>
-                                                        <div class="col-4"><i
-                                                                class="fa-2x pt-4 pb-3 fa-brands bi bi-instagram"></i>
-                                                        </div>
-                                                        <div class="col-3 mt-3"><button
-                                                                data-bs-target="#editGeneralSocialModal"
-                                                                data-bs-toggle="modal"
-                                                                class="btn btn-black-extra-mini mx-2"><i
-                                                                    class="fa-solid fa-pen"></i></button>
-                                                        </div>
-                                                        <div class="col-2 mt-3"><button
-                                                                data-bs-target="#deleteGeneralSocialModal"
-                                                                data-bs-toggle="modal"
-                                                                class="btn btn-black-extra-mini mx-2"><i
-                                                                    class="fa-solid fa-trash"></i></button>
-                                                        </div>
-                                                        <div class="col-2"></div>
-                                                    </div>
-                                                </div><!---->
-                                                <hr class="w-75 m-auto my-3">
-                                                <div class="d-flex justify-content-center"><button
-                                                        data-bs-target="#createGeneralSocialModal"
-                                                        data-bs-toggle="modal" class="btn btn-black-extra-mini"><i
-                                                            class="fa-solid fa-plus"></i></button>
-                                                </div>
-                                                <hr class="w-75 m-auto my-3">
-                                            </div>
-
-
-                                        </div>
-                                        <!-- </div>
-                                            </div> -->
-                                        <!-- <div class="modal-footer"><button data-bs-dismiss="modal" aria-label="Cerrar"
-                                                    class="btn btn-black-mini">Cerrar</button></div> -->
-                                    </div>
-                                    <!-- gaby -->
-
-
-
-
-
-
-                                </div>
-
-
-                                <br class="py-5 my-2">
-                                <button class="w-100 mb-2 btn btn-lg rounded-0 btn-loginout3 "
-                                    type="submit">Aceptar</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-
-
-
+                <!-- llamo a modal header----------------------------->
+                <app-modal-header></app-modal-header>
             </div>
         </div>
     </section>

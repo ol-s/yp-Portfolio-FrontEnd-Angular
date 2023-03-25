@@ -4,7 +4,7 @@
   /////////////////////////////////////////////////////////////////////// */
 /* fondo de seccion nombre, NO el mismo que navbar-----------------*/
 .headername {
-    background-color: var(--color-background-navbar2);
+    background-color: var(--color-background-claro);
     color:  var(--color-texto-header);
   
     height: 15em;

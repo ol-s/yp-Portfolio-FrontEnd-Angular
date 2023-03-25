@@ -1,9 +1,10 @@
 
 .redes1 i{
+    /* en html clases bootstrap
     display: flex;
-    flex-direction: row !important;
+    flex-direction: row !important;*/
     color: var(--color-links-navbar);
-    font-size: 1em;
+    font-size: 1.2em;
     transition: all 0.2s ease-in;
   }
   .redes1 a:hover i {

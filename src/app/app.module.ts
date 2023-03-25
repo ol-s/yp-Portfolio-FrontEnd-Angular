@@ -20,6 +20,14 @@ import { LoginComponent } from './componentes/login/login.component';
 import { LogoutComponent } from './componentes/logout/logout.component';
 import { Pagina404Component } from './componentes/pagina404/pagina404.component';
 import { RedesComponent } from './componentes/redes/redes.component';
+import { ModalHeaderComponent } from './modales/modal-header/modal-header.component';
+import { ModalSobremiComponent } from './modales/modal-sobremi/modal-sobremi.component';
+import { ModalEducacionAddComponent } from './modales/modal-educacion-add2/modal-educacion-add.component';
+import { ModalEducacionEditComponent } from './modales/modal-educacion-edit/modal-educacion-edit.component';
+import { ModalSkillEditComponent } from './modales/modal-skill-edit/modal-skill-edit.component';
+import { ModalSkillAddComponent } from './modales/modal-skill-add/modal-skill-add.component';
+import { ModalProyectosAddComponent } from './modales/modal-proyectos-add/modal-proyectos-add.component';
+import { ModalProyectosEditComponent } from './modales/modal-proyectos-edit/modal-proyectos-edit.component';
 
 
 @NgModule({
@@ -39,6 +47,14 @@ import { RedesComponent } from './componentes/redes/redes.component';
     LogoutComponent,
     Pagina404Component,
     RedesComponent,
+    ModalHeaderComponent,
+    ModalSobremiComponent,
+    ModalEducacionAddComponent,
+    ModalEducacionEditComponent,
+    ModalSkillEditComponent,
+    ModalSkillAddComponent,
+    ModalProyectosAddComponent,
+    ModalProyectosEditComponent,
     ],
   imports: [
     BrowserModule,

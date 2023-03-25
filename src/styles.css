@@ -1,53 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
 /* estilos globales/////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////// */
 :root {
-  /* --color-background: #f1f1f1; */
-  /* --color-background-a: #f9f9f9; */
-
-  --color-texto-header: #b4b4b4;
-
-  --color-primario: #272424;
-  --color-secundario: #7d7c7c;
-
   /* navbar offcanvas etc ,,,,,la dejo un poquiiiiito transparente VER-23-2-23*/
   /* --color-background-navbar: #ffffff; */
   --color-background-navbar: #ffffffe3;
-
-  /* half header name */
-  --color-background-navbar2: #ffffff;
 
   /* --color-background-oscuro1: #0e0e0e; */
   /* --color-background-oscuro1: #fd1414; */
   /* --color-background-oscuro1: #272727; */
   --color-background-oscuro1: #191919;
+  /* color de offscanvas y modales tambien, sin transparencia */
   --color-background-claro: #ffffff;
 
-
+  /* principal////////////////////////     --color-links-navbar: #edcca3; */
   /* --color-links-navbar: rgb(191, 255, 0);  estaba en rgb cabie a # */
   /* --color-links-navbar: rgb(161, 161, 161); */
   /* --color-links-navbar: #6b5840; */
   /* --color-links-navbar: rgb(191, 255, 0);  verdecito, mal contraste */
   /* --color-links-navbar: #bfff00; verdecito */
-  /* principal--------------------------------     --color-links-navbar: #edcca3; */
   --color-links-navbar: #efc591;
 
-  /* iconitos de redes sociales nomas */
-  --color-links-navbar-hover: var(--color-texto-medio);
+  /* solo mi nombre*/
+  --color-texto-header: #b4b4b4;
 
-  /* titulo skills */
+  /* titulo cada skills */
   /* --color-texto-medio: #9a9a9a; */
   --color-texto-medio: #7d7d7d;
 
-  /* titulo educacion */
+  /* titulo obtenido educacion */
   --color-texto-medio-educacion: #808080;
 
   /* --color-texto-medio-navbar: #9a9a9aad;    
       lo oscurezco un poco porque deje la nav a bit transparente*/
-  --color-texto-medio-navbar: #9a9a9a;
-  --color-texto-medio-navbar: #545454;
-  
+  /* --color-texto-medio-navbar: #9a9a9a;
+  --color-texto-medio-navbar: #545454;  */
   --color-texto-medio-navbar: #6f6f6f;
 
   /* nombre y otros importantes, lo ozcurezco un poquito 22-2-23
@@ -62,11 +49,9 @@
   --padding-left: 3.5em;
   /* --padding-left: 4em; */
 
-  /* --color-botones-edit-bg:blue;
-      --color-botones-edit-bg-hover:green; */
+  /* botones edit --------------------------------------------------*/
   --color-botones-edit-bg-seccion: #5b5b5b;
   --color-botones-edit-bg-subseccion: #4e4e4e;
-
   /* botones edit sombras ------------------------------------------*/
   /* --edit-botones-box-shadow:0 .1em .5em .1em #b1b1b14e; */
   /* --edit-botones-box-shadow:0 .1em .5em .1em #8181812b   acer 1; */
@@ -78,20 +63,21 @@
   --color-botones-edit-seccion: #616161;
   --color-botones-edit-subseccion: #d7d7d7;
 
-  --color-botones-edit-seccion-oscura: #868686;
+  --color-botones-edit-seccion-oscura: #969696;
   --color-botones-edit-subseccion-oscura: #3f3f3f;
-
-  /* estaban en 2.5em, para la cajita no el icono ------------------*/
+  /* estaban en 2.5em, para la cajita no el icono */
   --edit-botones-height: 2em;
   --edit-botones-width: 2em;
 
-  /* ver botones edicion -------------------------------------------*/
-  /* --edit-botones-display: none; */
+  /* cambia tamanio de encabezado y footer */
+  /* --bs-body-font-size: 1rem; */
 
-  /* mostrar o no porcentajes skills -------------------------------*/
+
+  /* mostrar o no porcentajes skills ----------------------------------------*/
   /* --skills-porcentajes-display: none; */
 
-  --bs-body-font-size: 1rem;
+  /* mostrar o no botones edicion -------------------------------------------*/
+  /* --edit-botones-display: none; */
 }
 
 
@@ -100,8 +86,8 @@
   padding: 0;
   /* hmmmmm porque le di a todo * margin y padding 0 aca??? */
 
-
-  /* agregue esto cos al dia siguiente que no cargabien/luego cargaba bien bootstrap en chrome, volvio a cargar mal, desplazado hacia   el costado, while firefox cargba bien, con este ahora carga bie,  seguir monitoreando
+  
+  /* 23-3-23--agregue esto cos al dia siguiente que no cargabien/luego cargaba bien bootstrap en chrome, volvio a cargar mal, desplazado hacia   el costado, while firefox cargba bien, con este ahora carga bie,  seguir monitoreando
   hmmmmmm, se rompe todo en el nest hub y nest hub max, pero soloen chrome,,,lo saco y carga bien en phone que recien no cargaba, buncionan los dos con     max-width: 100%;  en el  body parece */
   /* max-width: 100vh; */
 
@@ -143,18 +129,15 @@
 
   /* LUX */
   /* font-family: 'Nunito Sans', sans-serif; */
-
-  /* color: #7d7c7c; */
-  /* si pongo color aca me rompe todo lo del hover de otro color, 
-    ni con important alla arriba se arregla */
 }
 
 body {
   /* margin: 0; 
       padding: 0; /* no parece necesario aca tmb ,,, PROBAR CON ESTO TMB,, SINO DEJAR EL MAX WIDTH*/
       max-width: 100%;
-  /* para q no se vea borde claro en seccion oscura contra oscura*/
-  background-color: rgb(39, 39, 39);
+
+  /* para q no se vea borde claro en seccion oscura contra oscura, se ve de nuevo*/
+  background-color: #272727;
 }
 
 html {
@@ -171,18 +154,18 @@ p {
   color: var(--color-texto-medio);
 }
 
+/* subtitulos, arq/programadora, nombre institucion educacion */
 .h5,
 h5 {
   font-size: 1rem;
+  color: var(--color-texto-grande);
+  /* font-weight: 550; */
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* subtituo rubro skills */
+h4 {
+  color: var(--color-texto-medio-oscuro);
 }
-
 
 h1,
 .h1,
@@ -198,9 +181,11 @@ h6,
 .h6 {
   text-transform: uppercase;
   letter-spacing: 3px;
+  /*  em es un poquito mas*/
+  /* letter-spacing: .2em; */
 }
 
-/* nombre en half banner */
+/* mi nombre en half banner */
 h1,
 .h1 {
   font-size: calc(1.325rem + 0.9vw);
@@ -208,6 +193,7 @@ h1,
   /* font-family: 'Rubik Dirt', cursive; */
   /* font-family: 'Nova Round', cursive;
     font-family: 'Nunito Sans', sans-serif;   color cambiar maybe */
+  /* font-weight: 600; */
 }
 
 h6,
@@ -224,35 +210,31 @@ h1,
 .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-
-  /* agregarle solo al nombre/encabezado */
-  /* font-weight: 600; */
   line-height: 1.2;
   /* color: #1a1a1a; */
 }
-
-
 
 p {
   margin-top: 0;
   margin-bottom: 1rem;
 
-  /* sin este en educacion queda mejor, y en otros, maybe sacar , tenia 3px, lo achique*/
-  /* letter-spacing: .01em; */
+  /* sin espaciado en educacion (titulo) queda mejor, y en otros, maybe sacar, tenia 3px, lo achique*/
   letter-spacing: .1em;
   /* oscurecer el titulo o institucion en educacion, o mas negrita */
 }
 
 
-
-
-
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .seccion-oscura {
-  color: white;
+  color: rgb(251, 255, 0);
   background-color: var(--color-background-oscuro1);
 
 }
-
 .seccion-clara {
   /* color: rgb(0, 21, 254); */
   color: var(--color-texto-medio);
@@ -281,12 +263,12 @@ p {
 /* separar esto o dejarlo en estilos globales? */
 
 
-/* redes, creo que solo half banner arriba, ver como hacer un componente en angular, cada red capaz? pero se arma lio al agruparlas, como lo cones en app root?////////////////////////////
+/* redes, creo que solo half banner arriba, ver como hacer un componente en angular, cada red capaz? pero se 
+arma lio al agruparlas, como lo cones en app root?////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////// */
 
-/* le aplico efecto hover a redes2, links de resde under name
-  HACER UNA TRANSICIONNNNNNNN COMO LOS ICONOS DE ABAJO CONTACTO */
+/* estas creo que son del footer, tamanio diferente verrrrrrrrrr*/
 .redes2:hover {
   color: var(--color-links-navbar-hover) !important;
   /* OJO QUE ESTOY MANDANDO IMPORTANT A LOS HOVER PRQUE DEBE HABER ALGO ABAJO QUE LOS ANULA */
@@ -314,55 +296,6 @@ p {
 
 
 
-
-
-
-
-
-.iconos-redes-sociales a {
-  /* width: 2.5em;
-    height: 2.5em; */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* padding: 0em .8em 0em .6em; */
-  padding: 0em .6em 0em .6em;
-  /*margin: 10px; */
-  /* border: 2px solid white; */
-  /* border-radius: 50%; */
-  transition: all 0.2s ease-in;
-}
-
-.iconos-redes-sociales i {
-  color: var(--color-links-navbar);
-  font-size: 1.2em;
-  transition: all 0.2s ease-in;
-}
-
-.iconos-redes-sociales a:hover i {
-  color: var(--color-links-navbar-hover);
-  
-}
-
-
-
-
-/* 
-.redes1 i{
-  display: flex;
-  flex-direction: row !important;
-  color: var(--color-links-navbar);
-  font-size: 1em;
-  transition: all 0.2s ease-in;
-}
-.redes1 a:hover i {
-  color: var(--color-texto-medio);
-  cursor: pointer;
-} */
-
-/* redes, creo que solo half banner arriba, ver como hacer un componente en angular, cada red capaz? pero se arma lio al agruparlas, como lo cones en app root?////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 
@@ -416,10 +349,6 @@ p {
   color: var(--color-links-navbar);
 }
 
-.seccion-descripcion {
-  font-size: 1.2rem;
-  color: #584e4e;
-}
 
 .seccion-texto {
   font-size: 1.2rem;
@@ -430,42 +359,6 @@ p {
   margin: 1.5em;
 }
 
-.texto-negro {
-  color: black;
-}
-
-.texto-blanco {
-  color: white;
-}
-
-/* Seccion Hero */
-
-.hero {
-  background-color: #f5f6f7;
-  min-height: 40rem;
-  text-align: center;
-}
-
-.hero-principal {
-  padding: 3rem;
-}
-
-.hero-imagen-desarrollador {
-  /* width: 200px; */
-  /* increible que fcc te siga poniendo las cosas en pixeles!!,
-      y poner las misma dimensiones asi te deforma una foto un poco rectangular  */
-  height: 12.5em;
-  margin: 1.2em;
-}
-
-
-/* esto no es mio creo------------------------------------------------------------------------------- */
-.hero-principal h2 {
-  font-size: 1.5rem;
-  color: #615151;
-}
-
-/* //////////////////////////estilos globales probs//////////////////////////////////////////// */
 
 
 
@@ -596,8 +489,31 @@ p {
 
 
 
-/* MODAL
-    WELL, NO ME TOMA EL NO REDONDEO, FFSAKEEEEEEEEEE */
+
+/* modales------------------------------------------------ */
+.modal-body {
+  padding-top: 2rem;
+  padding-right: 3rem;
+  /* le agregue margin bottom al boton aceptar, sino se alarga mucho */
+  /* padding-bottom: 3rem; */
+  padding-left: 3rem;
+}
+
+/* no sacar esto, sin esto pasa eso de abajo, se paraliza
+   https://stackoverflow.com/questions/1791 bootstrap-modal-popping-up-but-has-a-tinted-page-and-cant-interact
+   */
+/*  estaba en 0, modal educacion quedaba bajo navbar, so le cambie aca
+body.modal-open div.modal-backdrop {
+  z-index: 0;
+} */
+body.modal-open div.modal-backdrop {
+  z-index: -1;
+}
+
+body.navbar-expand-lg-open div.navbar-backdrop {
+  z-index: 0;
+}
+
 .modal {
   --bs-modal-zindex: 1055;
   --bs-modal-width: 500px;
@@ -625,7 +541,8 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--bs-modal-zindex);
+  /* z-index: var(--bs-modal-zindex); */
+  z-index: 1500;
   display: none;
   width: 100%;
   height: 100%;
@@ -635,44 +552,46 @@ p {
 }
 
 
+/* modales sombra y colores etc //////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////// */
+  .modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+    border-bottom: 0.1em solid #ced4da94;
+    /* borde bajo 'login'  en asus y w7 se ve bien 1px, en acer no cos es fhd y el pixel es diminuto */
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+  }
+  
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    /* outline: 0; */
+  
+    box-shadow: .2em .2em 1em .2em #6e6e6e3b;
+    box-shadow: 0.1em 0.1em 1em 0.2em #00000054;
+    /* sombra sobre el fondo, lo de arriba no toque */
+  
+    color: rgb(153, 153, 153);
+    /* PONER COLOR DE LINKS NAVBAR, GRISECITO
+        poner variable color de navbar links cuando esten grises */
+    border-color: var(--color-links-navbar);
+    border: var(--color-links-navbar);
+  }
+  
 
 
 
-
-
-
-
-
-
-/* modales------------------------------------------------ */
-.modal-body {
-  padding-top: 2rem;
-  padding-right: 3rem;
-  padding-bottom: 3rem;
-  padding-left: 3rem;
-}
-
-
-
-
-/* no sacar esto, sin esto pasa eso de abajo, se paraliza
-   https://stackoverflow.com/questions/1791 bootstrap-modal-popping-up-but-has-a-tinted-page-and-cant-interact
-   */
-body.modal-open div.modal-backdrop {
-  z-index: 0;
-}
-
-body.navbar-expand-lg-open div.navbar-backdrop {
-  z-index: 0;
-}
-
-
-
-
-
-
-
-
+  
 /* boton X cerrar modales y offcanvas, saco borde sombra azul y redondeo---------- */
 .btn-close {
   border-radius: 0;
@@ -684,6 +603,7 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   /* estee anda */
   box-shadow: 0em 0em 0em var(--color-background-claro);
 }
+  /* fin modales sombra y colores etc ////////////////////////////////////// */
 
 
 
@@ -695,53 +615,6 @@ body.navbar-expand-lg-open div.navbar-backdrop {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* modales sombra y colores etc //////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////// */
-.modal-header {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--bs-modal-header-padding);
-  border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
-  border-bottom: 0.1em solid #ced4da94;
-  /* borde bajo 'login'  en asus y w7 se ve bien 1px, en acer no cos es fhd y el pixel es diminuto */
-  border-top-left-radius: var(--bs-modal-inner-border-radius);
-  border-top-right-radius: var(--bs-modal-inner-border-radius);
-}
-
-.modal-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
-  background-color: var(--bs-modal-bg);
-  background-clip: padding-box;
-  /* outline: 0; */
-
-  box-shadow: .2em .2em 1em .2em #6e6e6e3b;
-  box-shadow: 0.1em 0.1em 1em 0.2em #00000054;
-  /* sombra sobre el fondo, lo de arriba no toque */
-
-  color: rgb(153, 153, 153);
-  /* PONER COLOR DE LINKS NAVBAR, GRISECITO
-      poner variable color de navbar links cuando esten grises */
-  border-color: var(--color-links-navbar);
-  border: var(--color-links-navbar);
-}
-
-/* fin modales sombra y colores etc ////////////////////////////////////// */
 
 
 
@@ -770,6 +643,9 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   --bs-btn-focus-shadow-rgb: var(--color-links-navbar);
   --bs-btn-active-border-color: var(--color-links-navbar);
   --bs-btn-active-color: var(--color-links-navbar);
+}
+.btn-outline-info:hover {
+  color: var(--color-texto-medio);
 }
 
 
@@ -893,60 +769,71 @@ body.navbar-expand-lg-open div.navbar-backdrop {
 
 
 
-/* forms-------------------modales y form mover al componente correspondienteeeeeeeeee------------------------------------*/
+/* //////////////////////////////////////////////////////////////////////////////////
+forms------------------si lo pongo en css de cada componente repito codigo yse enrieda todo, 
+es para todos los modales, excepto form input del footer que es oscuro y con borde inferior solo
+///////////////////////////////////////////////////////////////////////////////////--*/
+
+ /* borde del recuadro para mail y pasword, maybe poner borde inferior nomas */
 .form-control {
-  display: block;
-  width: 100%;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-
-  color: #7676764a;
-
-
   background-color: var(--bs-offcanvas-bg);
-
-  /* background-color: #fff; */
-  /* poner variable fondo de seccion */
-
-
-  transition: .3s border-color;
   /* color borde recuadro mail y password login */
   border: 0.1em solid #77777742 !important;
-  transition: .3s border-color;
-  background-clip: padding-box;
-  /* borde del recuadro para mail y pasword, maybe poner borde inferior nomas */
-}
-
-.form-control:focus {
-  border: .1em solid var(--color-links-navbar) !important;
-  /* outline-width: thick; */
-  outline: 1em solid var(--color-background-oscuro1);
-  /* outline: 1em ridge rgba(170, 50, 220, .6); */
+  color: var(--color-texto-header);
 }
 
 .formulariosinput {
-  /* border-radius:10px;
-      border: .1em solid #eee; */
-  transition: .3s border-color;
-  /* border: none;
-      border-bottom: var(--color-links-navbar); */
-  /* podrias probar con border bottom, despuesssssssss */
+  transition: .5s border-color;
+  color: var(--color-texto-header);
 }
 
 .formulariosinput:focus {
   /* espesor linea de color al hacer click en email o password */
-  border: .1em solid var(--color-links-navbar) !important;
-  /* outline-width: thick; */
+  border: .15em solid var(--color-links-navbar) !important;
 
   /* tenia color bg navbar pero lo hice transparente y ya no cubre la sombra azul de bootstrap */
-  outline: 1em solid var(--bs-offcanvas-bg);
+  outline: 1em solid var(--bs-offcanvas-bg) !important;
   /* outline: 1em ridge rgba(170, 50, 220, .6); */
+
+  /* el outline funciona para el modal login, no aca (modal header css, pero mejor ponerlo en los estilos globales), aca funciona el box-shadow, todo asi man */
+  box-shadow: 1em solid var(--bs-offcanvas-bg) !important; 
+  color: var(--color-texto-header);
 }
 
 
+.textarea-modal {
+  border: .1em solid #77777742;
+  border-radius: 0;
+  transition: .5s border-color;
+  width: 100%;
+  color: var(--color-texto-header);
+}
 
+.textarea-modal:focus {
+  /* espesor linea de color al hacer click en email o password */
+  border: .15em solid var(--color-links-navbar) !important;
+
+  /* tenia color bg navbar pero lo hice transparente y ya no cubre la sombra azul de bootstrap */
+  outline: 1em solid var(--bs-offcanvas-bg) !important;
+  /* outline: 1em ridge rgba(170, 50, 220, .6); */
+
+  /* el outline funciona para el modal login, no aca (modal header css, pero mejor ponerlo en los estilos globales), aca funciona el box-shadow, todo asi man */
+  box-shadow: 1em solid var(--bs-offcanvas-bg) !important;
+  color: var(--color-texto-header);
+}
+
+
+/* no funcionaaaa
+https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery
+https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery
+https://www.google.com/search?q=make+placeholder+desapire+after+writing&rlz=1C1GGRV_enUS751US751&oq=make+placeholder+desapire+after+writing&aqs=chrome..69i57.33161j0j7&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=make+placeholder+desapire+after+writing&rlz=1C1GGRV_enUS751US751&oq=make+placeholder+desapire+after+writing&aqs=chrome..69i57.33161j0j7&sourceid=chrome&ie=UTF-8 */
+/* input:focus::placeholder {
+  color: transparent !important;
+}
+input:active::placeholder {
+  color: transparent !important;
+} */
 
 
 
@@ -1117,32 +1004,14 @@ body.navbar-expand-lg-open div.navbar-backdrop {
 
 
 
-h5 {
-  color: var(--color-texto-grande);
-  /* font-weight: 550; */
-}
-
-h4 {
-  color: var(--color-texto-grande);
-  /* font-weight: 550; */
-  /* text-transform: uppercase; */
-  /* color: #fff; */
-  color: var(--color-texto-medio-oscuro);
-
-}
-
-
-p {
-  margin-bottom: 0;
-}
 
 
 
 
-/* tamanio iconos redes */
-.bi::before,
+/* tamanio iconos redes      ver si puedo modificar solo para el footer,por ahora esta en componente redes1 1.2em */
+/* .bi::before,
 [class^="bi-"]::before,
 [class*=" bi-"]::before {
   font-size: 1.2em;
 
-}
+} */

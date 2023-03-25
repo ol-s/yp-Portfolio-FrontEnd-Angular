@@ -1,69 +1,71 @@
-
-    <!-- sobre mi + avatar con media queriesokokko//////////////////////
+<!-- sobre mi + avatar con media queriesokokko//////////////////////
         /////////////////////////////////////////////////////////////// -->
-        <section>
-            <div class="container-fluid seccion-oscura" id="sobre-mi">
-                <!-- agrego fluid para que se adapte a cualquier pantalla y se pegue al costado!! queda mejor, se ve horrible si haces zoom 25% en desktop tho, ojo -->
-                <!-- <div class="container"> -->
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- botones edicion seccion -->
-    
-                        <div class="m-0 col-sm-8 sobremi">
-                            <div class="text-end">
-                                <button type="button" class="botonEditSeccionOscura"><i
-                                        class="fa-solid fa-pen"></i></button>
-                                <button type="button" class="botonEditSeccionOscura"><i
-                                        class="fa-solid fa-plus"></i></button>
-                                <!-- <button type="button" class="botonEditSeccionOscura"><i
+<section>
+    <div class="container-fluid seccion-oscura" id="sobre-mi">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- botones edicion seccion -->
+                <div class="m-0 col-sm-8 sobremi">
+                    <div class="text-end">
+                        <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal" data-bs-target="#modalEditSobremi">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <!-- <button type="button" class="botonEditSeccionOscura">  -----------dejo edit boton nomas
+                            <i class="fa-solid fa-plus"></i>
+                        </button> -->
+                        <!-- <button type="button" class="botonEditSeccionOscura"><i
                                         class="fa-solid fa-trash"></i></button><br> -->
-                            </div>
-                            <!-- titulo seccion -->
-                            <h2 class="seccion-titulo">Sobre mi</h2>
-                            <p class="seccion-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet,
-                                odio
-                                eget
-                                fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor.
-                                Donec
-                                et
-                                venenatis
-                                nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittis
-                                urna. In
-                                non
-                                volutpat
-                                est. Vestibulum diam sapien, ultrices et euismod at, ultrices ut odio. Nullam in massa et
-                                elit
-                                ultrices
-                                suscipit. Proin lacinia leo ac posuere placerat.
-                                <!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil nulla dolorum voluptatibus
+                    </div>
+                    <!-- titulo seccion -->
+                    <h2 class="seccion-titulo">Sobre mi</h2>
+                    <p class="seccion-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet,
+                        odio
+                        eget
+                        fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor.
+                        Donec
+                        et
+                        venenatis
+                        nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittis
+                        urna. In
+                        non
+                        volutpat
+                        est. Vestibulum diam sapien, ultrices et euismod at, ultrices ut odio. Nullam in massa et
+                        elit
+                        ultrices
+                        suscipit. Proin lacinia leo ac posuere placerat.
+                        <!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil nulla dolorum voluptatibus
                                 distinctio numquam quam voluptates! Praesentium voluptatem aut hic in, tempora voluptatibus
                                 omnis amet cum at repudiandae quisquam id?-->
-                            </p>
-                                <h2 class="seccion-titulo mt-5">Experiencia</h2>
-                            <p class="seccion-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet,
-                                odio
-                                eget
-                                fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor.
-                                Donec
-                                et
-                                venenatis
-                                nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittis
-                                urna. </p>
-                        </div>
-                        <div class="m-0 col-sm-4 avatarbanner">
-                            <!-- SELFIE PARALLAX -->
-    
-                            <!-- botones edicion seccion ---------------------------------------->
-                            <div class="text-end">
-                                <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
-                                <!-- <button type="button" class="botonEditSubseccionOscura"><i
+                    </p>
+                    <h2 class="seccion-titulo mt-5">Experiencia</h2>
+                    <p class="seccion-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet,
+                        odio
+                        eget
+                        fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor.
+                        Donec
+                        et
+                        venenatis
+                        nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittis
+                        urna. </p>
+                </div>
+                <div class="m-0 col-sm-4 avatarbanner">
+                    <!-- SELFIE PARALLAX -->
+
+                    <!-- botones edicion seccion ---------------------------------------->
+                    <div class="text-end">
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                        <!-- <button type="button" class="botonEditSubseccionOscura"><i
                                         class="fa-solid fa-plus"></i></button> -->
-                                <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
-                            </div>
-                        </div>
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
+
+                
+                <!-- llamo a modal header--------si no lo pongo aca no abre nada--------------------->
+                <app-modal-sobremi></app-modal-sobremi>
             </div>
-        </section>
-        <!-- fin sobre mi + avatar con media queriesokokko//////////////////
+        </div>
+    </div>
+</section>
+<!-- fin sobre mi + avatar con media queriesokokko//////////////////
             /////////////////////////////////////////////////////////////// -->

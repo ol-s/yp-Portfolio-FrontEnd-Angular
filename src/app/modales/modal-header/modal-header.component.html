@@ -1,0 +1,127 @@
+<!--Modal encabezado, arreglar espaciado,,,y 
+    las letritas que se achicaban al tocar la casilla no hace mas, ah, porque borre el contenido de "placeholder" -->
+<form class="modal fade" id="modalEditName" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar encabezado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <!-- primera parte modal-------------------------------------------------------------- -->
+            <div class="modal-body">
+                <div class=" form-floating mb-3">
+                    <input type="email" class="form-control rounded-0 formulariosinput" id="floatingInput"
+                        placeholder="text">
+                    <label for="floatingInput">Nuevo título</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <!-- cambiar los id aca, ver bien como y que hacen -->
+                    <input type="email" class="form-control rounded-0 formulariosinput" id="floatingInput"
+                        placeholder="text">
+                    <label for="floatingInput">Nuevo subtítulo</label>
+                </div>
+                <!-- <br class="my-4 p-3"> -->
+                <br class="py-5 my-2">
+                <hr class="w-75 m-auto mB-0">
+            </div>
+            <!-- segunda parte modal-------------------------------------------------------------- -->
+            <div class="modal-body">
+                <div class="container text-center justify-content-between">
+                    <div class="row g-4">
+                        <div class="col">
+                            <h5>Editar o agregar redes</h5>
+                            <div class="">
+                                <!-- red 1 -->
+                                <div>
+                                    <div class="row d-flex justify-content-center align-items-center">
+                                        <div class="col-1"></div>
+                                        <div class="col-4"><i class="pt-4 pb-3 fa-brands bi bi-linkedin"></i>
+                                        </div>
+                                        <!-- PARA AGRANDAR ICONO RED class="fa-2x pt-4 pb-3 fa-brands bi bi-linkedin" -->
+                                        <div class="col-3 mt-3"><button data-bs-target="#editRedHalfBanner1"
+                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
+                                                    class="fa-solid fa-pen"></i></button>
+                                        </div>
+                                        <div class="col-2 mt-3"><button data-bs-target="#deleteGeneralSocialModal"
+                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                        <div class="col-2"></div>
+                                    </div>
+                                </div>
+                                <!-- red 2 -->
+                                <div>
+                                    <div class="row d-flex justify-content-center align-items-center">
+                                        <div class="col-1"></div>
+                                        <div class="col-4"><i class="pt-4 pb-3 fa-brands bi bi-github"></i>
+                                        </div>
+                                        <div class="col-3 mt-3"><button data-bs-target="#editGeneralSocialModal"
+                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
+                                                    class="fa-solid fa-pen"></i></button>
+                                        </div>
+                                        <div class="col-2 mt-3"><button data-bs-target="#deleteGeneralSocialModal"
+                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                        <div class="col-2"></div>
+                                    </div>
+                                </div>
+                                <!-- red 3 -->
+                                <div>
+                                    <div class="row d-flex justify-content-center align-items-center">
+                                        <div class="col-1"></div>
+                                        <div class="col-4"><i class="pt-4 pb-3 fa-brands bi bi-instagram"></i>
+                                        </div>
+                                        <div class="col-3 mt-3"><button data-bs-target="#editGeneralSocialModal"
+                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
+                                                    class="fa-solid fa-pen"></i></button>
+                                        </div>
+                                        <div class="col-2 mt-3"><button data-bs-target="#deleteGeneralSocialModal"
+                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                        <div class="col-2"></div>
+                                    </div>
+                                </div>
+                                <hr class="w-75 m-auto my-3">
+                                <div class="d-flex justify-content-center"><button
+                                        data-bs-target="#createGeneralSocialModal" data-bs-toggle="modal"
+                                        class="btn btn-black-extra-mini"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                                <hr class="w-75 m-auto my-3">
+                            </div>
+
+                        </div>
+                        <!-- </div>
+                                                </div> -->
+                        <!-- <div class="modal-footer"><button data-bs-dismiss="modal" aria-label="Cerrar"
+                                                        class="btn btn-black-mini">Cerrar</button></div> -->
+                    </div>
+                    <!-- ggggggggggggggggggggggggggggg hasta aca, maso -->
+                </div>
+            </div>
+            <!-- tercera parte modal, banner? -------------------------------------------------------------- -->
+            <div class="modal-body">
+                <div class="container text-center justify-content-between">
+                    <div class="row g-4">
+                        <div class="col">
+                            <h5>Editar banner header</h5>
+                            <div class=" form-floating mb-3">
+                                <input type="" class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                    placeholder="url">
+                                <label for="floatingInput">Nueva URL del banner</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br class="py-5 my-2">
+                <hr class="w-75 m-auto mB-0">
+            </div>
+            <div class="modal-body">
+                <br class="mt-0 my-2">
+                <button class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5" type="submit">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</form>

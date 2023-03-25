@@ -6,7 +6,7 @@
         <div class="container-fluid ">
             <div class="row">
 
-                <!-- banner educacion ------------------------------------------------------->     
+                <!-- banner educacion ------------------------------------------------------->
                 <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO">
                     <!-- botones edicion banner -->
                     <div class="">
@@ -18,18 +18,27 @@
                     https://dev.to/codeply/re-order-grid-columns-in-bootstrap-5-135k
                     https://www.codeply.com/p/T52wfQIdG6 -->
 
-                
+
                 <div class="m-0 col-sm-8 border SSSSeducacion">
                     <!-- titulo seccion ----------------------------------------------------->
                     <div>
                         <!-- botones edit seccion -->
                         <div class="text-end">
-                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
-                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-plus"></i></button>
+                            <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button> -->
+                            <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
+                                data-bs-target="#modalEducacionAdd2">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+
                             <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button> -->
                         </div>
+
                         <h2 class="seccion-titulo">Educación</h2>
                     </div>
+
+                    <!-- llamo al modal ----------------------------->
+                    <app-modal-educacion-add2></app-modal-educacion-add2>
+
 
                     <!-- modulo educacion --------------------------------------------------->
                     <div class="moduloEducacion" *ngFor="let cadaEstudio of estudiosTodos">
@@ -43,11 +52,18 @@
 
                         <!-- botones edit subseccion -->
                         <div class="text-end">
-                            <button type="button" class="botonEditSubseccion"><i class="fa-solid fa-pen"></i></button>
-                            <button type="button" class="botonEditSubseccion"><i class="fa-solid fa-trash"></i></button>
+                            <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
+                                data-bs-target="#modalEducacionEdit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
+                                data-bs-target="#modalEliminarItem">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </div>
                     </div>
-
+                    <!-- llamo al modal ----------------------------->
+                    <app-modal-educacion-edit></app-modal-educacion-edit>
                 </div>
             </div>
         </div>
@@ -55,3 +71,25 @@
 </section>
 <!-- fin educacion /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////// -->
+
+
+
+<!-- modal eliminar, no se si ponerlo asi, aparte, uno para cada uno de los items(??) o donde -->
+<form class="modal fade" id="modalEliminarItem" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel2">Eliminar estudio</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+                <form class="">
+                    <button class="w-100 mb-2 mt-5 btn btn-lg rounded-0 btn-loginout3 " type="submit">
+                        Eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
