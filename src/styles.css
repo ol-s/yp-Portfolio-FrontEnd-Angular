@@ -60,6 +60,9 @@
 
   /* --edit-botones-box-shadow: 0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020; */
 
+  /* 26-3-23 */
+  --edit-botones-box-shadow: 0 .25em 1em 0 #00000005, 0 .1em .2em 0 #86868624;
+
   --color-botones-edit-seccion: #616161;
   --color-botones-edit-subseccion: #d7d7d7;
 
@@ -1109,6 +1112,12 @@ https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css   */
 
 
 
+
+
+
+
+
+
 /* html,body{
   overflow-y: hidden;  no podes scrolear con esto lmao
 } */
@@ -1117,19 +1126,64 @@ https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css   */
  ESTE OCULTA LA BARRAS DE DESPLAZAMIENTO, MALA PRACTICA? PROBS? cels y tablets no tienen---------------------------------------------------------------------------
  https://es.stackoverflow.com/questions/56179/como-ocultar-el-scrollbar#:~:text=Puedes%20usar%20el%20atributo%20overflow,overflow%2Dy%3A%20hidden%3B%20. */
 
- /* ::-webkit-scrollbar {
+
+ /* jjjjjjjjjjjjjjjjjjjjjjjj buo este tampoco anda en firefox, ??!! 
+ dejar los dos cos sin este no funciona en chrome, asi todo 
+ //////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+*/
+::-webkit-scrollbar {
   display: none;
-} */
+} 
+/* este funciona en firefox, dejar los dos 
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+*/
+* {
+  scrollbar-width: none;
+}
+/* https://stackoverflow.com/questions/20997183/how-to-hide-scrollbar-in-firefox */
+
+
+
+
+
+
+/* con esto salta todo cuando esta la nav offcanvas on, zzzzzzzzzz
+https://community.adobe.com/t5/dreamweaver-discussions/bootstrap-modal-causing-background-images-to-jump/td-p/9224307
+"What time a framework is supposedly meant to save is negated by all the time spent trying to find out the cause of the quirks."  exactly
+
+
+.modal-open {
+
+  padding-right: 0 !important;
+
+}
+
+html {
+
+  overflow-y: scroll !important;
+
+}
+ */
+
 
 
 /* ------------------casi imperceptible el desplazamiento del banner pero todavia ahi, 
 que linda la scrollbar tho ------------------------------------------------
-----------------------------------ojo, creo que no anda en firefox-----------------------------------
+----------------------------------ojo, creo que no anda en firefox, 
+--------------------------------------------YEP, NO ANDA EN FIREFOX
+
 personalizar barra , anda pero se sigue desplazando el banner 
 https://www.digitalocean.com/community/tutorials/css-scrollbars-es */
+
+/* VOLVER A ACTIVAR O VER COMO PERSONALIZAR PARA FIREFOX TOO, POR AHORA DEJO LA BARRA DESACTIVADA
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 body::-webkit-scrollbar {
-  /* 3px */
-  width: 0.2em;               
+  
+  width: 0.2em;     O 3PX             
 }
 
 body::-webkit-scrollbar-track {
@@ -1141,11 +1195,15 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0; 
   height: 6em;
 }
+VOLVER A ACTIVAR O VER COMO PERSONALIZAR PARA FIREFOX TOO, POR AHORA DEJO LA BARRA DESACTIVADA
+//////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////// */
+
 /*  ----------------------------------------------------------------------------
 A continuación, se muestra un ejemplo que utiliza scrollbar-width, 
 scrollbar-color, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::webkit-scrollbar-thumb:
 
- Works on Firefox 
+ Works on Firefox --------si pero solo colorea, no anchos ni nada
 * {
   scrollbar-width: thin;
   scrollbar-color: blue orange;
@@ -1166,5 +1224,13 @@ scrollbar-color, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::webkit-scroll
   border: 3px solid orange;
 }
 */
+/* https://elcssar.com/css/webkit-scrollbar
+MAS AB FIREFOX  
+https://developer.mozilla.org/es/docs/Web/CSS/::-webkit-scrollbar
+ */
+
+
+
+
 
 
