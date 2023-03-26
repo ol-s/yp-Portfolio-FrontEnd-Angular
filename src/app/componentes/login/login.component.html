@@ -1,69 +1,84 @@
-     <!-- ////////////////////////////////login///////////////////////////////////////////// -->
-     <div class="nav-item ">
-        <!-- button trigger modal login-->
-        <button type="button" class="btn btn-outline-secondary p-0" data-bs-toggle="modal"
-            data-bs-target="#modalLogin">
-            <!-- <i class="bi bi-box-arrow-in-right" style="font-size: 1.5em;"></i> -->
-            <!-- pongo svg porque no se ve offline sino, tendria que hacer lo mismo con todos los iconos :/ -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                class="bi bi-box-arrow-in-right" viewBox="0 0 17 17">
-                <path fill-rule="evenodd"
-                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
-                <path fill-rule="evenodd"
-                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-            </svg>
-        </button>
+<!-- ///////////////////////////////////////login////////////////////////////////////////////// -->
 
+<div class="nav-item ">
+    <!-- button trigger modal login, esto no habia que dejarlo dentro de la navbar? probs-->
+    <button type="button" class="btn btn-outline-secondary p-0" data-bs-toggle="modal" data-bs-target="#modalLogin">
+        <!-- <i class="bi bi-box-arrow-in-right" style="font-size: 1.5em;"></i> -->
+        <!-- pongo svg porque no se ve offline sino -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-box-arrow-in-right"
+            viewBox="0 0 17 17">
+            <path fill-rule="evenodd"
+                d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+            <path fill-rule="evenodd"
+                d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+        </svg>
+    </button>
 
-
-
-        <!--  HICE UN DESASTREEEEEEEEEEE CON LOS NOMBRES DE LOS MODALES -->
-
-        <!--Modal login....tiene que quedar fuera de la navbar sino no funciona creo, poner todos despues del footer-->
-        <form class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <!-- agrego centered para q abra en el medio, arriba contrasta mas mepa, al medio poner mas sombra, ver -->
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content ">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close">
-                        </button>
+    <!--Modal login ------------------------------------------------------------------------------>
+    <!--  (ngSubmit)="onEnviar($event)"  ejecuta la funcion -->
+    <form class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <!-- agrego centered para q abra en el medio -->
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body mb-4">
+                    <!-- inputs -->
+                    <div class=" form-floating mb-4">
+                        <input type="email" formControlName="email" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="name@example.com" [class.invalido]="MailValid">
+                        <label for="floatingInput">Email</label>
                     </div>
-                    <div class="modal-body mb-4">
-                        <!-- <div class="modal-body p-5 "> le saque el padding para cambiar el top padding, no se como aca -->
-                        <div class=" form-floating mb-3">
-                            <input type="email" class="form-control rounded-0 formulariosinput"
-                                id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email</label>
-                        </div>
-                        <div class="form-floating mb-3">
 
-                            <!-- rounded-0 sin redondeo, creo q puse en css mio too, o no-->
-                            <input type="password" class="form-control rounded-0 formulariosinput"
-                                id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
-                        </div>
-
-                        <!-- <br class="my-4 p-3"> -->
-                        <br class="py-5 my-2">
-
-                        <!-- <hr class="w-75 m-auto mt-5 pb-3">
-                        <br class="pb-5 mb-5"> -->
-
-                        <!-- tenian btn-outline-danger, despues ver si no queda mejor, o secondary -->
-                        <!-- al final hice uno propio btn-loginout con borde color variable verde y btn-loginout2 con borde gris todo gris, le falta color, poner uno de los dos y el mismo al cerrar sesion  
-                        +loginout3 con gris clarito de entrada-->
-                        <button class="w-100 mb-2 btn btn-lg rounded-0 btn-loginout3"
-                            type="submit">Iniciar
-                            Sesión</button>
-
-
+                    <!-- 'Gracias al getter que configuramos en el controlador', esto no te lo dice el navegador ya si escribis mal? 
+                    si saco - && Mail?.touched- aparecela letrita -mail requerido-  sin haber tocado la casilla-->
+                    <div *ngIf="Mail?.errors  && Mail?.touched">
+                        <p *ngIf="Mail?.hasError('required')" class="error">
+                            * El email es requerido
+                        </p>
+                        <p *ngIf="Mail?.hasError('email')" class="error">
+                            * El formato del email debe ser válido
+                        </p>
                     </div>
+
+
+                    <div class="form-floating mb-4">
+                        <input type="password" formControlName="password"
+                            class="form-control rounded-0 formulariosinput" id="floatingPassword"
+                            placeholder="Password" [class.invalido]="PasswordValid">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <!-- si quisiera poner una clase ahi, databinding? se activa solo si el mail es invalido o password invalido, o mal escritos
+                     [class.border-danger]="MailValid" ----puse mi clase, no se cuando se activa el verde-->
+
+                    <!-- ''Gracias al getter que configuramos en el controlador'' -->
+                    <div *ngIf="Password?.errors  && Password?.touched">
+                        <p *ngIf="Password?.hasError('required')" class="error">
+                            * El password es requerido
+                        </p>
+                        <!-- en el stackblitz no daba error solo el .minlength, aca no compila, me pide "['minlength']" 
+                        supuestamente para esto importamos los validators en el ts, tmb puede ser maxlength
+                        https://www.youtube.com/watch?v=yKXoklM8m1g&list=PL1oXSbt2OIbG2ipcgJLQ8P64rwS-bz9tZ&ab_channel=ProgramaTK   min22'-->
+                        <p *ngIf="Password?.errors?.['minlength']" class="error">
+                            * El password debe ser de 8 o más caracteres
+                        </p>
+                    </div>
+
+                    <!-- boton iniciar sesion-------------------------------------------------------- -->
+                    <!-- <br class="my-4 p-3"> -->
+                    <!-- <br class="py-5 my-2"> -->
+                    <hr class="w-75 m-auto mt-5 pb-3">
+                    <br class="pb-5 mb-4">
+                    <!-- <button type="button" class="btn btn-ligth" >Limpiar</button> -->
+                    <button type="submit" class="w-100 mb-2 btn btn-lg rounded-0 btn-loginout3">
+                        Iniciar Sesión
+                    </button>
                 </div>
             </div>
-        </form>
-
-
-    </div>
+        </div>
+    </form>
+</div>

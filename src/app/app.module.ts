@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para formularios reactivos
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -32,6 +31,7 @@ import { ModalContactoComponent } from './modales/modal-contacto/modal-contacto.
 
 
 @NgModule({
+  
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -61,7 +61,9 @@ import { ModalContactoComponent } from './modales/modal-contacto/modal-contacto.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, //para formularios reactivos
+    ReactiveFormsModule //para formularios reactivos
   ],
   providers: [],
   bootstrap: [AppComponent]
