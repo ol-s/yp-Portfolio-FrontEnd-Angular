@@ -56,7 +56,7 @@
   /* --edit-botones-box-shadow:0 .1em .5em .1em #b1b1b14e; */
   /* --edit-botones-box-shadow:0 .1em .5em .1em #8181812b   acer 1; */
   --edit-botones-box-shadow: 0 .1em .5em .1em #7f7f7f42;
-  --edit-botones-box-shadow: 0 .1em .5em .1em #7f7f7f26;
+  /* --edit-botones-box-shadow: 0 .1em .5em .1em #7f7f7f26; */
 
   /* --edit-botones-box-shadow: 0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020; */
 
@@ -149,11 +149,6 @@ a {
   text-transform: uppercase;
   font-size: 1.1em;
 }
-
-p {
-  color: var(--color-texto-medio);
-}
-
 /* subtitulos, arq/programadora, nombre institucion educacion */
 .h5,
 h5 {
@@ -215,11 +210,13 @@ h1,
 }
 
 p {
+  color: var(--color-texto-medio);
   margin-top: 0;
   margin-bottom: 1rem;
 
-  /* sin espaciado en educacion (titulo) queda mejor, y en otros, maybe sacar, tenia 3px, lo achique*/
+  /* sin espaciado en educacion (titulo) queda mejor, y en otros, maybe sacar, tenia 3px, lo achique,,,*/
   letter-spacing: .1em;
+  letter-spacing: .01em;
   /* oscurecer el titulo o institucion en educacion, o mas negrita */
 }
 
@@ -609,7 +606,7 @@ body.navbar-expand-lg-open div.navbar-backdrop {
 
 
     /* no queda mal, pero maybe gris clarito nomas */
-    border: 4px solid var(--color-links-navbar);
+    border: 2.5px solid var(--color-links-navbar);
     /* border: 2px solid var(--color-texto-medio); */
   }
   
@@ -771,7 +768,8 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   /* al pulsar, letra */
   --bs-btn-active-color: #fff;
   /* al pulsar, fondo */
-  --bs-btn-active-bg: var(--color-links-navbar);
+  /* --bs-btn-active-bg: var(--color-links-navbar); */
+  --bs-btn-active-bg:  #ababab;
 
   --bs-btn-active-border-color: transparent;
   --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
@@ -1040,3 +1038,133 @@ input:active::placeholder {
   font-size: 1.2em;
 
 } */
+
+
+
+
+
+
+
+/* NOPE */
+ /* .modal-open {
+   overflow-y: inherit;  
+ } */
+
+
+ /* https://stackoverflow.com/questions/52388273/background-images-jump-when-opening-modal */
+ /* !!!!!!!!!!!!!! this works, 
+ salta la navbar ahora oops, no, antes saltaba tmb pero poquito,
+ ahhh, salta para acomodar la segunda barra lateral
+ 
+ ahora podes scrolear con el modal abierto, y como qu deja dos barras laterales, raro, pero mejor que antes*/
+ /*.modal-open{
+  /* sin este se corren todas las letras en lugar de los banners */
+  /* padding:0 !important; */
+
+  /* scroll tmb funciona pero no usar dice ahi */
+  /* overflow-y: scroll !important; */
+  /* overflow-y: auto !important; */
+
+
+
+  /* RESUMEN, ANDAN ESTOS DOS EN PC, PERO ENTABLET SE DESPLAZA TODO EL TOGLER Y O NAVBAR Y QUEDA ESPANTOSO */
+  /* padding:0 !important;
+  overflow-y: auto !important; 
+ }*/
+ /*zzzzzzz, nope, se agranda y achica el offcanvas too, zzzzzzzzzz, Y SE MUEVE EL TOGGLER cuando esta cerrado el offcavnas :(  */
+ /* todo ese desplazamiento es en pc nomas encima, en tablet y demas no porque no tiene la barra vertical de scroll al costado */
+
+ 
+
+/* CON ESTE SE MUEVEN O LAS LETRAS O EL BANNER, Y SE MUEVE EL BANNER CUANDO ABRIS EL OFFCANVAS, 
+LO SAQUE Y SE SIGUE MOVIENDO NOW, GREAT, AH SE MOVIADESDE ANTES, PERO NO SE NOTA EN HONE COS NO TIENE LA BARRA DE SCROLL  */
+ /* body.modal-open {padding:0 !important;} */
+
+
+
+
+
+
+
+
+/*  esto lo aplica a un container y va bien, pero no para toda la pagina
+https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css   */
+/* Estilos barra (thumb) de scroll */
+/* section::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 4px;
+} */
+
+
+ /* Estilos track de scroll */
+/* section::-webkit-scrollbar-track {
+  background: yellow;
+  border-radius: 4px;
+} */
+
+
+
+
+
+
+
+
+/* html,body{
+  overflow-y: hidden;  no podes scrolear con esto lmao
+} */
+ /* ------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------
+ ESTE OCULTA LA BARRAS DE DESPLAZAMIENTO, MALA PRACTICA? PROBS? cels y tablets no tienen---------------------------------------------------------------------------
+ https://es.stackoverflow.com/questions/56179/como-ocultar-el-scrollbar#:~:text=Puedes%20usar%20el%20atributo%20overflow,overflow%2Dy%3A%20hidden%3B%20. */
+
+ /* ::-webkit-scrollbar {
+  display: none;
+} */
+
+
+/* ------------------casi imperceptible el desplazamiento del banner pero todavia ahi, 
+que linda la scrollbar tho ------------------------------------------------
+----------------------------------ojo, creo que no anda en firefox-----------------------------------
+personalizar barra , anda pero se sigue desplazando el banner 
+https://www.digitalocean.com/community/tutorials/css-scrollbars-es */
+body::-webkit-scrollbar {
+  /* 3px */
+  width: 0.2em;               
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-background-oscuro1);      
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-links-navbar);  
+  border-radius: 0; 
+  height: 6em;
+}
+/*  ----------------------------------------------------------------------------
+A continuación, se muestra un ejemplo que utiliza scrollbar-width, 
+scrollbar-color, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::webkit-scrollbar-thumb:
+
+ Works on Firefox 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+ Works on Chrome, Edge, and Safari 
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: orange;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+  border: 3px solid orange;
+}
+*/
+
+

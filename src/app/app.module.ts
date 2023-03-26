@@ -28,6 +28,7 @@ import { ModalSkillEditComponent } from './modales/modal-skill-edit/modal-skill-
 import { ModalSkillAddComponent } from './modales/modal-skill-add/modal-skill-add.component';
 import { ModalProyectosAddComponent } from './modales/modal-proyectos-add/modal-proyectos-add.component';
 import { ModalProyectosEditComponent } from './modales/modal-proyectos-edit/modal-proyectos-edit.component';
+import { ModalContactoComponent } from './modales/modal-contacto/modal-contacto.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { ModalProyectosEditComponent } from './modales/modal-proyectos-edit/moda
     ModalSkillAddComponent,
     ModalProyectosAddComponent,
     ModalProyectosEditComponent,
+    ModalContactoComponent,
     ],
   imports: [
     BrowserModule,

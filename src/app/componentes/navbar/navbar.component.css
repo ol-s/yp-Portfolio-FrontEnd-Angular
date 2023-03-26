@@ -60,7 +60,7 @@
   
   /* opacidad logo AP */
   .navbar-brand img {
-    opacity: 60%;
+    opacity: 65%;
     /* padding-left: .9em;     
       estaba antes de ajustar si ajustar la nav completa porque me corre el toggler */
     padding-left: 1.5rem;
