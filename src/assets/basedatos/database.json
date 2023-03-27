@@ -2,8 +2,9 @@
     "header": [
         {
             "id": 1,
-            "nombreyapellido": "soledadfretes",
-            "subtitulo": "arquitecta | programadora web fullstack jr"
+            "nombre": "soledad",
+            "apellido": "fretes",
+            "ocupacion": "arquitecta | programadora web fullstack jr"
         }
     ],
     "redes": [
@@ -19,8 +20,7 @@
             "url": "https://github.com/ol-s/",
             "iconred": "bi bi-github"
         },
-        {
-           
+        {       
             "id": 4,
             "nombre": "Instagram",
             "url": "https://www.instagram.com/",
@@ -28,11 +28,12 @@
         }
     ],
     "logoBrand": "../assets/img/logo-argentina-programa.png",
-    "banner1": "../assets/img/banner/1banner.jpg",
+    "bannerEntrada": "../assets/img/banner/1banner.jpg",
     "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",
     "sobremi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
     "experiencias": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
     "bannerEducacion": "../assets/img/banner/3educacion.jpg",
+    "bannerSalida": "../assets/img/banner/4salida.jpg",
     "estudios": [
         {
             "id": 1,
@@ -257,10 +258,10 @@
             "id": 1,
             "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
             "imgPageAlt": "Proyecto 1",
-            "imgTargetBlank": "../assets/img/proyectos/proyecto1.jpg",
+            "hrefTargetBlank": "../assets/img/proyectos/proyecto1.jpg",
             "targetBlackAlt": "Proyecto 1",
-            "link1": "https://github.com/ol-s",
-            "link2": "https://ponerdespues.com",
+            "hrefRepo": "https://github.com/ol-s",
+            "hrefLive": "https://ponerdespues.com",
             "tituloProyecto": "Mi Portfolio Web",
             "descripcion": ""
         }
