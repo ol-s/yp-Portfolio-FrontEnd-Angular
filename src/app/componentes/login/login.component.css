@@ -20,10 +20,11 @@
   /* color: #8b8b8b; */
   color:#dd0000;
   text-transform: lowercase;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-top: -0.6em;
   letter-spacing: 1px;
-  /* transition:ease-in 2s; */
+  /* transition:5s;
+  transition-timing-function: ease-in; */
 }
 
  .valido {

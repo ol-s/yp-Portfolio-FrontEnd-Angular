@@ -92,12 +92,12 @@
         {
             "id": 6,
             "nombre": "Angular",
-            "porcentaje": "70"
+            "porcentaje": "75"
         },
         {
             "id": 7,
             "nombre": "MySql",
-            "porcentaje": "70"
+            "porcentaje": "75"
         },
         {
             "id": 8,
@@ -193,7 +193,7 @@
         {
             "id": 24,
             "nombre": "Atención al detalle",
-            "porcentaje": "90"
+            "porcentaje": "95"
         }
     ],
     "proyectosArq": [
