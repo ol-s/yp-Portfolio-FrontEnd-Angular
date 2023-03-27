@@ -1061,6 +1061,7 @@ input:active::placeholder {
  
  ahora podes scrolear con el modal abierto, y como qu deja dos barras laterales, raro, pero mejor que antes*/
  /*.modal-open{
+
   /* sin este se corren todas las letras en lugar de los banners */
   /* padding:0 !important; */
 
@@ -1068,21 +1069,27 @@ input:active::placeholder {
   /* overflow-y: scroll !important; */
   /* overflow-y: auto !important; */
 
-
-
   /* RESUMEN, ANDAN ESTOS DOS EN PC, PERO ENTABLET SE DESPLAZA TODO EL TOGLER Y O NAVBAR Y QUEDA ESPANTOSO */
   /* padding:0 !important;
   overflow-y: auto !important; 
  }*/
+
+
+
+
  /*zzzzzzz, nope, se agranda y achica el offcanvas too, zzzzzzzzzz, Y SE MUEVE EL TOGGLER cuando esta cerrado el offcavnas :(  */
  /* todo ese desplazamiento es en pc nomas encima, en tablet y demas no porque no tiene la barra vertical de scroll al costado */
 
  
 
+
+
+
+
+
 /* CON ESTE SE MUEVEN O LAS LETRAS O EL BANNER, Y SE MUEVE EL BANNER CUANDO ABRIS EL OFFCANVAS, 
 LO SAQUE Y SE SIGUE MOVIENDO NOW, GREAT, AH SE MOVIADESDE ANTES, PERO NO SE NOTA EN HONE COS NO TIENE LA BARRA DE SCROLL  */
  /* body.modal-open {padding:0 !important;} */
-
 
 
 
@@ -1121,6 +1128,46 @@ https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css   */
 /* html,body{
   overflow-y: hidden;  no podes scrolear con esto lmao
 } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* con esto salta todo cuando esta la nav offcanvas on, zzzzzzzzzz
+https://community.adobe.com/t5/dreamweaver-discussions/bootstrap-modal-causing-background-images-to-jump/td-p/9224307
+"What time a framework is supposedly meant to save is negated by all the time spent trying to find out the cause of the quirks."  exactly
+
+.modal-open {
+  padding-right: 0 !important;
+}
+html {
+  overflow-y: scroll !important;
+}
+ */
+
+
+
+
+
+
+
+
+
+/* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+
  /* ------------------------------------------------------------------------------
  ---------------------------------------------------------------------------------
  ESTE OCULTA LA BARRAS DE DESPLAZAMIENTO, MALA PRACTICA? PROBS? cels y tablets no tienen---------------------------------------------------------------------------
@@ -1132,16 +1179,16 @@ https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css   */
  //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-} 
+}  */
 /* este funciona en firefox, dejar los dos 
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 */
-* {
+/* * {
   scrollbar-width: none;
-}
+} */
 /* https://stackoverflow.com/questions/20997183/how-to-hide-scrollbar-in-firefox */
 
 
@@ -1149,23 +1196,6 @@ https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css   */
 
 
 
-/* con esto salta todo cuando esta la nav offcanvas on, zzzzzzzzzz
-https://community.adobe.com/t5/dreamweaver-discussions/bootstrap-modal-causing-background-images-to-jump/td-p/9224307
-"What time a framework is supposedly meant to save is negated by all the time spent trying to find out the cause of the quirks."  exactly
-
-
-.modal-open {
-
-  padding-right: 0 !important;
-
-}
-
-html {
-
-  overflow-y: scroll !important;
-
-}
- */
 
 
 
@@ -1179,25 +1209,70 @@ https://www.digitalocean.com/community/tutorials/css-scrollbars-es */
 
 /* VOLVER A ACTIVAR O VER COMO PERSONALIZAR PARA FIREFOX TOO, POR AHORA DEJO LA BARRA DESACTIVADA
 //////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////*/
 
-body::-webkit-scrollbar {
-  
-  width: 0.2em;     O 3PX             
+/* con todo esto funciona en pagina, no cuando abre el madal, ahi se ve la barra comun gris ancha, 
+en firefox si la muestra, por los estilos de abajo */
+body::-webkit-scrollbar { 
+  width: 0.2em;    /* O 3PX */              
 }
-
 body::-webkit-scrollbar-track {
   background: var(--color-background-oscuro1);      
 }
-
 body::-webkit-scrollbar-thumb {
   background-color: var(--color-links-navbar);  
   border-radius: 0; 
   height: 6em;
 }
-VOLVER A ACTIVAR O VER COMO PERSONALIZAR PARA FIREFOX TOO, POR AHORA DEJO LA BARRA DESACTIVADA
+
+
+/* Works on Firefox --------si pero solo colorea, no ancho personalizado, solo ''thin'' */
+* {
+  scrollbar-width:thin;
+  /* scrollbar-color: var(--color-links-navbar) var(--color-background-oscuro1); */
+  /* asi un poco transparente el color, sino es mucho porque es muy ancha */
+  scrollbar-color: #efc591cb #191919;
+}
+/*VOLVER A ACTIVAR O VER COMO PERSONALIZAR PARA FIREFOX TOO, POR AHORA DEJO LA BARRA DESACTIVADA
 //////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* no puedo estilizar la barra en chrome cuando el modal esta abierto, solo firefx lo hace con el codigo dearriba */
+/* .modal-body{
+  scrollbar-color: #efc591cb #191919;
+  scrollbar-width:thin;
+}  */
+
+/* agrega scrolls al modal solo (a cada cosa dentro de modal body, y yo tengo varios divs con esa clase, ojo} 
+queda horribleigual cos no puedo estilizar esa barra so*/
+/* .modal-body{
+  height: 95px;
+  width: 100%;
+  overflow-y: auto;
+} */
+
+
+
+
+
+/* con este sigue saltando el banner */
+/* body.modal-open {padding:0 !important;} */
+
+/* con este pasa a saltar la nav y el toggler, horrible queda, si pones none vuelve a saltar el banner
+con overflow-x: none;  salta todo menos los banners 
+ */
+/* html {
+  overflow-y: scroll !important;
+} */
+
+/* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+
+
+
+
+
+
+
+
 
 /*  ----------------------------------------------------------------------------
 A continuación, se muestra un ejemplo que utiliza scrollbar-width, 
@@ -1246,3 +1321,7 @@ input[type="file"] {
   padding: 6px 12px;
   cursor: pointer;
 } */
+
+
+
+
