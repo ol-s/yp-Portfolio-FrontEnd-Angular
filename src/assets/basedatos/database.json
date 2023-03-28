@@ -20,6 +20,12 @@
             "url": "https://github.com/ol-s/",
             "iconred": "bi bi-github"
         },
+        {
+            "id": 3,
+            "nombre": "Email",
+            "url": "mailto:janedoe@correo.com",
+            "iconred": "bi bi-envelope-fill"
+        },
         {       
             "id": 4,
             "nombre": "Instagram",

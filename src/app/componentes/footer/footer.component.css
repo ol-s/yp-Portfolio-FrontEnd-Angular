@@ -26,18 +26,12 @@
   }
   
   
-  
+/*  en app redes 
   .iconos-redes-sociales a {
-    /* width: 2.5em;
-      height: 2.5em; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* padding: 0em .8em 0em .6em; */
     padding: 0em .6em 0em .6em;
-    /*margin: 10px; */
-    /* border: 2px solid white; */
-    /* border-radius: 50%; */
     transition: all 0.2s ease-in;
   }
   
@@ -50,10 +44,15 @@
   .iconos-redes-sociales a:hover i {
     color: var(--color-texto-medio);
   }
+   */
   
-  
-  
-  
+  /* no me toma padding left o margin left , solo espacia arriba
+  tampoco toma medidas de margin, 20em o .5 em hace el mismo espaciado
+  meti el componente desnto de un dic con padding ps */
+  app-redes{
+    font-size: 1.1em;
+    /* margin: 1em; */
+  }
   
   
   

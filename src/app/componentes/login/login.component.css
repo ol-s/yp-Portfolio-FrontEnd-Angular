@@ -18,7 +18,8 @@
  } */
  .error {
   /* color: #8b8b8b; */
-  color:#dd0000;
+  /* color:#dd0000; */
+  color:var(--color-reactivos-novalid-letra);
   text-transform: lowercase;
   font-size: 1.1em;
   margin-top: -0.6em;
@@ -28,12 +29,13 @@
 }
 
  .valido {
-   border: 0.1em solid #009202 !important;
+   border: 0.1em solid var(--color-reactivos-valid) !important;
  }
 
  .invalido {
-   border: 0.1em solid #dd0000 !important;
-   transition: .7s border-color;
+   /* border: 0.1em solid #dd0000 !important; */
+   border: 0.1em solid var(--color-reactivos-novalid-borde) !important; 
+   transition: .7\5s border-color;
  }
 
  /* le saco el borde color en formularios login en caso de usar el rojo verde, solo en modal login */

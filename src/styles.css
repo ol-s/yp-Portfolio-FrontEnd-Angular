@@ -72,6 +72,10 @@
   --edit-botones-height: 2em;
   --edit-botones-width: 2em;
 
+  --color-reactivos-valid:#009202;
+  --color-reactivos-novalid-letra:#ff5252;
+  --color-reactivos-novalid-borde:#ff8686;
+
   /* cambia tamanio de encabezado y footer */
   /* --bs-body-font-size: 1rem; */
 
@@ -219,7 +223,7 @@ p {
 
   /* sin espaciado en educacion (titulo) queda mejor, y en otros, maybe sacar, tenia 3px, lo achique,,,*/
   letter-spacing: .1em;
-  letter-spacing: .01em;
+  letter-spacing: .02em;
   /* oscurecer el titulo o institucion en educacion, o mas negrita */
 }
 
@@ -1325,3 +1329,23 @@ input[type="file"] {
 
 
 
+
+
+
+/* por si se vuelve a correr, que parece que es problemas de chrome y edge f12, al activar y desactivar, poner esto, no se si funciona
+PEGUE DE LA PAGINA FUERA SERVICIO GOOGLE, VER SI NO SE MUEVE MAS PARA EL COSTADO TODO
+html {
+  display: block;
+
+  -webkit-text-size-adjust: 100%;----sacar
+  font-size: 125%; ------sacar
+  overflow-x: hidden;-----mio
+
+
+  y este???  aca o en el body
+  position:relative;
+}
+
+body{
+  position:relative;}
+*/
