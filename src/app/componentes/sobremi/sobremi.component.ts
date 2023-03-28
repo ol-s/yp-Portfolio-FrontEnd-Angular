@@ -1,10 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DatosService } from 'src/app/servicios/datos.service';
 
 @Component({
   selector: 'app-sobremi',
   templateUrl: './sobremi.component.html',
   styleUrls: ['./sobremi.component.css']
 })
-export class SobremiComponent {
+export class SobremiComponent implements OnInit {
+  //para traer un solo dato
+
+  seccionsobremi: any;
+  cv: string = '';
+  sobremi: string = '';
+  experiencias: string = '';
+
+
+
+  //datos: tambien es un alias, nombrar como querramos
+  constructor(private datos: DatosService) { }
+
+
+  //this 'datos' es el datos de la linea 20, el getDatos viene del datos.service.ts,  'data'  es otro alias que ponemos nosotros
+  ngOnInit(): void {
+    this.datos.getDatos().subscribe(data => {
+      this.seccionsobremi = data.any,
+      this.sobremi = data.sobremi,
+        this.experiencias = data.experiencias,
+        this.cv = data.cv   //si quisieramos traer solo el cv desde el json, quedaron con el mismo nombre aca y el el json
+    });
+
+  }
+
+
 
 }

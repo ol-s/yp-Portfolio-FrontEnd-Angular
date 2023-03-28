@@ -1,13 +1,14 @@
 <!-- sobre mi + avatar con media queriesokokko//////////////////////
-        /////////////////////////////////////////////////////////////// -->
+/////////////////////////////////////////////////////////////////// -->
 <section>
     <div class="container-fluid seccion-oscura" id="sobre-mi">
         <div class="container-fluid">
-            <div class="row">
-                <!-- botones edicion seccion -->
+            <div class="row">                
                 <div class="m-0 col-sm-8 sobremi">
+                    <!-- botones edicion seccion ------------------------------------------>
                     <div class="text-end">
-                        <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal" data-bs-target="#modalEditSobremi">
+                        <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                            data-bs-target="#modalEditSobremi">
                             <i class="fa-solid fa-pen"></i>
                         </button>
                         <!-- <button type="button" class="botonEditSeccionOscura">  -----------dejo edit boton nomas
@@ -16,42 +17,26 @@
                         <!-- <button type="button" class="botonEditSeccionOscura"><i
                                         class="fa-solid fa-trash"></i></button><br> -->
                     </div>
-                    <!-- titulo seccion -->
+                    <!-- titulo seccion --------------------------------------------------->
                     <h2 class="seccion-titulo">Sobre mi</h2>
-                    <p class="seccion-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet,
-                        odio
-                        eget
-                        fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor.
-                        Donec
-                        et
-                        venenatis
-                        nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittis
-                        urna. In
-                        non
-                        volutpat
-                        est. Vestibulum diam sapien, ultrices et euismod at, ultrices ut odio. Nullam in massa et
-                        elit
-                        ultrices
-                        suscipit. Proin lacinia leo ac ----poner link a cv pdf.
-                        <!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil nulla dolorum voluptatibus
-                                distinctio numquam quam voluptates! Praesentium voluptatem aut hic in, tempora voluptatibus
-                                omnis amet cum at repudiandae quisquam id?-->
+                    <p class="seccion-texto">{{sobremi}}
+                        <!--<a target="_blank" class="linkcv"
+                             href="../assets/cv/cv-SoledadFretes.pdf"> > Curriculum Vitae </a> -->
                     </p>
-                    <h2 class="seccion-titulo mt-5">Experiencia</h2>
-                    <p class="seccion-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet,
-                        odio
-                        eget
-                        fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor.
-                        Donec
-                        et
-                        venenatis
-                        nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittis
-                        urna. </p>
-                </div>
-                <div class="m-0 col-sm-4 avatarbanner">
-                    <!-- SELFIE PARALLAX -->
 
-                    <!-- botones edicion seccion ---------------------------------------->
+                    <!-- titulo seccion --------------------------------------------------->
+                    <h2 class="seccion-titulo mt-5">Experiencia</h2>
+                    <p class="seccion-texto">{{experiencias}} </p>
+
+                    <!-- descarga cv---------------------------------------------------- -->
+                    <br>
+                    <a target="_blank" class="linkcv" [href]="cv"> Ver Curriculum Vitae. </a>
+                    <br>
+                </div>
+
+                <!-- banner avatar -------------------------------------------------------->
+                <div class="m-0 col-sm-4 avatarbanner">               
+                    <!-- botones edicion banner, sacar probs-->
                     <div class="text-end">
                         <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
                         <!-- <button type="button" class="botonEditSubseccionOscura"><i
@@ -59,13 +44,13 @@
                         <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
-
-                
-                <!-- llamo a modal header--------si no lo pongo aca no abre nada--------------------->
-                <app-modal-sobremi></app-modal-sobremi>
             </div>
         </div>
     </div>
 </section>
-<!-- fin sobre mi + avatar con media queriesokokko//////////////////
-            /////////////////////////////////////////////////////////////// -->
+<!-- fin sobre mi + avatar con media queriesokokko/////////////////////////
+////////////////////////////////////////////////////////////////////////// -->
+
+
+<!-- llamo a modal header--------si no lo pongo aca no abre nada--------------------->
+<app-modal-sobremi></app-modal-sobremi>

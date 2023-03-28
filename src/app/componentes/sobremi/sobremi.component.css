@@ -18,7 +18,8 @@
     /* color: var(--color-links-navbar); */
   
     /* ver si no es mucho en pantalla grande */
-    min-height: 100vh;
+    /* min-height: 100vh; le falta 1mm noseporque */
+    min-height: 100.2vh;
   }
   
   .avatarbanner {
@@ -88,7 +89,39 @@
     }
   }
   
+
+
+
+
+  .linkcv{
+    /* text-decoration:underline; */
+    /* text-transform:lowercase; */
+    /* text-decoration: none !important; */
+    color:var(--color-texto-medio-oscuro);
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    /* border-bottom: 1px solid var(--color-texto-medio-oscuro); */
+  }
+  .linkcv:hover {
+    /* text-decoration:underline; */
+    /* text-transform:lowercase; */
+    color:var(--color-links-navbar);
+    font-size: 1em;
+    font-weight: 300;
+    /* border-bottom: 1px solid var(--color-links-navbar); */
+  }
+  .linkcv:active {
+    color:var(--color-links-navbar);
+    font-size: 1em;
+    font-weight: 300;
+    /* border-bottom: 1px solid var(--color-links-navbar); */
+  }
+  /* .seccion-texto a{
+    text-decoration: none;
+    text-transform:none;
+  } */
   /* fin SOBRE MI + avatar con media queriesokokko///////////////////////
     /////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////// */
-  
+ 

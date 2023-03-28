@@ -36,8 +36,9 @@
     "logoBrand": "../assets/img/logo-argentina-programa.png",
     "bannerEntrada": "../assets/img/banner/1banner.jpg",
     "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",
-    "sobremi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
-    "experiencias": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+    "sobremi": "Lorem desde el json ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+    "experiencias": "Lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+    "cv":"../assets/cv/cv-SoledadFretes.pdf",
     "bannerEducacion": "../assets/img/banner/3educacion.jpg",
     "bannerSalida": "../assets/img/banner/4salida.jpg",
     "estudios": [

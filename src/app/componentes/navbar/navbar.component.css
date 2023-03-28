@@ -33,7 +33,7 @@
     /* cambio el verde de los links en navbar, el nombre ya no lo cambio mas cos IMPOSIBLE, ETSA 700 VECES ABAJO, hay una forma de reemplazar todos, gaby anteultimo grupo4 encuentro creo */
     color: var(--color-texto-medio-navbar);
     font-weight: 500;
-    transition: all 0.05s ease-in;
+    transition: all 0.09s ease-in;
   }
   
   .navbar a:hover {

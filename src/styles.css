@@ -72,9 +72,9 @@
   --edit-botones-height: 2em;
   --edit-botones-width: 2em;
 
-  --color-reactivos-valid:#009202;
-  --color-reactivos-novalid-letra:#ff5252;
-  --color-reactivos-novalid-borde:#ff8686;
+  --color-reactivos-valid: #009202;
+  --color-reactivos-novalid-letra: #ff5252;
+  --color-reactivos-novalid-borde: #ff8686;
 
   /* cambia tamanio de encabezado y footer */
   /* --bs-body-font-size: 1rem; */
@@ -93,7 +93,7 @@
   padding: 0;
   /* hmmmmm porque le di a todo * margin y padding 0 aca??? */
 
-  
+
   /* 23-3-23--agregue esto cos al dia siguiente que no cargabien/luego cargaba bien bootstrap en chrome, volvio a cargar mal, desplazado hacia   el costado, while firefox cargba bien, con este ahora carga bie,  seguir monitoreando
   hmmmmmm, se rompe todo en el nest hub y nest hub max, pero soloen chrome,,,lo saco y carga bien en phone que recien no cargaba, buncionan los dos con     max-width: 100%;  en el  body parece */
   /* max-width: 100vh; */
@@ -141,7 +141,7 @@
 body {
   /* margin: 0; 
       padding: 0; /* no parece necesario aca tmb ,,, PROBAR CON ESTO TMB,, SINO DEJAR EL MAX WIDTH*/
-      max-width: 100%;
+  max-width: 100%;
 
   /* para q no se vea borde claro en seccion oscura contra oscura, se ve de nuevo*/
   background-color: #272727;
@@ -156,6 +156,7 @@ a {
   text-transform: uppercase;
   font-size: 1.1em;
 }
+
 /* subtitulos, arq/programadora, nombre institucion educacion */
 .h5,
 h5 {
@@ -234,11 +235,13 @@ section {
   align-items: center;
   justify-content: center;
 }
+
 .seccion-oscura {
   color: rgb(251, 255, 0);
   background-color: var(--color-background-oscuro1);
 
 }
+
 .seccion-clara {
   /* color: rgb(0, 21, 254); */
   color: var(--color-texto-medio);
@@ -282,7 +285,7 @@ arma lio al agruparlas, como lo cones en app root?////////////////////////////
   color: var(--color-links-navbar);
   height: 2em;
   padding-right: 1em;
-  
+
 }
 
 /*  ahi esta, transicion */
@@ -501,7 +504,7 @@ arma lio al agruparlas, como lo cones en app root?////////////////////////////
   /* le agregue margin bottom al boton aceptar, sino se alarga mucho */
   /* padding-bottom: 3rem; */
   padding-left: 3rem;
-  
+
 }
 
 /* no sacar esto, sin esto pasa eso de abajo, se paraliza
@@ -563,64 +566,64 @@ body.navbar-expand-lg-open div.navbar-backdrop {
 
 /* modales sombra y colores etc //////////////////////////////////////
   ///////////////////////////////////////////////////////////////////// */
-  .modal-header {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--bs-modal-header-padding);
-    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
-    border-bottom: 0.1em solid #ced4da94;
-    /* borde bajo 'login'  en asus y w7 se ve bien 1px, en acer no cos es fhd y el pixel es diminuto */
-    border-top-left-radius: var(--bs-modal-inner-border-radius);
-    border-top-right-radius: var(--bs-modal-inner-border-radius);
-  }
-  
-  .modal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    pointer-events: auto;
-    background-color: var(--bs-modal-bg);
-    background-clip: padding-box;
-    /* outline: 0; */
-  
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-modal-header-padding);
+  border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+  border-bottom: 0.1em solid #ced4da94;
+  /* borde bajo 'login'  en asus y w7 se ve bien 1px, en acer no cos es fhd y el pixel es diminuto */
+  border-top-left-radius: var(--bs-modal-inner-border-radius);
+  border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
 
-    /* sombra sobre el fondo--------------------------------*/
-    /* box-shadow: .2em .2em 1em .2em #6e6e6e3b; */
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: var(--bs-modal-bg);
+  background-clip: padding-box;
+  /* outline: 0; */
 
-    /* estuvo por meses, que mal sobre fondo blanco proyectos */
-    /* box-shadow: 0.1em 0.1em 1em 0.2em #00000054; */
 
-    /* con esta se oscurece todo el fondo pero no es parejo, es como centrada, y le haria falta unborde al modal */
-    box-shadow: 0.5em 0.5em 90em 9em #00000282;
+  /* sombra sobre el fondo--------------------------------*/
+  /* box-shadow: .2em .2em 1em .2em #6e6e6e3b; */
 
-    /* box-shadow: 0em 0em 2.2em 0.05em #0000004d; */
-    box-shadow: 0em 0em 2.2em 0.05em #0000008c;
+  /* estuvo por meses, que mal sobre fondo blanco proyectos */
+  /* box-shadow: 0.1em 0.1em 1em 0.2em #00000054; */
 
-    /* con esta se oscurece todo el fondo 2- pero no es parejo,  */
-    box-shadow: 0em 0em 5em 10em #00000054;
-    box-shadow: 0em 0em 50em 50em #00000054;
-    box-shadow: 0em 0em 50em 50em #0000007c;
-    
-  
-    color: rgb(153, 153, 153);
-    /* PONER COLOR DE LINKS NAVBAR, GRISECITO
+  /* con esta se oscurece todo el fondo pero no es parejo, es como centrada, y le haria falta unborde al modal */
+  box-shadow: 0.5em 0.5em 90em 9em #00000282;
+
+  /* box-shadow: 0em 0em 2.2em 0.05em #0000004d; */
+  box-shadow: 0em 0em 2.2em 0.05em #0000008c;
+
+  /* con esta se oscurece todo el fondo 2- pero no es parejo,  */
+  box-shadow: 0em 0em 5em 10em #00000054;
+  box-shadow: 0em 0em 50em 50em #00000054;
+  box-shadow: 0em 0em 50em 50em #0000007c;
+
+
+  color: rgb(153, 153, 153);
+  /* PONER COLOR DE LINKS NAVBAR, GRISECITO
         poner variable color de navbar links cuando esten grises */
-    border-color: var(--color-links-navbar);
-    border: var(--color-links-navbar);
+  border-color: var(--color-links-navbar);
+  border: var(--color-links-navbar);
 
 
-    /* no queda mal, pero maybe gris clarito nomas */
-    border: 2.5px solid var(--color-links-navbar);
-    /* border: 2px solid var(--color-texto-medio); */
-  }
-  
+  /* no queda mal, pero maybe gris clarito nomas */
+  border: 2.5px solid var(--color-links-navbar);
+  /* border: 2px solid var(--color-texto-medio); */
+}
 
 
 
-  
+
+
 /* boton X cerrar modales y offcanvas, saco borde sombra azul y redondeo---------- */
 .btn-close {
   border-radius: 0;
@@ -632,7 +635,8 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   /* estee anda */
   box-shadow: 0em 0em 0em var(--color-background-claro);
 }
-  /* fin modales sombra y colores etc ////////////////////////////////////// */
+
+/* fin modales sombra y colores etc ////////////////////////////////////// */
 
 
 
@@ -673,6 +677,7 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   --bs-btn-active-border-color: var(--color-links-navbar);
   --bs-btn-active-color: var(--color-links-navbar);
 }
+
 .btn-outline-info:hover {
   color: var(--color-texto-medio);
 }
@@ -776,7 +781,7 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   --bs-btn-active-color: #fff;
   /* al pulsar, fondo */
   /* --bs-btn-active-bg: var(--color-links-navbar); */
-  --bs-btn-active-bg:  #ababab;
+  --bs-btn-active-bg: #ababab;
 
   --bs-btn-active-border-color: transparent;
   --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
@@ -804,7 +809,7 @@ forms------------------si lo pongo en css de cada componente repito codigo yse e
 es para todos los modales, excepto form input del footer que es oscuro y con borde inferior solo
 ///////////////////////////////////////////////////////////////////////////////////--*/
 
- /* borde del recuadro para mail y pasword, maybe poner borde inferior nomas */
+/* borde del recuadro para mail y pasword, maybe poner borde inferior nomas */
 .form-control {
   background-color: var(--bs-offcanvas-bg);
   /* color borde recuadro mail y password login */
@@ -826,7 +831,7 @@ es para todos los modales, excepto form input del footer que es oscuro y con bor
   /* outline: 1em ridge rgba(170, 50, 220, .6); */
 
   /* el outline funciona para el modal login, no aca (modal header css, pero mejor ponerlo en los estilos globales), aca funciona el box-shadow, todo asi man */
-  box-shadow: 1em solid var(--bs-offcanvas-bg) !important; 
+  box-shadow: 1em solid var(--bs-offcanvas-bg) !important;
   color: var(--color-texto-header);
 }
 
@@ -1053,38 +1058,38 @@ input:active::placeholder {
 
 
 /* NOPE */
- /* .modal-open {
+/* .modal-open {
    overflow-y: inherit;  
  } */
 
 
- /* https://stackoverflow.com/questions/52388273/background-images-jump-when-opening-modal */
- /* !!!!!!!!!!!!!! this works, 
+/* https://stackoverflow.com/questions/52388273/background-images-jump-when-opening-modal */
+/* !!!!!!!!!!!!!! this works, 
  salta la navbar ahora oops, no, antes saltaba tmb pero poquito,
  ahhh, salta para acomodar la segunda barra lateral
  
  ahora podes scrolear con el modal abierto, y como qu deja dos barras laterales, raro, pero mejor que antes*/
- /*.modal-open{
+/*.modal-open{
 
   /* sin este se corren todas las letras en lugar de los banners */
-  /* padding:0 !important; */
+/* padding:0 !important; */
 
-  /* scroll tmb funciona pero no usar dice ahi */
-  /* overflow-y: scroll !important; */
-  /* overflow-y: auto !important; */
+/* scroll tmb funciona pero no usar dice ahi */
+/* overflow-y: scroll !important; */
+/* overflow-y: auto !important; */
 
-  /* RESUMEN, ANDAN ESTOS DOS EN PC, PERO ENTABLET SE DESPLAZA TODO EL TOGLER Y O NAVBAR Y QUEDA ESPANTOSO */
-  /* padding:0 !important;
+/* RESUMEN, ANDAN ESTOS DOS EN PC, PERO ENTABLET SE DESPLAZA TODO EL TOGLER Y O NAVBAR Y QUEDA ESPANTOSO */
+/* padding:0 !important;
   overflow-y: auto !important; 
  }*/
 
 
 
 
- /*zzzzzzz, nope, se agranda y achica el offcanvas too, zzzzzzzzzz, Y SE MUEVE EL TOGGLER cuando esta cerrado el offcavnas :(  */
- /* todo ese desplazamiento es en pc nomas encima, en tablet y demas no porque no tiene la barra vertical de scroll al costado */
+/*zzzzzzz, nope, se agranda y achica el offcanvas too, zzzzzzzzzz, Y SE MUEVE EL TOGGLER cuando esta cerrado el offcavnas :(  */
+/* todo ese desplazamiento es en pc nomas encima, en tablet y demas no porque no tiene la barra vertical de scroll al costado */
 
- 
+
 
 
 
@@ -1093,7 +1098,7 @@ input:active::placeholder {
 
 /* CON ESTE SE MUEVEN O LAS LETRAS O EL BANNER, Y SE MUEVE EL BANNER CUANDO ABRIS EL OFFCANVAS, 
 LO SAQUE Y SE SIGUE MOVIENDO NOW, GREAT, AH SE MOVIADESDE ANTES, PERO NO SE NOTA EN HONE COS NO TIENE LA BARRA DE SCROLL  */
- /* body.modal-open {padding:0 !important;} */
+/* body.modal-open {padding:0 !important;} */
 
 
 
@@ -1110,7 +1115,7 @@ https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css   */
 } */
 
 
- /* Estilos track de scroll */
+/* Estilos track de scroll */
 /* section::-webkit-scrollbar-track {
   background: yellow;
   border-radius: 4px;
@@ -1172,13 +1177,13 @@ html {
 
 /* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
 
- /* ------------------------------------------------------------------------------
+/* ------------------------------------------------------------------------------
  ---------------------------------------------------------------------------------
  ESTE OCULTA LA BARRAS DE DESPLAZAMIENTO, MALA PRACTICA? PROBS? cels y tablets no tienen---------------------------------------------------------------------------
  https://es.stackoverflow.com/questions/56179/como-ocultar-el-scrollbar#:~:text=Puedes%20usar%20el%20atributo%20overflow,overflow%2Dy%3A%20hidden%3B%20. */
 
 
- /* jjjjjjjjjjjjjjjjjjjjjjjj buo este tampoco anda en firefox, ??!! 
+/* jjjjjjjjjjjjjjjjjjjjjjjj buo este tampoco anda en firefox, ??!! 
  dejar los dos cos sin este no funciona en chrome, asi todo 
  //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -1217,26 +1222,30 @@ https://www.digitalocean.com/community/tutorials/css-scrollbars-es */
 
 /* con todo esto funciona en pagina, no cuando abre el madal, ahi se ve la barra comun gris ancha, 
 en firefox si la muestra, por los estilos de abajo */
-body::-webkit-scrollbar { 
-  width: 0.2em;    /* O 3PX */              
+body::-webkit-scrollbar {
+  width: 0.2em;
+  /* O 3PX */
 }
+
 body::-webkit-scrollbar-track {
-  background: var(--color-background-oscuro1);      
+  background: var(--color-background-oscuro1);
 }
+
 body::-webkit-scrollbar-thumb {
-  background-color: var(--color-links-navbar);  
-  border-radius: 0; 
+  background-color: var(--color-links-navbar);
+  border-radius: 0;
   height: 6em;
 }
 
 
 /* Works on Firefox --------si pero solo colorea, no ancho personalizado, solo ''thin'' */
 * {
-  scrollbar-width:thin;
+  scrollbar-width: thin;
   /* scrollbar-color: var(--color-links-navbar) var(--color-background-oscuro1); */
   /* asi un poco transparente el color, sino es mucho porque es muy ancha */
   scrollbar-color: #efc591cb #191919;
 }
+
 /*VOLVER A ACTIVAR O VER COMO PERSONALIZAR PARA FIREFOX TOO, POR AHORA DEJO LA BARRA DESACTIVADA
 //////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -1344,8 +1353,16 @@ html {
 
   y este???  aca o en el body
   position:relative;
+}*/
+
+
+/*  por ahora con esto corre bien en opera,,,que tuve que instalar cos perdi todo el dia con chrome y su f12---28-3-23 */
+/* body {
+  position: relative;
 }
 
-body{
-  position:relative;}
-*/
+html {
+  display: block;
+
+  position: relative;
+} */
