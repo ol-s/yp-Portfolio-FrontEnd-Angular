@@ -45,13 +45,15 @@
     ========================================================*/
   
   .SSSSeducacionFOTO {
-    /* PONER ESTE CUANDO TERMINE DE AJUSTAR COLORES
-       background-color: var(--color-background-claro); */
     background-color: var(--color-background-oscuro1);
     z-index: 1;
     /* padding: 2em; */
-    /* background-image: url("./assets/img/banner/dibujo.jpg"); */
-    background-image: url("/assets/img/banner/3educacion.jpg");
+
+
+    /* apago para traerla desde el json */
+    /* background-image: url("/assets/img/banner/3educacion.jpg"); */
+
+
     opacity: 99%;
     /* min-height: 50em; */
     /* background-repeat: no-repeat; */
@@ -60,9 +62,6 @@
     /* background-attachment: fixed; */
     /* z-index: 1; */
   
-    /* maso menos, en phone se hace cica y se mete al costado
-       igual esto es una chapuzaaaaaaaaaa!!!!!!!!!!!!
-       es la foto con bordes gigantes rosas */
     min-height: 65em;
   
     /* Create the parallax scrolling effect */

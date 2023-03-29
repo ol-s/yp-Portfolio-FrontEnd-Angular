@@ -16,7 +16,16 @@
     /*background-image: url("../assets/img/banner/1banner.jpg");   
     ASI CARGAGO DOS VECES BIEN, PERO DESPUES DE CARGAR MAL LA PRIMERA, NO SE PORQUE, 
     dejo asi que es como me cargo el avatar sobremi*/
-    background-image: url("/assets/img/banner/1banner.jpg");
+
+
+
+    /* apago y dejo en []html  desde el json*/
+    /* background-image: url("/assets/img/banner/1banner.jpg"); */
+
+
+
+
+
     opacity: 0.95;
   
     /* min-height: 41em;   ajustando */

@@ -30,14 +30,6 @@ export class BannerfooterComponent implements OnInit {
 
 
 
-
-
-
-
-
-// 1 ooooooooooooooooooo so no puedo traer con pipes {{}} desde el json al html, como lo hago para editar si esta en el css??????????????
-
-
 //58  LINKS UN POCO DE CADA LADO
 //https://stackoverflow.com/questions/61010091/path-to-background-image-in-css-with-specific-base-href-in-angular-9
 

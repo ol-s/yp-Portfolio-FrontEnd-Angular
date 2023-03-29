@@ -1,13 +1,3 @@
-<!--  ooooooooooooooooooo so no puedo traer con pipes {{}} desde el json aca, como lo hago para editar si esta en el css?????????????? -->
-<!-- <div [ngStyle]="{'background-image': 'url('bannerSalida')'}">
-    https://stackoverflow.com/questions/34875426/how-to-add-background-image-using-ngstyle-angular2 no sale, ver ggggggg -->
-
-<!-- //no anda 3, compila pero no muestra -->
-<!-- <div class="bannerFOOTER" [style.background-image]="bannerSalida ? bannerSalida : ''"> -->
-
-<!-- //no anda 4, compila pero no muestra -->
-
-
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!!!!!!!!! :O     5am -->
 <div class="bannerFOOTER" [style.background-image]=" bannerSalida ">
     <!-- botones edicion seccion ---------------------------------------->
@@ -27,4 +17,17 @@
                     this.bannerSalida = `url(${data.bannerSalida})`     
             });}
     y nada en el css, solo el resto de estilos, opacidad, fixed etc
+
+    bannerEntrada
+    bannerAvatar
+
+    ngOnInit(): void {
+                this.datos.getDatos().subscribe(data => {
+                    this.bannerEntrada = `url(${data.bannerEntrada})`     
+            });}
+
+             ngOnInit(): void {
+                this.datos.getDatos().subscribe(data => {
+                    this.bannerAvatar = `url(${data.bannerAvatar})`     
+            });}
  -->

@@ -3,7 +3,7 @@
 <section>
     <div class="container-fluid seccion-oscura" id="sobre-mi">
         <div class="container-fluid">
-            <div class="row">                
+            <div class="row">
                 <div class="m-0 col-sm-8 sobremi">
                     <!-- botones edicion seccion ------------------------------------------>
                     <div class="text-end">
@@ -35,8 +35,15 @@
                 </div>
 
                 <!-- banner avatar -------------------------------------------------------->
-                <div class="m-0 col-sm-4 avatarbanner">               
-                    <!-- botones edicion banner, sacar probs-->
+                <!-- yo les veo un pequenio movimiento al scrolear now, pero fue... -->
+                <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="bannerAvatar"> 
+
+                <!-- https://stackblitz.com/edit/how-to-use-an-image-as-background-with-ngstyle-angular-5?file=src%2Fapp%2Fapp.component.html
+                estos no me funcionan -->
+                <!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': ' url(' + bannerAvatar  + ')'}"> -->
+                <!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': 'url($bannerAvatar)'}"> -->
+
+                    <!-- botones edicion banner, sacar probs, editar en el modal sccion-------------------------------->
                     <div class="text-end">
                         <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
                         <!-- <button type="button" class="botonEditSubseccionOscura"><i
