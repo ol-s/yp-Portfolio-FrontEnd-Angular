@@ -1,5 +1,3 @@
-
-
 /* FOOTER CONTACTO ////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////// */
@@ -7,25 +5,25 @@
 
 /* ver si agrego clase contacto//section-contact-us/// y esto, para que se vea al 100% de altura en pantalla grande, esa area, creo que se corta en cel ojooooooo */
 .section-contactame {
-    min-height: 85vh;
-  }
-  
-  .foot {
-    min-height: 10vh;
-    /* border-top: 1px solid var(--color-texto-medio-oscuro); */
-    border-top: 1px solid #77777742;
-    
-  }
-  
-  .copyrights {
-    font-size: 1em;
-    color: var(--color-texto-medio);
-    /* color: #77777742; */
-    /* padding: 1.7em; */
-    padding: 1.8em 1em 1.8em 1em;
-  }
-  
-  
+  min-height: 85vh;
+}
+
+.foot {
+  min-height: 10vh;
+  /* border-top: 1px solid var(--color-texto-medio-oscuro); */
+  border-top: 1px solid #77777742;
+
+}
+
+.copyrights {
+  font-size: 1em;
+  color: var(--color-texto-medio);
+  /* color: #77777742; */
+  /* padding: 1.7em; */
+  padding: 1.8em 1em 1.8em 1em;
+}
+
+
 /*  en app redes 
   .iconos-redes-sociales a {
     display: flex;
@@ -45,48 +43,51 @@
     color: var(--color-texto-medio);
   }
    */
-  
-  /* no me toma padding left o margin left , solo espacia arriba
+
+/* no me toma padding left o margin left , solo espacia arriba
   tampoco toma medidas de margin, 20em o .5 em hace el mismo espaciado
   meti el componente desnto de un dic con padding ps */
-  app-redes{
-    font-size: 1.1em;
-    /* margin: 1em; */
-  }
-  
-  
-  
-  
-  /* footer formulario ------------------------------------------------------- */
-  .form-control-footer {
-    border: -0.5em solid var(--color-background-oscuro1) !important;
-    border-bottom: .1em solid #77777742 !important;
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #dfdfdfcb;
-    background-clip: padding-box;
-    transition: .3s border-color;
-  }
-  
-  .form-control-footer:focus {
-    
-    border-bottom: .1em solid var(--color-links-navbar) !important;
-    /* outline-width: thick; */
-    outline: .5em solid var(--color-background-oscuro1);
-    /* outline: 1em ridge rgba(170, 50, 220, .6); */
-  }
-  
-  
+app-redes {
+  font-size: 1.1em;
+  /* margin: 1em; */
+}
 
-  /* porque se separa mucho el nombre del fndo en ipad, por en vh 100%, prob quede mal en pc y cel  VER, Y SI, SAQUE */
-  /* .foot{
+
+
+
+/* footer formulario ------------------------------------------------------- */
+.form-control-footer {
+  border: -0.5em solid var(--color-background-oscuro1) !important;
+  border-bottom: .1em solid #77777742 !important;
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #dfdfdfcb;
+  background-clip: padding-box;
+  transition: .3s border-color;
+}
+
+.form-control-footer:focus {
+
+  border-bottom: .1em solid var(--color-links-navbar) !important;
+  /* outline-width: thick; */
+  outline: .5em solid var(--color-background-oscuro1);
+  /* outline: 1em ridge rgba(170, 50, 220, .6); */
+}
+
+
+
+.cierre p{
+  margin-bottom: 0;
+}
+
+/* porque se separa mucho el nombre del fndo en ipad, por en vh 100%, prob quede mal en pc y cel  VER, Y SI, SAQUE */
+/* .foot{
     padding-bottom: 20em;
   } */
-  /* FOOTER CONTACTO ////////////////////////////////////////////////////////////
+/* FOOTER CONTACTO ////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////////// */
-  

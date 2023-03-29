@@ -34,13 +34,14 @@
         }
     ],
     "logoBrand": "../assets/img/logo-argentina-programa.png",
+
     "bannerEntrada": "../assets/img/banner/1banner.jpg",
     "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",
     "sobremi": "Lorem desde el json ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
     "experiencias": "Lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
     "cv":"../assets/cv/cv-SoledadFretes.pdf",
+
     "bannerEducacion": "../assets/img/banner/3educacion.jpg",
-    "bannerSalida": "../assets/img/banner/4salida.jpg",
     "estudios": [
         {
             "id": 1,
@@ -273,5 +274,12 @@
             "descripcion": ""
         }
     ],
-    "bannerFooter": "../assets/img/banner/4salida.jpg"
+    "bannerSalida": "../assets/img/banner/4salida.jpg",
+    "servicios1": "• Proyectos de Arquitectura. Anteproyectos, Modelos 3D SKP, renders, presentaciones, legajos de obra, planos ejecutivos, presupuestos y seguimiento de obra.",
+
+    "servicios2": "• Proyectos de Diseño Web. Concept Design, mockups, frontend y backend, sitios web responsive, administracion de base de datos nivel jr.",
+
+    "descripcion": "¿Necesitás un sitio web propio o para tu negocio o querés desarrollar de un proyecto de arquitectura en concreto? Buscame en redes sociales o mandame un email directo.",
+
+    "salida":"Creemos un proyecto juntos..."
 }
