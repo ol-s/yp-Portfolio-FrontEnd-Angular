@@ -1,43 +1,64 @@
-
-
 /* BANNER FOOTER ////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////*/
 .bannerFOOTER {
-    position: relative;
-    /* opacity: 0.65; */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* background-size: 90%; */
-    /* background-size: 100% 90%; */
-    /*  90% ANCHO LO APLASTA UN POCO  */
-    background-image: url("/assets/img/banner/4salida.jpg");
-    opacity: 0.95;
-    /* 95 % VA CON EL BN PUERTITA, SINO 75% */
-  
-    /* background-image: url("./assets/img/banner/Train_Interior_5_Layers.jpg");
+  position: relative;
+  /* opacity: 0.65; */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: 90%; */
+  /* background-size: 100% 90%; */
+  /*  90% ANCHO LO APLASTA UN POCO  */
+  /* background-image: url("/assets/img/banner/4salida.jpg"); */
+
+  /* compilapero no carga nada */
+  /* background-image: [url]("bannerSalida"); */
+
+
+
+  /* no compila */
+  /* background-image: ("\'url(\' + bannersalida + \')\'"); */
+  /* background-image: url("{this.bannerSalida}data.bannerSalida"); */
+  /* background-image: url("{{bannerSalida}}"); */
+
+
+  /* 
+      ahora siiii, poniendo esto en html          
+           <div class="bannerFOOTER" [style.background-image]="bannerSalida"> 
+      y esto en el ts    
+            ngOnInit(): void {
+                this.datos.getDatos().subscribe(data => {
+                    this.bannerSalida = `url(${data.bannerSalida})`     
+            });}
+           
+  */
+
+
+
+  opacity: 0.95;
+  /* 95 % VA CON EL BN PUERTITA, SINO 75% */
+
+  /* background-image: url("./assets/img/banner/Train_Interior_5_Layers.jpg");
       opacity: 0.75; */
-  
-    /* background-image: url("./assets/img/banner/Train_Interior_5_RECORTADO\ MAS\ CENTRADOnope.jpg"); */
-    /* background-image: url("./assets/img/banner/_banner4.jpg"); */
-    /* min-height:30em; */
-    min-height: 50em;
-    /* ahi esta, pponiendo 100% no andaba, pero no es normal */
-  }
-  
-  /* ======================================== */
-  
-  
-  
-  /* sobreescrito el de bootstrap */
-  .ms-5 {
-    margin-left: 2.5rem !important;
-  }
-  
-  /* fin BANNER FOOTER ////////////////////////////////////////////////////
+
+  /* background-image: url("./assets/img/banner/Train_Interior_5_RECORTADO\ MAS\ CENTRADOnope.jpg"); */
+  /* background-image: url("./assets/img/banner/_banner4.jpg"); */
+  /* min-height:30em; */
+  min-height: 50em;
+  /* ahi esta, pponiendo 100% no andaba, pero no es normal */
+}
+
+/* ======================================== */
+
+
+
+/* sobreescrito el de bootstrap */
+.ms-5 {
+  margin-left: 2.5rem !important;
+}
+
+/* fin BANNER FOOTER ////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////*/
-  
-  

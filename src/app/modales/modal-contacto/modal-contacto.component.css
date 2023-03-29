@@ -10,6 +10,7 @@ padding-bottom: 1em;
 .btnEditModal:active{
     color:var(--color-links-navbar);
     /* border: 1px solid var(--color-links-navbar); */
+    border: 0;
 }
 .btnEditModal:focus{
     color:var(--color-links-navbar);
