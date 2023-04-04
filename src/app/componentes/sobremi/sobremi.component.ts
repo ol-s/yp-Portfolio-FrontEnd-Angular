@@ -29,3 +29,7 @@ export class SobremiComponent implements OnInit {
     });
   }
 }
+
+
+// DomSanitizer-VERRRRR SI HAY PROBLEMAS
+// https://stackoverflow.com/questions/34875426/how-to-add-background-image-using-ngstyle-angular2
