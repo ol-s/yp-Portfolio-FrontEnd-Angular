@@ -21,4 +21,5 @@ export class DatosService {
     //retorna datos via get httcliente que llama a la base de datos json o a una url , get('usar comillas simples')
     return this.httpCliente.get('./assets/basedatos/database.json');
   }
+  //no me dice nada elas viias, esta en github o no??
 }
