@@ -49,6 +49,10 @@
       }
     
   
+
+      limpiar(): void {
+        this.form.reset();
+      }
   
       onEnviar(event: Event) {      
         event.preventDefault; 

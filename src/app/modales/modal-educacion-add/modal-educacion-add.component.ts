@@ -36,19 +36,28 @@ export class ModalEducacionAddComponent implements OnInit  {
     return this.form.get("titulo"); //formControlName="titulo"
    }
 
+
+  //NO HACE FALTA ESTO PARECE(??)
+   /*
   get logoInstitucionValid(){
     return this.logoInstitucion?.touched && !this.logoInstitucion?.valid;
   }
-
   get anioeInstitucionValid(){
     return this.logoInstitucion?.touched && !this.logoInstitucion?.valid;
   }
-
   get tituloValid(){
     return this.logoInstitucion?.touched && !this.logoInstitucion?.valid;
   }
-
+   */
  
+
+  limpiar(): void{
+    this.form.reset();
+  }
+
+
+
+  
   onEnviar(event: Event){
     // Detenemos la propagación o ejecución del compotamiento submit de un form
     event.preventDefault; 

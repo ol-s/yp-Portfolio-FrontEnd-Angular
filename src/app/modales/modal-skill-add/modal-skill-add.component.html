@@ -19,7 +19,7 @@
                         <select class="form-select rounded-0 formulariosinput" id="floatingSelect"
                             aria-label="Floating label select example"  formControlName="rubro" class="form-control rounded-0 formulariosinput"
                             id="" placeholder="rubro" [ngClass]="{'is-invalid': rubro?.errors && rubro?.touched, 
-                                                                                 'is-valid': !rubro?.errors && rubro?.touched}">
+                                                                    'is-valid': !rubro?.errors}">
                             <!-- <input formControlName="rubro" class="form-control rounded-0 formulariosinput"
                             id="" placeholder="rubro" [ngClass]="{'is-invalid': rubro?.errors && rubro?.touched, 
                                                                                  'is-valid': !rubro?.errors && rubro?.touched}"> -->
@@ -40,8 +40,9 @@
                     <!-- input nombre --------------------------------------------------------------- -->
                     <div class=" form-floating mb-4">
                         <input type="text" formControlName="nombre" class="form-control rounded-0 formulariosinput"
-                            id="floatingInput" placeholder="nombre" [ngClass]="{'is-invalid': nombre?.errors && nombre?.touched, 
-                      'is-valid': !nombre?.errors && nombre?.touched}">
+                            id="floatingInput" placeholder="nombre" 
+                            [ngClass]="{'is-invalid': nombre?.errors && nombre?.touched, 
+                                          'is-valid': !nombre?.errors }">
                         <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
                         <label for="floatingInput">Nombre Skill</label>
                     </div>
@@ -57,8 +58,10 @@
                         <input type="number" min="0" max="100" formControlName="porcentaje"
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="porcentaje"
                             [ngClass]="{'is-invalid': porcentaje?.errors && porcentaje?.touched, 
-                          'is-valid': !porcentaje?.errors && porcentaje?.touched}">
-                        <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                                          'is-valid': !porcentaje?.errors}">
+                                          <!-- el valid no andabien sacandole el touched, pones 250 y 
+                                            muestra el rojo cuando salis del imput recien, lo deje asi igual (: -->
+                                          <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
                         <label for="floatingInput">% Skill (de 0-100)</label>
                     </div>
                     <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, etc inputs)-->
@@ -66,13 +69,19 @@
                         <p *ngIf="porcentaje?.hasError('required')" class="error2 text-start">
                             * El porcentaje es requerido
                         </p>
+                        <p *ngIf="porcentaje?.errors?.['max']" class="error2 text-start">
+                            * Escriba un número de 0-100
+                        </p>
                     </div>
 
-                    <br class="pt-2">
-                    <hr class="w-75 m-auto mt-4">
+                    <!-- <br class="pt-2">
+                    <hr class="w-75 m-auto mt-4"> -->
+                    <br class="pt-2 mb-2">
+                    <hr class="w-75 m-auto mt-3 mb-4">
 
                     <!-- aceptar---------------------------------------------------------------------------- -->
-                    <button type="submit" class="w-100 mb-5 mt-5 btn btn-lg rounded-0 btn-loginout3">
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="submit" class="w-100 mb-5 mt-4 btn btn-lg rounded-0 btn-loginout3">
                         Aceptar
                     </button>
                 </div>
