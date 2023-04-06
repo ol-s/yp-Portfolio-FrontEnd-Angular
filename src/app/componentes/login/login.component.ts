@@ -43,6 +43,26 @@ export class LoginComponent implements OnInit {
     return this.Password?.touched && !this.Password?.valid;  //metodo de validacion de password
   }
 
+
+
+
+
+
+
+
+
+
+  get PasswordinValid() {
+    return this.Password?.touched && !this.Password?.invalid;  //metodo de validacion de password
+  }
+
+
+
+
+
+
+
+  
   //onenviar viene del html (ngSubmit)="onEnviar($event), podria cambiar a onIniciarSesion, compila ok
   onEnviar(event: Event) {
     // Detenemos la propagación o ejecución del comportamiento submit de un form

@@ -35,7 +35,8 @@ export class EducacionComponent implements OnInit {
 
 
   ngOnInit(): void {  //no va nada aca adentro?, AH, DESPUES DEL METODO ABAJO CARGAMOS ACA ARRIBA //'ngonnit' cos se carga al inicio, no hagas nada, solamente mostrame esto
-    this.cargarEstudios();
+    
+    this.cargarEstudios(); //SOLAMENTE CARGA DATOS, NO EDITA/BORRA/NADA
  
 
   }   

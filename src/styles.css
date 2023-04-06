@@ -72,9 +72,9 @@
   --edit-botones-height: 2em;
   --edit-botones-width: 2em;
 
-  --color-reactivos-valid: #009202;
-  --color-reactivos-novalid-letra: #ff5252;
-  --color-reactivos-novalid-borde: #ff8686;
+  /* --color-reactivos-valid: #009202;  NO USADO */
+  --color-reactivos-novalid-letra: #ff4242;
+  /* --color-reactivos-novalid-borde: #ff8686;  NO USADO,,PUSE ICONITOS */
 
   /* cambia tamanio de encabezado y footer */
   /* --bs-body-font-size: 1rem; */
@@ -1365,4 +1365,88 @@ html {
   display: block;
 
   position: relative;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* formularios reactivos-------------------------------------------------------------------------- */
+
+
+ /* .error{
+    color:#dd0000;
+    text-transform:lowercase;
+    font-size: 2em;
+  } */
+ /* .error {
+   color: #000000;
+   text-transform: lowercase;
+   font-size: 1.2em;
+ } */
+ .error {
+  /* color: #8b8b8b; */
+  /* color:#dd0000; */
+  color:var(--color-reactivos-novalid-letra);
+  text-transform: none;
+  font-size: 1.2em;
+  margin-top: -0.6em;
+  letter-spacing: 1px;
+  /* transition:5s;
+  transition-timing-function: ease-in; */
+}
+
+/* no se porque el modal educacion no me toma la otra clase error */
+.error2 {
+  color:var(--color-reactivos-novalid-letra);
+  text-transform: none;
+  font-size: 1em;
+  margin-top: -0.6em;
+  letter-spacing: 1px;
+  transition:5s;
+  transition-timing-function: ease-in;
+}
+
+ /* .valido {
+   border: 0.1em solid var(--color-reactivos-valid) !important;
+ } */
+
+ /* .invalido {
+    border: 0.1em solid #dd0000 !important;
+   border: 0.1em solid var(--color-reactivos-novalid-borde) !important; 
+   transition: .7\5s border-color;
+ } */
+
+ /* le saco el borde color en formularios login/TODOS en caso de usar el rojo verde, solo en modal login/TODOS */
+ .formulariosinput:focus {
+  border: 0.1em solid var(--color-texto-header) !important;
+ 
+}
+
+
+
+
+/* solo borde abajo , VER DESPUES EL FOOTER, NO SALE AHORA   5-4-23*/
+/* .form-control {
+  background-color: var(--bs-offcanvas-bg);
+  border: 3px solid var(--bs-offcanvas-bg);
+  color: var(--color-texto-header);
+  border-bottom: 0.05em solid grey;
+}
+
+.formulariosinput {
+  border: 3px solid var(--bs-offcanvas-bg);
+  border-bottom: 0.05em solid var(--color-texto-header) !important;
+ 
+}
+.formulariosinput:focus {
+  border-bottom: 0.05em solid var(--color-texto-header) !important;
+ 
 } */

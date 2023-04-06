@@ -1,5 +1,5 @@
 <!--Modal educacion add-->
-<form class="modal fade" id="modalEducacionAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<form class="modal fade" id="modalEducacionAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  [formGroup]="form" > <!--  (ngSubmit)="onEnviar($event)" -->
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content ">
             <div class="modal-header">
@@ -7,15 +7,31 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
+
             <!-- primera parte modal-------------------------------------------------------------- -->
             <div class="modal-body">
                 <div class="container text-center justify-content-between">
                     <h5>Agregar estudio</h5>
+                     <!-- input -------------------------------------- -->
                     <div class=" form-floating mb-3">
-                        <input type="url" class="form-control rounded-0 formulariosinput" id="floatingInput"
-                            placeholder="text">
+                        <input type="url"  formControlName="logoInstitucion" class="form-control rounded-0 formulariosinput" id="floatingInput"
+                            placeholder="text" 
+                            [ngClass]="{'is-invalid': logoInstitucion?.errors && logoInstitucion?.touched, 
+                            'is-valid': !logoInstitucion?.errors && logoInstitucion?.touched}">
                         <label for="floatingInput">"URL logo institución"</label>
                     </div>
+                    <!--  -->
+                    <div *ngIf="logoInstitucion?.errors  && logoInstitucion?.touched" class="error2 text-start">    
+                        <p *ngIf="logoInstitucion?.hasError('required')" class="error2">
+                            <!-- <i class="bi bi-exclamation-circle"></i> Campo requerido
+                            <i class="bi bi-check-circle" ></i>Campo requerido -->
+                            * Campo requerido
+                        </p>
+                        <!-- <p *ngIf="logoInstitucion?.hasError('logoInstitucion')" class="error">
+                            El formato del email debe ser válido.
+                          </p> -->
+                    </div>
+                    <!-- --------------------------------------------- -->
                     <div class=" form-floating mb-3">
                         <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
                             placeholder="text">
