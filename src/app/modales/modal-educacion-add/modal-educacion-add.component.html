@@ -1,5 +1,6 @@
 <!--Modal educacion add-->
-<form class="modal fade" id="modalEducacionAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  [formGroup]="form" > <!--  (ngSubmit)="onEnviar($event)" -->
+<form class="modal fade" id="modalEducacionAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [formGroup]="form" (ngSubmit)="onEnviar($event)">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content ">
             <div class="modal-header">
@@ -12,17 +13,17 @@
             <div class="modal-body">
                 <div class="container text-center justify-content-between">
                     <h5>Agregar estudio</h5>
-                     <!-- input -------------------------------------- -->
+                    <!-- input -------------------------------------- -->
                     <div class=" form-floating mb-3">
-                        <input type="url"  formControlName="logoInstitucion" class="form-control rounded-0 formulariosinput" id="floatingInput"
-                            placeholder="text" 
+                        <input type="url" formControlName="logoInstitucion"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
                             [ngClass]="{'is-invalid': logoInstitucion?.errors && logoInstitucion?.touched, 
-                            'is-valid': !logoInstitucion?.errors && logoInstitucion?.touched}">
-                        <label for="floatingInput">"URL logo institución"</label>
+                                          'is-valid': !logoInstitucion?.errors && logoInstitucion?.touched}">
+                        <label for="floatingInput">"URL imagen/logo de la institución (ancho 470px)"</label>
                     </div>
                     <!--  -->
-                    <div *ngIf="logoInstitucion?.errors  && logoInstitucion?.touched" class="error2 text-start">    
-                        <p *ngIf="logoInstitucion?.hasError('required')" class="error2">
+                    <div *ngIf="logoInstitucion?.errors  && logoInstitucion?.touched" class="error2 text-start">
+                        <p *ngIf="logoInstitucion?.hasError('required')" class="error2 errorfloat">
                             <!-- <i class="bi bi-exclamation-circle"></i> Campo requerido
                             <i class="bi bi-check-circle" ></i>Campo requerido -->
                             * Campo requerido
@@ -31,22 +32,52 @@
                             El formato del email debe ser válido.
                           </p> -->
                     </div>
-                    <!-- --------------------------------------------- -->
+
+                    <!-- input -------------------------------------- -->
                     <div class=" form-floating mb-3">
+                        <input type="url" formControlName="anioeInstitucion"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
+                            [ngClass]="{'is-invalid': anioeInstitucion?.errors && anioeInstitucion?.touched, 
+                                          'is-valid': !anioeInstitucion?.errors && anioeInstitucion?.touched}">
+                        <label for="floatingInput">"Año (en numeros, ej. 2004-2008). Institución."</label>
+                    </div>
+                    <!--  -->
+                    <div *ngIf="anioeInstitucion?.errors && anioeInstitucion?.touched" class="error2 text-start">
+                        <p *ngIf="anioeInstitucion?.hasError('required')" class="error2">
+                            * Campo requerido
+                        </p>
+                    </div>
+                    <!-- input -------------------------------------- -->
+                    <div class=" form-floating mb-3">
+                        <input type="url" formControlName="titulo" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="text" [ngClass]="{'is-invalid': titulo?.errors && titulo?.touched, 
+                                          'is-valid': !titulo?.errors && titulo?.touched}">
+                        <!-- los '?' de por ahi es para que no tire error, desp de titulo etc  -->
+                        <label for="floatingInput">"Título/diploma"</label>
+                    </div>
+                    <!--  -->
+                    <div *ngIf="titulo?.errors && titulo?.touched" class="error2 text-start">
+                        <p *ngIf="titulo?.hasError('required')" class="error2">
+                            * Campo requerido
+                        </p>
+                    </div>
+                    <!-- --------------------------------------------- -->
+                    <!-- <div class=" form-floating mb-3">
                         <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
                             placeholder="text">
-                        <label for="floatingInput">"Año (en numeros). Institución."</label>
+                        <label for="floatingInput">""</label>
                     </div>
                     <div class=" form-floating mb-2">
                         <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
                             placeholder="text">
                         <label for="floatingInput">"Título."</label>
-                    </div>
+                    </div> -->
                 </div>
                 <br class="pt-2">
                 <hr class="w-75 m-auto mt-4">
             </div>
             <!-- segunda parte modal, banner? -------------------------------------------------------------- -->
+            <!-- ////////////////////////////////banners no se donde boy a editar todavia, modal banners? /////////////////////// -->
             <div class="modal-body">
                 <div class="container text-center justify-content-between">
                     <h5>Editar banner Educación</h5>
@@ -61,7 +92,7 @@
             </div>
             <!-- aceptar---------------------------------------------------------------------------- -->
             <div class="modal-body">
-                <button class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5" type="submit">Aceptar</button>
+                <button type="submit" class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5">Aceptar</button>
             </div>
         </div>
     </div>

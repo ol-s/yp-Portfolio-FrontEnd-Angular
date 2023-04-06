@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////integrado al back, desde 5.4.23///////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////EDITADO EDUCACION DESDE PHPMYADMIN!!////////////////////////////////////
-
+/*
 import { Component, OnInit } from '@angular/core';
 //import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Educacion } from 'src/app/model/educacion';                          //*** 
@@ -77,7 +77,7 @@ export class EducacionComponent implements OnInit {
 }
 
 
-
+*/
 
 
 
@@ -89,10 +89,11 @@ export class EducacionComponent implements OnInit {
 
 //////////////////////////////////////////////////////////////CORRIENDO OK CON JSON ANGULAR HASTA 4.4.23/////////////////////////
 ////////////////////si comento lo de arriba y descomento esto se ve como antes//////////////////////////////////////////////////
+/////////////////////////////////////////////////prendo este para editar modales cos SE MUERE LA ASUS CON LOS DOS CORRIENDO A LAVEZ/////////////////////////
 
 
 
-/*
+
  import { Component, OnInit } from '@angular/core';
  import { DatosService } from 'src/app/servicios/datos.service';
 
@@ -133,4 +134,3 @@ export class EducacionComponent implements OnInit {
 
 
 
-*/

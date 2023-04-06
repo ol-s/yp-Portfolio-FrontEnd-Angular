@@ -51,10 +51,10 @@ export class LoginComponent implements OnInit {
 
 
 
-
-  get PasswordinValid() {
-    return this.Password?.touched && !this.Password?.invalid;  //metodo de validacion de password
-  }
+//ESTE USE? AGREGUE POR ULTIMO, BORRAR>  corte luz
+  // get PasswordinValid() {
+  //   return this.Password?.touched && !this.Password?.invalid;  //metodo de validacion de password
+  // }
 
 
 

@@ -1430,6 +1430,16 @@ html {
  
 }
 
+/* .is-invalid{    jajajja este es solo el iconito, entra en camara lenta
+  transition:5s;
+  transition-timing-function: ease-in;
+} */
+
+
+
+
+
+
 
 
 
@@ -1449,4 +1459,28 @@ html {
 .formulariosinput:focus {
   border-bottom: 0.05em solid var(--color-texto-header) !important;
  
-} */
+} 
+
+
+
+
+
+ver tmb el salto brusco de las letras rojas, se amplia el modal, aparece la barra vertial de scroll, por eso salta
+
+ .is-invalid p{    
+  /* transition:5s;
+  transition-timing-function: ease-in;
+
+  transition: transform 3s;
+  transition: all 2s ease-in;
+} 
+
+
+
+.errorfloat{
+  transition: transform 3s;
+  transition: all 2s ease-in;
+}
+
+
+*/
