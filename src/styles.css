@@ -1408,11 +1408,15 @@ html {
   color:var(--color-reactivos-novalid-letra);
   text-transform: none;
   font-size: 1em;
-  margin-top: -0.6em;
+  margin-top: -0.9em;   /* estaba -0.6 */
+  padding-bottom: 0.8em;
   letter-spacing: 1px;
   transition:5s;
   transition-timing-function: ease-in;
 }
+
+
+
 
  /* .valido {
    border: 0.1em solid var(--color-reactivos-valid) !important;

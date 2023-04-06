@@ -24,7 +24,19 @@
                 <div class="row">
                     <!-- columna 1 Programación web -------------------------------------------------------------->
                     <div class="col-md-6 p-4 mt-5">
-                        <h4>Programación web</h4><br>
+                        
+                        <!-- botones edicion skill por ruros, VER SI LO EDITO ASI, SI NO PUEDO CON EL SELECTOR DE RUBROS----------------->
+                        <div class="text-end">
+                            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                                data-bs-target="#modalSkillAdd">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+
+
+                        <h4>Programación web</h4>
+                        <br>
                         <!-- modulo skill -->
                         <div class="moduloSkill" *ngFor="let cadaSkillProgram of skillsTodasProgram">
                             <div class="d-flex justify-content-between skill-text">
@@ -56,6 +68,16 @@
                     <div class="col-md-6 p-4 mt-5">
 
                         <!-- Diseño y Arquitectura ---------------------------->
+
+                         <!-- botones edicion skill por ruros, VER SI LO EDITO ASI, SI NO PUEDO CON EL SELECTOR DE RUBROS----------------->
+                         <div class="text-end">
+                            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                                data-bs-target="#modalSkillAdd">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+
                         <h4>Diseño y Arquitectura</h4><br>
                         <!-- modulo skill -->
                         <div class="moduloSkill" *ngFor="let cadaSkillArq of skillsTodasArq">
@@ -90,6 +112,16 @@
                     <div class="col-md-6 p-4 mt-5">
 
                         <!-- Idiomas ---------------------------->
+
+                         <!-- botones edicion skill por ruros, VER SI LO EDITO ASI, SI NO PUEDO CON EL SELECTOR DE RUBROS----------------->
+                         <div class="text-end">
+                            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                                data-bs-target="#modalSkillAdd">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+
                         <h4>Idiomas</h4><br>
                         <!-- modulo skill -->
                         <div class="moduloSkill" *ngFor="let cadaSkillIdiom of skillsTodasIdiom">
@@ -121,6 +153,16 @@
                     <div class="col-md-6 p-4 mt-5">
 
                         <!--Habilidades Blandas ---------------------------->
+
+                         <!-- botones edicion skill por ruros, VER SI LO EDITO ASI, SI NO PUEDO CON EL SELECTOR DE RUBROS----------------->
+                         <div class="text-end">
+                            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                                data-bs-target="#modalSkillAdd">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                        
                         <h4>Habilidades Blandas</h4><br>
                         <!-- modulo skill -->
                         <div class="moduloSkill" *ngFor="let cadaSkillBland of skillsTodasBlandas">

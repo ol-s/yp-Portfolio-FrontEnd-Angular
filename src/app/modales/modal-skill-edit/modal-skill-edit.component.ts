@@ -14,7 +14,7 @@
       constructor(private formBuilder: FormBuilder) {
      
         this.form = this.formBuilder.group({
-          rubro: ['', [Validators.required]],
+          //rubro: ['', [Validators.required]],
           nombre: ['', [Validators.required]],
           porcentaje: ['', [Validators.required]]  
         })
@@ -23,9 +23,9 @@
       ngOnInit() { }
     
       // metodos para el formulario
-      get rubro() {
+      /*get rubro() {
         return this.form.get("rubro");   //viene del html formControlName="", de ahi toma el dato
-      }
+      }*/
   
       get nombre() {
         return this.form.get("nombre"); 
@@ -36,9 +36,9 @@
       }
     
      
-      get rubroValid() {
+      /*get rubroValid() {
         return this.rubro?.touched && !this.rubro?.valid;  //metodo de validacion de nombre
-      }
+      }*/
   
       get nombreValid() {
         return this.nombre?.touched && !this.nombre?.valid;  

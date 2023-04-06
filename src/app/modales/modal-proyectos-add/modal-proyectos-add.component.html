@@ -1,5 +1,6 @@
 <!--Modal proyectos add-->
-<form class="modal fade" id="modalProyectosAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<form class="modal fade" id="modalProyectosAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [formGroup]="form" (ngSubmit)="onEnviar($event)" name="proyectosAddForm">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content ">
             <div class="modal-header">
@@ -9,7 +10,7 @@
             </div>
             <!-- primera parte modal-------------------------------------------------------------- -->
 
-            <div class="modal-body container text-center justify-content-between">
+            <!-- <div class="modal-body container text-center justify-content-between">
                 <h5>Editar subtítulo</h5>
                 <div class=" form-floating mb-2">
                     <textarea class="form-control rounded-0 formulariosinput" placeholder="Leave a comment here"
@@ -18,11 +19,29 @@
                 </div>
                 <br class="py-5 mb-2">
                 <hr class="w-75 m-auto mt-3">
+            </div> -->
+
+            <!-- primera parte modal-------------------------------------------------------------- -->
+            <div class="modal-body container text-center justify-content-between">
+                <h5>Editar subtítulo</h5>
+                <div class=" form-floating mb-2">
+                    <textarea type="text" formControlName="subtituloproy" class="form-control rounded-0 formulariosinput"
+                        placeholder="subtituloproy" id="floatingTextarea2" style="height: 75px" [ngClass]="{'is-invalid': subtituloproy?.errors && subtituloproy?.touched, 
+                                  'is-valid': !subtituloproy?.errors && subtituloproy?.touched}"></textarea>
+                    <label for="floatingTextarea2">Subtítulo sección</label>
+                </div>
+                <div *ngIf="subtituloproy?.errors  && subtituloproy?.touched">
+                    <p *ngIf="subtituloproy?.hasError('required')" class="error2 text-start mt-3">
+                        * Campo requerido
+                    </p>
+                </div>
             </div>
+
+
             <!-- segunda parte modal-------------------------------------------------------------- -->
             <div class="modal-body container text-center justify-content-between">
                 <h5>Agregar proyecto</h5>
-                <div class=" form-floating mb-3">
+                <!-- <div class=" form-floating mb-3">
                     <input type="url" class="form-control rounded-0 formulariosinput" id="floatingInput"
                         placeholder="text">
                     <label for="floatingInput">URL imagen en pagina</label>
@@ -46,7 +65,88 @@
                     <textarea class="form-control rounded-0 formulariosinput" placeholder="Leave a comment here"
                         id="floatingTextarea2" style="height: 75px"></textarea>
                     <label for="floatingTextarea2">Descripción</label>
+                </div> -->
+
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-4">
+                    <input type="text" formControlName="urlimg" class="form-control rounded-0 formulariosinput"
+                        id="floatingInput" placeholder="urlimg" [ngClass]="{'is-invalid': urlimg?.errors && urlimg?.touched, 
+                  'is-valid': !urlimg?.errors && urlimg?.touched}">
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <label for="floatingInput">URL imagen en pagina</label>
                 </div>
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <div *ngIf="urlimg?.errors  && urlimg?.touched">
+                    <p *ngIf="urlimg?.hasError('required')" class="error2 text-start">
+                        * Campo requerido
+                    </p>
+                </div>
+                
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-4">
+                    <input type="text" formControlName="altImg" class="form-control rounded-0 formulariosinput"
+                        id="floatingInput" placeholder="altImg" 
+                        [ngClass]="{'is-invalid': altImg?.errors && altImg?.touched, 
+                                      'is-valid': !altImg?.errors && altImg?.touched}">
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <label for="floatingInput">Nombre (alt) de img en pagina</label>
+                </div>
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <div *ngIf="altImg?.errors  && altImg?.touched">
+                    <p *ngIf="altImg?.hasError('required')" class="error2 text-start">
+                        * Campo requerido
+                    </p>
+                </div>
+
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-4">
+                    <input type="text" formControlName="targetblank" class="form-control rounded-0 formulariosinput"
+                        id="floatingInput" placeholder="targetblank" 
+                        [ngClass]="{'is-invalid': targetblank?.errors && targetblank?.touched, 
+                                      'is-valid': !targetblank?.errors && targetblank?.touched}">
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <label for="floatingInput">URL target blank</label>
+                </div>
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <div *ngIf="targetblank?.errors  && targetblank?.touched">
+                    <p *ngIf="targetblank?.hasError('required')" class="error2 text-start">
+                        * Campo requerido
+                    </p>
+                </div>
+
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-4">
+                    <input type="text" formControlName="titulop" class="form-control rounded-0 formulariosinput"
+                        id="floatingInput" placeholder="titulop" 
+                        [ngClass]="{'is-invalid': titulop?.errors && titulop?.touched, 
+                                      'is-valid': !titulop?.errors && titulop?.touched}">
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <label for="floatingInput">"Título Proyecto"</label>
+                </div>
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <div *ngIf="titulop?.errors  && titulop?.touched">
+                    <p *ngIf="titulop?.hasError('required')" class="error2 text-start">
+                        * Campo requerido
+                    </p>
+                </div>
+
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-2">
+                    <textarea type="text" formControlName="descripcionp" class="form-control rounded-0 formulariosinput"
+                        placeholder="descripcionp" id="floatingTextarea2" style="height: 75px" 
+                        [ngClass]="{'is-invalid': descripcionp?.errors && descripcionp?.touched, 
+                                     'is-valid': !descripcionp?.errors && descripcionp?.touched}"></textarea>
+                    <label for="floatingTextarea2">Descripción del proyecto</label>
+                </div>
+                <div *ngIf="descripcionp?.errors  && descripcionp?.touched">
+                    <p *ngIf="descripcionp?.hasError('required')" class="error2 text-start mt-3">
+                        * Campo requerido
+                    </p>
+                </div>
+
+
+
+
                 <br class="py-5 mb-2">
                 <hr class="w-75 m-auto mt-3">
             </div>
