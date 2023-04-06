@@ -1,10 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
-// importamos las librerias de formulario que vamos a necesitar
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-  /////////////////////////////////////////////////////////////////NO ME LLAMA A LOS REQUIRED CHE -->
- /////////////////////////////////////////////////////////////////NO ME LLAMA A LOS REQUIRED CHE -->
- /////////////////////////////////////////////////////////////////NO ME LLAMA A LOS REQUIRED CHE -->
 
 @Component({
   selector: 'app-modal-educacion-edit',
@@ -13,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ModalEducacionEditComponent implements OnInit  {
 
-  form: FormGroup;  /////////////////////////////////////////////////////////////////NO ME LLAMA A LOS REQUIRED CHE
+  form: FormGroup; 
 
   // Inyectar en el constructor el formBuilder
   constructor(private formBuilder: FormBuilder){ 
@@ -29,15 +24,15 @@ export class ModalEducacionEditComponent implements OnInit  {
   ngOnInit() {}
 
   get logoInstitucion(){
-    return this.form.get("logoInstitucion2"); 
+    return this.form.get("logoInstitucion"); 
   }
  
   get anioeInstitucion(){
-   return this.form.get("anioeInstitucion2");
+   return this.form.get("anioeInstitucion");
   }
 
   get titulo(){
-    return this.form.get("titulo2"); //formControlName="titulo2"
+    return this.form.get("titulo"); //formControlName="titulo2"
    }
 
   get logoInstitucionValid(){
@@ -45,28 +40,20 @@ export class ModalEducacionEditComponent implements OnInit  {
   }
 
   get anioeInstitucionValid(){
-    return this.logoInstitucion?.touched && !this.logoInstitucion?.valid;
+    return this.anioeInstitucion?.touched && !this.anioeInstitucion?.valid;
   }
 
   get tituloValid(){
-    return this.logoInstitucion?.touched && !this.logoInstitucion?.valid;
+    return this.titulo?.touched && !this.titulo?.valid;
   }
 
  
   onEnviar(event: Event){
-    // Detenemos la propagación o ejecución del compotamiento submit de un form
     event.preventDefault; 
- 
     if (this.form.valid){
-      // Llamamos a nuestro servicio para enviar los datos al servidor
-      // También podríamos ejecutar alguna lógica extra
       alert("Todo salio bien ¡Enviar formulario!")
-    }else{
-      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
+    }else{    
       this.form.markAllAsTouched(); 
-    }
- 
+    } 
   }
-
-
 }

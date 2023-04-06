@@ -1,5 +1,6 @@
 <!--Modal educacion edit-->
-<form class="modal fade" id="modalEducacionEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [formGroup]="form" (ngSubmit)="onEnviar($event)">
+<form class="modal fade" id="modalEducacionEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
+[formGroup]="form" (ngSubmit)="onEnviar($event)">
 
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content ">
@@ -8,58 +9,53 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
-   <!--  /////////////////////////////////////////////////////////////////NO ME LLAMA A LOS REQUIRED CHE -->
-   <!--  /////////////////////////////////////////////////////////////////NO ME LLAMA A LOS REQUIRED CHE -->
-   <!--  /////////////////////////////////////////////////////////////////NO ME LLAMA A LOS REQUIRED CHE -->
-            <!--  /////////////////////////////////////////////////////////////////NO ME LLAMA A LOS REQUIRED CHE -->
             <!-- primera parte modal-------------------------------------------------------------- -->
             <div class="modal-body">
-                <!-- input -------------------------------------- -->
+                <!-- input url-------------------------------------- -->
                 <div class=" form-floating mb-3">
-                    <input type="url" formControlName="logoInstitucion2"
+                    <input type="url" formControlName="logoInstitucion"
                         class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
                         [ngClass]="{'is-invalid': logoInstitucion?.errors && logoInstitucion?.touched, 
                                       'is-valid': !logoInstitucion?.errors && logoInstitucion?.touched}">
                     <label for="floatingInput">"Editar: URL imagen/logo de la institución"</label>
                 </div>
-                <!--  -->
                 <div *ngIf="logoInstitucion?.errors  && logoInstitucion?.touched" class="error2 text-start">
                     <p *ngIf="logoInstitucion?.hasError('required')" class="error2 errorfloat">
-                        <!-- <i class="bi bi-exclamation-circle"></i> Campo requerido
+                        <!-- <i class="bi bi-exclamation-circle"></i> icons no usados
                         <i class="bi bi-check-circle" ></i>Campo requerido -->
                         * Campo requerido
                     </p>              
                 </div>
 
-                <!-- input -------------------------------------- -->
+                <!-- input institucion-------------------------------------- -->
                     <div class=" form-floating mb-3">
-                        <input type="url" formControlName="anioeInstitucion2"
+                        <input type="url" formControlName="anioeInstitucion"
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
                             [ngClass]="{'is-invalid': anioeInstitucion?.errors && anioeInstitucion?.touched, 
                                           'is-valid': !anioeInstitucion?.errors && anioeInstitucion?.touched}">
                         <label for="floatingInput">"Editar: Año (en numeros, ej. 2004-2008). Institución."</label>
                     </div>
-                    <!--  -->
                     <div *ngIf="anioeInstitucion?.errors && anioeInstitucion?.touched" class="error2 text-start">
                         <p *ngIf="anioeInstitucion?.hasError('required')" class="error2">
                             * Campo requerido
                         </p>
                     </div>
-                    <!-- input -------------------------------------- -->
+
+                    <!-- input diploma-------------------------------------- -->
                     <div class=" form-floating mb-3">
-                        <input type="url" formControlName="titulo2"
+                        <input type="url" formControlName="titulo"
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
                             [ngClass]="{'is-invalid': titulo?.errors && titulo?.touched, 
                                           'is-valid': !titulo?.errors && titulo?.touched}"> 
                                             <!-- los '?' de por ahi es para que no tire error, desp de titulo etc  -->
                         <label for="floatingInput">"Editar: Título/diploma"</label>
                     </div>
-                    <!--  -->
                     <div *ngIf="titulo?.errors && titulo?.touched" class="error2 text-start">
                         <p *ngIf="titulo?.hasError('required')" class="error2">
                             * Campo requerido
                         </p>
                     </div>
+
                 <br class="pt-2">
                 <hr class="w-75 m-auto mt-4">
             </div>
