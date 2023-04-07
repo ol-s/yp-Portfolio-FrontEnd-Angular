@@ -44,6 +44,28 @@ export class EducacionService {
       return this.httpClient.delete<any>(this.url + `delete/${id}`);
       }
 
+  
+
+    //dejo el original, el de arriba, cos en java lo nombre asi, deleteEstudio,,,,,no se si llevan el mismo nombre??
+    /*
+    public delete(id: number):Observable<any>{
+        return this.httpClient.delete<any>(this.url + `delete/${id}`);
+    }*/
+
+
+
+
+/*  nada anda, no entrego,,,,,,,encima falta el edit
+
+    public delete(id: number):Observable<any>{
+      return this.httpClient.delete<number>(this.url + "delete/"+ id);
+  }
+
+/*
+    deleteE (id: number):Observable<number>{
+     
+      return this.httpClient.delete<number>(this.bookUrl+"/"+bookid);
+    }*/
 
 }
 
