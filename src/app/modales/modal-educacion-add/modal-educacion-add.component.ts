@@ -1,6 +1,12 @@
+
+
+
+///////////////cuando andaba
+
 import { Component, OnInit } from '@angular/core';
 // importamos las librerias de formulario que vamos a necesitar
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-modal-educacion-add',
@@ -10,29 +16,39 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ModalEducacionAddComponent implements OnInit  {
 
   form: FormGroup;
+ 
 
   // Inyectar en el constructor el formBuilder
   constructor(private formBuilder: FormBuilder){ 
 
     ///Creamos el grupo de controles para el formulario
     this.form= this.formBuilder.group({
+     
+      //id: [''],
       logoInstitucion:['',[Validators.required]],
+      logoAlt:[''],
       anioeInstitucion:['', [Validators.required]],
-      titulo:['', [Validators.required]],
+      titulo:['',[Validators.required]],
+      descripcion:[''],
+      
    })
   }
 
+
+
   ngOnInit() {}
 
-  get logoInstitucion(){
+
+  //////////////////////////////////////////////cambiados todos los nombres, tengo que hacer todo esto de nuevo maaan(porque me toma como declarado el atributo sino)
+  get Logo(){
     return this.form.get("logoInstitucion"); 
   }
  
-  get anioeInstitucion(){
-   return this.form.get("anioeInstitucion");
+  get Instituc(){
+   return this.form.get("anioeInstitucion"); 
   }
 
-  get titulo(){
+  get Diploma(){
     return this.form.get("titulo"); //formControlName="titulo"
    }
 
@@ -47,27 +63,26 @@ export class ModalEducacionAddComponent implements OnInit  {
   }
   get tituloValid(){
     return this.logoInstitucion?.touched && !this.logoInstitucion?.valid;
-  }
-   */
- 
+  }*/
+   
 
+
+
+  //para limpiar el form
   limpiar(): void{
     this.form.reset();
   }
 
-
-
-  
+  //click enviar
   onEnviar(event: Event){
-    // Detenemos la propagación o ejecución del compotamiento submit de un form
+    
     event.preventDefault; 
  
     if (this.form.valid){
-      // Llamamos a nuestro servicio para enviar los datos al servidor
-      // También podríamos ejecutar alguna lógica extra
+ 
       alert("Todo salio bien ¡Enviar formulario!")
     }else{
-      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
+     
       this.form.markAllAsTouched(); 
     }
  
@@ -75,3 +90,5 @@ export class ModalEducacionAddComponent implements OnInit  {
 
 
 }
+
+

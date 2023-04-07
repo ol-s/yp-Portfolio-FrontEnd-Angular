@@ -1,3 +1,5 @@
+//////////////////////model o entidades son lasque traemos del back en java, igualitas y sus atributos//////////////////////////////////
+
 export class Educacion {
 
     id?: number;                //signo ! o ? si da error //si tengo fechas tmb pongo string, el back lo convierte a date

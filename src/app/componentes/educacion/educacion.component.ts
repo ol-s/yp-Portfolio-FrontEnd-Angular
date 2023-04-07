@@ -23,16 +23,6 @@ export class EducacionComponent implements OnInit {
   //serviEduc es mi alias
   constructor(private serviEduc: EducacionService) { }
 
-  
-  // ngOnInit(): void {
-  //   this.datos.getDatos().subscribe(data => {
-  //     this.estudiosTodos = data.estudios,
-  //       this.nombreCompleto = data.nombreyapellido,   //si quisieramos traer solo el nombre
-  //       this.bannerEducacion = `url(${data.bannerEducacion})`   //background imagen
-  //   });
-
-  // }
-
 
   ngOnInit(): void {  //no va nada aca adentro?, AH, DESPUES DEL METODO ABAJO CARGAMOS ACA ARRIBA //'ngonnit' cos se carga al inicio, no hagas nada, solamente mostrame esto
     
@@ -46,7 +36,6 @@ export class EducacionComponent implements OnInit {
   //cargarestudios en mi metodo, de tipovoid porque no retorna nada,,,
   //this. es para utilizar una variable que esta fuera del metodo, si le pasara id entre los parenteiss, abajo no pondria 'this.' ,,,express 18, min 38'
   
-
   //solo este metodo hacemos?? y el new/find/update/delete?  h nor k  lo tienen...  k no tiene delete tampoco
   cargarEstudios():void{
     this.serviEduc.listaEstudios().subscribe(data => {this.estudiosTodos=data});  

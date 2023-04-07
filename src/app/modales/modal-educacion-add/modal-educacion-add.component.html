@@ -17,13 +17,13 @@
                     <div class=" form-floating mb-3">
                         <input type="url" formControlName="logoInstitucion"
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
-                            [ngClass]="{'is-invalid': logoInstitucion?.errors && logoInstitucion?.touched, 
-                                          'is-valid': !logoInstitucion?.errors}">
-                                          <!-- 'is-valid': !logoInstitucion?.errors && logoInstitucion?.touched}"> -->
+                            [ngClass]="{'is-invalid': Logo?.errors && Logo?.touched, 
+                                          'is-valid': !Logo?.errors}">
+                                          <!-- 'is-valid': !Logo?.errors && Logo?.touched}"> -->
                         <label for="floatingInput">"URL imagen/logo de la institución (ancho 470px)"</label>
                     </div>
-                    <div *ngIf="logoInstitucion?.errors  && logoInstitucion?.touched" class="error2 text-start">
-                        <p *ngIf="logoInstitucion?.hasError('required')" class="error2 errorfloat">
+                    <div *ngIf="Logo?.errors  && Logo?.touched" class="error2 text-start">
+                        <p *ngIf="Logo?.hasError('required')" class="error2 errorfloat">
                             <!-- <i class="bi bi-exclamation-circle"></i> Campo requerido
                             <i class="bi bi-check-circle" ></i>Campo requerido -->
                             * Campo requerido
@@ -34,13 +34,13 @@
                     <div class=" form-floating mb-3">
                         <input type="url" formControlName="anioeInstitucion"
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
-                            [ngClass]="{'is-invalid': anioeInstitucion?.errors && anioeInstitucion?.touched, 
-                                          'is-valid': !anioeInstitucion?.errors }">
+                            [ngClass]="{'is-invalid': Instituc?.errors && Instituc?.touched, 
+                                          'is-valid': !Instituc?.errors }">
                                           <!-- 'is-valid': !anioeInstitucion?.errors && anioeInstitucion?.touched}"> -->
                         <label for="floatingInput">"Año (en numeros, ej. 2004-2008). Institución."</label>
                     </div>
-                    <div *ngIf="anioeInstitucion?.errors && anioeInstitucion?.touched" class="error2 text-start">
-                        <p *ngIf="anioeInstitucion?.hasError('required')" class="error2">
+                    <div *ngIf="Instituc?.errors && Instituc?.touched" class="error2 text-start">
+                        <p *ngIf="Instituc?.hasError('required')" class="error2">
                             * Campo requerido
                         </p>
                     </div>
@@ -49,15 +49,15 @@
                     <div class=" form-floating mb-3">
                         <input type="url" formControlName="titulo" class="form-control rounded-0 formulariosinput"
                             id="floatingInput" placeholder="text" 
-                            [ngClass]="{'is-invalid': titulo?.errors && titulo?.touched, 
-                                          'is-valid': !titulo?.errors}">
+                            [ngClass]="{'is-invalid': Diploma?.errors && Diploma?.touched, 
+                                          'is-valid': !Diploma?.errors}">
                                           <!-- aaaa , si lo pongo sin el touched, apenas escribo bien se pone verde, no hace falta salir del input!!
                                         'is-valid': !titulo?.errors && titulo?.touched}       -->
                         <!-- los '?' de por ahi es para que no tire error, desp de titulo etc  -->
                         <label for="floatingInput">"Título/diploma"</label>
                     </div>
-                    <div *ngIf="titulo?.errors && titulo?.touched" class="error2 text-start">
-                        <p *ngIf="titulo?.hasError('required')" class="error2">
+                    <div *ngIf="Diploma?.errors && Diploma?.touched" class="error2 text-start">
+                        <p *ngIf="Diploma?.hasError('required')" class="error2">
                             * Campo requerido
                         </p>
                     </div>
