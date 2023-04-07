@@ -15,7 +15,7 @@
                     <h5>Agregar estudio</h5>
                     <!-- input url logo-------------------------------------- -->
                     <div class=" form-floating mb-3">
-                        <input type="url" formControlName="logoInstitucion"
+                        <input type="url" formControlName="logoInstitucion" [(ngModel)]="logoInstitucion"
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
                             [ngClass]="{'is-invalid': Logo?.errors && Logo?.touched, 
                                           'is-valid': !Logo?.errors}">
@@ -32,7 +32,7 @@
 
                     <!-- input institucion-------------------------------------- -->
                     <div class=" form-floating mb-3">
-                        <input type="url" formControlName="anioeInstitucion"
+                        <input type="url" formControlName="anioeInstitucion" [(ngModel)]="anioeInstitucion"
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="text"
                             [ngClass]="{'is-invalid': Instituc?.errors && Instituc?.touched, 
                                           'is-valid': !Instituc?.errors }">
@@ -47,7 +47,7 @@
 
                     <!-- input diploma-------------------------------------- -->
                     <div class=" form-floating mb-3">
-                        <input type="url" formControlName="titulo" class="form-control rounded-0 formulariosinput"
+                        <input type="url" formControlName="titulo" [(ngModel)]="titulo" class="form-control rounded-0 formulariosinput"
                             id="floatingInput" placeholder="text" 
                             [ngClass]="{'is-invalid': Diploma?.errors && Diploma?.touched, 
                                           'is-valid': !Diploma?.errors}">

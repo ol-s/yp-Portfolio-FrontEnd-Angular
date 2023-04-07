@@ -33,7 +33,7 @@
                         <input type="email" formControlName="email" class="form-control rounded-0 formulariosinput"
                             id="floatingInput" placeholder="name@example.com"
                             [ngClass]="{'is-invalid': Mail?.errors && Mail?.touched, 
-                                          'is-valid': !Mail?.errors && Mail?.touched}">
+                                          'is-valid': !Mail?.errors }">
                             <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
                         <label for="floatingInput">Email</label>
                     </div>
@@ -52,7 +52,7 @@
                         <input type="password" formControlName="password"
                             class="form-control rounded-0 formulariosinput" id="floatingPassword" placeholder="Password"
                             [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 
-                                          'is-valid': !Password?.errors && Password?.touched}">
+                                          'is-valid': !Password?.errors}">
                         <label for="floatingPassword">Password</label>
                     </div>
 

@@ -1,8 +1,128 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Educacion } from 'src/app/model/educacion';
+import { EducacionService } from 'src/app/servicios/educacion.service';
 
 
 
-///////////////cuando andaba
+@Component({
+  selector: 'app-modal-educacion-add',
+  templateUrl: './modal-educacion-add.component.html',
+  styleUrls: ['./modal-educacion-add.component.css']
+})
+export class ModalEducacionAddComponent implements OnInit {
 
+  form: FormGroup;
+  //estudiosTodos: Educacion[] = [];
+  logoInstitucion: string = '';
+  logoAlt: string = '';
+  anioeInstitucion: string = '';
+  titulo: string = '';
+  descripcion: string = '';
+
+
+
+  // Inyectar en el constructor el formBuilder
+  constructor(private formBuilder: FormBuilder, private educServ: EducacionService) {
+
+    ///Creamos el grupo de controles para el formulario reactivo
+    this.form = this.formBuilder.group({
+
+      //id: [''],
+      logoInstitucion: ['', [Validators.required]],
+      logoAlt: [''],
+      anioeInstitucion: ['', [Validators.required]],
+      titulo: ['', [Validators.required]],
+      descripcion: [''],
+
+    })
+  }
+
+
+
+  ngOnInit() { }
+
+
+
+  // reactivos
+  get Logo() {
+    return this.form.get("logoInstitucion");
+  }
+  get Instituc() {
+    return this.form.get("anioeInstitucion");
+  }
+  get Diploma() {
+    return this.form.get("titulo"); //formControlName="titulo"
+  }
+
+  //para limpiar el form/////SE PUEDE PONER EN EL BOTON CLOSE MODAL DIJO H
+  limpiar(): void {
+    this.form.reset();
+  }
+
+
+
+  //new estudio, que en educacion.service.ts se ponia saveEducacion(Educacion: Educacion), aca se pone como una constante
+  //y luego se llama al metodo con el nombre que tenia en el educacion service
+
+  onCreate(): void {
+    const estud = new Educacion(this.logoInstitucion, this.logoAlt, this.anioeInstitucion, this.titulo, this.descripcion);
+    this.educServ.saveEducacion(estud).subscribe(data => {
+      alert("Estudio añadido")
+      window.location.reload();  //se recarga la pagina
+    });
+  }
+  /* ESTABA ASI, H SACO LA ULTIMAPARTE COS ESTA EN EL onEnviar
+    window.location.reload();  //se recarga la pagina
+      }, err => {   //si hay error
+        alert("fallo carga de datos, intente nuevamente");
+        window.location.reload();
+      });
+    }
+    */
+
+
+  //click enviar, modulo 3 antes del ejercicio, h
+  onEnviar(event: Event) {
+    event.preventDefault;
+    if (this.form.valid) {
+
+      this.onCreate();          ///este agregue yo, cos esta enexpress, pero no en todos los otros que venia viendo...
+
+      //alert("Todo salió bien ¡Enviar formulario!")
+    } else {
+      alert("Falló carga de datos, intente nuevamente");  //va ; ahi?
+      this.form.markAllAsTouched();
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////cuando andaba, conectado a la bd corriendo el netbeans y angular
+/*
 import { Component, OnInit } from '@angular/core';
 // importamos las librerias de formulario que vamos a necesitar
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -63,8 +183,7 @@ export class ModalEducacionAddComponent implements OnInit  {
   }
   get tituloValid(){
     return this.logoInstitucion?.touched && !this.logoInstitucion?.valid;
-  }*/
-   
+  }
 
 
 
@@ -90,5 +209,4 @@ export class ModalEducacionAddComponent implements OnInit  {
 
 
 }
-
-
+*/
