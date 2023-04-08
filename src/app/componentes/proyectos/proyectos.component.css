@@ -52,7 +52,14 @@
 
 .proyectos-contenedor {
     padding-top: 0;
-    padding-bottom: 8em;
+
+    /* bajo porque separe web y arq */
+    /* padding-bottom: 8em; */
+     /* padding-bottom: 2em; */
+}
+
+.proyectos-recientes{
+    padding-bottom: 9em;
 }
 
 

@@ -89,7 +89,8 @@ export class ModalEducacionAddComponent implements OnInit {
 
       this.onCreate();          ///este agregue yo, cos esta enexpress, pero no en todos los otros que venia viendo...
 
-      alert("Estudio cargado correctamente, da click en 'Aceptar' para recargar la pagina.");    //AHI ESTAAAAA, DA EL OK, PONES ACEPTAR Y RECARGA PAGINA
+      alert("Estudio cargado correctamente!, click Aceptar para recargar la pagina.");    //AHI ESTAAAAA, DA EL OK, PONES ACEPTAR Y RECARGA PAGINA
+      //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
       window.location.reload();
      
 

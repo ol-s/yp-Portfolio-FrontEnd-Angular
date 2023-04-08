@@ -1,28 +1,10 @@
 {
-    "persona": [
+    "header": [
         {
-            "id": "CAPAZ ESTE NO VA ACA COS UNA SOLA PERSONA",
+            "id": 1,
             "nombre": "soledad",
             "apellido": "fretes",
-            "ocupacion": "arquitecta | programadora web fullstack jr",
-
-            "sobremi": "Nuevo json con entidad persona, ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
-            "experienciasTexto":"Texto unico de experiencias en nuevo json, ver si hago toda la entidad experiencia aparteeee. Eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
-            "cv": "../assets/cv/cv-SoledadFretes.pdf",
-            "email": "no use esto,,,,,,,",
-
-            "bannerEntrada": "../assets/img/banner/1banner.jpg",
-            "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",      
-            "bannerEducacion": "../assets/img/banner/3educacion.jpg",
-            "bannerSalida": "../assets/img/banner/4salida.jpg",
-
-            "servicios1": "• Proyectos de Arquitectura. Anteproyectos, Modelos 3D SKP, renders, presentaciones, legajos de obra, planos ejecutivos, presupuestos y seguimiento de obra.",
-            "servicios2": "• Proyectos de Diseño Web. Concept Design, mockups, frontend y backend, sitios web responsive, administracion de base de datos nivel jr.",
-            "salida1": "¿Necesitás un sitio web propio o para tu negocio o querés desarrollar de un proyecto de arquitectura en concreto? Buscame en redes sociales o mandame un email directo.",
-            "salida2": "Creemos un proyecto juntos...",
-            "copyrights": "2022-2023 Soledad Fretes",
-
-            "logoBrand": "../assets/img/logo-argentina-programa.png"
+            "ocupacion": "arquitecta | programadora web fullstack jr"
         }
     ],
     "redes": [
@@ -44,17 +26,22 @@
             "url": "mailto:janedoe@correo.com",
             "iconred": "bi bi-envelope-fill"
         },
-        {
+        {       
             "id": 4,
             "nombre": "Instagram",
             "url": "https://www.instagram.com/",
             "iconred": "bi bi-instagram"
         }
     ],
-   
-    "experienciasHACER LA ENDIDAD o NOO, YA DIVIDI PROYECTOS EN DOS, Y SKILLS EN 4444": "Lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
-    
-    
+    "logoBrand": "../assets/img/logo-argentina-programa.png",
+
+    "bannerEntrada": "../assets/img/banner/1banner.jpg",
+    "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",
+    "sobremi": "Lorem desde el json ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+    "experiencias": "Lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+    "cv":"../assets/cv/cv-SoledadFretes.pdf",
+
+    "bannerEducacion": "../assets/img/banner/3educacion.jpg",
     "estudios": [
         {
             "id": 1,
@@ -85,7 +72,6 @@
             "titulo": "Programadora web fullstack junior."
         }
     ],
-
     "skillsProgramacion": [
         {
             "id": 1,
@@ -271,7 +257,7 @@
             "imgPageAlt": "Proyecto 1",
             "hrefTargetBlank": "https://github.com/ol-s/yp-Portfolio-FrontEnd-Angular",
             "targetBlackAlt": "Proyecto 1",
-            "tituloProyecto": "Diseño de mi Portfolio Web",
+            "tituloProyecto": "Mi Portfolio Web",
             "descripcion": ""
         }
     ],
@@ -285,32 +271,15 @@
             "hrefRepo": "https://github.com/ol-s",
             "hrefLive": "https://ponerdespues.com",
             "tituloProyecto": "Mi Portfolio Web",
-            "descripcion": "Desarrollo front y backend de un portfolio web completo con funciones de edicion al logearse.",
-            "fecha": "2023"
-        },
-        {
-            "id": 2,
-            "imgPageProyecto": "../assets/img/proyectos/web2.jpg",
-            "imgPageAlt": "web 2",
-            "hrefTargetBlank": "../assets/img/proyectos/web2.jpg",
-            "targetBlackAlt": "web 2",
-            "hrefRepo": "https://github.com/ol-s",
-            "hrefLive": "https://ponerdespues.com",
-            "tituloProyecto": "Proyecto 2. *ilustrativo",
-            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, ipsum eget fringilla scelerisque.",
-            "fecha": "2023"
-        },
-        {
-            "id": 3,
-            "imgPageProyecto": "../assets/img/proyectos/web1.jpg",
-            "imgPageAlt": "web 1-----ESTO SACAR CREO, NO LO METI EN EL HTML DE ANGULAR COS ERRORR, SOOO",
-            "hrefTargetBlank": "../assets/img/proyectos/web1.jpg",
-            "targetBlackAlt": "",
-            "hrefRepo": "https://github.com/ol-s",
-            "hrefLive": "https://ponerdespues.com",
-            "tituloProyecto": "Proyecto 3. *ilustrativo",
-            "descripcion": "Sipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, ipsum eget.",
-            "fecha": "2023-2025"
+            "descripcion": ""
         }
-    ]
+    ],
+    "bannerSalida": "../assets/img/banner/4salida.jpg",
+    "servicios1": "• Proyectos de Arquitectura. Anteproyectos, Modelos 3D SKP, renders, presentaciones, legajos de obra, planos ejecutivos, presupuestos y seguimiento de obra.",
+
+    "servicios2": "• Proyectos de Diseño Web. Concept Design, mockups, frontend y backend, sitios web responsive, administracion de base de datos nivel jr.",
+
+    "descripcion": "¿Necesitás un sitio web propio o para tu negocio o querés desarrollar de un proyecto de arquitectura en concreto? Buscame en redes sociales o mandame un email directo.",
+
+    "salida":"Creemos un proyecto juntos..."
 }

@@ -1,24 +1,45 @@
-<!-- proyectos ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////// -->
 <section id="proyectos" class=" container-fluid proyectos-recientes seccion-clara d-flex flex-column">
-    <div class="container-fluid proyectostitulo justify-content-start">
-        <!-- botones edicion seccion ---------------------------------------->
-        <div class="text-end">
+
+
+
+    <!-- ********************************************* si divido por arq y web DEJAR APAGADO, SINO PONER ESTEEEEE ******************************** -->
+    <!-- <div class="container-fluid proyectostitulo justify-content-start">
+        botones edicion seccion --------------------------------------
+        <div class="text-end"> -->
             <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button> -->
             <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button> -->
-            <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
+            <!-- <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
                 <i class="fa-solid fa-plus"></i>
             </button>
         </div>
-        <!-- titulo seccion ------------------------------------------------->
+        titulo seccion -----------------------------------------------
         <h2 class="seccion-titulo">Proyectos</h2>
         <p class="seccion-texto">Algunos proyectos de arquitectura y diseño web en los que he trabajado
             recientemente</p>
-    </div>
+    </div> -->
+    <!-- ********************************************* si divido por arq y web DEJAR APAGADO, SINO PONER ESTEEEEE ******************************** -->
 
-    <!-- Galeria de Proyectos -->
+
+
+    <!-- Galeria de Proyectos ARQ ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div class="proyectos-contenedor">
-        <div class="row">
+
+
+        <!-- ********************************************* si divido por arq y web DEJAR O APAGAR ***************************************** -->
+        <div class="container-fluid proyectostitulo justify-content-start">
+            <div class="text-end">
+                <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <!-- <h2 class="seccion-titulo">Proyectos de Arquitectura</h2> -->
+            <h2 class="seccion-titulo">Proyectos Arq</h2>
+            <p class="seccion-texto">Algunos proyectos de arquitectura y diseño en los que he trabajado recientemente</p>
+        </div>
+        <!-- ********************************************* si divido por arq y web DEJAR O APAGAR ***************************************** -->
+
+        
+        <div class="row">   
             <!-- modulo proyectos arq ---------------------------------------------------------->
             <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let cadaProyecto of proyectosTodos">
                 <div class="proyecto">
@@ -103,20 +124,97 @@
             </div> -->
 
 
-
-            <!-- subi a github proyectosArq y proyectosWeb dividos en el json (quedo nombrado asi en el json y ts, para volver atras mas facil) y en proyectos.ts y html, LUEGO VOLVI ATRAS Y LO DEJE CON EL SIGNO +, HACER EL MODAL CON casilla para EL NUMERO DE ID PARA VER POSICION DEL PROYECTO EN LA PAGINA,,DESPUES VER SI PUEDO ARMARLO MEJOR 
-            los deje todos en el mismo array del json con href (+) img para los arq y href github para los web, maybe poner la urlde pagina final-->
+            <!-- subi a github proyectosArq y proyectosWeb dividos en el json (quedo nombrado asi en el json y ts, para volver atras mas facil) 
+            y en proyectos.ts y html, LUEGO VOLVI ATRAS Y LO DEJE CON EL SIGNO +, HACER EL MODAL CON casilla para EL NUMERO DE ID PARA VER POSICION 
+            DEL PROYECTO EN LA PAGINA,,DESPUES VER SI PUEDO ARMARLO MEJOR 
+            los deje todos en el mismo array del json con href (+) img para los arq y href github para los web, maybe poner la urlde pagina final
+            ....agregado abajo aparte proyectos web-->
 
         </div>
     </div>
+
+
+
+
+
+
+    <!-- Galeria de Proyectos WEB ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <!-- ********************************************* si divido por arq y web DEJAR O APAGAR *********************************************** --> 
+    <div class="proyectos-contenedor">
+        <div class="container-fluid proyectostitulo justify-content-start">
+            <div class="text-end" >
+                <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <h2 class="seccion-titulo">Proyectos Web</h2>
+            <!-- queria editar el subtitulo pero esta fuera del bucle, so tendria que ir a 'persona' tmb, nope now -->
+            <!-- <p class="seccion-texto">Comenzando esta etapa, estos proyectos he desarrollado recientemente</p> -->
+            <p class="seccion-texto">Comenzando esta etapa, algunos proyectos de desarrollo web</p>           
+        </div>
+
+        <div class="row">   
+            <!-- modulo proyectos web ---------------------------------------------------------->
+            <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let cadaProyecto of proyectosTodosWeb">
+                <div class="proyecto">
+
+                    <img [src]="cadaProyecto.imgPageProyecto" [alt]="cadaProyecto.imgPageAlt">
+                    <div class="ms-5">
+                        <!-- YA FUE, ME VA A DAR PROBLEMAS, Y SI LIMITO A 4 CARACTERES NOPUEDO ESCRIBR '2023' '2022-2023', see, type text?? -->
+                        <h6 class="skill-title pt-3">{{cadaProyecto.fecha}}. {{cadaProyecto.tituloProyecto}}</h6>
+                        <!-- <h6 class="skill-title pt-3">{{cadaProyecto.tituloProyecto}}</h6> -->
+                    </div>
+
+                    <div class="overlay">
+                        <div class="iconos-contenedor mb-5 pb-5">
+                            <!-- para que se ponga la manito antes hay que rodear todo con la etiqueta <a> -->
+                            <a [href]="cadaProyecto.hrefRepo" target="_blank" rel="noopener noreferrer" class="ps-3 pr-3">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a [href]="cadaProyecto.hrefLive" target="_blank" rel="noopener noreferrer" class="ps-3 pr-3">
+                                <i class="bi bi-laptop"></i>
+                            </a>
+                            <!-- <a [href]="cadaProyectoWeb.link2" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-card-image"></i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <div class="ms-5 pt-3">
+                        <p class="skill-title">{{cadaProyecto.descripcion}}</p>
+                    </div>
+
+                </div>
+
+                <!-- botones edit subseccion -->
+                <div class="text-end">
+                   
+                    <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
+                        data-bs-target="#modalProyectosEdit">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
+                        data-bs-target="#modalEliminarProyecto">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ********************************************* si divido por arq y web DEJAR O APAGAR *********************************************** -->    
+
+
 </section>
-<!-- fin proyectos ////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////// -->
 
 
-<!-- llamo a modal -->
+<!-- llamo a modal, tendria que hacer dos mas para web? ver con el elejit rubro? creo que no va a salir eh -->
 <app-modal-proyectos-add></app-modal-proyectos-add>
 <app-modal-proyectos-edit></app-modal-proyectos-edit>
+
+
+
+
 
 
 <!-- modal eliminar, no se si ponerlo asi, aparte, uno para cada uno de los items(??) o donde -->

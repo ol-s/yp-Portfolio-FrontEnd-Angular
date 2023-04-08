@@ -6,9 +6,17 @@
         <div class="d-flex flex-column ">
             <div class="">
                 <!-- titulo seccion --------------------------------->
-                <div *ngFor="let elementoHeader of headerTodos">
-                    <h1>{{elementoHeader.nombre}}{{elementoHeader.apellido}}</h1>
-                    <h5>{{elementoHeader.ocupacion}}</h5>
+
+
+                <!-- hice un ngfor pero deberia haber puesto solo {{persona.nombre}},,,,
+                    (ah h tenia un ngfor al comienzo, despues ya no, nose  tonces)
+                    PERO NO ME ANDAAAA 
+                Y NO GUaRDE COMO LO TENIA ANTES CON EL JSON VIEJO,,,ZZZZZZZZZZ-->
+                <div *ngFor="let itemPersona of personaItems">
+                    <h1>{{itemPersona.nombre}}{{itemPersona.apellido}}</h1>
+                    <h5>{{itemPersona.ocupacion}}</h5>
+
+
                     <!-- cambie la | en el json por una mas larga,ver 
 
                         arquitecta | programadora web fullstack jr

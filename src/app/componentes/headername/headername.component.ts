@@ -9,7 +9,7 @@ import { DatosService } from 'src/app/servicios/datos.service';
 export class HeadernameComponent implements OnInit {
 
   //headerTodos : any =[];
-  headerTodos : any =[];
+  personaItems : any =[];
   redesTodas : any;
 
   //para traer un solo dato
@@ -22,7 +22,7 @@ export class HeadernameComponent implements OnInit {
 
   ngOnInit(): void {
     this.datos.getDatos().subscribe(data =>{  
-      this.headerTodos = data.header,   
+      this.personaItems = data.persona,   
       this.redesTodas = data.redes
     });
     

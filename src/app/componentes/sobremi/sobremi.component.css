@@ -32,7 +32,7 @@
   
     /* me vuelve a dar error aca, a pesar que lo escribo bien como me dejo en el primer avatar
     VER DE DEJAR /ASSETS/  O ../ASSETS/  QUE FUNCIONO EN EL PRIMER BANNER, EN ESTE NO FUNCIONA, SOLO SIN LOS PUNTOS */
-    background-image: url("/assets/img/banner/2banneravataralejado.jpg");
+    /* background-image: url("/assets/img/banner/2banneravataralejado.jpg"); */
   
     /* min-height: 50em; */
     /* background-repeat: no-repeat; */

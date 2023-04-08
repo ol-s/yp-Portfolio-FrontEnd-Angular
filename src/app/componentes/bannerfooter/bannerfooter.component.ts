@@ -1,3 +1,42 @@
+///////////////////////////////////////////////////nuevo json////////////////////////////////////////////////
+import { Component, OnInit } from '@angular/core';
+import { DatosService } from 'src/app/servicios/datos.service';
+
+@Component({
+  selector: 'app-bannerfooter',
+  templateUrl: './bannerfooter.component.html',
+  styleUrls: ['./bannerfooter.component.css']
+})
+export class BannerfooterComponent implements OnInit {          
+
+  personaItems: any = [];
+  bannerSalida: string = '';
+ 
+  constructor(private datos: DatosService) { }
+
+  ngOnInit(): void {
+    this.datos.getDatos().subscribe(data => {
+        this.personaItems = data.persona
+        this.bannerSalida = `url(${data.persona})`
+    });
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////viejo json/////////////////////////////////////////////////////////////
+/*
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';
 
@@ -27,7 +66,7 @@ export class BannerfooterComponent implements OnInit {
     });
   }
 }
-
+*/
 
 
 //58  LINKS UN POCO DE CADA LADO

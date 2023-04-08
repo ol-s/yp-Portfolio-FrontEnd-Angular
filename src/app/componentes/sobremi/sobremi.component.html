@@ -3,7 +3,7 @@
 <section>
     <div class="container-fluid seccion-oscura" id="sobre-mi">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" *ngFor="let itemPersona of personaItems">
                 <div class="m-0 col-sm-8 sobremi">
                     <!-- botones edicion seccion ------------------------------------------>
                     <div class="text-end">
@@ -19,24 +19,29 @@
                     </div>
                     <!-- titulo seccion --------------------------------------------------->
                     <h2 class="seccion-titulo">Sobre mi</h2>
-                    <p class="seccion-texto">{{sobremi}}
+                    <p class="seccion-texto">{{itemPersona.sobremi}}
                         <!--<a target="_blank" class="linkcv"
                              href="../assets/cv/cv-SoledadFretes.pdf"> > Curriculum Vitae </a> -->
                     </p>
 
                     <!-- titulo seccion --------------------------------------------------->
                     <h2 class="seccion-titulo mt-5">Experiencia</h2>
-                    <p class="seccion-texto">{{experiencias}} </p>
+                    <p class="seccion-texto">{{itemPersona.experienciasTexto}} </p>
 
                     <!-- descarga cv---------------------------------------------------- -->
                     <br>
-                    <a target="_blank" class="linkcv" [href]="cv"> Ver Curriculum Vitae. </a>
+                    <a target="_blank" class="linkcv" [href]="itemPersona.cv"> Ver Curriculum Vitae. </a>
                     <br>
                 </div>
 
                 <!-- banner avatar -------------------------------------------------------->
-                <!-- yo les veo un pequenio movimiento al scrolear now, pero fue... -->
-                <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="bannerAvatar"> 
+                <!-- andaba solo, NO ANDA DENTRO DE PERSONA -->
+                <!-- <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="itemPersona.bannerAvatar">  -->
+
+               <!-- <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="itemPersona.bannerAvatar">  -->
+
+
+                <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background-image': ' url(' + itemPersona.bannerAvatar + ')'}">
 
                 <!-- https://stackblitz.com/edit/how-to-use-an-image-as-background-with-ngstyle-angular-5?file=src%2Fapp%2Fapp.component.html
                 estos no me funcionan -->
@@ -64,3 +69,98 @@
 
 <!-- llamo a modal header--------si no lo pongo aca no abre nada--------------------->
 <app-modal-sobremi></app-modal-sobremi>
+
+
+
+<!-- about ME----------------USAR COMPLETARRR
+Hola, soy sf
+Soy arquitecta y diseño y creo sitios web.
+Como desarrolladora fullstack, vigilo el diseño y la facilidad de uso de su sitio web.
+Me enfoco en presentar su contenido de una manera atractiva y optimizada para todos los dispositivos (teléfono inteligente, tableta, computadora de escritorio).
+
+Concedo gran importancia a un diseño claro y conciso. Cada uno de mis sitios web y proyectos de arquitectura está diseñado individualmente y optimizado para cada necesidad, no utilizo plantillas en ninguno de los casos.
+
+EXPERIENCIA
+Trabajo de manera particular(freelance) desde el anio 2017 realizando proyectos de arquitectura y disenio...
+
+SERVICIOS
+¿Necesitás un sitio web propio o para tu negocio o querés desarrollar de un proyecto de arquitectura en concreto? Entonces
+raelizame una consulta inicial gratuita ahora. -->
+
+
+
+
+
+
+
+
+
+<!-- ///////////////////////////////////////////JSON VIEJO SIN ENTIDAD PERSONA////////////////////////////////////////// -->
+<!-- <section>
+    <div class="container-fluid seccion-oscura" id="sobre-mi">
+        <div class="container-fluid">
+            <div class="row"  >
+                <div class="m-0 col-sm-8 sobremi"  >
+                    
+                    <div class="text-end">
+                        <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                            data-bs-target="#modalEditSobremi">
+                            <i class="fa-solid fa-pen"></i>
+                        </button> -->
+                        <!-- <button type="button" class="botonEditSeccionOscura">  -----------dejo edit boton nomas
+                            <i class="fa-solid fa-plus"></i>
+                        </button> -->
+                        <!-- <button type="button" class="botonEditSeccionOscura"><i
+                                        class="fa-solid fa-trash"></i></button><br> -->
+                    <!-- </div> -->
+
+
+
+                    <!-- titulo seccion --------------------------------------------------->
+                    <!-- <h2 class="seccion-titulo">Sobre mi</h2>
+                    <p class="seccion-texto">{{sobremi}} -->
+                        <!--<a target="_blank" class="linkcv"
+                             href="../assets/cv/cv-SoledadFretes.pdf"> > Curriculum Vitae </a> -->
+                    <!-- </p> -->
+
+                    <!-- titulo seccion --------------------------------------------------->
+                    <!-- <h2 class="seccion-titulo mt-5">Experiencia</h2> -->
+
+
+                    <!-- este hay que traerlo de afuera, entidad experiencia -->
+                    <!-- <p class="seccion-texto">{{experiencias}} </p> -->
+
+
+
+                    <!-- descarga cv---------------------------------------------------- -->
+                    <!-- <br>
+                    <a target="_blank" class="linkcv" [href]="cv"> Ver Curriculum Vitae. </a>
+                    <br>
+                </div> -->
+
+                <!-- banner avatar -------------------------------------------------------->
+                <!-- yo les veo un pequenio movimiento al scrolear now, pero fue... -->
+                <!-- <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="bannerAvatar">  ESTE ANDABA BIENNN-->
+
+                <!-- https://stackblitz.com/edit/how-to-use-an-image-as-background-with-ngstyle-angular-5?file=src%2Fapp%2Fapp.component.html
+                estos no me funcionan -->
+                <!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': ' url(' + bannerAvatar  + ')'}"> -->
+                <!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': 'url($bannerAvatar)'}"> -->
+
+                <!-- DomSanitizer-VERRRRR SI HAY PROBLEMAS
+                https://stackoverflow.com/questions/34875426/how-to-add-background-image-using-ngstyle-angular2 -->
+
+                    <!-- botones edicion banner, sacar probs, editar en el modal sccion-------------------------------->
+                    <!-- <div class="text-end">
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button> -->
+                        <!-- <button type="button" class="botonEditSubseccionOscura"><i
+                                        class="fa-solid fa-plus"></i></button> -->
+                        <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- fin sobre mi + avatar con media queriesokokko/////////////////////////
+////////////////////////////////////////////////////////////////////////// -->

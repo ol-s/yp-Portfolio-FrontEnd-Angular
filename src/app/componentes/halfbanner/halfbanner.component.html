@@ -1,16 +1,20 @@
-    <!-- half banner1 //////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////// -->
-    <!-- le pongo 100vh altura en css, para que se adapte a cualquier pantalla y no quede truncado -->
-    <div class="banner1" [style.background-image]="bannerEntrada">
-        <!-- botones edicion seccion ---------------------------------------->
-        <!-- no se como ponerlo abajo-->
+<!-- half banner1 //////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////// -->
+
+<!-- 2dias despuessssssssssssssss OKOK////////////////////////////////////////////////PROBS EL NGFOR NO VA PERO B//////////////////////////// -->
+<div *ngFor="let itemPersona of personaItems">
+
+    <div class="banner1" [ngStyle]="{'background-image': ' url(' + itemPersona.bannerEntrada + ')'}">
+
         <div class="text-end ">
-            <button type="button" class="botonEditSubseccionOscura"  data-bs-toggle="modal"
-            data-bs-target="#modalBanner1"  ><i class="fa-solid fa-pen"></i></button>
-            <!-- <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-plus"></i></button> -->
+            <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal" data-bs-target="#modalBanner1">
+                <i class="fa-solid fa-pen"></i></button>
             <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button>
         </div>
-  
+    </div>
+</div>
+
+<!-- <div class="banner1" [style.background-image]="itemPersona.bannerEntrada"> ESTE ANDABA PONIENDO 'url' EN EL TS Y FUERA DE 'persona'-->
 
 
 
@@ -19,7 +23,217 @@
 
 
 
-<!-- *************************************************************************** 
+
+
+
+<!--  ///////////////////////////////////////////////////////////////////////////carga este pero una imagen online y poniendo 
+    this.bannerEntrada= "https://static.eldiario.es/clip/b75933f3-8399-4ddd-85ee-d73c86314089_16-9-discover-aspect-ratio_default_0.jpg";
+ en el ts,,,o sea estoy accediendo mal al dato de la url? -->
+<!-- <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'"> -->
+
+
+
+
+
+<!-- tampoco anda, ero estoy accediendo mal a lista -->
+<!-- <div class="banner1"   [ngStyle]="{'background-image': 'url(' + persona[7].bannerEntrada + ')'}" > -->
+
+
+
+
+<!-- ////////////////////////////////////////////////////////////andaba desde el json,solo fuera de persona -->
+<!-- <div class="banner1" [style.background-image]="bannerEntrada"> -->
+
+<!-- <div class="banner1" [style.background-image]="'url(' + persona.bannerEntrada + ')'"> -->
+<!-- <div class="banner1" [style.background-image]="persona.bannerEntrada">  -->
+
+<!-- 88 -->
+<!-- <div class="banner1" [style.background-image]="banner">  -->
+
+<!-- 89 -->
+<!-- <div class="banner1" [style.background-image]="'url(' + banner + ')'"> -->
+<!-- 89 -->
+<!-- <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'"> -->
+
+
+
+<!-- <div class="banner1"   [ngStyle]="{'background-image': 'url(' + bannerEntrada + ')'}" > -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- le pongo 100vh altura en css, para que se adapte a cualquier pantalla y no quede truncado -->
+
+
+
+
+<!-- <div class="banner1" [style.background-image]= "url('bannerEntrada.persona')"> -->
+
+<!-- <div class="banner1" [style.background-image]= "bannerEntrada"> -->
+
+
+
+<!-- <div class="banner1" [ngStyle]="{'background-image': url(' + bannerEntrada + ')}"> -->
+
+
+
+
+<!-- via stakfnnvgfbfgn   COMPILA PERO NO CARGA NADA -->
+<!-- <div class="banner1" [ngStyle]="{'background':'url('+bannerEntrada+')'}"> -->
+
+<!--  COMPILA PERO NO CARGA NADA ,,,,,,,naadaaaaaaaaaaaaaaa anadaaaaaaaaaaaaaaaaaaaaaaaaa  LLORE ALL DAY ENTRE ESTO Y EL DELETE-->
+<!-- <div  class="banner1" [style.background-image]="bannerEntrada" >  -->
+
+
+<!-- <div class="banner1" [ngStyle]="{'background':'url(+bannerEntrada+)'}"> -->
+
+
+<!--  COMPILA PERO NO CARGA NADA -->
+<!-- <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'"> -->
+
+
+<!--  COMPILA PERO NO CARGA NADA -->
+<!-- <div class="banner1"   [ngStyle]= "{'background': 'bannerEntrada'}" > -->
+
+
+
+<!-- este no da error pero nocarga nada -->
+<!-- <div class="banner1" [ngStyle]="{'background-image': 'url(${bannerEntrada})'} "> -->
+
+<!-- <div class="banner1" [ngStyle]="{'background-image': '}url('${bannerEntrada}')'}"> -->
+<!-- <div class="banner1" [ngStyle]="{{background-image: 'url('${bannerEntrada}')}} "  > -->
+
+
+
+
+
+<!-- <div class="banner1" [style.background-image]="bannerEntrada"> -->
+
+
+
+
+
+<!-- <div class="banner1" [style.background-image]="'url(${bannerEntrada.persona})'">  -->
+
+
+<!-- <div class="banner1" [ngStyle]=" {'background-image':  url(${data.persona})} " > -->
+
+
+<!-- <div class="banner1" [ngStyle]="{'background': ' url(' + bannerEntrada + ')'}"> -->
+
+
+
+<!--  ///////////////////////////////////////////////////////////////////////////carga este pero una imagen online y poniendo 
+    this.bannerEntrada= "https://static.eldiario.es/clip/b75933f3-8399-4ddd-85ee-d73c86314089_16-9-discover-aspect-ratio_default_0.jpg";
+ en el ts,,,o sea estoy accediendo mal al dato de la url? -->
+<!-- <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'"> -->
+
+
+
+
+<!-- tampoco anda, ero estoy accediendo mal a lista -->
+<!-- <div class="banner1"   [ngStyle]="{'background-image': 'url(' + persona[7].bannerEntrada + ')'}" > -->
+
+
+<!-- botones edicion seccion ---------------------------------------->
+<!-- no se como ponerlo abajo-->
+<!-- <div class="text-end ">
+                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
+                        data-bs-target="#modalBanner1"><i class="fa-solid fa-pen"></i></button>
+                 
+                    <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button>
+                </div>
+
+            </div>
+
+            <div class="">
+                <div class="">
+
+
+                    nada 
+                    <div class="banner1" [style.background-image]="personaItem.bannerEntrada"
+                        *ngFor="let personaItem of persona">
+
+                        <div class="banner1" [style.background-image]="bannerEntrada"></div>
+
+                    </div> -->
+
+
+<!-- <div class=" d-flex flex-row redes1">
+            <a class="pe-4 pt-3" [href]="cadaRed.url" target="_blank" *ngFor="let cadaRed of redesTodas">
+                <i [ngClass]="cadaRed.iconred"></i>
+            </a>
+        </div> -->
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ////////////////////////////OKOKO////////////////////////////////andaba desde el VIEJO json,solo fuera de persona -->
+<!-- <div class="banner1" [style.background-image]="bannerEntrada">
+
+
+    <div class="text-end ">
+        <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal" data-bs-target="#modalBanner1"><i
+                class="fa-solid fa-pen"></i></button>
+
+        <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button>
+    </div>
+
+</div> -->
+
+<!-- ***************************************************************************
  *******************************************************************************
  *******************************************************************************
  *******************************************************************************
@@ -28,9 +242,23 @@
 
 
 
-        <!--  ggggggg modal -->
 
-     <!-- <div class="modal-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  ggggggg modal -->
+
+<!-- <div class="modal-content">
         <div class="modal-header">
             <h1 id="" class="modal-title fs-5">Editar Banner</h1><i data-bs-target="#modalBanner1"
                 data-bs-toggle="modal" aria-label="Volver" class="fa-solid fa-rotate-left"></i>
@@ -43,7 +271,7 @@
                                 id="url" placeholder="Banner URL" formcontrolname="url"
                                 class="form-control ng-untouched ng-pristine ng-invalid">
                             <div id="urlHelp" class="form-text">Ingresar una URL</div>   -->
-                        <!-- </div>
+<!-- </div>
                         <div class="col-12 mt-3"><label for="description" class="form-label">Descripción</label><input
                                 type="text" id="description" placeholder="Descripción de la imagen"
                                 formcontrolname="description" class="form-control ng-untouched ng-pristine ng-invalid">
@@ -62,16 +290,15 @@
                     </div>
                 </div>
                 <div class="modal-footer"><button data-bs-target="#bannersModal" data-bs-toggle="modal"
-                        aria-label="Actualizar" class="btn btn-black-mini">Actualizar</button></div> 
+                        aria-label="Actualizar" class="btn btn-black-mini">Actualizar</button></div>
             </div>
         </form>-->
-    </div> 
 
 
 
 
 
 
-    <!-- fin half banner1 //////////////////////////////////////////////
+
+<!-- fin half banner1 //////////////////////////////////////////////
         /////////////////////////////////////////////////////////////// -->
-

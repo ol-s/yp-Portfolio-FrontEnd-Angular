@@ -7,14 +7,71 @@
             <div class="row">
 
                 <!-- banner educacion ------------------------------------------------------->
+                <!-- anotaciones el el ts, no pude conectarlo todavia,a no ser que lo ponga al banner dentro de entidad educacion?
+                 //////////////////////////////////OJO PORQUE ESTO YA ESTA CONECTADO AL SERVICIO DEL BACK, 
+                ////////////////////O SEA QUE TENDRIA QUE ESCRIBIRLO ASI, NO COMO CON EL JSON DE ANGULAR (PARA EL BANNER DIGO) 
+    //////////////////ASI ES CON EL JSON
+    //this.personaItems = data.persona
+    //this.bannerEducacion = `url(${data.persona})` 
+ -->
+                <!-- --------------/////////--------con banner educacion dentro de persona (IMPORTAR EN EL TS SERVICIO PERSONA ETC, MESSY)--------------------------------- -->
+                <!-- <div *ngFor="let itemPersona of personaItems">
+                    <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
+                        [ngStyle]="{'background-image': ' url(' + itemPersona.bannerEducacion + ')'}">
+
+                        <div class=" ">
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div> -->
+
+
+
+
+
+
+                <!-- --------------------------------------con banner educacion dentro de educacion
+    ooooooooooooooooooo nvm, no puedo porque el bucle es de arrays iguales, logo/institucion/diploma,,,hay que hacer desde persona nomas--------------------------------- -->
+                <!-- <div *ngFor="let estudio of estudiosTodos"     ESTO NO SIRVE>
+                    <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
+                         [ngStyle]="{'background-image': ' url(' + estudio.bannerEducacionDentro + ')'}">
+                
+                        <div class=" ">
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <!-- -----------!!!!!!!!!TEMPORAL!!!!!!--------------con banner educacion url suelto en educacion ts, 
+                ---------------------------------NO EN LA BASE DE DATOS OJO, CONECTAR A SERVICIO PERSONA!!!(y al serv educacion ofc)
+                no lo hice esta vez porque estoy arreglando el json,y educacion ya esta conectado al back y se escribe todo diferente en el TS
+                ---------------------------------------------------------------------------------------------------------------- -->
                 <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
-                    [style.background-image]="bannerEducacion">
-                    <!-- botones edicion banner -->
-                    <div class="">
+                    [ngStyle]="{'background-image': ' url(' + bannerEducacionSueltoTS + ')'}">
+
+                    <div class=" ">
                         <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
                         <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
+                <!-- -----------!!!!!!!!!TEMPORAL!!!!!!--------------con banner educacion url suelto en educacion ts,-->
+
+
+                
+
+
+                <!-- ////////////////////////////////////////////OKOK CON JSON VIEJO Y BANNER SUELTO FUERA DE PERSONA///////////////////////////// -->
+                <!-- <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
+                    [style.background-image]="bannerEducacion">-->
+                <!-- botones edicion banner -->
+                <!-- <div class="">
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+                    </div> -->
+                <!--</div> -->
                 <!-- order-sm-first order-last agregados para que colapse la foto abajo del texto y no al reves +border
                     https://dev.to/codeply/re-order-grid-columns-in-bootstrap-5-135k
                     https://www.codeply.com/p/T52wfQIdG6 -->
@@ -53,14 +110,40 @@
                                 data-bs-target="#modalEducacionEdit">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
+
+
+                            <!-- LLAMANDO AL MODALCITO ELIMINAR ACA ARRIBA DENTRO DEL ngfor TAMBIEN ELIMINA EL PRMER ID QUE ENCUENTRA -->
                             <!-- <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
                                 data-bs-target="#modalEliminarItem">
                                 <i class="fa-solid fa-trash"></i>
-                            </button> -->
+                            </button>
+                            <form class="modal fade" id="modalEliminarItem" tabindex="-1"
+                                aria-labelledby="exampleModalLabel2" aria-hidden="true">                            
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content ">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel2">Eliminar estudio</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body p-5 pt-0">
+                                            <button type="submit"
+                                                class="w-100 mb-2 mt-5 btn btn-lg rounded-0 btn-loginout3 "
+                                                (click)="deleteEstudio(estudio.id)  " [(ngModel)]="id">
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form> -->
+
+
+
 
 
                             <!-- ////////////LLAMA AL MODAL ELIMINAR DE ABAJO //////////////////////////////////////////
-                                ///QUE   borra el primer id que encuentra, ojooooooooooooooooo --> 
+                                ///QUE   borra el primer id que encuentra, ojooooooooooooooooo -->
 
                             <!-- <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
                                 data-bs-target="#modalEliminarItem">
@@ -79,21 +162,11 @@
                             <!-- <button type="submit" class="btn" (click)="deleteEstudio(estudio.id)">   
                                 <i class=" fa-solid fa-x"></i>
                             </button> -->
-                            <button type="submit" class="botonEditSubseccion" (click)="deleteEstudio(estudio.id)">   
+
+                            <!-- ////////////////////////////////////OKOKOKO////////////////////////////////////////////////////// -->
+                            <button type="submit" class="botonEditSubseccion" (click)="deleteEstudio(estudio.id)">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
-
-
-
-
-
-
-
-
-                            <!-- h
-                                <button type="submit" class="btn btn-close-white" 
-                                (click)="deleteEstudio(estudio.id)"><i class="fa-solid fa-trash-can"></i></button> -->
-
 
                         </div>
                     </div>
@@ -123,9 +196,9 @@
 
 <!-- modal eliminar, no se si ponerlo asi, aparte, uno para cada uno de los items(??) o donde -->
 <form class="modal fade" id="modalEliminarItem" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
- <!-- <form class="modal fade" id="modalEliminarItem" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true"
+    <!-- <form class="modal fade" id="modalEliminarItem" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true"
  (ngSubmit)="onDelete($event)"> -->
-   
+
     <!-- poniendo ngsumit aca abajo tampocoanda,,antes que anduviera, igual borra el primero de la lista no el que queres borrar -->
 
     <div class="modal-dialog modal-dialog-centered" *ngFor="let estudio of estudiosTodos">
@@ -140,8 +213,8 @@
             y borro lo que no tenia que borrar ( asi que vamos a dejar el alert del browsernomas por ahora,
              capaz hay que hacer un component modal aparte) , buo, lo puse alla arriba y me aparecio unsolo boton
             PERO ME ELIMINO EL PRIMER ESTIDO DE LA LISTAAA, NO DONDE APRETE EL BOTON,,SERA LO MISMO QUE CON EL MDAL EDITAR?-->
-            <div class="modal-body p-5 pt-0" >
-                <form class=""   >
+            <div class="modal-body p-5 pt-0">
+                <form class="">
                     <!-- <button class="w-100 mb-2 mt-5 btn btn-lg rounded-0 btn-loginout3 " type="submit">
                         Eliminar
                     </button> -->
@@ -150,7 +223,7 @@
                         (click)="deleteEstudio(educacion.id)  " [(ngModel)]="id">
                         Eliminar
                     </button> -->
-                    <button type="submit" class="btn" (click)="deleteEstudio(estudiosTodos.id)">   
+                    <button type="submit" class="btn" (click)="deleteEstudio(estudiosTodos.id)">
                         <i class=" fa-solid fa-x"></i>
                     </button>
                 </form>

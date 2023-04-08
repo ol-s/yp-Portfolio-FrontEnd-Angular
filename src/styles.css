@@ -1488,3 +1488,10 @@ ver tmb el salto brusco de las letras rojas, se amplia el modal, aparece la barr
 
 
 */
+
+
+
+/* acomodar arriba, es para proyectos nombre, se iba unpoco a la derecha en phone */
+.skill-title{
+  margin-right: 2em !important;
+}

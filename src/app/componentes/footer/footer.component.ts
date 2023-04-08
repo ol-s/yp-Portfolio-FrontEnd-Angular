@@ -1,3 +1,46 @@
+
+
+
+
+/////////////////////////////////////NUEVO JSON, NO DESDE EL BACK!////////////////////////////////////////////////
+import { Component, OnInit } from '@angular/core';
+import { DatosService } from 'src/app/servicios/datos.service';
+
+@Component({
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
+})
+export class FooterComponent implements OnInit {
+
+  personaItems: any = [];
+
+  constructor(private datos: DatosService) { }
+
+  ngOnInit(): void {
+    this.datos.getDatos().subscribe(data => {
+      this.personaItems = data.persona
+    });
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////VIEJO JSON//////////////////////////////////////////////
+
+/*
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';
 
@@ -29,3 +72,4 @@ export class FooterComponent implements OnInit {
 
 
 }
+*/

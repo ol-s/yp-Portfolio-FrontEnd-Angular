@@ -1,6 +1,6 @@
-<!--Modal proyectos add-->
+<!--Modal proyectos edit-->
 <form class="modal fade" id="modalProyectosEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
- [formGroup]="form" (ngSubmit)="onEnviar($event)" name="proyectosEditForm">
+    [formGroup]="form" (ngSubmit)="onEnviar($event)" name="proyectosEditForm">
 
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content ">
@@ -38,6 +38,7 @@
                         <label for="floatingTextarea2">Editar: Descripción</label>
                     </div>
                 </div> -->
+
             <div class="modal-body">
 
                 <!-- input --------------------------------------------------------------- -->
@@ -55,7 +56,7 @@
                     </p>
                 </div>
 
-                <!-- input --------------------------------------------------------------- -->
+                <!-- input -----------------------------esto sacarrr---------------------------------- -->
                 <div class=" form-floating mb-4">
                     <input type="text" formControlName="altImg" class="form-control rounded-0 formulariosinput"
                         id="floatingInput" placeholder="altImg" [ngClass]="{'is-invalid': altImg?.errors && altImg?.touched, 
@@ -85,6 +86,23 @@
                     </p>
                 </div>
 
+                <!-- YA FUE, ME VA A DAR PROBLEMAS (poner date, solo quiero anio), Y SI LIMITO A 4 CARACTERES (type number)
+                NOPUEDO ESCRIBR '2023' '2022-2023', see?
+                ver si dejo o saco, incluir en el java, pero en angular tendria que hacer diferentes modales....wait, 
+                igual tengo q hacer diferentes modales para arq y web :/  -->
+                <div class=" form-floating mb-4">
+                    <input type="text" formControlName="urlimg" class="form-control rounded-0 formulariosinput"
+                        id="floatingInput" placeholder="urlimg" [ngClass]="{'is-invalid': urlimg?.errors && urlimg?.touched, 
+                  'is-valid': !urlimg?.errors && urlimg?.touched}">
+                    <label for="floatingInput">fechaproyecto,,yo kiero anio nomas, puse number</label>
+                </div>
+                <div *ngIf="urlimg?.errors  && urlimg?.touched">
+                    <p *ngIf="urlimg?.hasError('required')" class="error2 text-start">
+                        * Campo requerido
+                    </p>
+                </div>
+
+
                 <!-- input --------------------------------------------------------------- -->
                 <div class=" form-floating mb-4">
                     <input type="text" formControlName="titulop" class="form-control rounded-0 formulariosinput"
@@ -103,8 +121,7 @@
                 <!-- input --------------------------------------------------------------- -->
                 <div class=" form-floating mb-2">
                     <textarea type="text" formControlName="descripcionp" class="form-control rounded-0 formulariosinput"
-                        placeholder="descripcionp" id="floatingTextarea2" style="height: 75px" 
-                        [ngClass]="{'is-invalid': descripcionp?.errors && descripcionp?.touched, 
+                        placeholder="descripcionp" id="floatingTextarea2" style="height: 75px" [ngClass]="{'is-invalid': descripcionp?.errors && descripcionp?.touched, 
                                       'is-valid': !descripcionp?.errors && descripcionp?.touched}"></textarea>
                     <label for="floatingTextarea2">Editar: Descripción del proyecto</label>
                 </div>
@@ -124,9 +141,8 @@
 
             <!-- aceptar---------------------------------------------------------------------------- -->
             <div class="modal-body">
-                <button type="submit" class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5" >Aceptar</button>
+                <button type="submit" class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5">Aceptar</button>
             </div>
         </div>
     </div>
-
 </form>

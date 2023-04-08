@@ -2,9 +2,12 @@
         ///////////////////////////////////////////////////////////////-->
         <nav class="navbar bg-light fixed-top navbar-expand-lg">
             <div class="container-fluid">
+                
                 <a class="navbar-brand" href="https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa"
-                    target="_blank">
-                    <img src="./assets/img/logo-argentina-programa.png" alt="logo argentinaprograma"></a>
+                    target="_blank" *ngFor="let itemPersona of personaItems">
+                    <!-- <img src="./assets/img/logo-argentina-programa.png" alt="logo argentinaprograma"></a> -->
+                    <img [src]="itemPersona.logoBrand" alt="logo argentinaprograma"></a>
+
                 <!-- para separarlo en ipad del borde derecho, pe-4 -->
                 <button class="navbar-toggler pe-4" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

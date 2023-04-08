@@ -20,10 +20,13 @@ export class EducacionComponent implements OnInit {
   //estudiosTodos: Educacion[]=[]; //se llama al modelo (poner el nombre que lleva en model, Educacion ***) que es un array
   //tengo que dejar estudiostodos cos asi esta en los pipes en el html
 
-
+  personaItems: any = [];
   bannerEducacion: string = '';  //como voy a traer los banners?? :/
 
+  //conectar al servicio persona y sacar estooooooooooooooooooooo,para meter al banner en la base dee datos
+  bannerEducacionSueltoTS: string = '';
 
+  
   estudiosTodos: any = [];
   estudios: Educacion[] = [];
   //titulo: string = "Educacion";  //k
@@ -56,6 +59,16 @@ export class EducacionComponent implements OnInit {
 
     // tampoco anda esto    this.deleteEstudio(this.educacion.id);
 
+
+
+
+    //////////////////////////////////OJO PORQUE ESTO YA ESTA CONECTADO AL SERVICIO DEL BACK, 
+    /////////////////////////////////O SEA QUE TENDRIA QUE ESCRIBIRLO ASI, NO COMO CON EL JSON DE ANGULAR (PARA EL BANNER DIGO) 
+    //////////////////ASI ES CON EL JSON
+    //this.personaItems = data.persona
+    //this.bannerEducacion = `url(${data.persona})` 
+
+    this.bannerEducacionSueltoTS = "../assets/img/banner/3educacion.jpg"
   }
 
 
@@ -66,54 +79,11 @@ export class EducacionComponent implements OnInit {
   //solo este metodo hacemos?? y el new/find/update/delete?  h nor k  lo tienen...  k no tiene delete tampoco
   cargarEstudios(): void {
     this.educServ.listaEstudios().subscribe(data => { this.estudiosTodos = data });
+    
   }
   //listaEstudios()  es lo mismo que escribi en el educacion.service.ts,,,,si tuviera algo entre parentsis aca lo pongo 
   //'data' es alias
   //estudiosTodos es la variable de mas arriba  estudiosTodos: Educacion[]=[]
-
-
-
-
-
-  /*       //tooooooooooooodo da error
-  findEstudio(id: number){
-    this.educServ.findEstudio(id).subscribe(data => {this.estudiosTodos=data});  
-  }
-*/
-
-
-
-  //en express h tenia este tmb, no en ghb, me da error aca
-  // idEdit(id: number) {
-  //   this.isTrue = true;
-  //   this.isEditar = id;
-  //   }
-
-
-
-
-
-
-
-  /*    queria ver si tenia que encntrar by id first, pero da error esto
-    findEstudio(id: number){
-      this.educServ.findEstudio(id).subscribe({
-        next: (data) => {
-          this.educServ.findEstudio(data);
-        },
-        error: (e) => console.error(e),
-        complete: ()=> console.info('complete')
-      });
-      console.log("Estudios cargados");
-    }
-  */
-
-
-
-
-
-
-
 
 
 
@@ -158,7 +128,6 @@ export class EducacionComponent implements OnInit {
       window.location.reload();  //se recarga la pagina
     });
   }
-
 */
 
 
@@ -208,9 +177,7 @@ export class EducacionComponent implements OnInit {
   deleteEstudio(id: number) {  //ESTO NO USE, VER SI QUEDA DESPUES
     if (id != undefined) {
       this.educServ.deleteEstudio(id).subscribe(data => {     //AH LOS OTROS CIERRAN LA LLAVA ACA, EL ALERT VA ABAJO
-
         this.cargarEstudios();
-
       }, err => {
         alert("Estudio eliminado correctamente!, click Aceptar para recargar la pagina.")
         //bue,me aparece solo este mensaje de error, so use este alerta :/ borra bien tho
@@ -226,6 +193,8 @@ export class EducacionComponent implements OnInit {
       this.educServ.deleteEstudio(id).subscribe(data => { });
       window.location.reload();
       alert ("Estudio eliminado correctamente, da click en 'Aceptar' para recargar la pagina.");
+      //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
+      //PRENDO NOMAS, DA PROBLEMAS
     }
   }
 
@@ -242,8 +211,6 @@ export class EducacionComponent implements OnInit {
 */
 
 }
-
-
 
 
 

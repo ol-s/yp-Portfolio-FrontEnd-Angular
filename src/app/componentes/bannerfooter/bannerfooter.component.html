@@ -1,12 +1,38 @@
-<!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!!!!!!!!! :O     5am -->
-<div class="bannerFOOTER" [style.background-image]=" bannerSalida ">
-    <!-- botones edicion seccion ---------------------------------------->
-    <div class="text-end ">
-        <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-pen"></i></button>
-        <!-- <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-plus"></i></button> -->
-        <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button>
+<!-- ///////////////////////////////////nUEVO JSON////////////////////////////////////////////// -->
+<!-- las HORAS buscando maneras de insertar esto, BOTH TIMES -->
+<div *ngFor="let itemPersona of personaItems">
+    <div class="bannerFOOTER" [ngStyle]="{'background-image': ' url(' + itemPersona.bannerSalida + ')'}">
+        <!-- botones edicion seccion -->
+        <div class="text-end ">
+            <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-pen"></i></button>
+            <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button>
+        </div>
     </div>
 </div>
+
+
+
+
+
+
+<!-- ///////////////////////////////////VIEJO JSON////////////////////////////////////////////// -->
+<!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!!!!!!!!! :O     5am -->
+<!-- <div class="bannerFOOTER" [style.background-image]=" bannerSalida ">
+    
+    <div class="text-end ">
+        <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-pen"></i></button> -->
+        <!-- <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-plus"></i></button> -->
+        <!-- <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
 
 <!-- 
     ahora siiii, poniendo esto en html          
