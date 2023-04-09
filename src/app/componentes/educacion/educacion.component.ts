@@ -67,7 +67,7 @@ export class EducacionComponent implements OnInit {
     //////////////////ASI ES CON EL JSON
     //this.personaItems = data.persona
     //this.bannerEducacion = `url(${data.persona})` 
-
+    //////////////////////////////////////////////////////////temporal!! conecta a persona/////////////////////////
     this.bannerEducacionSueltoTS = "../assets/img/banner/3educacion.jpg"
   }
 
@@ -189,10 +189,12 @@ export class EducacionComponent implements OnInit {
   //k ----ESTE ANDAN BIEN LAS ALERTAS!!!/////////////////////////
 
   deleteEstudio(id: number) {
-    if (confirm("¿Querés eliminar este estudio?")) {
+    if (confirm("❗❗ ¿Querés eliminar este item? ")) {        //(confirm("❗❗❗⚠️ ¿Querés eliminar este estudio?")) {
       this.educServ.deleteEstudio(id).subscribe(data => { });
       window.location.reload();
-      alert ("Estudio eliminado correctamente, da click en 'Aceptar' para recargar la pagina.");
+      //alert ("Estudio eliminado correctamente, da click en 'Aceptar' para recargar la pagina.");
+      //alert ("Estudio eliminado ✔× ❌ ✔️ &#10060. Click en 'Aceptar' para recargar la página.");
+      alert ("Estudio eliminado ✔. Click en 'Aceptar' para recargar la página.");
       //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
       //PRENDO NOMAS, DA PROBLEMAS
     }

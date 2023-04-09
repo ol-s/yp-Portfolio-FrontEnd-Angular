@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 // importamos las librerias de formulario que vamos a necesitar
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+///**********************************pppppppppppppppppppppppppppppppppp
+//import { DatosService } from 'src/app/servicios/datos.service';
+///**********************************pppppppppppppppppppppppppppppppppp
+
 @Component({
   selector: 'app-modal-skill-add',
   templateUrl: './modal-skill-add.component.html',
@@ -12,6 +16,46 @@ export class ModalSkillAddComponent implements OnInit {
 
   form: FormGroup;
 
+
+
+  //*************************ppppppppppppppppppppp
+  //id?: string;
+  //categories: Category[] = [];
+  //rubros : any;
+  /*states = [
+    {name: 'Arizona', abbrev: 'AZ'},
+    {name: 'California', abbrev: 'CA'},
+    {name: 'Colorado', abbrev: 'CO'},
+    {name: 'New York', abbrev: 'NY'},
+    {name: 'Pennsylvania', abbrev: 'PA'},
+  ];
+  <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <mat-label>States</mat-label>
+              <mat-select formControlName="state">
+                <mat-option [value]="state" *ngFor="let state of states">
+                  {{ state.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs">
+            <select formControlName="state">
+              <option [ngValue]="state" *ngFor="let state of states">
+                {{ state.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+        */
+
+  //*************************[ppppppppppppppppppppppppppppppppppp */
+  //ai abajo tmb  constructor(private formBuilder: FormBuilder, private datos: DatosService)  lo de datos service agregue yo
+
+
   constructor(private formBuilder: FormBuilder) {
 
     this.form = this.formBuilder.group({
@@ -21,7 +65,10 @@ export class ModalSkillAddComponent implements OnInit {
     })
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+
+
+  }
 
   // metodos para el formulario
   get rubro() {
@@ -65,6 +112,20 @@ export class ModalSkillAddComponent implements OnInit {
     }
   }
 
+
+
+
+
+
+  ///**********************************pppppppppppppppppppppppppppppppppp
+  /*ngOnInit(): void {
+    this.datos.getDatos().subscribe(data => {
+   
+        this.rubros = data.rubrosss
+
+    });
+  }*/
+  ///**********************************pppppppppppppppppppppppppppppppppp
 }
 
 

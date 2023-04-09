@@ -11,14 +11,46 @@
             <!-- primera parte modal-------------------------------------------------------------- -->
             <div class="modal-body">
 
+
+                <!-- *********************************************ppppppppppppppppppppppppppppppppppppppp -->
+
+                <!-- category le llama al rubro creo, name/id/img -->
+                <!-- <div class="row">
+                    <div class="col-xs">
+                        <form>
+                            <label>rubros</label>
+                            <select formControlName="rubro_id">
+                                <option [value]="rubro._id" *ngFor="let rubro of rubros">
+                                    {{ rubro.name }}
+                                </option>
+                            </select>
+                        </form>
+                    </div>
+                </div> -->
+
+                <!-- *********************************************ppppppppppppppppppppppppppppppppppppppp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="container text-center justify-content-between">
                     <h5>Agregar skill</h5>
 
                     <!-- input rubro --------------------------------------------------------------- -->
-                    <div class="form-floating mb-3">                        
+                    <div class="form-floating mb-3">
                         <select class="form-select rounded-0 formulariosinput" id="floatingSelect"
-                            aria-label="Floating label select example"  formControlName="rubro" class="form-control rounded-0 formulariosinput"
-                            id="" placeholder="rubro" [ngClass]="{'is-invalid': rubro?.errors && rubro?.touched, 
+                            aria-label="Floating label select example" formControlName="rubro"
+                            class="form-control rounded-0 formulariosinput" id="" placeholder="rubro" [ngClass]="{'is-invalid': rubro?.errors && rubro?.touched, 
                                                                     'is-valid': !rubro?.errors}">
                             <!-- <input formControlName="rubro" class="form-control rounded-0 formulariosinput"
                             id="" placeholder="rubro" [ngClass]="{'is-invalid': rubro?.errors && rubro?.touched, 
@@ -40,8 +72,7 @@
                     <!-- input nombre --------------------------------------------------------------- -->
                     <div class=" form-floating mb-4">
                         <input type="text" formControlName="nombre" class="form-control rounded-0 formulariosinput"
-                            id="floatingInput" placeholder="nombre" 
-                            [ngClass]="{'is-invalid': nombre?.errors && nombre?.touched, 
+                            id="floatingInput" placeholder="nombre" [ngClass]="{'is-invalid': nombre?.errors && nombre?.touched, 
                                           'is-valid': !nombre?.errors }">
                         <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
                         <label for="floatingInput">Nombre Skill</label>
@@ -59,9 +90,9 @@
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="porcentaje"
                             [ngClass]="{'is-invalid': porcentaje?.errors && porcentaje?.touched, 
                                           'is-valid': !porcentaje?.errors}">
-                                          <!-- el valid no andabien sacandole el touched, pones 250 y 
+                        <!-- el valid no andabien sacandole el touched, pones 250 y 
                                             muestra el rojo cuando salis del imput recien, lo deje asi igual (: -->
-                                          <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                        <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
                         <label for="floatingInput">% Skill (de 0-100)</label>
                     </div>
                     <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, etc inputs)-->
