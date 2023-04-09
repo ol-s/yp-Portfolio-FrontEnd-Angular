@@ -1,4 +1,54 @@
+///////////////////////////////////////////////////integrado al back, desde 9-4-23///////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import { Component, OnInit } from '@angular/core';
+import { Persona } from 'src/app/model/persona';                      
+import { PersonaService } from 'src/app/servicios/persona.service';
+
+@Component({
+  selector: 'app-bannerfooter',
+  templateUrl: './bannerfooter.component.html',
+  styleUrls: ['./bannerfooter.component.css']
+})
+export class BannerfooterComponent implements OnInit {
+
+  persona: Persona[] = [];
+  personaItems: any = [];
+  //no hace falta    bannerAvatar: string = '';
+
+  constructor(private persoServ: PersonaService) { }
+
+  ngOnInit(): void {  
+    this.cargarPersona();
+  }
+
+  cargarPersona(): void {
+    this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });
+    
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ///////////////////////////////////////////////////nuevo json////////////////////////////////////////////////
+////////////////////////////////////CON JSON NUEVO ENTIDAD PERSONA//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////CORRIENDO OK CON JSON ANGULAR HASTA 9-4-23///////////////////////////////////
+////////////////////si comento lo de arriba y descomento esto se ve como antes SIN CONECTAR CON NETB, TOMCAT ETC//////////////////////////
+/*
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';
 
@@ -21,6 +71,7 @@ export class BannerfooterComponent implements OnInit {
     });
   }
 }
+*/
 
 
 

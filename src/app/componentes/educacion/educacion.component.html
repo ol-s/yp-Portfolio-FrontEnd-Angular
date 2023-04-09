@@ -6,61 +6,51 @@
         <div class="container-fluid ">
             <div class="row">
 
-                <!-- banner educacion ------------------------------------------------------->
-                <!-- anotaciones el el ts, no pude conectarlo todavia,a no ser que lo ponga al banner dentro de entidad educacion?
-                 //////////////////////////////////OJO PORQUE ESTO YA ESTA CONECTADO AL SERVICIO DEL BACK, 
-                ////////////////////O SEA QUE TENDRIA QUE ESCRIBIRLO ASI, NO COMO CON EL JSON DE ANGULAR (PARA EL BANNER DIGO) 
-    //////////////////ASI ES CON EL JSON
-    //this.personaItems = data.persona
-    //this.bannerEducacion = `url(${data.persona})` 
- -->
-                <!-- --------------/////////--------con banner educacion dentro de persona (IMPORTAR EN EL TS SERVICIO PERSONA ETC, MESSY)--------------------------------- -->
-                <!-- <div *ngFor="let itemPersona of personaItems">
-                    <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
-                        [ngStyle]="{'background-image': ' url(' + itemPersona.bannerEducacion + ')'}">
-
-                        <div class=" ">
-                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
-                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                </div> -->
-
-
-
-
-
-
-                <!-- --------------------------------------con banner educacion dentro de educacion
-    ooooooooooooooooooo nvm, no puedo porque el bucle es de arrays iguales, logo/institucion/diploma,,,hay que hacer desde persona nomas--------------------------------- -->
-                <!-- <div *ngFor="let estudio of estudiosTodos"     ESTO NO SIRVE>
-                    <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
-                         [ngStyle]="{'background-image': ' url(' + estudio.bannerEducacionDentro + ')'}">
-                
-                        <div class=" ">
-                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
-                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                </div> -->
-
-
-                <!-- -----------!!!!!!!!!TEMPORAL!!!!!!--------------con banner educacion url suelto en educacion ts, 
-                ---------------------------------NO EN LA BASE DE DATOS OJO, CONECTAR A SERVICIO PERSONA!!!(y al serv educacion ofc)
-                no lo hice esta vez porque estoy arreglando el json,y educacion ya esta conectado al back y se escribe todo diferente en el TS
-                ---------------------------------------------------------------------------------------------------------------- -->
+                <!-- *******************banner educacion dentro de entidad persona, conectado al back**************************** -->
                 <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
-                    [ngStyle]="{'background-image': ' url(' + bannerEducacionSueltoTS + ')'}">
+                    *ngFor="let itemPersona of personaItems"
+                    [ngStyle]="{'background-image': ' url(' + itemPersona.bannerEducacion + ')'}">
 
                     <div class=" ">
                         <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
                         <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
-                <!-- -----------!!!!!!!!!TEMPORAL!!!!!!--------------con banner educacion url suelto en educacion ts,-->
-
-
+                <!-- *******************banner educacion dentro de entidad persona, conectado al back**************************** -->
                 
+
+                <!-- -----------!!!!!!!!!TEMPORAL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!, sirvio, ya lo conecte a la bd/persona
+                    SIAPAGO CONECCION A BD PORQUE ASUS NO AGUANTA, PRENDER ESTE----------------------------------------------------
+                ----------------------------- banner educacion url suelto en educacion ts, 
+                ---------------------------------NO EN LA BASE DE DATOS OJO, CONECTAR A SERVICIO PERSONA!!!(y al serv educacion ofc)
+                no lo hice esta vez porque estoy arreglando el json,y educacion ya esta conectado al back y se escribe todo diferente en el TS
+                ---------------------------------------------------------------------------------------------------------------- -->
+                <!-- <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
+                    [ngStyle]="{'background-image': ' url(' + bannerEducacionSueltoTS + ')'}">
+
+                    <div class=" ">
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                        <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div> -->
+                <!-- -----------!!!!!!!!!TEMPORAL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!--------------con banner educacion url suelto en educacion ts,-->
+
+
+
+
+
+
+                  <!-- banner educacion ------------------------------------------------------->
+                <!-- anotaciones el el ts, no pude conectarlo todavia,a no ser que lo ponga al banner dentro de entidad educacion?
+                 //////////////////////////////////OJO PORQUE ESTO YA ESTA CONECTADO AL SERVICIO DEL BACK, 
+                ////////////////////O SEA QUE TENDRIA QUE ESCRIBIRLO ASI, NO COMO CON EL JSON DE ANGULAR (PARA EL BANNER DIGO) 
+                //////////////////ASI ES CON EL JSON ***********UPDATE, PUSE 'URL' EN EL HTML AL FINAL
+                //this.personaItems = data.persona
+                //this.bannerEducacion = `url(${data.persona})` 
+                -->
+
+
+
 
 
                 <!-- ////////////////////////////////////////////OKOK CON JSON VIEJO Y BANNER SUELTO FUERA DE PERSONA///////////////////////////// -->
@@ -75,6 +65,24 @@
                 <!-- order-sm-first order-last agregados para que colapse la foto abajo del texto y no al reves +border
                     https://dev.to/codeply/re-order-grid-columns-in-bootstrap-5-135k
                     https://www.codeply.com/p/T52wfQIdG6 -->
+
+
+
+
+                <!-- --------------------------------------con banner educacion dentro de educacion
+                    ESTO NO serviaaaaaaa, lo de arriba si c json viejo, si con banner suelto, si con bannerdesde bd----------------------------------------------
+                  ooooooooooooooooooo nvm, no puedo porque el bucle es de arrays iguales, logo/institucion/diploma,,,
+                  hay que hacer desde persona nomas--------------------------------- -->
+                <!-- <div *ngFor="let estudio of estudiosTodos"     >
+                    <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
+                         [ngStyle]="{'background-image': ' url(' + estudio.bannerEducacionDentro + ')'}">
+                
+                        <div class=" ">
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div> -->
 
 
                 <div class="m-0 col-sm-8 border SSSSeducacion">

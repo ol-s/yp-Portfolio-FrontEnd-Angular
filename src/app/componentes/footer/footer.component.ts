@@ -1,8 +1,62 @@
+///////////////////////////////////////////////////integrado al back, desde 9-4-23///////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import { Component, OnInit } from '@angular/core';
+import { Persona } from 'src/app/model/persona';                      
+import { PersonaService } from 'src/app/servicios/persona.service';
+
+@Component({
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
+})
+export class FooterComponent implements OnInit {
+
+  persona: Persona[] = [];
+  personaItems: any = [];
+  //no hace falta    bannerAvatar: string = '';
+
+  constructor(private persoServ: PersonaService) { }
+
+  ngOnInit(): void {  
+    this.cargarPersona();
+  }
+
+  cargarPersona(): void {
+    this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });
+    
+  }
 
 
 
 
-/////////////////////////////////////NUEVO JSON, NO DESDE EL BACK!////////////////////////////////////////////////
+  //delete///////////////////IGUAL ESTE NO ME SIRVE ACA PORQUE NOQUIERO ELIMINAR NADA DE PERSONA, SOLO EDITAR!!///////////////////
+  deletePersona(id: number): void {
+    if (confirm("❗❗ ¿Querés eliminar este item? ")) { 
+
+      this.persoServ.deletePersona(id).subscribe(data => { });
+      window.location.reload();
+      
+      alert ("Item eliminado ✔. Click en 'Aceptar' para recargar la página.");
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////CON JSON NUEVO ENTIDAD PERSONA//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////CORRIENDO OK CON JSON ANGULAR HASTA 9-4-23///////////////////////////////////
+////////////////////si comento lo de arriba y descomento esto se ve como antes SIN CONECTAR CON NETB, TOMCAT ETC//////////////////////////
+/*
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';
 
@@ -23,6 +77,7 @@ export class FooterComponent implements OnInit {
     });
   }
 }
+*/
 
 
 
@@ -37,8 +92,7 @@ export class FooterComponent implements OnInit {
 
 
 
-
-////////////////////////////////VIEJO JSON//////////////////////////////////////////////
+////////////////////////////////VIEJO JSON, tambien andaba pero suelto, no dentro de persona//////////////////////////////////////////////
 
 /*
 import { Component, OnInit } from '@angular/core';

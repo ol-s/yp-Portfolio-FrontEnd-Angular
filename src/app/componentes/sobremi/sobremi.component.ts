@@ -1,13 +1,9 @@
-///////////////////////esto es para el back?? cyando lo hice?? MESSSSSSS MY HEAD
-/////////////////INCOMPLETO, NO SE COMO VOY A TRAER AHORA LOS DATOS COS SOBRE MI ESTA DENTRO DE PERSONA
-////////////////////////////////////////////////////////////////////////Y EXPERIENCIA ESTA APARTE, DEBERIA HACER UN COMPONENTE...
-///////////////////////////////////////////////////////////////Y TAMBIEN DEBERIA TRAER DESDE PERSONA LOS DATOS DELFOOTER/////////
-
-/*
+///////////////////////////////////////////////////integrado al back, desde 9-4-23///////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import { Component, OnInit } from '@angular/core';
-//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Educacion } from 'src/app/model/educacion';                          //*** 
-import { EducacionService } from 'src/app/servicios/educacion.service';
+import { Persona } from 'src/app/model/persona';                      
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-sobremi',
@@ -15,73 +11,48 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
   styleUrls: ['./sobremi.component.css']
 })
 
-export class EducacionComponent implements OnInit {          
+export class SobremiComponent implements OnInit {
+
+  persona: Persona[] = [];
+  personaItems: any = [];
+
+  //bannerAvatar: string = '';
+
+  //persoserv es mi alias
+  constructor(private persoServ: PersonaService) { }
 
 
-  estudiosTodos: Educacion[]=[]; //se llama al modelo (poner el nombre que lleva en model, Educacion ***) que es un array
-  bannerEducacion: string = '';  //como voy a traer los banners?? :/
-  titulo: string = "Educacion";  //k
-
-
-  seccionsobremi: any;
-  cv: string = '';  //para traer un solo dato
-  sobremi: string = '';
-  experiencias: string = '';
-
-  //banner background fixed
-  bannerAvatar: string = '';
-
-
-
-
-  //serviEduc es mi alias
-  constructor(private serviEduc: EducacionService) { }
-
-
-
-  ngOnInit(): void {  //no va nada aca adentro?, AH, DESPUES DEL METODO ABAJO CARGAMOS ACA ARRIBA //'ngonnit' cos se carga al inicio, no hagas nada, solamente mostrame esto
-    this.cargarEstudios();
- 
-
-  }   
-
-  
-  //delante puede ir public o private, si no tiene nada es public
-  //cargarestudios en mi metodo, de tipovoid porque no retorna nada,,,
-  //this. es para utilizar una variable que esta fuera del metodo, si le pasara id entre los parenteiss, abajo no pondria 'this.' ,,,express 18, min 38'
-  
-
-  //solo este metodo hacemos?? y el new/find/update/delete?  h nor k  lo tienen...  k no tiene delete tampoco
-  cargarEstudios():void{
-    this.serviEduc.listaEstudios().subscribe(data => {this.estudiosTodos=data});  
+  ngOnInit(): void {  
+    this.cargarPersona();
   }
-  //listaEstudios()  es lo mismo que escribi en el educacion.service.ts,,,,si tuviera algo entre parentsis aca lo pongo 
-  //'data' es alias
-  //estudiosTodos es la variable de mas arriba  estudiosTodos: Educacion[]=[]
+
+  
+  //this. es para utilizar una variable que esta fuera del metodo, si le pasara id entre los parenteiss, abajo no pondria 'this.' ,,,express 18, min 38'
+  //solo este metodo hacemos?? y el new/find/update/delete?..en el servicio! 
+  cargarPersona(): void {
+    this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });
+    
+  }
 
 
 
 
 
-  //en express h tenia este tmb, no en ghb, me da error aca
-  // idEdit(id: number) {
-  //   this.isTrue = true;
-  //   this.isEditar = id;
-  //   }
+  //----tendria que poner delete nomas, pero habria q cambiar todo en el back...//////IGUAL ESTE NO ME SIRVE ACA PORQUE NOQUIERO ELIMINAR NADA DE PERSONA, SOLO EDITAR!!///////////////////
+  deletePersona(id: number): void {
+    if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
+      this.persoServ.deletePersona(id).subscribe(data => { });
+      window.location.reload();
+      
+      alert ("Item eliminado ✔. Click en 'Aceptar' para recargar la página.");
+      //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
+      //PRENDO NOMAS, DA PROBLEMAS sin las dos alertas,,,ya les puse emojis so dejar asi
+    }
+  }
 
-  deleteEstudio(id: number){  //ESTO NO USE, VER SI QUEDA DESPUES
-    if(id != undefined){
-      this.serviEduc.deleteEstudio(id).subscribe(data =>{
-          alert("Estudio eliminado")
-          this.cargarEstudios();
-        }, err =>{
-          alert("No se pudo eliminar el estudio")
-        })
-    }}
 }
 
 
-*/
 
 
 
@@ -95,11 +66,10 @@ export class EducacionComponent implements OnInit {
 
 
 
-
-
-
-////////////////////////////////////CON JSON NUEVO ENTIDAD PERSONA/////////////////////////////////////////////////////////
-
+////////////////////////////////////CON JSON NUEVO ENTIDAD PERSONA//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////CORRIENDO OK CON JSON ANGULAR HASTA 9-4-23///////////////////////////////////
+////////////////////si comento lo de arriba y descomento esto se ve como antes SIN CONECTAR CON NETB, TOMCAT ETC//////////////////////////
+/*
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';
 
@@ -115,7 +85,7 @@ export class SobremiComponent implements OnInit {
   experiencias: string = '';
 
   //banner background fixed
-  */
+  
 
   personaItems: any = [];
   bannerAvatar: string = '';
@@ -143,12 +113,9 @@ export class SobremiComponent implements OnInit {
   }
 }
 
-
+*/
 // DomSanitizer-VERRRRR SI HAY PROBLEMAS
 // https://stackoverflow.com/questions/34875426/how-to-add-background-image-using-ngstyle-angular2
-
-
-
 
 
 

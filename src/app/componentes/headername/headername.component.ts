@@ -4,8 +4,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/persona';                          //*** 
 import { PersonaService } from 'src/app/servicios/persona.service';
+
+//redes es entidad aparte pero insertada tmb en la seccion header
 import { Red } from 'src/app/model/red';
 import { RedService } from 'src/app/servicios/red.service';
+
 
 @Component({
   selector: 'app-headername',
