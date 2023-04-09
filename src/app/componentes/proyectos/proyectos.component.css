@@ -9,7 +9,7 @@
 
 }
 
-/* //////******  ///cambiarle nombres a todo estoooooooooooooooooooooooo */
+/* //////******  /// */
 .proyectos-recientes img {
     height: 100%;
     width: 100%;
@@ -65,7 +65,7 @@
 
 
 /* todo d los iconos al hacer hover sobre imagenes------------------------------------ */
-/* ver el efecto de kelly sobre las fotos,
+/* ver el efecto de kelly (verde agua?) sobre las fotos,
      tambien arquitecto dinamico,,,color antes y color real when hove */
 .overlay {
     transition: all 0.2s ease;
@@ -109,6 +109,17 @@
     color: #a19484;
     font-size: 2em;
     margin: .2em;
+}
+
+
+
+.icoZoom {
+    /* transition: transform .2s ease-out; */
+    transition: all 0.17s ease-in;
+}
+
+.icoZoom:hover {
+    transform: scale(1.4);
 }
 
 /* fin PROYECTOS //////////////////////////////////////////////////////////////

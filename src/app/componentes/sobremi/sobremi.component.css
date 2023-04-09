@@ -101,6 +101,9 @@
     font-size: 1em;
     font-weight: 400;
     letter-spacing: 0.1em;
+
+    /* transition: transform 5s ; */
+    transition: all 0.09s ease-in;
     /* border-bottom: 1px solid var(--color-texto-medio-oscuro); */
   }
   .linkcv:hover {

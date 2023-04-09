@@ -18,6 +18,12 @@ export class SkillsComponent implements OnInit {
   skillsTodasIdiom: any = [];
   skillsTodasBlandas: any = [];
 
+  /****************pruebarubros*****************
+  Todasrubr1: any = [];
+  Todasrubr2: any = [];
+  Todasrubr3: any = [];*/
+
+
   //datos: tambien es un alias, nombrar como querramos
   constructor(private datos: DatosService) { }
 
@@ -28,6 +34,13 @@ export class SkillsComponent implements OnInit {
         this.skillsTodasArq = data.skillsDisenioArquitectura,
         this.skillsTodasIdiom = data.skillsIdiomas,
         this.skillsTodasBlandas = data.skillsHabilidadesBlandas
+
+          /****************pruebarubros*****************
+          this.Todasrubr1 = data.rubrosss[0].rubro1,
+          this.Todasrubr2 = data.rubrosss[1].rubro2,
+          this.Todasrubr3 = data.rubrosss[2].rubro3*/
+    
+
     });
   }
 }

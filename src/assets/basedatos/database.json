@@ -7,14 +7,17 @@
             "ocupacion": "arquitecta | programadora web fullstack jr",
 
             "sobremi": "Nuevo json con entidad persona, ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
-            "experienciasTexto":"Texto unico de experiencias en nuevo json, ver si hago toda la entidad experiencia aparteeee. Eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+            "experienciasTexto": "Texto unico de experiencias en nuevo json, ver si hago toda la entidad experiencia aparteeee. Eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
             "cv": "../assets/cv/cv-SoledadFretes.pdf",
             "email": "no use esto,,,,,,,",
 
             "bannerEntrada": "../assets/img/banner/1banner.jpg",
-            "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",      
+            "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",
             "bannerEducacion": "../assets/img/banner/3educacion.jpg",
             "bannerSalida": "../assets/img/banner/4salida.jpg",
+
+            "subtitulo1": "crear para proyectos arq web por las dudas",
+            "subtitulo2": "crear para proyectos arq web por las dudas",
 
             "servicios1": "• Proyectos de Arquitectura. Anteproyectos, Modelos 3D SKP, renders, presentaciones, legajos de obra, planos ejecutivos, presupuestos y seguimiento de obra.",
             "servicios2": "• Proyectos de Diseño Web. Concept Design, mockups, frontend y backend, sitios web responsive, administracion de base de datos nivel jr.",
@@ -51,7 +54,8 @@
             "iconred": "bi bi-instagram"
         }
     ],
-   
+
+
     "experienciasHACER LA ENDIDAD o NOO, YA DIVIDI PROYECTOS EN DOS, Y SKILLS EN 4444": "Lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
     
     
@@ -85,7 +89,6 @@
             "titulo": "Programadora web fullstack junior."
         }
     ],
-
     "skillsProgramacion": [
         {
             "id": 1,
@@ -311,6 +314,57 @@
             "tituloProyecto": "Proyecto 3. *ilustrativo",
             "descripcion": "Sipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, ipsum eget.",
             "fecha": "2023-2025"
+        }
+    ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "rubrosss ****************pruebarubros***********sacar esto sino no anda************": [
+        {
+            "rubro1": [
+                {
+                    "nombre": " skill 1",
+                    "porcentaje": "20 "
+                },
+                {
+                    "nombre": " skill 2",
+                    "porcentaje": "50 "
+                }
+            ]
+        },
+        {
+            "rubro2": [
+                {
+                    "nombre": "444444 ",
+                    "porcentaje": " 66"
+                },
+                {
+                    "nombre": "555 ",
+                    "porcentaje": " 88"
+                }
+            ]
+        },
+        {
+            "rubro3": [
+                {
+                    "nombre": "DEL RUBRO 3 -1 ",
+                    "porcentaje": " 54"
+                },
+                {
+                    "nombre": "DEL RUBRO 3 -2 ",
+                    "porcentaje": " 29"
+                }
+            ]
         }
     ]
 }
