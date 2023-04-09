@@ -1,4 +1,4 @@
-<section id="proyectos" class=" container-fluid proyectos-recientes seccion-clara d-flex flex-column">
+<section id="proyectos" class=" container-fluid proyectos-recientes  d-flex flex-column">
 
 
 
@@ -22,7 +22,7 @@
 
 
     <!-- Galeria de Proyectos ARQ ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-    <div class="proyectos-contenedor">
+    <div class="proyectos-contenedor seccion-clara pb-5">
 
 
         <!-- ********************************************* si divido por arq y web DEJAR O APAGAR ***************************************** -->
@@ -52,11 +52,12 @@
                     </div>
 
                     <div class="overlay">
-                        <div class="iconos-contenedor">
+                        <div class="iconos-contenedor pt-4">
 
                             <!-- asi no da error el alt pero no muestra el alt en la pagina tampoco, so
                                 <a target="_blank" class="" [href]="cadaProyecto.imgTargetBlank" [attr.alt]="cadaProyecto.targetBlackAlt" > -->
-                            <a target="_blank" class="icoZoom mb-2" [href]="cadaProyecto.hrefTargetBlank">
+                            <a target="_blank" class="" [href]="cadaProyecto.hrefTargetBlank"
+                            class="ps-3 pe-3">
                                 <i class="bi bi-card-image"></i>
                                 <!-- <i class="bi bi-plus-square"></i> -->
                                 <!-- ----------------------pongo el svg sin redondeado en las puntas --nop,y hay que ajustar color etc-->
@@ -140,10 +141,10 @@
 
     <!-- Galeria de Proyectos WEB ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
         <!-- ********************************************* si divido por arq y web DEJAR O APAGAR *********************************************** --> 
-    <div class="proyectos-contenedor">
+    <div class="proyectos-contenedor seccion-oscura pb-5">
         <div class="container-fluid proyectostitulo justify-content-start">
             <div class="text-end" >
-                <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
+                <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
@@ -166,12 +167,12 @@
                     </div>
 
                     <div class="overlay">
-                        <div class="iconos-contenedor mb-5 pb-5">
+                        <div class="iconos-contenedor ">
                             <!-- para que se ponga la manito antes hay que rodear todo con la etiqueta <a> -->
-                            <a [href]="cadaProyecto.hrefRepo" target="_blank" rel="noopener noreferrer" class="ps-3 pe-3  icoZoom">
+                            <a [href]="cadaProyecto.hrefRepo" target="_blank" rel="noopener noreferrer" class="ps-3 pe-3">
                                 <i class="bi bi-github"></i>
                             </a>
-                            <a [href]="cadaProyecto.hrefLive" target="_blank" rel="noopener noreferrer" class="ps-3 pe-3  icoZoom">
+                            <a [href]="cadaProyecto.hrefLive" target="_blank" rel="noopener noreferrer" class="ps-3 pe-3">
                                 <i class="bi bi-laptop"></i>
                             </a>
                             <!-- <a [href]="cadaProyectoWeb.link2" target="_blank" rel="noopener noreferrer">
@@ -189,11 +190,11 @@
                 <!-- botones edit subseccion -->
                 <div class="text-end">
                    
-                    <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
+                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
                         data-bs-target="#modalProyectosEdit">
                         <i class="fa-solid fa-pen"></i>
                     </button>
-                    <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
+                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
                         data-bs-target="#modalEliminarProyecto">
                         <i class="fa-solid fa-trash"></i>
                     </button>

@@ -281,9 +281,9 @@
     "proyectosWeb": [
         {
             "id": 1,
-            "imgPageProyecto": "../assets/img/proyectos/proyecto1+.jpg",
+            "imgPageProyecto": "../assets/img/proyectos/w1.jpg",
             "imgPageAlt": "Proyecto 1",
-            "hrefTargetBlank": "../assets/img/proyectos/proyecto1.jpg",
+            "hrefTargetBlank": "",
             "targetBlackAlt": "Proyecto 1",
             "hrefRepo": "https://github.com/ol-s",
             "hrefLive": "https://ponerdespues.com",
@@ -293,9 +293,9 @@
         },
         {
             "id": 2,
-            "imgPageProyecto": "../assets/img/proyectos/web2.jpg",
+            "imgPageProyecto": "../assets/img/proyectos/w2.jpg",
             "imgPageAlt": "web 2",
-            "hrefTargetBlank": "../assets/img/proyectos/web2.jpg",
+            "hrefTargetBlank": "",
             "targetBlackAlt": "web 2",
             "hrefRepo": "https://github.com/ol-s",
             "hrefLive": "https://ponerdespues.com",
@@ -305,9 +305,9 @@
         },
         {
             "id": 3,
-            "imgPageProyecto": "../assets/img/proyectos/web1.jpg",
+            "imgPageProyecto": "../assets/img/proyectos/w3.jpg",
             "imgPageAlt": "web 1-----ESTO SACAR CREO, NO LO METI EN EL HTML DE ANGULAR COS ERRORR, SOOO",
-            "hrefTargetBlank": "../assets/img/proyectos/web1.jpg",
+            "hrefTargetBlank": "",
             "targetBlackAlt": "",
             "hrefRepo": "https://github.com/ol-s",
             "hrefLive": "https://ponerdespues.com",

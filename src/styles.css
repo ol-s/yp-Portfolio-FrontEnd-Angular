@@ -237,7 +237,8 @@ section {
 }
 
 .seccion-oscura {
-  color: rgb(251, 255, 0);
+  /* color: rgb(251, 255, 0); */
+  color: var(--color-texto-medio);
   background-color: var(--color-background-oscuro1);
 
 }
