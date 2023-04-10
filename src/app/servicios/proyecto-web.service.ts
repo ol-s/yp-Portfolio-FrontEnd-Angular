@@ -13,23 +13,23 @@ export class ProyectoWebService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public listaProyectos(): Observable<ProyectoWeb[]> {
+  public listaProyectosW(): Observable<ProyectoWeb[]> {
     return this.httpClient.get<ProyectoWeb[]>(this.url + 'lista');
   }
 
-  public findProyecto(id: number): Observable<ProyectoWeb> {
+  public findProyectoW(id: number): Observable<ProyectoWeb> {
     return this.httpClient.get<ProyectoWeb>(this.url + `find/${id}`);
   }
 
-  public saveProyecto(ProyectoWeb: ProyectoWeb): Observable<any> {
+  public saveProyectoW(ProyectoWeb: ProyectoWeb): Observable<any> {
     return this.httpClient.post<any>(this.url + 'new', ProyectoWeb);
   }
 
-  public updateProyecto(ProyectoWeb: ProyectoWeb): Observable<any> {
+  public updateProyectoW(ProyectoWeb: ProyectoWeb): Observable<any> {
     return this.httpClient.put<any>(this.url + 'update', ProyectoWeb);
   }
 
-  public deleteProyecto(id: number): Observable<any> {
+  public deleteProyectoW(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.url + `delete/${id}`);
   }
 

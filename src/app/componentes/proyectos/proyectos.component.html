@@ -149,7 +149,7 @@
     <div class="proyectos-contenedor seccion-oscura pb-5">
         <div class="container-fluid proyectostitulo justify-content-start">
             <div class="text-end" >
-                <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
+                <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal" data-bs-target="#modalProyectosWebAdd">
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
@@ -193,14 +193,16 @@
                 </div>
 
                 <!-- botones edit subseccion -->
-                <div class="text-end">
-                   
+                <div class="text-end">                  
                     <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
                         data-bs-target="#modalProyectosEdit">
                         <i class="fa-solid fa-pen"></i>
                     </button>
-                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
+                    <!-- <button type="button" class="" data-bs-toggle="modal"
                         data-bs-target="#modalEliminarProyecto">
+                        <i class="fa-solid fa-trash"></i>
+                    </button> -->
+                    <button type="submit" class="botonEditSubseccionOscura" (click)="deleteProyectoW(cadaProyecto.id)">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
@@ -217,6 +219,8 @@
 <!-- llamo a modal, tendria que hacer dos mas para web? ver con el elejit rubro? creo que no va a salir eh -->
 <app-modal-proyectos-add></app-modal-proyectos-add>
 <app-modal-proyectos-edit></app-modal-proyectos-edit>
+
+<app-modal-proyectosweb-add></app-modal-proyectosweb-add>
 
 
 

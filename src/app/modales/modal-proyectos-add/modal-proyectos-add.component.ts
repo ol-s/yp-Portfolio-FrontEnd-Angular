@@ -1,9 +1,16 @@
+//////////////////////COPIADO DEL SCR DE ESTA MANIANA, SI HAY PROBLEMAS VOLVER A VERSION   10-4-23 add delete proy arq OK//////////////////////////////////////////////
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-//***************************nuevo para conectar modal a la bd, lo anterior era hasta formularios reactivos */
+//***************************nuevo para conectar modal a la bd, lo anterior era hasta formularios reactivos
 import { Proyecto } from 'src/app/model/proyecto';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
+
+//*************a ver si puedo editar subt que esta en entidad persona
+//*****************************************NOPE, LIO, ESTE ES PARA AGREGAR Y TODAVIA NO SE COMO EDITAR!! 
+/*import { Persona } from 'src/app/model/persona';
+import { PersonaService } from 'src/app/servicios/persona.service';
+import { HammerModule } from '@angular/platform-browser';*/
 
 @Component({
   selector: 'app-modal-proyectos-add',
@@ -25,16 +32,16 @@ export class ModalProyectosAddComponent implements OnInit {
   tituloProyecto : string = '';
   descripcion : string = '';
   //***************************nuevo para conectar modal a la bd, lo anterior era hasta formularios reactivos */
-
+  
 
   //***************************nuevo para conectar modal a la bd, lo anterior era hasta formularios reactivos */
   // + private proyWebServ: ProyectoWebService
   constructor(private formBuilder: FormBuilder, private proyServ: ProyectoService) {
 
     this.form = this.formBuilder.group({
-      subtituloproy: ['', [Validators.required]],
+      //subtituloproy: ['', [Validators.required]], //apago para que no sea obligatorio
       urlimg: ['', [Validators.required]],
-      //altImg: ['', [Validators.required]],  //apago para que no sea obligatorio, compila ok
+      //altImg: ['', [Validators.required]],  //apago para que no sea obligatorio
       targetblank: ['', [Validators.required]],
       titulop: ['', [Validators.required]],
       //descripcionp: ['', [Validators.required]], //apago para que no sea obligatorio, compila ok
@@ -52,6 +59,8 @@ export class ModalProyectosAddComponent implements OnInit {
     return this.subtituloproy?.touched && !this.subtituloproy?.valid;  //metodo de validacion de nombre
   }
 
+  ///////////////como anda esto no se, el nombre del input no tiene que ser el mismo que el atributo? 
+  //o solo el ngmodel?  en educacion puse el mismo, en proyectos arq no, los dos andan, EL WEB NO ME ANDAAAAAAAAAAA
   get urlimg() {
     return this.form.get("urlimg");
   }
@@ -105,8 +114,9 @@ onCreate(): void {
     this.tituloProyecto,
     this.descripcion);
 
+    //PORQUE DICE (ESTU) AHIIII, NO IMPORTA?? PORQUE ME CREA Y BORRA BIEN??!! ah lo declara ahi arriba, estud, CAAMBIAR NOMBRE!!  EL WEB NO ANDA LPM
   this.proyServ.saveProyecto(estud).subscribe(data => {
-    alert("Proyecto agregado ✔, click en 'Aceptar' para recargar la página.")
+    alert("esta alerta no sale, pero dejar vacia porque necesita 2 creo para andar bien, probar")
     window.location.reload();  //se recarga la pagina
   });
 }
@@ -127,7 +137,7 @@ onCreate(): void {
 
       this.onCreate();          
 
-      alert("Proyecto agregado ✔, da click en 'Aceptar' para recargar la página.");   
+      alert("Proyecto agregado ✔, click en 'Aceptar' para recargar la página.");   
       window.location.reload();
      
     } else {

@@ -36,23 +36,33 @@ export class ProyectosComponent implements OnInit {
     
   }
   cargarProyectoWeb(): void {
-    this.proyWebServ.listaProyectos().subscribe(data => { this.proyectosTodosWeb = data });
+    this.proyWebServ.listaProyectosW().subscribe(data => { this.proyectosTodosWeb = data });
     
   }
 
 
 
 
-
+  ///PARA ARQ
   //----tendria que poner delete nomas, pero habria q cambiar todo en el back...//////IGUAL ESTE NO ME SIRVE ACA PORQUE NOQUIERO ELIMINAR NADA DE PERSONA, SOLO EDITAR!!///////////////////
   deleteProyecto(id: number): void {
     if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
       this.proyServ.deleteProyecto(id).subscribe(data => { });
       window.location.reload();
       
-      alert ("Item eliminado ✔. Click en 'Aceptar' para recargar la página.");
+      alert ("¡Item eliminado! ✔. Click en 'Aceptar' para recargar la página.");
       //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
       //PRENDO NOMAS, DA PROBLEMAS sin las dos alertas,,,ya les puse emojis so dejar asi
+    }
+  }
+
+  //PARA WEB
+  deleteProyectoW(id: number): void {
+    if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
+      this.proyWebServ.deleteProyectoW(id).subscribe(data => { });
+      window.location.reload();     
+      alert ("¡Item eliminado! ✔. Click en 'Aceptar' para recargar la página.");
+
     }
   }
 

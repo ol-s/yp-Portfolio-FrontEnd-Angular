@@ -1,0 +1,149 @@
+
+<!--Modal proyectos WEB add-->
+<form class="modal fade" id="modalProyectosWebAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [formGroup]="form" (ngSubmit)="onEnviar($event)" name="proyectosWebAddForm">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Proyectos Web</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+
+            <div class="modal-body container text-center justify-content-between">
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-4">
+                    <input type="text" formControlName="imgPageProyecto" [(ngModel)]="imgPageProyecto"
+                        class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="urlimg"
+                        [ngClass]="{'is-invalid': urlimg2?.errors && urlimg2?.touched, 
+              'is-valid': !urlimg2?.errors && urlimg2?.touched}">
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <label for="floatingInput">URL de imagen en página</label>
+                </div>
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <div *ngIf="urlimg2?.errors  && urlimg2?.touched">
+                    <p *ngIf="urlimg2?.hasError('required')" class="error2 text-start">
+                        * Cargar la url de la imagen es requerido
+                    </p>
+                </div>
+
+                <!-- input ------------------------------------NO LO PUDE METER COMO DATO EN EL HTML DE PROYECTO COS ANGULAR EROORES ETC--------------------------- -->
+                <!-- <div class=" form-floating mb-4">
+                    <input type="text" formControlName="imgPageAlt" [(ngModel)]="imgPageAlt"
+                        class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="altImg" >
+                         [ngClass]="{'is-invalid': altImg2?.errors && altImg2?.touched, 
+                                  'is-valid': !altImg2?.errors && altImg2?.touched}">
+                    <label for="floatingInput">Nombre (alt) de img en pagina</label>
+                </div> -->
+                <!-- no requerido-->
+                <!-- <div *ngIf="altImg?.errors  && altImg?.touched">
+                <p *ngIf="altImg?.hasError('required')" class="error2 text-start">
+                    * Campo requerido
+                </p>
+                </div> -->
+
+                <!-- input ----------------------------------esto no deberia ir en el modal, no usooo EN PROY WEB----------------------------- -->
+                <!-- <div class=" form-floating mb-4">
+                    <input type="text" formControlName="hrefTargetBlank" [(ngModel)]="hrefTargetBlank"
+                        class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="targetblank2"
+                        [ngClass]="{'is-invalid': targetblank2?.errors && targetblank2?.touched, 
+                                  'is-valid': targetblank2?.errors && targetblank2?.touched}">
+                    <label for="floatingInput">Link al repositorio</label>
+                </div>
+                <div *ngIf="targetblank2?.errors  && targetblank2?.touched">
+                    <p *ngIf="targetblank2?.hasError('required')" class="error2 text-start">
+                        * Cargar la url de la imagen es requerido
+                    </p>
+                </div> -->
+
+
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-4">
+                    <input type="text" formControlName="hrefRepo" [(ngModel)]="hrefRepo"
+                        class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="hrefRepo"
+                        [ngClass]="{'is-invalid': repo?.errors && repo?.touched, 
+              'is-valid': !repo?.errors && repo?.touched}">
+                    <label for="floatingInput">Link al repositorio</label>
+                </div>
+                <div *ngIf="repo?.errors  && repo?.touched">
+                    <p *ngIf="repo?.hasError('required')" class="error2 text-start">
+                        * Cargar la url de la imagen es requerido
+                    </p>
+                </div>
+
+
+
+
+
+                 <!-- input --------------------------------------------------------------- -->
+                 <div class=" form-floating mb-4">
+                    <input type="text" formControlName="hrefLive" [(ngModel)]="hrefLive"
+                        class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="hrefLive"
+                        [ngClass]="{'is-invalid': live?.errors && live?.touched, 
+                                  'is-valid': !live?.errors && live?.touched}">
+                    <label for="floatingInput">Link al Live</label>
+                </div>
+                <div *ngIf="live?.errors  && live?.touched">
+                    <p *ngIf="live?.hasError('required')" class="error2 text-start">
+                        * Cargar la url de la imagen es requerido
+                    </p>
+                </div>
+
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-4">
+                    <!-- ***************agregar el ngmodel para que eldat de cada input se guarde en la bd******************************************** -->
+                    <input type="text" formControlName="fecha" [(ngModel)]="fecha"
+                        class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="fecha"
+                        >  <!-- [ngClass]="{'is-invalid': fechap2?.errors && fechap2?.touched, 
+                            'is-valid': !fechap2?.errors && fechap2?.touched}" -->
+                    <label for="floatingInput">Fecha del Proyecto (ej. '2022', '2020-2021')</label>
+                </div>
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <!-- <div *ngIf="fechap2?.errors  && fechap2?.touched">
+                    <p *ngIf="fechap2?.hasError('required')" class="error2 text-start">
+                        * La fecha es requerida
+                    </p>
+                </div> -->
+
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-4">
+                    <!-- ***************agregar el ngmodel para que eldat de cada input se guarde en la bd******************************************** -->
+                    <input type="text" formControlName="tituloProyecto" [(ngModel)]="tituloProyecto"
+                        class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="tituloProyecto"
+                        [ngClass]="{'is-invalid': titulop2?.errors && titulop2?.touched, 
+                                  'is-valid': !titulop2?.errors && titulop2?.touched}">
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <label for="floatingInput">Título del Proyecto</label>
+                </div>
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <div *ngIf="titulop2?.errors  && titulop2?.touched">
+                    <p *ngIf="titulop2?.hasError('required')" class="error2 text-start">
+                        * El título es requerido
+                    </p>
+                </div>
+
+                <!-- input --------------------------------------------------------------- -->
+                <div class=" form-floating mb-3">
+                    <!-- descripcion no tengo en arq peroagregotodo por las dudas [(ngModel)]="descripcionnnn"  -->
+                    <textarea type="text" formControlName="descripcion" [(ngModel)]="descripcion"
+                        class="form-control rounded-0 formulariosinput" placeholder="descripcion"
+                        id="floatingTextarea2" style="height: 85px" [ngClass]="{'is-invalid': descripcionp2?.errors && descripcionp2?.touched, 
+                                 'is-valid': !descripcionp2?.errors && descripcionp2?.touched}"></textarea>
+                    <label for="floatingTextarea2">Descripción del proyecto</label>
+                </div>
+                <div *ngIf="descripcionp2?.errors  && descripcionp2?.touched">
+                <p *ngIf="descripcionp2?.hasError('required')" class="error2 text-start mt-3">
+                    * La descripción es requerida
+                </p>
+                </div>
+                <br class="py-5 mb-2">
+                <hr class="w-75 m-auto mt-3">
+            </div>
+            <button type="button" class="btn btn-ligth fa-solid fa-rotate-right mt-3" (click)="limpiar()"></button>
+            <!-- aceptar---------------------------------------------------------------------------- -->
+            <div class="modal-body text-center justify-content-between">
+                <button type="submit" class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</form>
