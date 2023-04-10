@@ -20,7 +20,7 @@ export class ProyectosComponent implements OnInit {
   proyectoweb: ProyectoWeb[] = [];
   proyectosTodosWeb : any = [];
 
-  constructor(private proyServ: ProyectoService, private proywebServ: ProyectoWebService) { }
+  constructor(private proyServ: ProyectoService, private proyWebServ: ProyectoWebService) { }
 
 
   ngOnInit(): void {  
@@ -36,7 +36,7 @@ export class ProyectosComponent implements OnInit {
     
   }
   cargarProyectoWeb(): void {
-    this.proywebServ.listaProyectos().subscribe(data => { this.proyectosTodosWeb = data });
+    this.proyWebServ.listaProyectos().subscribe(data => { this.proyectosTodosWeb = data });
     
   }
 
