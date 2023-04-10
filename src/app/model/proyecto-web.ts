@@ -1,7 +1,6 @@
-export class Proyecto {
+export class ProyectoWeb {
 
     id?: number;
-    rubro : string;
     imgPageProyecto : string;
     imgPageAlt : string;
     hrefTargetBlank : string;
@@ -9,9 +8,9 @@ export class Proyecto {
     hrefLive : string;
     tituloProyecto : string;
     descripcion : string;
+    fecha : string;
 
     constructor(
-        rubro : string,
         imgPageProyecto : string,
         imgPageAlt : string,
         hrefTargetBlank : string,
@@ -19,10 +18,9 @@ export class Proyecto {
         hrefLive : string,
         tituloProyecto : string,
         descripcion : string,
+        fecha : string,
     ) {
 
-        //rubro como que deberia limpiar aca y en el java
-        this.rubro = rubro;
         this.imgPageProyecto = imgPageProyecto;
         this.imgPageAlt = imgPageAlt;
         this.hrefTargetBlank = hrefTargetBlank;
@@ -30,7 +28,8 @@ export class Proyecto {
         this.hrefLive = hrefLive;
         this.tituloProyecto = tituloProyecto;
         this.descripcion = descripcion;
+        this.fecha = fecha;
     }
 
-
 }
+

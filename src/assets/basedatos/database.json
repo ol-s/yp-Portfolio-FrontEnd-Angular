@@ -296,7 +296,7 @@
             "imgPageProyecto": "../assets/img/proyectos/w2.jpg",
             "imgPageAlt": "web 2",
             "hrefTargetBlank": "",
-            "targetBlackAlt": "web 2",
+            "targetBlackAlt": "web 2---------------------------------------------esto no esta en java back eh",
             "hrefRepo": "https://github.com/ol-s",
             "hrefLive": "https://ponerdespues.com",
             "tituloProyecto": "Proyecto 2. *ilustrativo",
@@ -306,7 +306,7 @@
         {
             "id": 3,
             "imgPageProyecto": "../assets/img/proyectos/w3.jpg",
-            "imgPageAlt": "web 1-----ESTO SACAR CREO, NO LO METI EN EL HTML DE ANGULAR COS ERRORR, SOOO",
+            "imgPageAlt": "web 1-NO EN ANGULAR",
             "hrefTargetBlank": "",
             "targetBlackAlt": "",
             "hrefRepo": "https://github.com/ol-s",

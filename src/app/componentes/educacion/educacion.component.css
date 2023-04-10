@@ -15,8 +15,23 @@
   /* seccion educacion, poner arriba */
   .logoseducacion {
     width: 8em;
+
+    /* *******************************9-4-23 */
+    transition: all 0.19s ease-out;
   }
   
+  .logoseducacion:hover {
+     /* *******************************9-4-23 */
+     transform: scale(1.2);
+     /* transform: translateX(5em);  como hacias dos a las vez?  ya fue */
+
+  }
+
+
+
+
+
+
   /* .titleeducacion{
       color: var(--color-texto-grande);
     } */
