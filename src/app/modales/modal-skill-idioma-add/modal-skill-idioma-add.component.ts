@@ -43,7 +43,7 @@ export class ModalSkillIdiomaAddComponent {
 
 
 
-  //para limpiar el form/////SE PUEDE PONER EN EL BOTON CLOSE MODAL DIJO H
+  //para limpiar el form
   limpiar(): void {
     this.form.reset();
   }
