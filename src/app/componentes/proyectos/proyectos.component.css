@@ -29,6 +29,12 @@
     filter: grayscale(50%);
     /* filter: grayscale(100%); */
 
+
+    border-left: 1px solid #ffc632;
+}
+/*no se si agregar el bordecito a arq tmb, quedaba feo, por eso hice una clase solo para los web*/
+.pweb {
+    border-left: 1px solid #ffc632;
 }
 
 

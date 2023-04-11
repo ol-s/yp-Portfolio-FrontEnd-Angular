@@ -29,6 +29,15 @@ import { ModalProyectosAddComponent } from './modales/modal-proyectos-add/modal-
 import { ModalProyectosEditComponent } from './modales/modal-proyectos-edit/modal-proyectos-edit.component';
 import { ModalContactoComponent } from './modales/modal-contacto/modal-contacto.component';
 import { ModalProyectoswebAddComponent } from './modales/modal-proyectosweb-add/modal-proyectosweb-add.component';
+import { ModalSkillArqAddComponent } from './modales/modal-skill-arq-add/modal-skill-arq-add.component';
+import { ModalSkillArqEditComponent } from './modales/modal-skill-arq-edit/modal-skill-arq-edit.component';
+import { ModalSkillWebAddComponent } from './modales/modal-skill-web-add/modal-skill-web-add.component';
+import { ModalSkillWebEditComponent } from './modales/modal-skill-web-edit/modal-skill-web-edit.component';
+import { ModalSkillIdiomaAddComponent } from './modales/modal-skill-idioma-add/modal-skill-idioma-add.component';
+import { ModalSkillIdiomaEditComponent } from './modales/modal-skill-idioma-edit/modal-skill-idioma-edit.component';
+import { ModalSkillSoftAddComponent } from './modales/modal-skill-soft-add/modal-skill-soft-add.component';
+import { ModalSkillSoftEditComponent } from './modales/modal-skill-soft-edit/modal-skill-soft-edit.component';
+import { ModalProyectoswebEditComponent } from './modales/modal-proyectosweb-edit/modal-proyectosweb-edit.component';
 
 
 @NgModule({
@@ -59,6 +68,15 @@ import { ModalProyectoswebAddComponent } from './modales/modal-proyectosweb-add/
     ModalProyectosEditComponent,
     ModalContactoComponent,
     ModalProyectoswebAddComponent,
+    ModalSkillArqAddComponent,
+    ModalSkillArqEditComponent,
+    ModalSkillWebAddComponent,
+    ModalSkillWebEditComponent,
+    ModalSkillIdiomaAddComponent,
+    ModalSkillIdiomaEditComponent,
+    ModalSkillSoftAddComponent,
+    ModalSkillSoftEditComponent,
+    ModalProyectoswebEditComponent,
     ],
   imports: [
     BrowserModule,

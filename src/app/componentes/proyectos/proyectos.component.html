@@ -164,7 +164,7 @@
             <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let cadaProyecto of proyectosTodosWeb">
                 <div class="proyecto">
 
-                    <img [src]="cadaProyecto.imgPageProyecto" [alt]="cadaProyecto.imgPageAlt">
+                    <img [src]="cadaProyecto.imgPageProyecto" [alt]="cadaProyecto.imgPageAlt" class=" pweb">
                     <div class="ms-5">
                         <!-- YA FUE, ME VA A DAR PROBLEMAS, Y SI LIMITO A 4 CARACTERES NOPUEDO ESCRIBR '2023' '2022-2023', see, type text?? -->
                         <h6 class="skill-title pt-3">{{cadaProyecto.fecha}}. {{cadaProyecto.tituloProyecto}}</h6>
