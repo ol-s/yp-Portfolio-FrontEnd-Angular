@@ -9,7 +9,7 @@ import { Skillidioma } from '../model/skill-idioma';
 export class SkillIdiomaService {
 
 
-  url: string = "http://localhost:8080/Skillidioma/"; 
+  url: string = "http://localhost:8080/skillidioma/"; 
 
   constructor(private httpClient: HttpClient) { }
 
