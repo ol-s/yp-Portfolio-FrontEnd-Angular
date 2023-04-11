@@ -1,0 +1,55 @@
+<!--Modal SKILL ARQ add-->
+<form class="modal fade" id="modalRedAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Red</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container text-center justify-content-between">
+                    <!-- <h5>Agregar skill</h5> -->
+                    <!-- input nombre --------------------------------------------------------------------- -->
+                    <div class=" form-floating mb-4">
+                        <input type="text" formControlName="url" [(ngModel)]="url"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="url"
+                            [ngClass]="{'is-invalid': Red?.errors && Red?.touched, 
+                                          'is-valid': !Red?.errors }">
+                        <label for="floatingInput">Link</label>
+                    </div>
+                    <div *ngIf="Red?.errors  && Red?.touched">
+                        <p *ngIf="Red?.hasError('required')" class="error2 text-start">
+                            * Ingrese un link
+                        </p>
+                    </div>
+                    <!-- input porcentaje ----------------------------------------------------------------- -->
+                    <div class=" form-floating mb-4">
+                        <input type="text" formControlName="iconred" [(ngModel)]="iconred"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="iconred"
+                            [ngClass]="{'is-invalid': Icono?.errors && Icono?.touched, 
+                                          'is-valid': !Icono?.errors}">
+                        <label for="floatingInput">Nombre del icono de bootstrap o fontawesome</label>
+                    </div>
+                    <div *ngIf="Icono?.errors  && Icono?.touched">
+                        <p *ngIf="Icono?.hasError('required')" class="error2 text-start">
+                            * Ingrese un nombre de icono
+                        </p>
+                        <!-- <p *ngIf="Icono?.errors?.['max']" class="error2 text-start">
+                            * Ingrese un número de 0-100
+                        </p> -->
+                    </div>
+                    <br class="pt-2 mb-0">
+                    <hr class="w-75 m-auto mt-3 mb-4">
+                    <!-- aceptar---------------------------------------------------------------------------- -->
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

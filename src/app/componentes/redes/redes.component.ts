@@ -20,14 +20,25 @@ export class RedesComponent implements OnInit {
   constructor(private redServ: RedService) { }
 
   ngOnInit(): void {  
-    this.cargarPersona(); //SOLAMENTE CARGA DATOS, NO EDITA/BORRA/NADA
+    this.cargarRed(); //SOLAMENTE CARGA DATOS, NO EDITA/BORRA/NADA
   }
   
-  cargarPersona(): void {
+  cargarRed(): void {
     this.redServ.listaRedes().subscribe(data => { this.redesTodas = data });
     
   }
-  //listaPERSONAS()  es lo mismo que escribi en el PERSONA.service.ts,,,,si tuviera algo entre parentsis aca lo pongo 
+
+  //tenia esto asi antes pero ya no me acuerdo cuando lo hice :/  cos modal edit redes no tengo
+  /*
+  
+  ngOnInit(): void {  
+    this.cargarPersona(); //SOLAMENTE CARGA DATOS, NO EDITA/BORRA/NADA
+  } 
+  cargarPersona(): void {
+    this.redServ.listaRedes().subscribe(data => { this.redesTodas = data });
+    
+  } */
+  //listaredes()  es lo mismo que escribi en el redes.service.ts,,,,si tuviera algo entre parentsis aca lo pongo 
   //'data' es alias
   
 
@@ -40,15 +51,13 @@ export class RedesComponent implements OnInit {
       this.redServ.deleteRed(id).subscribe(data => { });
       window.location.reload();
       
-      alert ("Item eliminado ✔. Click en 'Aceptar' para recargar la página.");
+      alert("Item eliminado ✔️. Click en 'Aceptar' para recargar la página.");
       //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
       //PRENDO NOMAS, DA PROBLEMAS
     }
   }
 
 }
-
-
 
 
 
