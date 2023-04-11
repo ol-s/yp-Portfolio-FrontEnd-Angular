@@ -153,7 +153,7 @@ onCreate(): void {
 
       this.onCreate();          
 
-      alert("¡Proyecto agregado! ✔, click en 'Aceptar' para recargar la página.");   
+      alert("¡Proyecto agregado! ✔️, click en 'Aceptar' para recargar la página.");   
       window.location.reload();
      
     } else {

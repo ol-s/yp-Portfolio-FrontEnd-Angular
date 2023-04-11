@@ -50,7 +50,7 @@ export class ProyectosComponent implements OnInit {
       this.proyServ.deleteProyecto(id).subscribe(data => { });
       window.location.reload();
       
-      alert ("¡Item eliminado! ✔. Click en 'Aceptar' para recargar la página.");
+      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
       //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
       //PRENDO NOMAS, DA PROBLEMAS sin las dos alertas,,,ya les puse emojis so dejar asi
     }
@@ -61,7 +61,7 @@ export class ProyectosComponent implements OnInit {
     if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
       this.proyWebServ.deleteProyectoW(id).subscribe(data => { });
       window.location.reload();     
-      alert ("¡Item eliminado! ✔. Click en 'Aceptar' para recargar la página.");
+      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
 
     }
   }

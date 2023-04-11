@@ -1,1 +1,70 @@
-<p>modal-skill-arq-add works!</p>
+<!--Modal SKILL ARQ add-->
+<form class="modal fade" id="modalSkillArqAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar skill Arq</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container text-center justify-content-between">
+                    <!-- <h5>Agregar skill</h5> -->
+
+
+
+
+                    <!-- input nombre --------------------------------------------------------------- -->
+                    <div class=" form-floating mb-4">
+                        <input type="text" formControlName="nombre" [(ngModel)]="nombre" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="nombre" 
+                            [ngClass]="{'is-invalid': Skill?.errors && Skill?.touched, 
+                                          'is-valid': !Skill?.errors }">
+                        <label for="floatingInput">Nombre Skill</label>
+                    </div>
+                    <div *ngIf="Skill?.errors  && Skill?.touched">
+                        <p *ngIf="Skill?.hasError('required')" class="error2 text-start">
+                            * Ingrese el nombre de la habilidad
+                        </p>
+                    </div>
+                    <!-- input porcentaje ----------------------------------------------------------- -->
+                    <div class=" form-floating mb-4">
+                        <input type="number" min="0" max="100" formControlName="porcentaje" [(ngModel)]="porcentaje"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="porcentaje"
+                            [ngClass]="{'is-invalid': Porc?.errors && Porc?.touched, 
+                                          'is-valid': !Porc?.errors}">
+                        <label for="floatingInput">% Skill (número de 0-100)</label>
+                    </div>
+                    <div *ngIf="Porc?.errors  && Porc?.touched">
+                        <p *ngIf="Porc?.hasError('required')" class="error2 text-start">
+                            * Ingrese el porcentaje
+                        </p>
+                        <p *ngIf="Porc?.errors?.['max']" class="error2 text-start">
+                            * Ingrese un número de 0-100
+                        </p>
+                    </div>
+
+
+               
+
+
+
+                    <!-- <br class="pt-2">
+                    <hr class="w-75 m-auto mt-4"> -->
+                    <br class="pt-2 mb-2">
+                    <hr class="w-75 m-auto mt-3 mb-4">
+
+                    <!-- aceptar---------------------------------------------------------------------------- -->
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="submit" class="w-100 mb-5 mt-4 btn btn-lg rounded-0 btn-loginout3">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

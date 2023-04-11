@@ -7,8 +7,6 @@ import { SkillArq } from 'src/app/model/skill-arq';
 import { SkillArqService } from 'src/app/servicios/skill-arq.service';
 import { SkillWeb } from 'src/app/model/skill-web';
 import { SkillWebService } from 'src/app/servicios/skill-web.service';
-
-//-----------------------------ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ  VER QUE PASO
 import { Skillidioma } from 'src/app/model/skill-idioma';
 import { SkillIdiomaService } from 'src/app/servicios/skill-idioma.service';
 import { SkillSoft } from 'src/app/model/skill-soft';
@@ -48,27 +46,20 @@ export class SkillsComponent implements OnInit {
     this.cargarSkillSoft();
   }
 
-  
-  //this. es para utilizar una variable que esta fuera del metodo, si le pasara id entre los parenteiss, abajo no pondria 'this.' ,,,express 18, min 38'
-  //solo este metodo hacemos?? y el new/find/update/delete?..en el servicio! 
   cargarSkillArq(): void {
-    this.saServ.listaSkillsA().subscribe(data => { this.skillsTodasArq = data });
-    
+    this.saServ.listaSkillsA().subscribe(data => { this.skillsTodasArq = data });    
   }
 
   cargarSkillWeb(): void {
-    this.swServ.listaSkillsW().subscribe(data => { this.skillsTodasProgram = data });
-    
+    this.swServ.listaSkillsW().subscribe(data => { this.skillsTodasProgram = data });    
   }
 
   cargarSkillidioma(): void {
-    this.siServ.listaSkillsD().subscribe(data => { this.skillsTodasIdiom = data });
-    
+    this.siServ.listaSkillsD().subscribe(data => { this.skillsTodasIdiom = data });    
   }
 
   cargarSkillSoft(): void {
-    this.ssServ.listaSkillsS().subscribe(data => { this.skillsTodasBlandas = data });
-    
+    this.ssServ.listaSkillsS().subscribe(data => { this.skillsTodasBlandas = data });   
   }
 
  
@@ -78,7 +69,7 @@ export class SkillsComponent implements OnInit {
     if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
       this.saServ.deleteSkillA(id).subscribe(data => { });
       window.location.reload();     
-      alert ("¡Item eliminado! ✔. Click en 'Aceptar' para recargar la página.");
+      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
     }
   }
 
@@ -86,7 +77,7 @@ export class SkillsComponent implements OnInit {
     if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
       this.swServ.deleteSkillW(id).subscribe(data => { });
       window.location.reload();     
-      alert ("¡Item eliminado! ✔. Click en 'Aceptar' para recargar la página.");
+      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
     }
   }
 
@@ -94,7 +85,7 @@ export class SkillsComponent implements OnInit {
     if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
       this.siServ.deleteSkillD(id).subscribe(data => { });
       window.location.reload();     
-      alert ("¡Item eliminado! ✔. Click en 'Aceptar' para recargar la página.");
+      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
     }
   }
 
@@ -102,7 +93,7 @@ export class SkillsComponent implements OnInit {
     if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
       this.ssServ.deleteSkillS(id).subscribe(data => { });
       window.location.reload();     
-      alert ("¡Item eliminado! ✔. Click en 'Aceptar' para recargar la página.");
+      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
     }
   }
 

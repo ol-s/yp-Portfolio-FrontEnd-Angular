@@ -91,7 +91,7 @@ export class ModalEducacionAddComponent implements OnInit {
 
       //alert("Estudio cargado correctamente!, click Aceptar para recargar la pagina.");
       //alert("¡Estudio agregado! ✔ Click en 'Aceptar' para recargar la página."); 
-      alert("Estudio agregado ✔. Click en 'Aceptar' para recargar la página.");    //AHI ESTAAAAA, DA EL OK, PONES ACEPTAR Y RECARGA PAGINA
+      alert("Estudio agregado ✔️. Click en 'Aceptar' para recargar la página.");    //AHI ESTAAAAA, DA EL OK, PONES ACEPTAR Y RECARGA PAGINA
       //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
       window.location.reload();
      

@@ -62,7 +62,7 @@ export class EducacionComponent implements OnInit {
       window.location.reload();
       //alert ("Estudio eliminado correctamente, da click en 'Aceptar' para recargar la pagina.");
       //alert ("Estudio eliminado ✔× ❌ ✔️ &#10060. Click en 'Aceptar' para recargar la página.");
-      alert ("Estudio eliminado ✔. Click en 'Aceptar' para recargar la página.");
+      alert ("Estudio eliminado ✔️. Click en 'Aceptar' para recargar la página.");
       //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
       //PRENDO NOMAS, DA PROBLEMAS
     }
