@@ -119,16 +119,13 @@
                     <div class="col-md-6 p-4 mt-5">
 
                         <!-- Idiomas ---------------------------->
-
                         <!-- botones edicion skill por ruros, VER SI LO EDITO ASI, SI NO PUEDO CON EL SELECTOR DE RUBROS----------------->
                         <div class="text-end mb-3">
                             <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                                data-bs-target="#modalSkillAdd">
+                                data-bs-target="#modalSkillIdiomaAdd">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
-
-
                         <h4>Idiomas</h4><br>
                         <!-- modulo skill -->
                         <div class="moduloSkill" *ngFor="let cadaSkillIdiom of skillsTodasIdiom">
@@ -267,10 +264,13 @@
     </div>
 
     <!-- llamo a modales -->
-    <app-modal-skill-edit></app-modal-skill-edit>  <!-- estos dos sacar,ya lo dividi todo --> 
-    <app-modal-skill-add></app-modal-skill-add>
+    <!-- <app-modal-skill-edit></app-modal-skill-edit>   estos dos sacar,ya lo dividi todo
+    <app-modal-skill-add></app-modal-skill-add> -->
 
     <app-modal-skill-arq-add></app-modal-skill-arq-add>
+    <app-modal-skill-idioma-add></app-modal-skill-idioma-add>
+    <app-modal-skill-soft-add></app-modal-skill-soft-add>
+    <app-modal-skill-web-add></app-modal-skill-web-add>
 
 </section>
 

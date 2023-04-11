@@ -66,7 +66,7 @@ export class SkillsComponent implements OnInit {
 
 
   deleteSkillA(id: number): void {
-    if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
+    if (confirm("❗❗ ¿Querés eliminar este item? DALEEEEEEEEEEEEEEEE")) {        
       this.saServ.deleteSkillA(id).subscribe(data => { });
       window.location.reload();     
       alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
