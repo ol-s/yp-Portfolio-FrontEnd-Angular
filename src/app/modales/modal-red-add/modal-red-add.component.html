@@ -1,4 +1,4 @@
-<!--Modal SKILL ARQ add-->
+<!--Modal red add-->
 <form class="modal fade" id="modalRedAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
     [formGroup]="form" (ngSubmit)="onEnviar($event)">
     <div class="modal-dialog modal-dialog-centered">
@@ -18,7 +18,7 @@
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="url"
                             [ngClass]="{'is-invalid': Red?.errors && Red?.touched, 
                                           'is-valid': !Red?.errors }">
-                        <label for="floatingInput">Link</label>
+                        <label for="floatingInput">Link ("https://www...  ")</label>
                     </div>
                     <div *ngIf="Red?.errors  && Red?.touched">
                         <p *ngIf="Red?.hasError('required')" class="error2 text-start">
@@ -31,7 +31,8 @@
                             class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="iconred"
                             [ngClass]="{'is-invalid': Icono?.errors && Icono?.touched, 
                                           'is-valid': !Icono?.errors}">
-                        <label for="floatingInput">Nombre del icono de bootstrap o fontawesome</label>
+                        <label for="floatingInput">Nombre del icono (ej, "bi bi-twitter")</label>
+                        <!-- 'nombre del icono en bootstrap/fontawesome' -->
                     </div>
                     <div *ngIf="Icono?.errors  && Icono?.touched">
                         <p *ngIf="Icono?.hasError('required')" class="error2 text-start">

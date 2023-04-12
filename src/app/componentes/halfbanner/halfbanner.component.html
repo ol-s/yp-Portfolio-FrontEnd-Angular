@@ -7,7 +7,7 @@
     <div class="banner1" [ngStyle]="{'background-image': ' url(' + itemPersona.bannerEntrada + ')'}">
 
         <div class="text-end ">
-            <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal" data-bs-target="#modalBanner1">
+            <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal" data-bs-target="#modalBannerEdit">
                 <i class="fa-solid fa-pen"></i></button>
 
             <!-- dejo solo para editar -->
@@ -15,6 +15,9 @@
         </div>
     </div>
 </div>
+
+<!-- llamo al modal -->
+<app-modal-banner-edit></app-modal-banner-edit>
 
 <!-- <div class="banner1" [style.background-image]="itemPersona.bannerEntrada"> ESTE ANDABA PONIENDO 'url' EN EL TS Y FUERA DE 'persona'-->
 

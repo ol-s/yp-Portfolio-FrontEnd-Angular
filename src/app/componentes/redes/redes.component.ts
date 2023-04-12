@@ -45,17 +45,16 @@ export class RedesComponent implements OnInit {
 
 
 
-  //delete dentro del html (click)
+  //delete dentro del html (click)// creo que esto no va aca, va en ts del modal
+  /*
   deleteRed(id: number): void {
-    if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
+    if (confirm("❗❗ ¿Querés eliminar esta red? ")) {        
       this.redServ.deleteRed(id).subscribe(data => { });
       window.location.reload();
       
-      alert("Item eliminado ✔️. Click en 'Aceptar' para recargar la página.");
-      //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
-      //PRENDO NOMAS, DA PROBLEMAS
+      alert("Red eliminada ✔️. Click en 'Aceptar' para recargar la página.");
     }
-  }
+  }*/
 
 }
 

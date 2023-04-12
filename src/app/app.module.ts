@@ -40,6 +40,7 @@ import { ModalSkillSoftEditComponent } from './modales/modal-skill-soft-edit/mod
 import { ModalProyectoswebEditComponent } from './modales/modal-proyectosweb-edit/modal-proyectosweb-edit.component';
 import { ModalRedAddComponent } from './modales/modal-red-add/modal-red-add.component';
 import { ModalRedEditComponent } from './modales/modal-red-edit/modal-red-edit.component';
+import { ModalBannerEditComponent } from './modales/modal-banner-edit/modal-banner-edit.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { ModalRedEditComponent } from './modales/modal-red-edit/modal-red-edit.c
     ModalProyectoswebEditComponent,
     ModalRedAddComponent,
     ModalRedEditComponent,
+    ModalBannerEditComponent,
     ],
   imports: [
     BrowserModule,

@@ -1,5 +1,25 @@
 /* en estilos globales */
+a {
+    color: var(--color-texto-medio);
+}
 
+.btnEditModal {
+    /* color:var(--color-texto-header) ; */
+    color: #525252;
+    padding-bottom: 1em;
+}
 
-  
-  
+.btnEditModal:hover {
+    color: var(--color-links-navbar);
+}
+
+.btnEditModal:active {
+    color: var(--color-links-navbar);
+    /* border: 1px solid var(--color-links-navbar); */
+    border: 0;
+}
+
+.btnEditModal:focus {
+    color: var(--color-links-navbar);
+    border: 0;
+}

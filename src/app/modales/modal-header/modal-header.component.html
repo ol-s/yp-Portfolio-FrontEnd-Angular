@@ -1,110 +1,94 @@
-<!--Modal encabezado, arreglar espaciado,,,y 
-    las letritas que se achicaban al tocar la casilla no hace mas, ah, porque borre el contenido de "placeholder" -->
-<form class="modal fade" id="modalEditName" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- modal edit header, edit/agregar redes(modal dentro de modal) -->
+<form class="modal fade" id="modalEditHeader" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content ">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar encabezado // UNIFICAR ENTIDAD
-                    PERSONA---header banners sobremi contacto + EDITAR TODOS LOS BANNERS A LA VEZ + HACER REACTIVOS</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar encabezado // FALTA EDITAR TODOS LOS BANNERS
+                    A LA VEZ</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
-            <!-- primera parte modal-------------------------------------------------------------- -->
+            <!-- primera parte modal---------ACA HAY QUE TRAER CON NGFOR PARECE, HAGO EDUCACION EDIT Y VUELVO------------------------------------------- -->
             <div class="modal-body">
                 <div class=" form-floating mb-3">
-                    <input type="email" class="form-control rounded-0 formulariosinput" id="floatingInput"
+                    <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
                         placeholder="text">
-                    <label for="floatingInput">Nuevo título</label>
+                    <label for="floatingInput">Nombre</label>
+                </div>
+                <div class=" form-floating mb-3">
+                    <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
+                        placeholder="text">
+                    <label for="floatingInput">Apellido</label>
                 </div>
                 <div class="form-floating mb-3">
                     <!-- cambiar los id aca, ver bien como y que hacen -->
-                    <input type="email" class="form-control rounded-0 formulariosinput" id="floatingInput"
+                    <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
                         placeholder="text">
-                    <label for="floatingInput">Nuevo subtítulo</label>
+                    <label for="floatingInput">Ocupacion</label>
                 </div>
                 <!-- <br class="my-4 p-3"> -->
-                <br class="py-5 my-2">
-                <hr class="w-75 m-auto mB-0">
+                <!-- <br class="py-5 my-2"> -->
             </div>
-            <!-- segunda parte modal-------------------------------------------------------------- -->
+
+            <!-- EDITAR REDES-------------------------------------------------------------- -->
             <div class="modal-body">
+                <hr class="w-75 m-auto mb-4">
+                <div class="d-flex justify-content-center">
+                    <h5 class="mt-2 pt-0">Agregar / Editar redes</h5>
+                    <button data-bs-target="#modalRedAdd" data-bs-toggle="modal" class="ms-3 pb-1 btn btnEditModal">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <hr class="w-75 m-auto my-3">
                 <div class="container text-center justify-content-between">
                     <div class="row g-4">
                         <div class="col">
-                            <h5>Editar o agregar redes</h5>
-                            <div class="">
-                                <!-- red 1 -->
-                                <div>
-                                    <div class="row d-flex justify-content-center align-items-center">
-                                        <div class="col-1"></div>
-                                        <div class="col-4"><i class="pt-4 pb-3 fa-brands bi bi-linkedin"></i>
-                                        </div>
-                                        <!-- PARA AGRANDAR ICONO RED class="fa-2x pt-4 pb-3 fa-brands bi bi-linkedin" -->
-                                        <div class="col-3 mt-3"><button data-bs-target="#editRedHalfBanner1"
-                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
-                                                    class="fa-solid fa-pen"></i></button>
-                                        </div>
-                                        <div class="col-2 mt-3"><button data-bs-target="#deleteGeneralSocialModal"
-                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
-                                                    class="fa-solid fa-trash"></i></button>
-                                        </div>
-                                        <div class="col-2"></div>
-                                    </div>
-                                </div>
-                                <!-- red 2 -->
-                                <div>
-                                    <div class="row d-flex justify-content-center align-items-center">
-                                        <div class="col-1"></div>
-                                        <div class="col-4"><i class="pt-4 pb-3 fa-brands bi bi-github"></i>
-                                        </div>
-                                        <div class="col-3 mt-3"><button data-bs-target="#editGeneralSocialModal"
-                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
-                                                    class="fa-solid fa-pen"></i></button>
-                                        </div>
-                                        <div class="col-2 mt-3"><button data-bs-target="#deleteGeneralSocialModal"
-                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
-                                                    class="fa-solid fa-trash"></i></button>
-                                        </div>
-                                        <div class="col-2"></div>
-                                    </div>
-                                </div>
-                                <!-- red 3 -->
-                                <div>
-                                    <div class="row d-flex justify-content-center align-items-center">
-                                        <div class="col-1"></div>
-                                        <div class="col-4"><i class="pt-4 pb-3 fa-brands bi bi-instagram"></i>
-                                        </div>
-                                        <div class="col-3 mt-3"><button data-bs-target="#editGeneralSocialModal"
-                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
-                                                    class="fa-solid fa-pen"></i></button>
-                                        </div>
-                                        <!-- <div class="col-2 mt-3"><button data-bs-target="#deleteGeneralSocialModal"
-                                                data-bs-toggle="modal" class="btn btn-black-extra-mini mx-2"><i
-                                                    class="fa-solid fa-trash"></i></button>
-                                        </div> -->
-                                        
-                                        <div class="col-2"></div>
-                                    </div>
-                                </div>
-                                <hr class="w-75 m-auto my-3">
-                                <div class="d-flex justify-content-center"><button
-                                        data-bs-target="#createGeneralSocialModal" data-bs-toggle="modal"
-                                        class="btn btn-black-extra-mini"><i class="fa-solid fa-plus"></i></button>
-                                </div>
-                                <hr class="w-75 m-auto my-3">
-                            </div>
+                            <!-- <h5>Editar o agregar redes</h5> -->
 
+                            <!-- importo redes en el modal para editar el  red-component dentro del modal -->
+                            <div class="row d-flex justify-content-center align-items-center"
+                                *ngFor="let cadaRed of redesTodas">
+                                <div class="col-1"></div>
+                                <!-- traigo al modal las redes cargadas para que se vea el icono +edit+delete botones -->
+                                <div class="col-4 mt-2">
+                                    <a class=" pt-3 pb-3 " [href]="cadaRed.url" target="_blank">
+                                        <i [ngClass]="cadaRed.iconred"></i>
+                                    </a>
+                                </div>
+                                <div class="col-3 mt-3">
+                                    <button data-bs-target="#modalEditRed" data-bs-toggle="modal"
+                                        class="btn btn-extra-mini mb-0 btnEditModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </div>
+                                <div class="col-1 mt-3">
+                                    <!-- trigger delete con alert del browser-->
+                                    <button type="submit" class="btn btn-extra-mini mb-0 btnEditModal"
+                                        (click)="deleteRed(cadaRed.id)">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                            <hr class="w-75 m-auto my-3 mt-4">
+
+                            <!-- saco esto, dejo el add arriba con el titulo -->
+                            <!-- <div class="d-flex justify-content-center"><button data-bs-target="#modalRedAdd"
+                                        data-bs-toggle="modal" class="btn btn-black-extra-mini"><i
+                                            class="fa-solid fa-plus"></i></button>
+                                </div>
+                                <hr class="w-75 m-auto my-3"> -->
                         </div>
-                        <!-- </div>
-                                                </div> -->
-                        <!-- <div class="modal-footer"><button data-bs-dismiss="modal" aria-label="Cerrar"
-                                                        class="btn btn-black-mini">Cerrar</button></div> -->
                     </div>
-                    <!-- ggggggggggggggggggggggggggggg hasta aca, maso -->
                 </div>
             </div>
-            <!-- tercera parte modal, banner? -------------------------------------------------------------- -->
-            <div class="modal-body">
+
+
+
+
+            <!-- tercera parte modal, banner? ----------------HACER MODAL EDIT BANNERS------
+                -wow, en blanco estoy, ver modal educaicon, como se guarda l aurl??--------------------------------------- -->
+            <!-- <div class="modal-body">
                 <div class="container text-center justify-content-between">
                     <div class="row g-4">
                         <div class="col">
@@ -119,7 +103,10 @@
                 </div>
                 <br class="py-5 mb-2">
                 <hr class="w-75 m-auto mt-3">
-            </div>
+            </div> -->
+
+            <!-- ,,,lo saque nomas, error en ''form''  -->
+            <!-- <button type="button" class="btn btn-ligth fa-solid fa-rotate-right mt-3" (click)="limpiar()"></button> -->
             <div class="modal-body">
                 <button class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5" type="submit">Aceptar</button>
             </div>
