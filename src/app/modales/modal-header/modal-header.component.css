@@ -3,6 +3,9 @@ a {
     color: var(--color-texto-medio);
 }
 
+
+
+/* sacar de aca, lo puse en estilos globales */
 .btnEditModal {
     /* color:var(--color-texto-header) ; */
     color: #525252;

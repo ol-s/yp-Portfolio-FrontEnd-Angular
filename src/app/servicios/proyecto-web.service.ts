@@ -25,8 +25,8 @@ export class ProyectoWebService {
     return this.httpClient.post<any>(this.url + 'new', ProyectoWeb);
   }
 
-  public updateProyectoW(ProyectoWeb: ProyectoWeb): Observable<any> {
-    return this.httpClient.put<any>(this.url + 'update', ProyectoWeb);
+  public updateProyectoW(id: number, ProyectoWeb: ProyectoWeb): Observable<any> {
+    return this.httpClient.put<any>(this.url + `update/${id}`, ProyectoWeb);
   }
 
   public deleteProyectoW(id: number): Observable<any> {

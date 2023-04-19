@@ -9,30 +9,30 @@ import { Red } from '../model/red';
 
 export class RedService {
 
-  url:string= "http://localhost:8080/red/";   //barra al final asi no va en cada uno abajo
-  
-  constructor(private httpClient:HttpClient) { }                             
-                                                      
-    public listaRedes(): Observable<Red[]>{                     
-      return this.httpClient.get<Red[]>(this.url + 'lista');          
-    }                                                                                                                                               
+  url: string = "http://localhost:8080/red/";   //barra al final asi no va en cada uno abajo
 
-    public findRed(id: number):Observable<Red>{
-    return this.httpClient.get<Red>(this.url + `find/${id}`);           
-    }                                                                     
-  
-    //primer red es un alias, segundo es el red del model, o sea la entidad
-    public saveRed(Red: Red):Observable<any>{
-      return this.httpClient.post<any>(this.url + 'new', Red);
-      }
+  constructor(private httpClient: HttpClient) { }
 
-    public updateRed(Red: Red):Observable<any>{
-      return this.httpClient.put<any>(this.url + 'update', Red);
-      }
-   
-    public deleteRed(id: number):Observable<any>{
-      return this.httpClient.delete<any>(this.url + `delete/${id}`);
-      }
+  public listaRedes(): Observable<Red[]> {
+    return this.httpClient.get<Red[]>(this.url + 'lista');
+  }
+
+  public findRed(id: number): Observable<Red> {
+    return this.httpClient.get<Red>(this.url + `find/${id}`);
+  }
+
+  //primer red es un alias, segundo es el red del model, o sea la entidad
+  public saveRed(Red: Red): Observable<any> {
+    return this.httpClient.post<any>(this.url + 'new', Red);
+  }
+
+  public updateRed(id: number, Red: Red): Observable<any> {
+    return this.httpClient.put<any>(this.url + `update/${id}`, Red);
+  }
+
+  public deleteRed(id: number): Observable<any> {
+    return this.httpClient.delete<any>(this.url + `delete/${id}`);
+  }
 
 
 }

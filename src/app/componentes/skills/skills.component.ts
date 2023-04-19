@@ -1,7 +1,4 @@
 ///////////////////////////////////////////////////integrado al back, desde 11-4-23///////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 import { Component, OnInit } from '@angular/core';                  
 import { SkillArq } from 'src/app/model/skill-arq';
 import { SkillArqService } from 'src/app/servicios/skill-arq.service';
@@ -32,6 +29,9 @@ export class SkillsComponent implements OnInit {
   skillSoft: SkillSoft[] = [];
   skillsTodasBlandas: any = [];
 
+  id?: number;
+  //form: any;
+
   constructor(
     private saServ: SkillArqService, 
     private swServ: SkillWebService,
@@ -44,6 +44,7 @@ export class SkillsComponent implements OnInit {
     this.cargarSkillWeb();
     this.cargarSkillidioma();
     this.cargarSkillSoft();
+    //this.findSkillArq(this.skillsTodasArq.id);
   }
 
   cargarSkillArq(): void {
@@ -65,6 +66,8 @@ export class SkillsComponent implements OnInit {
  
 
 
+  //aww, bye, dejo modal en dos pasos
+  /*
   deleteSkillA(id: number): void {
     if (confirm("❗❗ ¿Querés eliminar este item?")) {        
       this.saServ.deleteSkillA(id).subscribe(data => { });
@@ -96,6 +99,42 @@ export class SkillsComponent implements OnInit {
       alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
     }
   }
+  */
+
+
+
+/*  error id
+  findSkillArq(): void {
+    this.saServ.findSkillA(id).subscribe(data => { this.skillsTodasArq = data });    
+  }*/
+/*
+//MIO//no encuentra  el id,,soloponiendo toda la ruta en el,  html routerlink, pero igual esta todo en rojo
+  findSkillArq(id: number){
+    this.saServ.findSkillA(this.skillsTodasArq.id).subscribe({  //pongoao asi largo porque me da error  el id ((((:   ta todo roto esto
+      next: (data) => {
+        //this.form.setValue(data); //era para dentro de unfrom, ofc no encontraba el id
+      },
+      error: (e) => console.error,  //console.error(e),  la (e) tiraba error en laconsola,,,y otros 200
+      complete: ()=> console.info('complete')
+    });
+    console.log("skill cargada correctamenteSSSSSSS");  //ESTE ME SALE AHORA EN CONSOLA, PERO SIN TOCAR NINGUN BOTON AL APENAS CARGAR
+  }*/
+
+
+
+
+
+  /*findSkillArq(id: number) {
+    this.saServ.findSkillA(id).subscribe({
+      next: (data) => {
+        this.form.setValue(data); //sip, form da error porque no es un form el html comun, entonces nunca encuentra el id
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+    });
+    //console.log("Estudios cargados correctamente");
+    console.log(id);
+  }*/
 
 }
 

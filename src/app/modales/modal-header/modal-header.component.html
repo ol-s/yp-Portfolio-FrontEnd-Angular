@@ -1,115 +1,252 @@
-<!-- modal edit header, edit/agregar redes(modal dentro de modal) -->
-<form class="modal fade" id="modalEditHeader" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- modal header, incluye edit de persona y redes -------------------------------------------------------------------------->
+<div class="modal fade" id="modalHeader" tabindex="-1" aria-hidden="true" aria-labelledby="modalHeader">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content ">
+        <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar encabezado // FALTA EDITAR TODOS LOS BANNERS
-                    A LA VEZ</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                </button>
+                <h1 class="modal-title fs-5" id="modalHeader">Editar encabezado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <!-- primera parte modal---------ACA HAY QUE TRAER CON NGFOR PARECE, HAGO EDUCACION EDIT Y VUELVO------------------------------------------- -->
+            <!-- persona--------------------------------------------------------------------------------- -->
             <div class="modal-body">
-                <div class=" form-floating mb-3">
-                    <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
-                        placeholder="text">
-                    <label for="floatingInput">Nombre</label>
+                <div class="container mb-1">
+                    <!-- listado de items cargados-->
+                    <div class="mt-0" *ngFor="let cadaPersona of personaItems">
+                        <!-- <div class="row me-2 mb-3">
+                            <h5 class="col-11 mt-2" id="">Editar Persona, todo es persona tho</h5>
+                            <div class="col-1">
+                                <button class="btn btnEditModal" data-bs-toggle="modal"
+                                    data-bs-target="#modalInsideCompHeaderEdit"
+                                    (click)="cadaPersona.id? findPers(cadaPersona.id): null">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                            </div>
+                        </div> -->
+                        <div class="text-end">
+                            <button class="btn btnEditModal mt-3" data-bs-toggle="modal" data-bs-target="#modalInsideCompHeaderEdit"
+                                (click)="cadaPersona.id? findPers(cadaPersona.id): null">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </div>
+                        <div class="">
+                            <!-- <p><b>ID: </b> {{skillW.id}}</p> -->
+                            <p><b>Nombre: </b>{{cadaPersona.nombre}}</p>
+                            <p><b>Apellido: </b>{{cadaPersona.apellido}}</p>
+                            <p><b>Ocupación: </b>{{cadaPersona.ocupacion}}</p>
+                            <p><b>Brand Logo: </b>{{cadaPersona.logoBrand}}</p>
+                            <p><b>Brand Link: </b>{{cadaPersona.subtitulo1}}</p>
+                        </div>
+                        <!-- <div class="text-end">
+                            <button class="btn btnEditModal mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalInsideCompHeaderEdit"
+                                (click)="cadaPersona.id? findPers(cadaPersona.id): null">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </div> -->
+                    </div>
                 </div>
-                <div class=" form-floating mb-3">
-                    <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
-                        placeholder="text">
-                    <label for="floatingInput">Apellido</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <!-- cambiar los id aca, ver bien como y que hacen -->
-                    <input type="text" class="form-control rounded-0 formulariosinput" id="floatingInput"
-                        placeholder="text">
-                    <label for="floatingInput">Ocupacion</label>
-                </div>
-                <!-- <br class="my-4 p-3"> -->
-                <!-- <br class="py-5 my-2"> -->
             </div>
 
-            <!-- EDITAR REDES-------------------------------------------------------------- -->
-            <div class="modal-body">
-                <hr class="w-75 m-auto mb-4">
-                <div class="d-flex justify-content-center">
-                    <h5 class="mt-2 pt-0">Agregar / Editar redes</h5>
-                    <button data-bs-target="#modalRedAdd" data-bs-toggle="modal" class="ms-3 pb-1 btn btnEditModal">
+            <!-- redes---------------------------------------------------------------------------------- -->
+            <hr class="ms-5 me-5">
+            <div class="modal-body row  me-2">
+                <h5 class="col-11 mt-2" id="">Agregar / Editar redes</h5>
+                <div class="col-1">
+                    <button type="btn" class="btn btnEditModal" aria-label="" data-bs-target="#modalHeaderREDESedit"
+                        data-bs-toggle="modal">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
-                <hr class="w-75 m-auto my-3">
-                <div class="container text-center justify-content-between">
-                    <div class="row g-4">
-                        <div class="col">
-                            <!-- <h5>Editar o agregar redes</h5> -->
-
-                            <!-- importo redes en el modal para editar el  red-component dentro del modal -->
-                            <div class="row d-flex justify-content-center align-items-center"
-                                *ngFor="let cadaRed of redesTodas">
-                                <div class="col-1"></div>
-                                <!-- traigo al modal las redes cargadas para que se vea el icono +edit+delete botones -->
-                                <div class="col-4 mt-2">
-                                    <a class=" pt-3 pb-3 " [href]="cadaRed.url" target="_blank">
-                                        <i [ngClass]="cadaRed.iconred"></i>
-                                    </a>
-                                </div>
-                                <div class="col-3 mt-3">
-                                    <button data-bs-target="#modalEditRed" data-bs-toggle="modal"
-                                        class="btn btn-extra-mini mb-0 btnEditModal">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                </div>
-                                <div class="col-1 mt-3">
-                                    <!-- trigger delete con alert del browser-->
-                                    <button type="submit" class="btn btn-extra-mini mb-0 btnEditModal"
-                                        (click)="deleteRed(cadaRed.id)">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </div>
-                                <div class="col-3"></div>
+            </div>
+            <!-- <hr class="ms-5 me-5 ps-2 pe-2"> -->
+            <div class="container text-center justify-content-between">
+                <div class="row g-4">
+                    <div class="col">
+                        <!-- importo redes en el modal para editar el red-component dentro del modal header-->
+                        <div class="row d-flex justify-content-center align-items-center"
+                            *ngFor="let cadaRed of redesTodas">
+                            <div class="col-1"></div>
+                            <!-- traigo al modal las redes cargadas para que se vea el icono +edit+delete botones -->
+                            <div class="col-4 mt-2">
+                                <a class=" pt-3 pb-3 ">
+                                    <i [ngClass]="cadaRed.iconred"></i>
+                                </a>
                             </div>
-                            <hr class="w-75 m-auto my-3 mt-4">
-
-                            <!-- saco esto, dejo el add arriba con el titulo -->
-                            <!-- <div class="d-flex justify-content-center"><button data-bs-target="#modalRedAdd"
-                                        data-bs-toggle="modal" class="btn btn-black-extra-mini"><i
-                                            class="fa-solid fa-plus"></i></button>
-                                </div>
-                                <hr class="w-75 m-auto my-3"> -->
+                            <div class="col-3 mt-3">
+                                <button type="button" class="btn mb-0 btnEditModal"
+                                    (click)="cadaRed.id? findRed(cadaRed.id): null" data-bs-toggle="modal"
+                                    data-bs-target="#modalHeaderREDESedit"><i class="fa-solid fa-pen"></i>
+                                </button>
+                            </div>
+                            <div class="col-1 mt-3">
+                                <button type="submit" class="btn mb-0 btnEditModal" (click)="deleteRed(cadaRed.id)">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="col-3"></div>
                         </div>
                     </div>
                 </div>
             </div>
+            <hr class="ms-5 me-5 mt-5 mb-5">
+        </div>
+    </div>
+</div>
 
 
 
 
-            <!-- tercera parte modal, banner? ----------------HACER MODAL EDIT BANNERS------
-                -wow, en blanco estoy, ver modal educaicon, como se guarda l aurl??--------------------------------------- -->
-            <!-- <div class="modal-body">
-                <div class="container text-center justify-content-between">
-                    <div class="row g-4">
-                        <div class="col">
-                            <h5>Editar banner header</h5>
-                            <div class=" form-floating mb-3">
-                                <input type="" class="form-control rounded-0 formulariosinput" id="floatingInput"
-                                    placeholder="url">
-                                <label for="floatingInput">Nueva URL del banner</label>
-                            </div>
-                        </div>
+
+<!--Modal Edit HEADER *************************************************************************************************-->
+<div class="modal fade" id="modalInsideCompHeaderEdit" tabindex="-1" aria-hidden="true" aria-labelledby="modalInsideCompHeaderEdit">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalInsideCompHeaderEdit">Editar Persona </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center justify-content-between">
+                <form [formGroup]="persoForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
+                    <!-- input ---- ------------------------------------------------------------------------- -->
+                    <div class=" form-floating mb-4 mt-2">
+                        <!--  <input type="text" formControlName="nombre" [(ngModel)]="nombre" -->
+                        <input type="text" formControlName="nombre" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="nombre" [ngClass]="{'is-invalid': NombrePersona?.errors && NombrePersona?.touched,
+                                          'is-valid': !NombrePersona?.errors}">
+                        <!-- <input type="text" formControlName="nombre" class="form-control rounded-0 formulariosinput"
+                            [(ngModel)]="nombre" id="floatingInput" placeholder="nombre">-->
+                        <label for="floatingInput">Nombre</label>
                     </div>
-                </div>
-                <br class="py-5 mb-2">
-                <hr class="w-75 m-auto mt-3">
-            </div> -->
+                    <div *ngIf="NombrePersona?.errors  && NombrePersona?.touched">
+                        <p *ngIf="NombrePersona?.hasError('required')" class="error2 text-start">
+                            * Campo requerido
+                        </p>
+                    </div>
+                    <!-- input -------------------------------------------------------------------------------- -->
+                    <div class=" form-floating mb-4">
+                        <!--  <input type="text" formControlName="nombre" [(ngModel)]="nombre" no hace falta el ngmodel!!!-->
+                        <input type="text" formControlName="apellido" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="apellido" [ngClass]="{'is-invalid': ApellidoPersona?.errors && ApellidoPersona?.touched,
+                                          'is-valid': !ApellidoPersona?.errors }">
+                        <label for="floatingInput">Apellido</label>
+                        <!-- <input type="text" formControlName="apellido" class="form-control rounded-0 formulariosinput"
+                            [(ngModel)]="apellido" id="floatingInput" placeholder="apellido">
+                        <label for="floatingInput">Apellido</label> -->
+                    </div>
+                    <div *ngIf="ApellidoPersona?.errors  && ApellidoPersona?.touched">
+                        <p *ngIf="ApellidoPersona?.hasError('required')" class="error2 text-start">
+                            * Campo requerido
+                        </p>
+                    </div>
+                    <!-- input nombre ------------------------------------------------------------------------- -->
+                    <div class=" form-floating mb-4">
+                        <!--  <input type="text" formControlName="nombre" [(ngModel)]="ocupacion" -->
+                        <input type="text" formControlName="ocupacion" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="ocupacion" [ngClass]="{'is-invalid': Ocupacion?.errors && Ocupacion?.touched,
+                                          'is-valid': !Ocupacion?.errors }">
+                        <label for="floatingInput">Ocupación</label>
+                        <!-- <input type="text" formControlName="ocupacion" class="form-control rounded-0 formulariosinput"
+                        id="floatingInput" placeholder="ocupacion" [(ngModel)]="ocupacion" >  anda igual sin el ngmodel
+                        <label for="floatingInput">Ocupacion</label> -->
+                    </div>
+                    <div *ngIf="Ocupacion?.errors  && Ocupacion?.touched">
+                        <p *ngIf="Ocupacion?.hasError('required')" class="error2 text-start">
+                            * Campo requerido
+                        </p>
+                    </div>
+                    <!-- input --------------------ME FALTA ATRIBUTO PARA CAMBIAR EL LINK!!! SSSH------------------------ -->
+                    <div class=" form-floating mb-4">
+                        <input type="text" formControlName="logoBrand" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="logoBrand" [ngClass]="{'is-invalid': LogoBrand?.errors && LogoBrand?.touched,
+                                          'is-valid': !LogoBrand?.errors }">
+                        <label for="floatingInput">Brand Logo</label>
+                    </div>
+                    <div *ngIf="LogoBrand?.errors  && LogoBrand?.touched">
+                        <p *ngIf="LogoBrand?.hasError('required')" class="error2 text-start">
+                            * Campo requerido
+                        </p>
+                    </div>
+                    <!-- input --------------------ME FALTA ATRIBUTO PARA CAMBIAR EL LINK!!! USO Subtitulo1!------------------------ -->
+                    <!-- ver si sacar igual, el link a yoprogramo no existe mas, habria que poner el link al home, 
+                        suelen tener algunas paginas, vuelve arriba, pero ya tengo 'home', ver , esta feo el modal -->
+                    <div class=" form-floating mb-4">
+                        <input type="text" formControlName="subtitulo1" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="subtitulo1" [ngClass]="{'is-invalid': Subtitulo1?.errors && Subtitulo1?.touched,
+                                          'is-valid': !Subtitulo1?.errors }">
+                        <label for="floatingInput">Brand Link</label>
+                    </div>
+                    <div *ngIf="Subtitulo1?.errors  && Subtitulo1?.touched">
+                        <p *ngIf="Subtitulo1?.hasError('required')" class="error2 text-start">
+                            * Campo requerido
+                        </p>
+                    </div>
 
-            <!-- ,,,lo saque nomas, error en ''form''  -->
-            <!-- <button type="button" class="btn btn-ligth fa-solid fa-rotate-right mt-3" (click)="limpiar()"></button> -->
-            <div class="modal-body">
-                <button class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5" type="submit">Aceptar</button>
+                    <br class="pt-0 mb-0">
+                    <hr class="w-75 m-auto mt-0 mb-4">
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()"></button>
+                    <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                        (click)="savePers()" data-bs-dismiss="modal" [disabled]="persoForm.invalid">Guardar</button>
+                </form>
             </div>
         </div>
     </div>
-</form>
+</div>
+
+
+<!--Modal Add/Edit REDES, dentro de modal header -------------------------------------------------------------------------->
+<div class="modal fade" id="modalHeaderREDESedit" tabindex="-1" aria-hidden="true" aria-labelledby="modalHeaderREDESedit">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalHeaderREDESedit">Agregar / Editar Red</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiarR()"></button>
+            </div>
+            <div class="modal-body text-center justify-content-between">
+                <form [formGroup]="redForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
+                    <!-- input ------------------------------------------------------------------------ -->
+                    <div>
+                        <div class=" form-floating mb-4 mt-2">
+                            <!-- [(ngModel)]="url" NO HACE FALTA (?)-->
+                            <input type="text" formControlName="url" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput" placeholder="url" [ngClass]="{'is-invalid': Red?.errors && Red?.touched, 
+                                              'is-valid': !Red?.errors }">
+                            <label for="floatingInput">Link "https://www... "</label>
+                        </div>
+                        <div *ngIf="Red?.errors  && Red?.touched">
+                            <p *ngIf="Red?.hasError('required')" class="error2 text-start">
+                                * Ingrese un link
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input ------------------------------------------------------------------------ -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <!-- [(ngModel)]="iconred" NO HACE FALTA-->
+                            <input type="text" formControlName="iconred" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput" placeholder="iconred" [ngClass]="{'is-invalid': Icono?.errors && Icono?.touched, 
+                                              'is-valid': !Icono?.errors}">
+                            <label for="floatingInput">Nombre del ícono de bootstrap/fontawesome</label>
+                        </div>
+                        <div *ngIf="Icono?.errors  && Icono?.touched">
+                            <p *ngIf="Icono?.hasError('required')" class="error2 text-start">
+                                * Ingrese un nombre de ícono, ej. "bi bi-twitter"
+                            </p>
+                        </div>
+                    </div>
+                    <!-- guardar----------------------------------------------------------------------- -->
+                    <!-- <br class="pt-0 mb-0"> -->
+                    <hr class="w-75 m-auto mt-5 mb-3">
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right mb-3" (click)="limpiarR()"></button>
+                    <button type="submit" class="w-100 mb-5 mt-0 btn btn-lg rounded-0 btn-loginout3" (click)="saveRed()"
+                        data-bs-dismiss="modal" [disabled]="redForm.invalid">Guardar</button>
+                        <!-- class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--AL FINAL PUSE EL MODAL ACA, ELIMINAR MODAL RED ADD Y EDIT
+<app-modal-red-add></app-modal-red-add>
+<app-modal-red-edit></app-modal-red-edit> -->

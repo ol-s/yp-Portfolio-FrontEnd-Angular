@@ -25,8 +25,11 @@ export class SkillIdiomaService {
     return this.httpClient.post<any>(this.url + 'new', Skillidioma);
   }
 
-  public updateSkillD(Skillidioma: Skillidioma): Observable<any> {
-    return this.httpClient.put<any>(this.url + 'update', Skillidioma);
+  // public updateSkillD(Skillidioma: Skillidioma): Observable<any> {
+  //   return this.httpClient.put<any>(this.url + 'update', Skillidioma);
+  // }
+  public updateSkillD(id:number, Skillidioma: Skillidioma): Observable<any> {
+    return this.httpClient.put<any>(this.url + `update/${id}`, Skillidioma);
   }
 
   public deleteSkillD(id: number): Observable<any> {

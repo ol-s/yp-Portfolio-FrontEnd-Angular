@@ -1,15 +1,9 @@
-/* PROYECTOS //////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////// */
-
-
 .proyectostitulo {
     /* padding: 4em var(--padding-left) 2em var(--padding-left); */
     padding: 4em var(--padding-left) .5em var(--padding-left);
 
 }
 
-/* //////******  /// */
 .proyectos-recientes img {
     height: 100%;
     width: 100%;
@@ -86,7 +80,8 @@
     /* icono al hover over imagen, cero cuando no */
     opacity: 0;
     position: absolute;
-    top: 50%;
+    /* top: 50%; se iba para abajo cuando parrafos largos, margintop se va para abjo (el icono) cuando titulo largo, zzz*/
+    margin-top: -8em;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -117,7 +112,9 @@
 
 .overlay .iconos-contenedor {
     display: flex;
-    margin-top: -4em;
+
+
+    /* margin-top: -4em; */
     /* 9-4-23  o se porque se fue tan para abajo, y los pb-5 mb-5 no funcionan ahora, NO USAR ACA PORQUE ES RESPECTO AL LARGO DEL TWXTO? */
     /* margin-bottom: 1.2em; */
 }
@@ -180,6 +177,9 @@
 
 
 
-/* fin PROYECTOS //////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+
+

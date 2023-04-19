@@ -1,1 +1,208 @@
-<p>modal-skill-arq-edit works!</p>
+<!--Modal Edit Or Add SKILLS ARQ-------------------------------------------------------------------------------------->
+<div class="modal fade" id="modalItemsSkillArq" aria-hidden="true" aria-labelledby="modalItemsSkillArq" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalItemsSkillArq">Diseño y Arquitectura</h1>
+                <!-- al final agrego el limpiar cos si pones editas primero, salis sin editar y no apretas 'x' para cerrar modal, volves a abrir 
+                el modal y pones '+' te trae todos los datos del ultimo item que apretaste edit y no editaste -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            </div>
+            <div class="modal-body">
+                <!-- agregar item -->
+                <div class="text-end">
+                    <button data-bs-target="#modalEditOrAddSkillsArq" data-bs-toggle="modal"
+                        class="btn btnEditModal mt-2 mb-2">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="container mb-1">
+                    <div class="list-group-item mt-4" *ngFor="let skillA of skillArq">
+                        <div class="col-12">
+                            <!-- <p><b>ID: </b> {{skillArq.id}}</p> -->
+                            <p><b>NOMBRE: </b> {{skillA.nombre}}</p>
+                            <p><b>PORCENTAJE: </b> {{skillA.porcentaje}}</p>
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btnEditModal" (click)="skillA.id? findSkillArq(skillA.id): null"
+                                data-bs-toggle="modal" data-bs-target="#modalEditOrAddSkillsArq">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn btnEditModal" (click)="skillA.id? deleteSkillArq(skillA.id): null">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Modal Edit Or Add SKILLS ARQ-------------------------------------------------------------------------------------->
+<div class="modal fade" id="modalEditOrAddSkillsArq" tabindex="-1" aria-labelledby="modalEditOrAddSkillsArq" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalEditOrAddSkillsArqLabel">Agregar/Editar Skill Arq</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+            </div>
+            <div class="modal-body text-center justify-content-between">
+                <form [formGroup]="saForm"> <!-- (ngSubmit)="onSubmit($event)" id="saForm", SAVE ABAJO-->
+                    <!-- input nombre ------------------------------------------------------------------------ -->
+                    <div>
+                        <div class=" form-floating mb-4 mt-2">
+                            <!--  [(ngModel)]="nombre" -->
+                            <input type="text" formControlName="nombre"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="nombre"
+                                [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 
+                                              'is-valid': !Nombre?.errors }">
+                            <label for="floatingInput">Nombre Skill</label>
+                        </div>
+                        <div *ngIf="Nombre?.errors  && Nombre?.touched">
+                            <p *ngIf="Nombre?.hasError('required')" class="error2 text-start">
+                                * Ingrese el nombre de la habilidad
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input porcentaje --------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <!-- [(ngModel)]="porcentaje" -->
+                            <input type="number" min="0" max="100" formControlName="porcentaje" 
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="porcentaje" [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched, 
+                                              'is-valid': !Porcentaje?.errors}">
+                            <label for="floatingInput">% Skill (número de 0-100)</label>
+                        </div>
+                        <div *ngIf="Porcentaje?.errors  && Porcentaje?.touched">
+                            <p *ngIf="Porcentaje?.hasError('required')" class="error2 text-start">
+                                * Ingrese un número de 0-100
+                            </p>
+                            <p *ngIf="Porcentaje?.errors?.['max']" class="error2 text-start">
+                                * Ingrese un número de 0-100
+                            </p>
+                        </div>
+                    </div>
+                    <!-- guardar----------------------------------------------------------------------------------- -->
+                    <br class="pt-0 mb-0">
+                    <hr class="w-75 m-auto mt-0 mb-4">
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                        (click)="saveSkillArq()" data-bs-dismiss="modal" [disabled]="saForm.invalid">
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--Modal SKILL ARQ edit-->
+<!-- <form class="modal fade" id="SkillArqEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [formGroup]="editform" (ngSubmit)="onEnviar($event)">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar skill Arq</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+
+
+            <div class="modal-body">
+                <div class="">
+                    <h6 class="">{{skillsTodasArq.nombre}}no me trae ningun dato asi</h6>
+                    <h6 class="">{{skillsTodasArq.porcentaje}}%</h6>
+                </div>
+            </div>
+
+
+            <!--no entiendo porque no me muestra esto en el modal????????????????????  --
+            <div class="modal-body" *ngFor="let cadaSkillArq of skillArq">
+                <div class="">
+                    <h6 class="">{{cadaSkillArq.nombre}}</h6>
+                    <h6 class="">{{cadaSkillArq.porcentaje}}%</h6>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="container text-center justify-content-between">
+                    <!-- input nombre --------------------------------------------------------------------- --
+                    <div class=" form-floating mb-4">
+                        <input type="text" formControlName="nombre" [(ngModel)]="nombre"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="nombre"
+                            [ngClass]="{'is-invalid': Skill?.errors && Skill?.touched, 
+                                          'is-valid': !Skill?.errors }">
+                        <label for="floatingInput">Nombre Skill</label>
+                    </div>
+                    <div *ngIf="Skill?.errors  && Skill?.touched">
+                        <p *ngIf="Skill?.hasError('required')" class="error2 text-start">
+                            * Ingrese el nombre de la habilidad
+                        </p>
+                    </div>
+                    <!-- input porcentaje ----------------------------------------------------------------- --
+                    <div class=" form-floating mb-4">
+                        <input type="number" min="0" max="100" formControlName="porcentaje" [(ngModel)]="porcentaje"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="porcentaje"
+                            [ngClass]="{'is-invalid': Porc?.errors && Porc?.touched, 
+                                          'is-valid': !Porc?.errors}">
+                        <label for="floatingInput">% Skill (número de 0-100)</label>
+                    </div>
+                    <div *ngIf="Porc?.errors  && Porc?.touched">
+                        <p *ngIf="Porc?.hasError('required')" class="error2 text-start">
+                            * Ingrese el porcentaje
+                        </p>
+                        <p *ngIf="Porc?.errors?.['max']" class="error2 text-start">
+                            * Ingrese un número de 0-100
+                        </p>
+                    </div>
+                    <!-- <br class="pt-2 mb-0">
+                    <hr class="w-75 m-auto mt-3 mb-4"> -->
+<!-- aceptar---------------------------------------------------------------------------- --
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <!-- aceptar---------------------------------------------------------------------------- --
+                <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                    routerLink="http://localhost:8080/skillarq/update/{{skillsTodasArq.id}}">
+                    con link router
+                </button>
+                <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3">
+                    7sin, updateM deberia estar en ONSUBMIT
+                </button>
+<br>
+                <!-- jjjjjjjjjjjjj   tampoco me aparece por el ngfor????? en educacion meti los datos dentro del modal wtf --
+                <div *ngFor="let cadaSkillArq of skillsTodasArq">
+                    <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                        routerLink="http://localhost:8080/skillarq/update/{{cadaSkillArq.id}}">
+                        ngfor
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</form> -->

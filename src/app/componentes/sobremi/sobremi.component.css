@@ -124,7 +124,20 @@
     text-decoration: none;
     text-transform:none;
   } */
-  /* fin SOBRE MI + avatar con media queriesokokko///////////////////////
-    /////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////// */
  
+
+
+
+  
+
+  /* con el avatar fotito */
+  .img-fluid{
+    /* border-radius: 10%; */
+    border: 1px solid var(--color-links-navbar);
+    width: 10em;
+    margin-top: -18em;
+    transition: all 0.5s ease-out;
+  }
+  .img-fluid:hover{
+    transform: scale(1.3);
+  }

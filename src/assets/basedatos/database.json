@@ -11,10 +11,10 @@
             "cv": "../assets/cv/cv-SoledadFretes.pdf",
             "email": "no use esto,,,,,,,",
 
-            "bannerEntrada": "../assets/img/banner/1banner.jpg",
-            "bannerAvatar": "../assets/img/banner/2banneravataralejado.jpg",
-            "bannerEducacion": "../assets/img/banner/3educacion.jpg",
-            "bannerSalida": "../assets/img/banner/4salida.jpg",
+            "bannerEntrada": "../assets/img/banners/1banner.jpg",
+            "bannerAvatar": "../assets/img/banners/2banneravataralejado.jpg",
+            "bannerEducacion": "../assets/img/banners/3educacion.jpg",
+            "bannerSalida": "../assets/img/banners/4salida.jpg",
 
             "subtitulo1": "crear para proyectos arq web por las dudas",
             "subtitulo2": "crear para proyectos arq web por las dudas",

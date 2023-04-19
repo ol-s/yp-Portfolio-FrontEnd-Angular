@@ -1,59 +1,118 @@
+//import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Educacion } from 'src/app/model/educacion';
+import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
   selector: 'app-modal-educacion-edit',
   templateUrl: './modal-educacion-edit.component.html',
   styleUrls: ['./modal-educacion-edit.component.css']
 })
-export class ModalEducacionEditComponent implements OnInit  {
+export class ModalEducacionEditComponent implements OnInit {
 
-  form: FormGroup; 
+  eduForm: FormGroup;
+  educacion: Educacion[] = [];
+  estudio: any;
+  id?: number;
 
-  // Inyectar en el constructor el formBuilder
-  constructor(private formBuilder: FormBuilder){ 
+  constructor(
+    private eduServ: EducacionService,
+    private formBuilder: FormBuilder ) {
 
-    ///Creamos el grupo de controles para el formulario
-    this.form= this.formBuilder.group({
-      logoInstitucion:['',[Validators.required]],
-      anioeInstitucion:['', [Validators.required]],
-      titulo:['', [Validators.required]],
-   })
+    this.eduForm = this.formBuilder.group({
+      id: [''],
+      logoInstitucion: ['', [Validators.required]],
+      logoAlt: [''],
+      anioeInstitucion: ['', [Validators.required]],
+      titulo: ['', [Validators.required]],
+      descripcion: ['']
+    })
   }
 
-  ngOnInit() {}
+  //metodos p formularios reactivos
+  get Logo() { return this.eduForm.get("logoInstitucion");}
+  //get Alt() { return this.eduForm.get("logoAlt");}
+  get AnioeInstitucion() { return this.eduForm.get("anioeInstitucion");}
+  get Titulo() { return this.eduForm.get("titulo");}
+  get Descripcion() { return this.eduForm.get("descripcion");}
 
-  get logoInstitucion(){
-    return this.form.get("logoInstitucion"); 
-  }
- 
-  get anioeInstitucion(){
-   return this.form.get("anioeInstitucion");
-  }
 
-  get titulo(){
-    return this.form.get("titulo"); //formControlName="titulo2"
-   }
-
-  get logoInstitucionValid(){
-    return this.logoInstitucion?.touched && !this.logoInstitucion?.valid;
+  ngOnInit(): void {
+    this.listaEstud();
   }
 
-  get anioeInstitucionValid(){
-    return this.anioeInstitucion?.touched && !this.anioeInstitucion?.valid;
+  listaEstud(): void {
+    this.eduServ.listaEstudios().subscribe({
+      next: (data) => {
+        this.educacion = data;
+        console.log('Items cargados correctamente');
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('Completado')
+    })
   }
 
-  get tituloValid(){
-    return this.titulo?.touched && !this.titulo?.valid;
+  findEstud(id: number) {
+    this.eduServ.findEstudio(id).subscribe({
+      next: (data) => {
+        this.eduForm.setValue(data);
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('Completado')
+    });
+    //console.log("Item cargado correctamente");
+    console.log('Estudio id = ' + id);
   }
 
- 
-  onEnviar(event: Event){
-    event.preventDefault; 
-    if (this.form.valid){
-      alert("Todo salio bien ¡Enviar formulario!")
-    }else{    
-      this.form.markAllAsTouched(); 
-    } 
+  saveEstud() {
+    let estudio = this.eduForm.value;
+    if (estudio.id == '') {
+      this.eduServ.saveEducacion(estudio).subscribe({
+        next: (data) => {
+          this.limpiar();
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('Completado')
+      });
+      window.location.reload();
+      alert("Estudio creado ✔️");
+    } else {
+      this.eduServ.updateEstudio(estudio.id, estudio).subscribe({   
+        next: (data) => {
+          this.limpiar();
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('Completado')
+      });
+      window.location.reload();
+      alert("Estudio editado ✔️");
+    }
   }
+
+  deleteEstud(id: number) {
+    if (confirm("¿Querés eliminar este estudio? ❗❗")) {
+      this.eduServ.deleteEstudio(id).subscribe(data => { });
+      window.location.reload();
+      alert("Estudio eliminado ✔️");
+    }
+  }
+
+  //para limpiar el form
+  limpiar(): void {
+    this.eduForm.reset();
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

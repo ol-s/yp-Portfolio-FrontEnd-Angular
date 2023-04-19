@@ -1,10 +1,7 @@
 ///////////////////////////////////////////////////integrado al back, desde 9-4-23///////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/persona';                          //*** 
 import { PersonaService } from 'src/app/servicios/persona.service';
-
 //redes es entidad aparte pero insertada tmb en la seccion header
 import { Red } from 'src/app/model/red';
 import { RedService } from 'src/app/servicios/red.service';
@@ -24,7 +21,6 @@ export class HeadernameComponent implements OnInit {
   red :Red [] = [];
   redesTodas : any = [];
   
-
   //serviEduc es mi alias
   constructor(private persoServ: PersonaService, private redServ: RedService) { }
 
@@ -34,22 +30,21 @@ export class HeadernameComponent implements OnInit {
     this.cargarRed();    //SOLAMENTE CARGA DATOS, NO EDITA/BORRA/NADA
   }
 
-  
+
   //this. es para utilizar una variable que esta fuera del metodo, si le pasara id entre los parenteiss, abajo no pondria 'this.' ,,,express 18, min 38'
   //solo este metodo hacemos?? y el new/find/update/delete?..en el servicio! 
   cargarPersona(): void {
-    this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });
-    
+    this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });  
   }
   //listaPERSONAS()  es lo mismo que escribi en el PERSONA.service.ts,,,,si tuviera algo entre parentsis aca lo pongo 
   //'data' es alias
   
-
   cargarRed(): void {
-    this.redServ.listaRedes().subscribe(data => { this.redesTodas = data });
-    
+    this.redServ.listaRedes().subscribe(data => { this.redesTodas = data });  
   }
 
+  
+}
 
 
 
@@ -59,7 +54,7 @@ export class HeadernameComponent implements OnInit {
 
 
   //----ESTE ANDAN BIEN LAS ALERTAS!!!//////IGUAL ESTE NO ME SIRVE ACA PORQUE NOQUIERO ELIMINAR NADA DE PERSONA, SOLO EDITAR!!///////////////////
-  deletePersona(id: number): void {
+  /*deletePersona(id: number): void {
     if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
       this.persoServ.deletePersona(id).subscribe(data => { });
       window.location.reload();
@@ -68,9 +63,9 @@ export class HeadernameComponent implements OnInit {
       //OJO OJO QUE SI NO LO HACE A LA PRIMERA HAY QUE PRENDER LA SEGUNDA ALERT, POR AHORA ANDUVO DE NUEVO BIEN CREAR Y ELIMINAR 7-4-23  18.50HS
       //PRENDO NOMAS, DA PROBLEMAS
     }
-  }
+  }*/
 
-}
+
 
 
 

@@ -1,35 +1,158 @@
-<!-- half banner1 //////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////// -->
-
-<!-- 2dias despuessssssssssssssss OKOK////////////////////////////////////////////////PROBS EL NGFOR NO VA PERO B//////////////////////////// -->
-<div *ngFor="let itemPersona of personaItems">
+<!-- banner entrada + modal edit todos los banners------------------------------------------------ -->
+<!-- 2dias despuessssssssssssssss ////////////////////4 dias para banners, 6 dias para btn edit////////////////////////////// -->
+<div *ngFor="let itemPersona of personaItems" class="container-fluid">
 
     <div class="banner1" [ngStyle]="{'background-image': ' url(' + itemPersona.bannerEntrada + ')'}">
 
         <div class="text-end ">
-            <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal" data-bs-target="#modalBannerEdit">
-                <i class="fa-solid fa-pen"></i></button>
+            <!-- MODAL EN DOS PASOS -->
+            <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
+                data-bs-target="#modalBanners">
+                DOS
+            </button> -->
 
-            <!-- dejo solo para editar -->
-            <!-- <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button> -->
+            <!-- MODAL EN UN CLICK, TRAYENDO LOS DATOS CON EL MODAL ACA ABAJO y en el ts todo lo que ponia en los modales-->
+            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                data-bs-target="#modalBannersInsideComponent" (click)="itemPersona.id? findPers(itemPersona.id): null">
+                <i class="fa-solid fa-pen"></i>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- llamo al modal,,,,,,, reemplace x modal en un click dentro del component-->
+<!-- <app-modal-banner-edit></app-modal-banner-edit> -->
+
+
+
+<!--Modal Edit BANNERS --------------------------------------------------------------------------------------------->
+    <!-- TIENE QUE ESTAR EL MODAL ACA ABAJO, SINO NO TRAE LOS DATOS*****************************-->
+<div class="modal fade" id="modalBannersInsideComponent" tabindex="-1" aria-hidden="true"
+    aria-labelledby="modalBannersInsideComponent">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalBannersInsideComponent">Editar Banners</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>*Reemplazar nombre del archivo o insertar desde una URL</p>
+                <hr class="w-75 m-auto mt-4 mb-4">
+
+                <form [formGroup]="persoForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
+                    <!-- input ---- ------------------------------------------------------------------------- -->
+                    <div>
+                        <h5>Banner Entrada</h5>
+                        <!--   <div class=" form-floating mb-4"> -->
+                        <div class="mb-4">
+                            <input type="text" formControlName="bannerEntrada"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="" 
+                                [ngClass]="{'is-invalid': BannerEntrada?.errors && BannerEntrada?.touched,
+                                              'is-valid': !BannerEntrada?.errors}">
+                            <!-- <label for="floatingInput">Reemplazar nombre del archivo o insertar desde una URL</label> -->
+                        </div>
+                        <div *ngIf="BannerEntrada?.errors  && BannerEntrada?.touched">
+                            <p *ngIf="BannerEntrada?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input -------------------------------------------------------------------------------- -->
+                    <div class="mt-3">
+                        <h5>Banner Sobre Mi</h5>
+                        <div class="mb-4">
+                            <input type="text" formControlName="bannerAvatar"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="" 
+                                [ngClass]="{'is-invalid': BannerAvatar?.errors && BannerAvatar?.touched,
+                                              'is-valid': !BannerAvatar?.errors }">
+                            <!-- <label for="floatingInput">Reemplazar nombre del archivo o insertar desde una URL</label> -->
+                        </div>
+                        <div *ngIf="BannerAvatar?.errors  && BannerAvatar?.touched">
+                            <p *ngIf="BannerAvatar?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input ------------------------------------------------------------------------------ -->
+                    <div class="mt-3">
+                        <h5>Banner Educación</h5>
+                        <div class="mb-4">
+                            <input type="text" formControlName="bannerEducacion"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="" 
+                                [ngClass]="{'is-invalid': BannerEducacion?.errors && BannerEducacion?.touched,
+                                              'is-valid': !BannerEducacion?.errors }">
+                            <!-- <label for="floatingInput">Reemplazar nombre del archivo o insertar desde una URL</label> -->
+                        </div>
+                        <div *ngIf="BannerEducacion?.errors  && BannerEducacion?.touched">
+                            <p *ngIf="BannerEducacion?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input ------------------------------------------------------------------------------ -->
+                    <div class="mt-3">
+                        <h5>Banner Salida</h5>
+                        <div class=" mb-4">
+                            <input type="text" formControlName="bannerSalida"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="" 
+                                [ngClass]="{'is-invalid': BannerSalida?.errors && BannerSalida?.touched,
+                                              'is-valid': !BannerSalida?.errors }">
+                            <!-- <label for="floatingInput">Reemplazar nombre del archivo o insertar desde una URL</label> -->
+                        </div>
+                        <div *ngIf="BannerSalida?.errors  && BannerSalida?.touched">
+                            <p *ngIf="BannerSalida?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- guardar ------------------------------------------------------------------------------ -->
+                    <div class="text-center justify-content-between">
+                        <br class="pt-2 mb-0">
+                        <hr class="w-75 m-auto mt-1 mb-4">
+                        <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()"></button>
+                        <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                            (click)="savePers()" data-bs-dismiss="modal" [disabled]="persoForm.invalid">Guardar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- llamo al modal -->
-<app-modal-banner-edit></app-modal-banner-edit>
+
+
+<!--
+<div class=" ">
+     <p>Reemplazar el nombre de la imagen dentro de la carpeta
+        "../assets/banners/<b>nueva_imagen.png</b>", ó
+        reemplazar la ruta con una imagen online "<b>https://www.imgbb...</b>".</p> -->
+
+    <!-- arreglar esto, esta horrible*************************** 
+    <p>Reemplazar con el nombre de otra imagen dentro de la carpeta
+        "../assets/banners/<b>nueva_imagen.png</b>", ó insertar desde una url
+        "<b>https://www.imgbb.com/nueva_imagen</b>"</p>
+    <!-- <p>Cambiar nombre de imagen "../assets/banners/<b>nueva_imagen.png</b>", ó insertar una url "<b>https://www.imgbb.com/...</b>"</p> --
+    <!-- <hr class="w-75 m-auto mb-5 mt-4"> --
+</div>-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- /////////////////////////////////////intentos de traer el banner/////////////////////////////////////////////////////////// -->
 
 <!-- <div class="banner1" [style.background-image]="itemPersona.bannerEntrada"> ESTE ANDABA PONIENDO 'url' EN EL TS Y FUERA DE 'persona'-->
-
-
-
-
-
-
-
-
-
-
 
 <!--  ///////////////////////////////////////////////////////////////////////////carga este pero una imagen online y poniendo 
     this.bannerEntrada= "https://static.eldiario.es/clip/b75933f3-8399-4ddd-85ee-d73c86314089_16-9-discover-aspect-ratio_default_0.jpg";
@@ -243,67 +366,3 @@
  *******************************************************************************
  *******************************************************************************
  *******************************************************************************-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--  ggggggg modal -->
-
-<!-- <div class="modal-content">
-        <div class="modal-header">
-            <h1 id="" class="modal-title fs-5">Editar Banner</h1><i data-bs-target="#modalBanner1"
-                data-bs-toggle="modal" aria-label="Volver" class="fa-solid fa-rotate-left"></i>
-        </div>
-        <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
-            <div class="form-group">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-12"><label for="url" class="form-label">Enlace</label><input type="text"
-                                id="url" placeholder="Banner URL" formcontrolname="url"
-                                class="form-control ng-untouched ng-pristine ng-invalid">
-                            <div id="urlHelp" class="form-text">Ingresar una URL</div>   -->
-<!-- </div>
-                        <div class="col-12 mt-3"><label for="description" class="form-label">Descripción</label><input
-                                type="text" id="description" placeholder="Descripción de la imagen"
-                                formcontrolname="description" class="form-control ng-untouched ng-pristine ng-invalid">
-                            <div id="descriptionHelp" class="form-text">Ingresar una descripción</div>
-                        </div>
-                        <div class="col-12 mt-3"><label for="hero" class="form-label">Hero</label><input type="text"
-                                id="hero" placeholder="Hero" formcontrolname="hero"
-                                class="form-control ng-untouched ng-pristine ng-invalid">
-                            <div id="heroHelp" class="form-text">Ingresar un hero</div>
-                        </div>
-                        <div class="col-12 mt-3"><label for="subhero" class="form-label">Subhero</label><input
-                                type="text" id="subhero" placeholder="Subhero" formcontrolname="subhero"
-                                class="form-control ng-untouched ng-pristine ng-invalid">
-                            <div id="subheroHelp" class="form-text">Ingresar un subhero</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer"><button data-bs-target="#bannersModal" data-bs-toggle="modal"
-                        aria-label="Actualizar" class="btn btn-black-mini">Actualizar</button></div>
-            </div>
-        </form>-->
-
-
-
-
-
-
-
-<!-- fin half banner1 //////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////// -->

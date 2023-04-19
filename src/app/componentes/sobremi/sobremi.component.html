@@ -1,80 +1,87 @@
-<!-- sobre mi + avatar con media queriesokokko//////////////////////
-/////////////////////////////////////////////////////////////////// -->
+<!-- seccion sobre mi + banner avatar con media queries + MODAL EDIT EN UN SOLO CLICK-------------------------->
 <section>
     <div class="container-fluid seccion-oscura" id="sobre-mi">
         <div class="container-fluid">
             <div class="row" *ngFor="let itemPersona of personaItems">
                 <div class="m-0 col-sm-8 sobremi">
-                    <!-- botones edicion seccion ------------------------------------------>
+                    <!-- boton edicion seccion -->
                     <div class="text-end">
+
+
+
+
+                        <!-- BORRRARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+                        si fueran dos modales quedaria el primero resentando el texto y lapicito editar/otro modal,
+                        pero es un click de mas-->
                         <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                            data-bs-target="#modalEditSobremi">
+                            data-bs-target="#modalPresentacion"
+                            (click)="itemPersona.id? findPers(itemPersona.id): null">
+                            <b>X</b>
+                        </button>
+                        <!-- BORRRARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR-->
+
+
+
+
+
+                        <!-- MODAL EN UN CLICK, TRAYENDO LOS DATOS CON EL MODAL ACA ABAJO y en 
+                        el ts todo lo que ponia en los modales-->
+                        <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
+                            data-bs-target="#modalSobreMiInsideComponent"
+                            (click)="itemPersona.id? findPers(itemPersona.id): null">
                             <i class="fa-solid fa-pen"></i>
                         </button>
-                        <!-- <button type="button" class="botonEditSeccionOscura">  -----------dejo edit boton nomas
-                            <i class="fa-solid fa-plus"></i>
-                        </button> -->
-                        <!-- <button type="button" class="botonEditSeccionOscura"><i
-                                        class="fa-solid fa-trash"></i></button><br> -->
                     </div>
-                    <!-- titulo seccion --------------------------------------------------->
+
+
+                    <!-- /////////////////con el avatar fotito, nope///////////////////// -->
+                    <!-- <div class=" col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-3">
+                        <img class="img-fluid" [src]="itemPersona.bannerAvatar" alt="avatar">
+                    </div> -->
+                    <!-- /////////////////con el avatar fotito, nope///////////////////// -->
+
+
+                    <!-- titulo sobre mi ------------------------------------------------->
                     <h2 class="seccion-titulo">Sobre mi</h2>
                     <p class="seccion-texto">{{itemPersona.sobremi}}
-                        <!--<a target="_blank" class="linkcv"
-                             href="../assets/cv/cv-SoledadFretes.pdf"> > Curriculum Vitae </a> -->
                     </p>
+                    <!-- descarga cv-----QUEDA FEO ACA---------------------------------- -->
+                    <!-- <br><div class=""><a target="_blank" class="linkcv " [href]="itemPersona.cv"> Ver Curriculum Vitae </a></div>-->
 
-                    <!-- titulo seccion --------------------------------------------------->
+                    <!-- titulo experiencias ------------------------------------------------->
                     <h2 class="seccion-titulo mt-5">Experiencia</h2>
                     <p class="seccion-texto">{{itemPersona.experienciasTexto}} </p>
+                    <div class="text-end">
 
-                    <!-- descarga cv---------------------------------------------------- -->
-                    <br>
-                    <a target="_blank" class="linkcv" [href]="itemPersona.cv"> Ver Curriculum Vitae. </a>
-                    <br>
+                        falta add experiencias, traer de seccion ed el html
+                        <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
+                            data-bs-target="# AGREGAR MODAL EXPERIENCIAS ADD!!!!!!!!!!"
+                            (click)="itemPersona.id? findPers(itemPersona.id): null">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+
+                    </div>
+                    <!-- descarga cv ---------------------------------------------------->
+                    <br><a target="_blank" class="linkcv" [href]="itemPersona.cv">Ver Curriculum Vitae</a><br>
                 </div>
 
-                <!-- banner avatar -------------------------------------------------------->
-                <!-- andaba solo, NO ANDA DENTRO DE PERSONA -->
-                <!-- <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="itemPersona.bannerAvatar">  -->
+                <!-- banner avatar--------------------------------------------------------------- -->
+                <div class="m-0 col-sm-4 avatarbanner"
+                    [ngStyle]="{'background-image': ' url(' + itemPersona.bannerAvatar + ')'}">
 
-               <!-- <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="itemPersona.bannerAvatar">  -->
-
-
-                <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background-image': ' url(' + itemPersona.bannerAvatar + ')'}">
-
-                <!-- https://stackblitz.com/edit/how-to-use-an-image-as-background-with-ngstyle-angular-5?file=src%2Fapp%2Fapp.component.html
-                estos no me funcionan -->
-                <!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': ' url(' + bannerAvatar  + ')'}"> -->
-                <!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': 'url($bannerAvatar)'}"> -->
-
-                <!-- DomSanitizer-VERRRRR SI HAY PROBLEMAS
-                https://stackoverflow.com/questions/34875426/how-to-add-background-image-using-ngstyle-angular2 -->
-
-                    <!-- botones edicion banner, sacar probs, editar en el modal sccion-------------------------------->
-                    <div class="text-end">
-                        <button type="button" class="botonEditSeccionOscura"><i class="fa-solid fa-pen"></i></button>
-                        <!-- <button type="button" class="botonEditSubseccionOscura"><i
-                                        class="fa-solid fa-plus"></i></button> -->
-
-                        <!-- dejo solo para editar -->                
-                        <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button> -->
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- fin sobre mi + avatar con media queriesokokko/////////////////////////
-////////////////////////////////////////////////////////////////////////// -->
 
-
-<!-- llamo a modal header--------si no lo pongo aca no abre nada--------------------->
-<app-modal-sobremi></app-modal-sobremi>
+<!-- llamo a modal header--------si no lo pongo aca no abre nada------18-4-23 ya borre este modal, sigo con modal en un click-->
+<!-- <app-modal-sobremi></app-modal-sobremi> -->
 
 
 
-<!-- about ME----------------USAR COMPLETARRR
+<!-- about ME--------///////////////////////////////////////////////////////////////////////--------USAR COMPLETARRR
 Hola, soy sf
 Soy arquitecta y diseño y creo sitios web.
 Como desarrolladora fullstack, vigilo el diseño y la facilidad de uso de su sitio web.
@@ -88,6 +95,140 @@ Trabajo de manera particular(freelance) desde el anio 2017 realizando proyectos 
 SERVICIOS
 ¿Necesitás un sitio web propio o para tu negocio o querés desarrollar de un proyecto de arquitectura en concreto? Entonces
 raelizame una consulta inicial gratuita ahora. -->
+
+
+
+
+
+
+
+<!--Modal sobremi, datos en un solo click----------------------------------------------------------------------------------------->
+<form class="modal fade" id="modalSobreMiInsideComponent" tabindex="-1" aria-labelledby="modalSobreMiInsideComponent"
+    aria-hidden="true" [formGroup]="persoForm">
+    <!-- creo que me fata name="formSobremi"   etc en todos los forms? -->
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Sobre mi</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- input Sobremi------------------------------------------------------------------------------ -->
+                <div>
+                    <div class="mb-1">
+                        <h5>Texto Sobre mi</h5>
+                        <textarea type="text" formControlName="sobremi" class="form-control rounded-0 formulariosinput"
+                            id="" placeholder="" style="height: 280px" [ngClass]="{'is-invalid': Sobremi?.errors && Sobremi?.touched,
+                                          'is-valid': !Sobremi?.errors}"></textarea>
+                        <!-- <label for="floatingInput">Servicios1</label> -->
+                    </div>
+                    <div *ngIf="Sobremi?.errors  && Sobremi?.touched">
+                        <p *ngIf="Sobremi?.hasError('required')" class="error2 text-start pt-3">
+                            * Texto requerido
+                        </p>
+                    </div>
+                </div>
+                <!-- input Texto experiencias------------------------------------------------------------------------------ -->
+                <div>
+                    <div class="mb-1 pt-4">
+                        <h5>Texto experiencias</h5>
+                        <textarea type="text" formControlName="experienciasTexto"
+                            class="form-control rounded-0 formulariosinput" id="" placeholder="" style="height: 270px"
+                            [ngClass]="{'is-invalid': ExperienciasTexto?.errors && ExperienciasTexto?.touched,
+                                          'is-valid': !ExperienciasTexto?.errors}"></textarea>
+                        <!-- <label for="floatingInput">Servicios1</label> -->
+                    </div>
+                    <div *ngIf="ExperienciasTexto?.errors  && ExperienciasTexto?.touched">
+                        <p *ngIf="ExperienciasTexto?.hasError('required')" class="error2 text-start pt-3">
+                            * Texto requerido
+                        </p>
+                    </div>
+                </div>
+                <!-- input cv---------------------------------------------------------------------------------- -->
+                <div class="mb-0 pt-4">
+                    <h5>Curriculum Vitae</h5>
+                    <div class=" form-floating mb-0">
+                        <input type="text" formControlName="cv" class="form-control rounded-0 formulariosinput"
+                            id="floatingInput" placeholder="cv" [ngClass]="{'is-invalid': Cv?.errors && Cv?.touched,
+                                                       'is-valid': !Cv?.errors }">
+                        <label for="floatingInput">Reemplazar nombre del archivo o insertar desde URL</label>
+                        <!-- agregando formcontrolname ahi con nombre del campo ya te trae los datos de la bd!! sin no se veia nada -->
+                        <div *ngIf="Cv?.errors  && Cv?.touched">
+                            <p *ngIf="Sobremi?.hasError('required')" class="error2 text-start mt-2">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- aceptar---------------------------------------------------------------------------------------- -->
+            <div class="modal-body text-center justify-content-between">
+                <!-- <br class="pt-0 mb-0"> -->
+                <hr class="w-75 m-auto mt-0 mb-4">
+                <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()"></button>
+                <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="savePers()"
+                    data-bs-dismiss="modal" [disabled]="persoForm.invalid">Guardar</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------------------BORrARRRRRRRRRR------------------------------------------ -->
+
+<div class="modal fade" id="modalPresentacion" aria-hidden="true" aria-labelledby="modalPresentacion" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalPresentacion">Sobre mi</h1>
+                <div class="text-end">
+                    <button type="btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container mb-3">
+                    <div class="mt-4" *ngFor="let itemPersona of personaItems">
+                        <div class="col-12">
+                            <p><b>Sobre mi:</b> {{itemPersona.sobremi}}</p>
+                            <br>
+                            <p><b>Experiencias:</b> {{itemPersona.experienciasTexto}}</p>
+                            <br>
+                            <p><b>Cv:</b> {{itemPersona.cv}}</p>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button class="btn" (click)="itemPersona.id? findPers(itemPersona.id): null"
+                                data-bs-toggle="modal" data-bs-target="#modalSobreMiInsideComponent">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -109,55 +250,55 @@ raelizame una consulta inicial gratuita ahora. -->
                             data-bs-target="#modalEditSobremi">
                             <i class="fa-solid fa-pen"></i>
                         </button> -->
-                        <!-- <button type="button" class="botonEditSeccionOscura">  -----------dejo edit boton nomas
+<!-- <button type="button" class="botonEditSeccionOscura">  -----------dejo edit boton nomas
                             <i class="fa-solid fa-plus"></i>
                         </button> -->
-                        <!-- <button type="button" class="botonEditSeccionOscura"><i
+<!-- <button type="button" class="botonEditSeccionOscura"><i
                                         class="fa-solid fa-trash"></i></button><br> -->
-                    <!-- </div> -->
+<!-- </div> -->
 
 
 
-                    <!-- titulo seccion --------------------------------------------------->
-                    <!-- <h2 class="seccion-titulo">Sobre mi</h2>
+<!-- titulo seccion --------------------------------------------------->
+<!-- <h2 class="seccion-titulo">Sobre mi</h2>
                     <p class="seccion-texto">{{sobremi}} -->
-                        <!--<a target="_blank" class="linkcv"
+<!--<a target="_blank" class="linkcv"
                              href="../assets/cv/cv-SoledadFretes.pdf"> > Curriculum Vitae </a> -->
-                    <!-- </p> -->
+<!-- </p> -->
 
-                    <!-- titulo seccion --------------------------------------------------->
-                    <!-- <h2 class="seccion-titulo mt-5">Experiencia</h2> -->
-
-
-                    <!-- este hay que traerlo de afuera, entidad experiencia -->
-                    <!-- <p class="seccion-texto">{{experiencias}} </p> -->
+<!-- titulo seccion --------------------------------------------------->
+<!-- <h2 class="seccion-titulo mt-5">Experiencia</h2> -->
 
 
+<!-- este hay que traerlo de afuera, entidad experiencia -->
+<!-- <p class="seccion-texto">{{experiencias}} </p> -->
 
-                    <!-- descarga cv---------------------------------------------------- -->
-                    <!-- <br>
+
+
+<!-- descarga cv---------------------------------------------------- -->
+<!-- <br>
                     <a target="_blank" class="linkcv" [href]="cv"> Ver Curriculum Vitae. </a>
                     <br>
                 </div> -->
 
-                <!-- banner avatar -------------------------------------------------------->
-                <!-- yo les veo un pequenio movimiento al scrolear now, pero fue... -->
-                <!-- <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="bannerAvatar">  ESTE ANDABA BIENNN-->
+<!-- banner avatar -------------------------------------------------------->
+<!-- yo les veo un pequenio movimiento al scrolear now, pero fue... -->
+<!-- <div class="m-0 col-sm-4 avatarbanner"  [style.background-image]="bannerAvatar">  ESTE ANDABA BIENNN-->
 
-                <!-- https://stackblitz.com/edit/how-to-use-an-image-as-background-with-ngstyle-angular-5?file=src%2Fapp%2Fapp.component.html
+<!-- https://stackblitz.com/edit/how-to-use-an-image-as-background-with-ngstyle-angular-5?file=src%2Fapp%2Fapp.component.html
                 estos no me funcionan -->
-                <!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': ' url(' + bannerAvatar  + ')'}"> -->
-                <!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': 'url($bannerAvatar)'}"> -->
+<!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': ' url(' + bannerAvatar  + ')'}"> -->
+<!-- <div class="m-0 col-sm-4 avatarbanner" [ngStyle]="{'background': 'url($bannerAvatar)'}"> -->
 
-                <!-- DomSanitizer-VERRRRR SI HAY PROBLEMAS
+<!-- DomSanitizer-VERRRRR SI HAY PROBLEMAS
                 https://stackoverflow.com/questions/34875426/how-to-add-background-image-using-ngstyle-angular2 -->
 
-                    <!-- botones edicion banner, sacar probs, editar en el modal sccion-------------------------------->
-                    <!-- <div class="text-end">
+<!-- botones edicion banner, sacar probs, editar en el modal sccion-------------------------------->
+<!-- <div class="text-end">
                         <button type="button" class="botonEditSeccion"><i class="fa-solid fa-pen"></i></button> -->
-                        <!-- <button type="button" class="botonEditSubseccionOscura"><i
+<!-- <button type="button" class="botonEditSubseccionOscura"><i
                                         class="fa-solid fa-plus"></i></button> -->
-                        <!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
+<!-- <button type="button" class="botonEditSeccion"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
             </div>

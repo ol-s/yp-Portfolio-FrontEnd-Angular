@@ -27,8 +27,6 @@ export class BannerfooterComponent implements OnInit {
     
   }
 
-
-
 }
 
 

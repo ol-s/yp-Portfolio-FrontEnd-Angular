@@ -24,8 +24,8 @@ export class SkillWebService {
     return this.httpClient.post<any>(this.url + 'new', SkillWeb);
   }
 
-  public updateSkillW(SkillWeb: SkillWeb): Observable<any> {
-    return this.httpClient.put<any>(this.url + 'update', SkillWeb);
+  public updateSkillW(id:number, SkillWeb: SkillWeb): Observable<any> {
+    return this.httpClient.put<any>(this.url + `update/${id}`, SkillWeb);
   }
 
   public deleteSkillW(id: number): Observable<any> {

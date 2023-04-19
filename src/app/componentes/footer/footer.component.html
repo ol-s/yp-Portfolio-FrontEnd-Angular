@@ -1,20 +1,25 @@
 <app-bannerfooter></app-bannerfooter>
 
-<!-- footer formulario ok, creo que le falta la etiqueta/////////// form //////////////////////////////////////////////////////////////-->
+<!-- seccion contactame + modal contactame en un solo click inside component-------------------------------------------------------------------- -->
 <section id="contacto" class=" container-fluid seccion-oscura section-contactame  m-0 pb-0 pt-5">
     <!--  -->
-    <div class="container">
-
+    <div class="container" *ngFor="let itemPersona of personaItems">
         <div class="row mt-3 ">
             <!-- botones edicion seccion ---------------------------------------->
             <div class="text-end pe-3 pt-3">
-                <button type="button" class="botonEditSeccionOscura " data-bs-toggle="modal"
+                <!-- <button type="button" class="botonEditSeccionOscura " data-bs-toggle="modal"
                     data-bs-target="#modalContacto">
+                    <i class="fa-solid fa-pen"></i>
+                </button> -->
+                <!-- MODAL EN UN CLICK, TRAYENDO LOS DATOS CON EL MODAL ACA ABAJO y en el ts todo lo que ponia en los modales-->
+                <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                    data-bs-target="#modalCONTACTOinsideComponent"
+                    (click)="itemPersona.id? findPers(itemPersona.id): null">
                     <i class="fa-solid fa-pen"></i>
                 </button>
             </div>
-           
-            <div class="col-sm-6  p-5 pt-4" *ngFor="let itemPersona of personaItems">
+
+            <div class="col-sm-6  p-5 pt-4" >
                 <h2 class="seccion-titulo ">Contactame</h2>
                 <div class="pt-4 pb-1">
                     <p class="">• {{itemPersona.servicios1}}</p>
@@ -34,15 +39,17 @@
             <!-- 27-3-23 tnia etiqueta div, le puse form, hacer reactivo, hacer!!! Y VER COMO HACER P QUE FUNCIONE -->
             <form class="col-sm-6  ml-auto mr-auto p-5  ">
                 <div class="pt-4"></div>
-                <!-- pt-4 para alinear con titulo contactame,  a mess estoy haciendo -->
+                <!-- pt-4 para alinear con titulo contactame,  mess...-->
                 <div class="input-group input-lg pt-5">
                     <div class="input-group-prepend">
                     </div>
-                    <input type="text" class="form-control-footer rounded-0 mb-3 bg-transparent" placeholder="Tu nombre...">
+                    <input type="text" class="form-control-footer rounded-0 mb-3 bg-transparent"
+                        placeholder="Tu nombre...">
                 </div>
                 <div class="input-group input-lg">
-  
-                    <input type="text" class="form-control-footer rounded-0 mb-3 bg-transparent" placeholder="Tu email...">
+
+                    <input type="text" class="form-control-footer rounded-0 mb-3 bg-transparent"
+                        placeholder="Tu email...">
                 </div>
                 <div class="textarea-container">
                     <textarea class="form-control-footer rounded-0  mb-3 bg-transparent" name="name" rows="6" cols="80"
@@ -87,4 +94,120 @@ SERVICIOS
 raelizame una consulta inicial gratuita ahora. -->
 
 
-<app-modal-contacto></app-modal-contacto>
+
+<!-- BORRAR ESTE COMPONENT, PONGO EL MODAL ACA ABAJO EN PERSONA PARA HACER EL EDIT EN UN SOLO PASO -->
+<!-- <app-modal-contacto></app-modal-contacto> -->
+
+
+
+<!--Modal modalCONTACTOinsideComponent ------------------------------------------------------------------------------------------------------->
+<div class="modal fade" id="modalCONTACTOinsideComponent" tabindex="-1" aria-hidden="true"
+    aria-labelledby="modalCONTACTOinsideComponent">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalCONTACTOinsideComponent">Editar Servicios/Contactame</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="persoForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
+                    <!-- input ---- ------------------------------------------------------------------------- -->
+                    <div class="mb-1">
+                        <h5>Servicios 1</h5>
+                        <textarea type="text" formControlName="servicios1"
+                            class="form-control rounded-0 formulariosinput" id=""
+                            placeholder="" style="height: 120px"
+                            [ngClass]="{'is-invalid': Servicios1?.errors && Servicios1?.touched,
+                                          'is-valid': !Servicios1?.errors}"></textarea>
+                        <!-- <label for="floatingInput">Servicios1</label> -->
+                    </div>
+                    <div *ngIf="Servicios1?.errors  && Servicios1?.touched">
+                        <p *ngIf="Servicios1?.hasError('required')" class="error2 text-start pt-3">
+                            * Texto requerido
+                        </p>
+                    </div>
+                    <br class="pt-3">
+                    <!-- input -------------------------------------------------------------------------------- -->
+                    <!-- <div class=" form-floating mb-4">
+                        <input type="text" formControlName="servicios2"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput"
+                            placeholder="servicios2" 
+                            [ngClass]="{'is-invalid': Servicios2?.errors && Servicios2?.touched,
+                                          'is-valid': !Servicios2?.errors }">
+                        <label for="floatingInput">Servicios2</label>
+                    </div> -->
+                    <div class="mb-1">
+                        <h5>Servicios 2</h5>
+                        <textarea type="text" formControlName="servicios2"
+                            class="form-control rounded-0 formulariosinput" id=""
+                            placeholder="" style="height: 120px"
+                            [ngClass]="{'is-invalid': Servicios2?.errors && Servicios2?.touched,
+                                          'is-valid': !Servicios2?.errors}"></textarea>
+                        <!-- <label for="floatingInput">Servicios1</label> -->
+                    </div>
+                    <div *ngIf="Servicios2?.errors  && Servicios2?.touched">
+                        <p *ngIf="Servicios2?.hasError('required')" class="error2 text-start pt-3">
+                            * Texto requerido
+                        </p>
+                    </div>
+                    <br class="pt-3">
+                    <!-- input ------------------------------------------------------------------------------ -->
+                    <div class="mb-1">
+                        <h5>Salida 1</h5>
+                        <textarea type="text" formControlName="salida1"
+                            class="form-control rounded-0 formulariosinput" id=""
+                            placeholder="" style="height: 120px"
+                            [ngClass]="{'is-invalid': Salida1?.errors && Salida1?.touched,
+                                          'is-valid': !Salida1?.errors}"></textarea>
+                        <!-- <label for="floatingInput">Servicios1</label> -->
+                    </div>
+                    <div *ngIf="Salida1?.errors  && Salida1?.touched">
+                        <p *ngIf="Salida1?.hasError('required')" class="error2 text-start pt-3">
+                            * Texto requerido
+                        </p>
+                    </div>
+                    <br class="pt-3">
+                    <!-- input ------------------------------------------------------------------------------ -->
+                    <div class="mb-1">
+                        <h5>Salida 2</h5>
+                        <textarea type="text" formControlName="salida2"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput"
+                            placeholder="" style="height: 40px"
+                            [ngClass]="{'is-invalid': Salida2?.errors && Salida2?.touched,
+                                          'is-valid': !Salida2?.errors}"></textarea>
+                        <!-- <label for="floatingInput">Servicios1</label> -->
+                    </div>
+                    <div *ngIf="Salida2?.errors  && Salida2?.touched">
+                        <p *ngIf="Salida2?.hasError('required')" class="error2 text-start pt-3">
+                            * Texto requerido
+                        </p>
+                    </div>
+                    <br class="pt-3">
+                    <!-- input ------------------------------------------------------------------------------ -->
+                    <div class="mb-1">
+                        <h5>Copyrights/Autor</h5>
+                        <input type="text" formControlName="copyrights"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput"
+                            placeholder="" 
+                            [ngClass]="{'is-invalid': Copyrights?.errors && Copyrights?.touched,
+                                          'is-valid': !Copyrights?.errors }">
+                        <!-- <label for="floatingInput">Copyrights</label> -->
+                    </div>
+                    <div *ngIf="Copyrights?.errors  && Copyrights?.touched">
+                        <p *ngIf="Copyrights?.hasError('required')" class="error2 text-start pt-3">
+                            * Campo requerido
+                        </p>
+                    </div>
+                    <!-- guardar------------------------------------------------------------------------------ -->
+                    <div class="text-center justify-content-between">
+                        <br class="pt-5 mb-0">
+                        <hr class="w-75 m-auto mt-4 mb-4">
+                        <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()"></button>
+                        <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                            (click)="savePers()" data-bs-dismiss="modal" [disabled]="persoForm.invalid">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

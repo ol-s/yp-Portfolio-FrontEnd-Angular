@@ -1,5 +1,5 @@
 <section class="container-fluid headername" id="home">
-    <section class=" m-5 align-items-left">
+    <div class=" m-5 align-items-left">
         <div class="d-flex flex-column ">
             <div class="">
                 <!-- titulo seccion --------------------------------->
@@ -10,14 +10,13 @@
 
                         arquitecta | programadora web fullstack jr
                         arquitecta | programadora web fullstack jr|
-                        arquitecta • programadora web fullstack jr    ------volvi al original lol-->                   
+                        arquitecta • programadora web fullstack jr    ------volvi al original lol-->
                 </div>
                 <!-- componente redes-------------------------------->
                 <app-redes></app-redes>
                 <!-- botones edicion seccion------------------------->
                 <div class="divEditRight">
-                    <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
-                        data-bs-target="#modalEditHeader">
+                    <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalHeader">
                         <i class="fa-solid fa-pen"></i>
                     </button>
                     <!-- <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalAdd">
@@ -33,15 +32,12 @@
                         data-bs-target="#modalRedAdd">
                         <i class="fa-solid fa-plus"></i>
                     </button> -->
-
-
                 </div>
-
-                <!-- llamo a modal header----------------------------->
-                <app-modal-header></app-modal-header>
-                <app-modal-red-add></app-modal-red-add>
-
             </div>
         </div>
-    </section>
+    </div>
 </section>
+
+<!-- llamo a modal header----------------------------->
+<app-modal-header></app-modal-header>
+<!-- <app-modal-red-add></app-modal-red-add> -->

@@ -1,1 +1,169 @@
-<p>modal-proyectosweb-edit works!</p>
+<!-- modal con todos los items PROYECTOS WEB----------------------------------------------------------------------------->
+<div class="modal fade" id="modalItemsProyWeb" tabindex="-1" aria-hidden="true" aria-labelledby="modalItemsProyWeb">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalItemsProyWeb">Proyectos Web</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- agregar item -->
+                <div class="text-end">
+                    <button data-bs-target="#modalEditOrAddProyWeb" data-bs-toggle="modal"
+                        class="btn btnEditModal mt-2 mb-2">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="container mb-1">
+                    <!-- listado de items cargados-->
+                    <div class="mt-4" *ngFor="let cadaProyW of proyectoWeb">
+                        <div class="">
+                            <!-- <p><b>ID: </b> {{cadaProyW.id}}</p> -->
+                            <!-- en phone el link largo no respeta cuerpo del modal ni padding ni margin, arreglado css 'break-word' -->
+                            <p><b>Imagen Proyecto: </b>{{cadaProyW.imgPageProyecto}}</p>
+                            <p><b>Link Repositorio: </b>{{cadaProyW.hrefRepo}}</p>
+                            <p><b>Link Live: </b>{{cadaProyW.hrefLive}}</p>
+                            <p><b>Fecha: </b>{{cadaProyW.fecha}}</p>
+                            <p><b>Título: </b>{{cadaProyW.tituloProyecto}}</p>
+                            <p><b>Descripción: </b>{{cadaProyW.descripcion}}</p>
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btnEditModal" (click)="cadaProyW.id? findProyWeb(cadaProyW.id): null"
+                                data-bs-toggle="modal" data-bs-target="#modalEditOrAddProyWeb">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn btnEditModal" (click)="cadaProyW.id? deleteProyWeb(cadaProyW.id): null">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Edit Or Add PROYECTOS WEB-------------------------------------------------------------------------------------->
+<div class="modal fade" id="modalEditOrAddProyWeb" tabindex="-1" aria-hidden="true"
+    aria-labelledby="modalEditOrAddProyWeb">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalEditOrAddProyWeb">Agregar/Editar Proyectos Web</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+            </div>
+            <div class="modal-body text-center justify-content-between">
+                <form [formGroup]="pwForm">
+                    <!-- input img ------------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4 mt-2">
+                            <input type="text" formControlName="imgPageProyecto"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="imgPageProyecto" [ngClass]="{'is-invalid': Img?.errors && Img?.touched, 
+                                              'is-valid': !Img?.errors }">
+                            <label for="floatingInput">Imagen en página</label>
+                        </div>
+                        <div *ngIf="Img?.errors && Img?.touched">
+                            <p *ngIf="Img?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input repo --------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="hrefRepo"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="hrefRepo" [ngClass]="{'is-invalid': Repo?.errors && Repo?.touched, 
+                                              'is-valid': !Repo?.errors}">
+                            <label for="floatingInput">Link repositorio</label>
+                        </div>
+                        <div *ngIf="Repo?.errors  && Repo?.touched">
+                            <p *ngIf="Repo?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input live ------------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="hrefLive"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="hrefLive" [ngClass]="{'is-invalid': Live?.errors && Live?.touched, 
+                                              'is-valid': !Live?.errors }">
+                            <label for="floatingInput">Link Live</label>
+                        </div>
+                        <div *ngIf="Live?.errors && Live?.touched">
+                            <p *ngIf="Live?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input fecha ------------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="fecha" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput" placeholder="fecha" [ngClass]="{'is-invalid': Fecha?.errors && Fecha?.touched, 
+                                              'is-valid': !Fecha?.errors }">
+                            <label for="floatingInput">Fecha</label>
+                        </div>
+                        <div *ngIf="Fecha?.errors && Fecha?.touched">
+                            <p *ngIf="Fecha?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input tituloProyecto ---------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="tituloProyecto"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="tituloProyecto" [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 
+                                              'is-valid': !Titulo?.errors }">
+                            <label for="floatingInput">Título</label>
+                        </div>
+                        <div *ngIf="Titulo?.errors && Titulo?.touched">
+                            <p *ngIf="Titulo?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input descripcion ------------------------------------------------------------------------- -->
+                    <div>
+                        <!-- <div class=" form-floating mb-4">
+                            <input type="text" formControlName="descripcion" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput" placeholder="descripcion" 
+                                [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 
+                                              'is-valid': !Descripcion?.errors }">
+                            <label for="floatingInput">Descripción</label>
+                        </div> -->
+                        <div class="form-floating mb-4">
+                            <textarea type="text" formControlName="descripcion"
+                                class="form-control rounded-0 formulariosinput" id="floatingTextarea2" placeholder="descripcion"
+                                style="height: 85px" 
+                                [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched,
+                                              'is-valid': !Descripcion?.errors}"></textarea>
+                            <label for="floatingTextarea2">Descripción</label>
+                        </div>
+                        <div *ngIf="Descripcion?.errors  && Descripcion?.touched">
+                            <p *ngIf="Descripcion?.hasError('required')" class="error2 text-start pt-3">
+                                * Texto requerido
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- guardar--------------------------------------------------------------------------------- -->
+                    <br class="pt-0 mb-0">
+                    <hr class="w-75 m-auto mt-0 mb-4">
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                        (click)="saveProyWeb()" data-bs-dismiss="modal" [disabled]="pwForm.invalid">
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

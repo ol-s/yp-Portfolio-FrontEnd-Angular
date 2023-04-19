@@ -1,1 +1,105 @@
-<p>modal-skill-soft-edit works!</p>
+<!-- modal con todos los items y sus id (apagado)----------------------------------------------------------------------------->
+<div class="modal fade" id="modalItemsSkillSoft" tabindex="-1" aria-hidden="true" aria-labelledby="modalItemsSkillSoft" >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalItemsSkillSoft">Habilidades Blandas</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="text-end">
+                    <!-- <button type="btn" class="btn btnEditModal" data-bs-toggle="modal" data-bs-target="#modalEditOrAddSkillWeb">
+                        <i class="fa-solid fa-plus"></i>
+                    </button> -->
+                    <!-- agregar e boton grande -ARRIBA- de close y sacar el add de aca? o dejar add solo en modal? ADD EN MODAL-->
+                    <!-- <button type="btn" class="btn" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button> -->
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- agregar item -->
+                <div class="text-end">
+                    <button data-bs-target="#modalEditOrAddSkillSoft" data-bs-toggle="modal" class="btn btnEditModal mt-2 mb-2">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="container mb-1">
+                    <!-- listado de items cargados-->
+                    <div class="mt-4" *ngFor="let softS of skillSoft">
+                        <div class="">
+                            <!-- <p><b>ID: </b> {{skillW.id}}</p> -->
+                            <p><b>Skill: </b>{{softS.nombre}}</p>
+                            <p><b>Porcentaje: </b>{{softS.porcentaje}}</p>
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btnEditModal" (click)="softS.id? findSs(softS.id): null" data-bs-toggle="modal"
+                                data-bs-target="#modalEditOrAddSkillSoft">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn btnEditModal" (click)="softS.id? deleteSs(softS.id): null">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Edit Or Add Soft Skills-------------------------------------------------------------------------------------->
+<div class="modal fade" id="modalEditOrAddSkillSoft" tabindex="-1" aria-hidden="true" aria-labelledby="modalEditOrAddSkillSoft">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalEditOrAddSkillSoft">Agregar/Editar Soft Skill</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+            </div>
+            <div class="modal-body text-center justify-content-between">
+                <form [formGroup]="ssForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
+                    <!-- input nombre ------------------------------------------------------------------------- -->
+                    <div class=" form-floating mb-4 mt-2">
+                        <!-- [(ngModel)]="nombre" -->
+                        <input type="text" formControlName="nombre" 
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="nombre"
+                            [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 
+                                          'is-valid': !Nombre?.errors }">
+                        <label for="floatingInput">Nombre Skill</label>
+                    </div>
+                    <div *ngIf="Nombre?.errors  && Nombre?.touched">
+                        <p *ngIf="Nombre?.hasError('required')" class="error2 text-start">
+                            * Ingrese el nombre de la habilidad
+                        </p>
+                    </div>
+                    <!-- input porcentaje --------------------------------------------------------------------- -->
+                    <div class=" form-floating mb-4">
+                        <input type="number" min="0" max="100" formControlName="porcentaje" 
+                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="porcentaje"
+                            [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched, 
+                                          'is-valid': !Porcentaje?.errors}">
+                        <label for="floatingInput">% Skill (número de 0-100)</label>
+                    </div>
+                    <div *ngIf="Porcentaje?.errors  && Porcentaje?.touched">
+                        <p *ngIf="Porcentaje?.hasError('required')" class="error2 text-start">
+                            * Ingrese un número de 0-100
+                        </p>
+                        <p *ngIf="Porcentaje?.errors?.['max']" class="error2 text-start">
+                            * Ingrese un número de 0-100
+                        </p>
+                    </div>
+                    <!-- guardar -------------------------------------------------------------------------------- -->
+                    <br class="pt-0 mb-0">
+                    <hr class="w-75 m-auto mt-0 mb-4">
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="saveSs()"
+                        data-bs-dismiss="modal" [disabled]="ssForm.invalid">
+                        <!-- data-bs-dismiss="modal" [disabled]="swForm.invalid">  q no quede ==== -->
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

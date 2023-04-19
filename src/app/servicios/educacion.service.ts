@@ -30,19 +30,23 @@ export class EducacionService {
     //observable de any ................etc.......'new', Educacion (del alias del primer Educacion, si clikeas te marca ese y el otro)
     public saveEducacion(Educacion: Educacion):Observable<any>{
       return this.httpClient.post<any>(this.url + 'new', Educacion);
-      }
+    }
 
     //igual al de arriba, uno es post, otro put, por convencion, podrian ser los dos post (?)  expres 18, 22:20'
     //''no se va a hacer una nueva experiencia porque vamos a mandar el id dentro del formulario,vamos a sobreescribir,,
     //ESE ES EL SECRETO DE QUE EL UPDATE ANDE BIEN'' HHHHHHHHMMMMMM AHHHHHHHHHHHH
-    public updateEstudio(Educacion: Educacion):Observable<any>{
+    /*public updateEstudio(Educacion: Educacion):Observable<any>{
       return this.httpClient.put<any>(this.url + 'update', Educacion);
-      }
+    }*/
+    public updateEstudio(id: number, Educacion: Educacion):Observable<any>{
+      return this.httpClient.put<any>(this.url + `update/${id}`, Educacion);
+    }
+      
   
     //ID: NUMBER, PORQUE ES TYPESCRIPT, hay q decirle de que tipo es, <any> borra todos los campos q tenga ese id
     public deleteEstudio(id: number):Observable<any>{
       return this.httpClient.delete<any>(this.url + `delete/${id}`);
-      }
+    }
 
   
 

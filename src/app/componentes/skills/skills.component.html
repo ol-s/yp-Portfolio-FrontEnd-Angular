@@ -1,38 +1,26 @@
 <section id="skills" class="container-fluid seccion-oscura">
-    <!-- class="experiencia seccion-clara" -->
     <div class="container-fluid skillscontainer">
         <div class="row justify-content-start">
-            <!-- botones edicion seccion ---------------------------------------->
-            <div class="text-end">
-                <!-- <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                    data-bs-target="#modalSkillAdd">
-                    <i class="fa-solid fa-plus"></i>
-                </button> -->
-                <!-- ////////////////////////////////este estaba en uso,pero no sesi puedo hacer funcionar el selector rubros -->
-
-                <!-- <button type="button" class="botonEditSeccionOscura"><i class="fa-solid fa-plus"></i></button> -->
-                <!-- <button type="button" class="botonEditSeccionOscura"><i class="fa-solid fa-trash"></i></button> -->
-
-                <!-- **************maybe hacer un modal largo que permita agregar una subseccion de skills? tipo idiomas etc? y dentro de cada una agregar the skills -->
-
-            </div>
-            <!-- titulo seccion ---------------------------------------->
+            <!-- titulo seccion -->
             <h2 class="seccion-titulo mt-5">
                 Skills
             </h2>
             <div class="">
                 <div class="row">
                     <!-- columna 1 Programación web -------------------------------------------------------------->
-                    <div class="col-md-6 p-4 mt-5">  
-                        <!-- trigger modal add, el 'modalSkillAdd ES EL QUE TENIA SELECT/RUBRO, YA NO LO USO'-->                      
+                    <div class="col-md-6 p-4 mt-5">
+                        <!-- trigger modal items -->
                         <div class="text-end mb-3">
-                            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal" data-bs-target="#modalSkillWebAdd"> 
-                                <i class="fa-solid fa-plus"></i>
+                            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                                data-bs-target="#modalItemsSkillWeb">
+                                <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
+                        <!-- titulo -->
                         <h4>Programación web</h4>
                         <br>
-                        <div class="moduloSkill" *ngFor="let cadaSkillProgram of skillsTodasProgram">
+                        <!-- agrego mb-4 porque saque los botones de edit de cada skill mas el br que tenian -->
+                        <div class="moduloSkill mb-4" *ngFor="let cadaSkillProgram of skillsTodasProgram">
                             <div class="d-flex justify-content-between skill-text">
                                 <h6 class="skill-title">{{cadaSkillProgram.nombre}}</h6>
                                 <h6 class="text-end skills-porcentajes">{{cadaSkillProgram.porcentaje}}%</h6>
@@ -42,38 +30,38 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
                                         aria-valuemax="100" [style.width.%]="cadaSkillProgram.porcentaje"></div>
                                 </div>
-                                <div class="text-end">
+                                <!-- <div class="text-end">
                                     <br>
-                                    <!-- trigger modal edit-->
-                                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
+                                    <!-- trigger modal edit--
+                                    <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
                                         data-bs-target="#modalSkillEdit">
                                         <i class="fa-solid fa-pen"></i>
                                     </button>
-                                    <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
+                                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
                                         data-bs-target="#modalEliminarSkill">
                                         <i class="fa-solid fa-trash"></i>
-                                    </button> -->
-                                    <!-- trigger delete con alert del browser-->
+                                    </button> 
+                                     trigger delete con alert del browser
                                     <button type="submit" class="botonEditSubseccionOscura"
                                         (click)="deleteSkillW(cadaSkillProgram.id)">
                                         <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </div>
+                                    </button> --
+                                </div> -->
                             </div>
                         </div>
                     </div>
-                    <!-- columna 2  -------------------------------------------------------------->
+                    <!-- columna 2  Diseño y Arquitectura-------------------------------------------------------------->
                     <div class="col-md-6 p-4 mt-5">
-                        <!-- Diseño y Arquitectura ---------------------------->
+                        <!-- trigger modal items -->
                         <div class="text-end mb-3">
-                            <!-- trigger modal add -->
+                            <!---13-4-22-- en vez de editar crea una skill nueva,,arreglao, faltaba update/id + 2 argumentos, tmb en java-->
                             <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                                data-bs-target="#modalSkillArqAdd">
-                                <i class="fa-solid fa-plus"></i>
+                                data-bs-target="#modalItemsSkillArq">
+                                <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
                         <h4>Diseño y Arquitectura</h4><br>
-                        <div class="moduloSkill" *ngFor="let cadaSkillArq of skillsTodasArq">
+                        <div class="moduloSkill mb-4" *ngFor="let cadaSkillArq of skillsTodasArq">
                             <div class="d-flex justify-content-between skill-text">
                                 <h6 class="skill-title">{{cadaSkillArq.nombre}}</h6>
                                 <h6 class="text-end skills-porcentajes">{{cadaSkillArq.porcentaje}}%</h6>
@@ -84,40 +72,27 @@
                                         aria-valuemax="100" [style.width.%]="cadaSkillArq.porcentaje">
                                     </div>
                                 </div>
-                                <div class="text-end">
+                                <!-- <div class="text-end">
                                     <br>
-                                    <!-- trigger modal edit-->
-                                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                                        data-bs-target="#modalSkillEdit">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                    <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                                        data-bs-target="#modalEliminarSkill">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button> -->
-                                    <!-- trigger delete con alert del browser-->
-                                    <button type="submit" class="botonEditSubseccionOscura"
-                                        (click)="deleteSkillA(cadaSkillArq.id)">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </div>
+
+                                    <!-- ////////////borro este espacio?  VER/////////borrar, puse margin bottom////////////// --
+                                </div> -->
                             </div>
                         </div>
                     </div>
                     <br><br>
 
-                    <!-- columna 1  -------------------------------------------------------------->
+                    <!-- columna 3  Idiomas----------------------------------------------------------------------->
                     <div class="col-md-6 p-4 mt-5">
-                        <!-- Idiomas ---------------------------->
-                        <!-- trigger modal add-->
+                        <!-- trigger modal items-->
                         <div class="text-end mb-3">
                             <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                                data-bs-target="#modalSkillIdiomaAdd">
-                                <i class="fa-solid fa-plus"></i>
+                                data-bs-target="#modalItemsSkillidiom">
+                                <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
                         <h4>Idiomas</h4><br>
-                        <div class="moduloSkill" *ngFor="let cadaSkillIdiom of skillsTodasIdiom">
+                        <div class="moduloSkill mb-4" *ngFor="let cadaSkillIdiom of skillsTodasIdiom">
                             <div class="d-flex justify-content-between skill-text">
                                 <h6 class="skill-title">{{cadaSkillIdiom.nombre}}</h6>
                                 <h6 class="text-end skills-porcentajes">{{cadaSkillIdiom.porcentaje}}%</h6>
@@ -128,95 +103,25 @@
                                         aria-valuemax="100" [style.width.%]="cadaSkillIdiom.porcentaje"></div>
                                 </div>
 
-                                <div class="text-end">
+                                <!-- <div class="text-end">
                                     <br>
-                                    <!-- trigger modal edit-->
-                                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                                        data-bs-target="#modalSkillEdit">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                    <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                                        data-bs-target="#modalEliminarSkill">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button> -->
-                                    <!-- trigger delete con alert del browser-->
-                                    <button type="submit" class="botonEditSubseccionOscura"
-                                        (click)="deleteSkillD(cadaSkillIdiom.id)">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </div>
+
+
+                                </div> -->
                             </div>
                         </div>
-
-
-                        <!-- *****************************pruebarubros********************************************** -->
-                        <!-- *************************************************************************************** -->
-                        <!-- <div>
-                            <h4 class="mt-5">r1</h4><br>
-                            <div class="moduloSkill" *ngFor="let cadaSkillrubr of Todasrubr1">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">{{cadaSkillrubr.nombre}}</h6>
-                                    <h6 class="text-end skills-porcentajes">{{cadaSkillrubr.porcentaje}} %</h6>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100"
-                                            [style.width.%]="cadaSkillrubr.porcentaje"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <h4 class="mt-5">r2</h4><br>
-                            <div class="moduloSkill" *ngFor="let cadaSkillrubr2 of Todasrubr2">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">{{cadaSkillrubr2.nombre}}</h6>
-                                    <h6 class="text-end skills-porcentajes">{{cadaSkillrubr2.porcentaje}}%</h6>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100"
-                                            [style.width.%]="cadaSkillrubr2.porcentaje"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <h4 class="mt-5">r3</h4><br>
-                            <div class="moduloSkill" *ngFor="let cadaSkillrubr3 of Todasrubr3">
-                                <div class="d-flex justify-content-between skill-text">
-                                    <h6 class="skill-title">{{cadaSkillrubr3.nombre}}</h6>
-                                    <h6 class="text-end skills-porcentajes">{{cadaSkillrubr3.porcentaje}}%</h6>
-                                </div>
-                                <div class="">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100"
-                                            [style.width.%]="cadaSkillrubr3.porcentaje"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- *****************************pruebarubros********************************************** -->
-                        <!-- *************************************************************************************** -->
-
-
                     </div>
-                    <!-- columna 2  -------------------------------------------------------------->
+                    <!-- columna 4  Habilidades Blandas-------------------------------------------------------------->
                     <div class="col-md-6 p-4 mt-5">
-
-                        <!--Habilidades Blandas ---------------------------->
-                        <!-- trigger modal add -->
+                        <!-- trigger modal items -->
                         <div class="text-end mb-3">
                             <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                                data-bs-target="#modalSSoftAdd">
-                                <i class="fa-solid fa-plus"></i>
+                                data-bs-target="#modalItemsSkillSoft">
+                                <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
                         <h4>Habilidades Blandas</h4><br>
-                        <div class="moduloSkill" *ngFor="let cadaSkillBland of skillsTodasBlandas">
+                        <div class="moduloSkill mb-4" *ngFor="let cadaSkillBland of skillsTodasBlandas">
                             <div class="d-flex justify-content-between skill-text">
                                 <h6 class="skill-title">{{cadaSkillBland.nombre}}</h6>
                                 <h6 class="text-end skills-porcentajes">{{cadaSkillBland.porcentaje}}%</h6>
@@ -226,24 +131,10 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
                                         aria-valuemax="100" [style.width.%]="cadaSkillBland.porcentaje"></div>
                                 </div>
-                                
-                                <div class="text-end">
+
+                                <!-- <div class="text-end"  era espacio para botones edit/delete de cada skill>
                                     <br>
-                                    <!-- trigger modal edit -->
-                                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                                        data-bs-target="#modalSkillEdit">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                    <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                                        data-bs-target="#modalEliminarSkill">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button> -->
-                                    <!-- trigger delete con alert del browser-->
-                                    <button type="submit" class="botonEditSubseccionOscura"
-                                        (click)="deleteSkillS(cadaSkillBland.id)">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -251,40 +142,20 @@
             </div>
         </div>
     </div>
-
-    <!-- llamo a modales -->
-    <!-- <app-modal-skill-edit></app-modal-skill-edit>   estos dos sacar,ya lo dividi todo
-    <app-modal-skill-add></app-modal-skill-add> -->
-
-    <app-modal-skill-arq-add></app-modal-skill-arq-add>
-    <app-modal-skill-idioma-add></app-modal-skill-idioma-add>
-    <app-modal-skill-soft-add></app-modal-skill-soft-add>
-    <app-modal-skill-web-add></app-modal-skill-web-add>
-
 </section>
 
+<!-- llamo a modales -->
+<!-- <app-modal-skill-edit></app-modal-skill-edit> --> <!-- estos dos sacar,ya lo dividi todo -->
+<!-- <app-modal-skill-add></app-modal-skill-add>  -->
 
+<!-- <app-modal-skill-arq-add></app-modal-skill-arq-add> -->
+<app-modal-skill-arq-edit></app-modal-skill-arq-edit>
 
+<!-- <app-modal-skill-idioma-add></app-modal-skill-idioma-add> -->
+<app-modal-skill-idioma-edit></app-modal-skill-idioma-edit>
 
+<!-- <app-modal-skill-soft-add></app-modal-skill-soft-add> -->
+<app-modal-skill-soft-edit></app-modal-skill-soft-edit>
 
-
-<!-- por ahora no lo uso, ver despues meter el click delete dentro de este -->
-<!-- modal eliminar, no se si ponerlo asi, aparte, uno para cada uno de los items(??) o donde -->
-<form class="modal fade" id="modalEliminarSkill" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content ">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel2">Eliminar skill</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                </button>
-            </div>
-            <div class="modal-body p-5 pt-0">
-                <form class="">
-                    <button class="w-100 mb-2 mt-5 btn btn-lg rounded-0 btn-loginout3 " type="submit">
-                        Eliminar
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</form>
+<!-- <app-modal-skill-web-add></app-modal-skill-web-add> -->
+<app-modal-skill-web-edit></app-modal-skill-web-edit>

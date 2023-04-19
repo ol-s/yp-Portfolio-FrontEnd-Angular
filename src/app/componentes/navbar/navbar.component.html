@@ -3,8 +3,9 @@
         <nav class="navbar bg-light fixed-top navbar-expand-lg">
             <div class="container-fluid">
                 
-                <a class="navbar-brand" href="https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa"
-                    target="_blank" *ngFor="let itemPersona of personaItems">
+                <!-- <a class="navbar-brand" href="https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa"
+                    target="_blank" *ngFor="let itemPersona of personaItems"> -->
+                <a class="navbar-brand" target="_blank" *ngFor="let itemPersona of personaItems" [href]="itemPersona.subtitulo1">
                     <!-- <img src="./assets/img/logo-argentina-programa.png" alt="logo argentinaprograma"></a> -->
                     <img [src]="itemPersona.logoBrand" alt="logo argentinaprograma"></a>
 

@@ -1,5 +1,183 @@
+
+<!-- modal con todos los items PROYECTOS ARQ----------------------------------------------------------------------------->
+<div class="modal fade" id="modalItemsProyArq" tabindex="-1" aria-hidden="true" aria-labelledby="modalItemsProyArq">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalItemsProyArq">Proyectos Arq</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- agregar item -->
+                <div class="text-end">
+                    <button data-bs-target="#modalEditOrAddProyArq" data-bs-toggle="modal"
+                        class="btn btnEditModal mt-2 mb-2">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="container mb-1">
+                    <!-- listado de items cargados-->
+                    <div class=" mt-4" *ngFor="let cadaProyArq of proyectoArq">
+                        <div class="">
+                            <!-- <p><b>ID: </b> {{cadaProyArq.id}}</p> -->
+                            <p ><b>Imagen Proyecto: </b>{{cadaProyArq.imgPageProyecto}}</p>
+                            <p><b>Link/Imagen Externa: </b>{{cadaProyArq.hrefTargetBlank}}</p>
+                            <p><b>Título: </b>{{cadaProyArq.tituloProyecto}}</p>
+                            <p><b>Descripción: </b>{{cadaProyArq.descripcion}}</p>
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btnEditModal" (click)="cadaProyArq.id? findProyArq(cadaProyArq.id): null"
+                                data-bs-toggle="modal" data-bs-target="#modalEditOrAddProyArq">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn btnEditModal"
+                                (click)="cadaProyArq.id? deleteProyArq(cadaProyArq.id): null">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Edit Or Add PROYECTOS ARQ-------------------------------------------------------------------------------------->
+<div class="modal fade" id="modalEditOrAddProyArq" tabindex="-1" aria-hidden="true"
+    aria-labelledby="modalEditOrAddProyArq">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalEditOrAddProyArq">Agregar/Editar Proyectos Arq</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+            </div>
+            <div class="modal-body text-center justify-content-between">
+                <form [formGroup]="pForm"> 
+                    <!-- input img ------------------------------------------------------------------------------ -->
+                    <div>
+                        <div class=" form-floating mb-4 mt-2">
+                            <input type="text" formControlName="imgPageProyecto"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="imgPageProyecto" [ngClass]="{'is-invalid': Img?.errors && Img?.touched, 
+                                              'is-valid': !Img?.errors }">
+                            <label for="floatingInput">Imagen en Página</label>
+                        </div>
+                        <div *ngIf="Img?.errors && Img?.touched">
+                            <p *ngIf="Img?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input hrefTargetBlank ------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="hrefTargetBlank"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                placeholder="hrefTargetBlank" 
+                                [ngClass]="{'is-invalid': ImgTB?.errors && ImgTB?.touched, 
+                                              'is-valid': !ImgTB?.errors}">
+                            <label for="floatingInput">Link/Imagen Externa</label>
+                        </div>
+                        <div *ngIf="ImgTB?.errors  && ImgTB?.touched">
+                            <p *ngIf="ImgTB?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input tituloProyecto -------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="tituloProyecto" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput" placeholder="tituloProyecto" 
+                                [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 
+                                              'is-valid': !Titulo?.errors }">
+                            <label for="floatingInput">Título</label>
+                        </div>
+                        <div *ngIf="Titulo?.errors && Titulo?.touched">
+                            <p *ngIf="Titulo?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input descripcion ------------------------------------------------------------------------- -->
+                    <div>
+                        <!-- <div class=" form-floating mb-4">
+                            <input type="text" formControlName="descripcion" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput" placeholder="descripcion" 
+                                [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 
+                                              'is-valid': !Descripcion?.errors }">
+                            <label for="floatingInput">Descripción</label>
+                        </div> -->
+                        <div class=" form-floating mb-4">
+                            <textarea type="text" formControlName="descripcion"
+                                class="form-control rounded-0 formulariosinput" placeholder="descripcion"
+                                id="floatingTextarea2" style="height: 85px" ></textarea>
+                            <label for="floatingTextarea2">Descripción</label>
+                        </div>
+                        <!-- <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                            <p *ngIf="Descripcion?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div> -->
+                    </div>
+                    
+                    <!-- guardar----------------------------------------------------------------------------------- -->
+                    <br class="pt-0 mb-0">
+                    <hr class="w-75 m-auto mt-0 mb-4">
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="saveProyArq()"
+                        data-bs-dismiss="modal" [disabled]="pForm.invalid">
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--Modal proyectos edit-->
-<form class="modal fade" id="modalProyectosEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+<!-- <form class="modal fade" id="modalProyectosEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
     [formGroup]="form" (ngSubmit)="onEnviar($event)" name="proyectosEditForm">
 
     <div class="modal-dialog modal-dialog-centered">
@@ -9,7 +187,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
-            <!-- primera parte modal--------------------NO REACTIVO, FUNCIONA THO------------------------------------------ -->
+
+
+            borro la colita del --ETC  coments cos sino no puedo comentar todo junto,,,ESTO DESCARTADO IGUAL
+
+            <!-- primera parte modal--------------------NO REACTIVO, FUNCIONA THO------------------------------------------ --
             <!-- <div class="modal-body">
                 <div class="container text-center justify-content-between">
                     <div class=" form-floating mb-3">
@@ -37,49 +219,56 @@
                             id="floatingTextarea2" style="height: 75px"></textarea>
                         <label for="floatingTextarea2">Editar: Descripción</label>
                     </div>
-                </div> -->
+                </div> --
+
+
+
+
+
+
+
 
             <div class="modal-body">
 
-                <!-- input --------------------------------------------------------------- -->
+                <!-- input --------------------------------------------------------------- --
                 <div class=" form-floating mb-4">
                     <input type="text" formControlName="urlimg" class="form-control rounded-0 formulariosinput"
                         id="floatingInput" placeholder="urlimg" [ngClass]="{'is-invalid': urlimg?.errors && urlimg?.touched, 
                   'is-valid': !urlimg?.errors && urlimg?.touched}">
-                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo --
                     <label for="floatingInput">Editar: URL imagen en pagina</label>
                 </div>
-                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)--
                 <div *ngIf="urlimg?.errors  && urlimg?.touched">
                     <p *ngIf="urlimg?.hasError('required')" class="error2 text-start">
                         * Campo requerido
                     </p>
                 </div>
 
-                <!-- input -----------------------------esto sacarrr---------------------------------- -->
+                <!-- input -----------------------------esto sacarrr---------------------------------- --
                 <div class=" form-floating mb-4">
                     <input type="text" formControlName="altImg" class="form-control rounded-0 formulariosinput"
                         id="floatingInput" placeholder="altImg" [ngClass]="{'is-invalid': altImg?.errors && altImg?.touched, 
                                       'is-valid': !altImg?.errors && altImg?.touched}">
-                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo --
                     <label for="floatingInput">Editar: Nombre (alt) de img en pagina</label>
                 </div>
-                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)--
                 <div *ngIf="altImg?.errors  && altImg?.touched">
                     <p *ngIf="altImg?.hasError('required')" class="error2 text-start">
                         * Campo requerido
                     </p>
                 </div>
 
-                <!-- input --------------------------------------------------------------- -->
+                <!-- input --------------------------------------------------------------- --
                 <div class=" form-floating mb-4">
                     <input type="text" formControlName="targetblank" class="form-control rounded-0 formulariosinput"
                         id="floatingInput" placeholder="targetblank" [ngClass]="{'is-invalid': targetblank?.errors && targetblank?.touched, 
                                       'is-valid': !targetblank?.errors && targetblank?.touched}">
-                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo --
                     <label for="floatingInput">Editar: URL target blank</label>
                 </div>
-                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)--
                 <div *ngIf="targetblank?.errors  && targetblank?.touched">
                     <p *ngIf="targetblank?.hasError('required')" class="error2 text-start">
                         * Campo requerido
@@ -89,7 +278,7 @@
                 <!-- YA FUE, ME VA A DAR PROBLEMAS (poner date, solo quiero anio), Y SI LIMITO A 4 CARACTERES (type number)
                 NOPUEDO ESCRIBR '2023' '2022-2023', see?
                 ver si dejo o saco, incluir en el java, pero en angular tendria que hacer diferentes modales....wait, 
-                igual tengo q hacer diferentes modales para arq y web :/  -->
+                igual tengo q hacer diferentes modales para arq y web :/  --
                 <div class=" form-floating mb-4">
                     <input type="text" formControlName="urlimg" class="form-control rounded-0 formulariosinput"
                         id="floatingInput" placeholder="urlimg" [ngClass]="{'is-invalid': urlimg?.errors && urlimg?.touched, 
@@ -103,22 +292,22 @@
                 </div>
 
 
-                <!-- input --------------------------------------------------------------- -->
+                <!-- input --------------------------------------------------------------- --
                 <div class=" form-floating mb-4">
                     <input type="text" formControlName="titulop" class="form-control rounded-0 formulariosinput"
                         id="floatingInput" placeholder="titulop" [ngClass]="{'is-invalid': titulop?.errors && titulop?.touched, 
                                       'is-valid': !titulop?.errors && titulop?.touched}">
-                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -
                     <label for="floatingInput">Editar: Título Proyecto</label>
                 </div>
-                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)-->
+                <!-- 'Gracias al getter que configuramos en el controlador' (nombre, Password, Mail etc inputs)--
                 <div *ngIf="titulop?.errors  && titulop?.touched">
                     <p *ngIf="titulop?.hasError('required')" class="error2 text-start">
                         * Campo requerido
                     </p>
                 </div>
 
-                <!-- input --------------------------------------------------------------- -->
+                <!-- input --------------------------------------------------------------- --
                 <div class=" form-floating mb-2">
                     <textarea type="text" formControlName="descripcionp" class="form-control rounded-0 formulariosinput"
                         placeholder="descripcionp" id="floatingTextarea2" style="height: 75px" [ngClass]="{'is-invalid': descripcionp?.errors && descripcionp?.touched, 
@@ -139,10 +328,10 @@
             <!-- <br class="py-5 mb-2">
             <hr class="w-75 m-auto mt-3"> -->
 
-            <!-- aceptar---------------------------------------------------------------------------- -->
+            <!-- aceptar---------------------------------------------------------------------------- --
             <div class="modal-body">
                 <button type="submit" class="w-100 btn btn-lg rounded-0 btn-loginout3 mb-5">Aceptar</button>
             </div>
         </div>
     </div>
-</form>
+</form> -->
