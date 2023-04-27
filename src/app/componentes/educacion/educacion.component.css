@@ -1,138 +1,68 @@
-
-/* EDUCACION + avatar con media queries////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////// */
-
 .moduloEducacion {
-    border-bottom: 1px solid var(--color-botones-edit-subseccion);
-    /* border-bottom: 1px solid var(--color-links-navbar); */
-    padding: 3em .5em 2em 0;
-  }
-  
-  /*  probar esto con los hr class hr de bootstrap */
-  
-  
-  /* seccion educacion, poner arriba */
-  .logoseducacion {
-    width: 8em;
+  border-bottom: 1px solid var(--color-botones-edit-subseccion);
+  padding: 3em .5em 2em 0;
+}
 
-    /* *******************************9-4-23 */
-    transition: all 0.19s ease-out;
-  }
-  
-  .logoseducacion:hover {
-     /* *******************************9-4-23 */
-     transform: scale(1.2);
-     /* transform: translateX(5em);  como hacias dos a las vez?  ya fue */
+.logoseducacion {
+  width: 8em;
+  transition: all 0.19s ease-out;
+  /* 9-4-23 */
+}
 
-  }
+.logoseducacion:hover {
+  /* 9-4-23 */
+  transform: scale(1.2);
+}
 
+/* cambiar nombre */
+.seccionEducacion {
+  background-color: var(--color-background-claro);
+  z-index: 1;
+  padding: 5em 3em 5em var(--padding-left);
+  color: var(--color-links-navbar);
+  border-left: 2px solid white !important;
+  /* por bordes blanco negro en la superposicion */
+}
 
+.educacionBanner {
+  background-color: var(--color-background-oscuro1);
+  z-index: 1;
+  /* background-image: url("/assets/img/banner/3educacion.jpg"); apago para traerla desde el json */
+  opacity: 99%;
+  min-height: 65em;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100%;
+}
 
-
-
-
-  /* .titleeducacion{
-      color: var(--color-texto-grande);
-    } */
-  
-  
-  
-  /* cambiar nombre */
-  .SSSSeducacion {
-    /* background-color: rebeccapurple; */
-    background-color: var(--color-background-claro);
-    z-index: 1;
-    padding: 5em 3em 5em var(--padding-left);
-    color: var(--color-links-navbar);
-  
-  
-    /* no se como sacar el borde de la parte blaca, porque es color del body
-      eso, pero lo puse oscuro sino las fotos BN salen con un bordecito blanco, 
-      y aca al reves, bordecito gris, esto lo tapa apenas, ya intente con 20px */
-    border-left: 2px solid white !important;
-  }
-  
-  
-  /* ======================================================
-    =========================igualar paddings de secciones
-     y paddings de titulos en todas las secciones
-    ========================================================*/
-  
-  .SSSSeducacionFOTO {
-    background-color: var(--color-background-oscuro1);
-    z-index: 1;
-    /* padding: 2em; */
-
-
-    /* apago para traerla desde el json */
-    /* background-image: url("/assets/img/banner/3educacion.jpg"); */
-
-
-    opacity: 99%;
-    /* min-height: 50em; */
-    /* background-repeat: no-repeat; */
-    /* background-size: 100%; */
-    /* background-size: cover; */
-    /* background-attachment: fixed; */
-    /* z-index: 1; */
-  
-    min-height: 65em;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
+@media only screen and (max-device-width: 1000px) {
+  .educacionBanner {
     background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 100%;
+    /* agrando un poco para ipad */
+    background-size: 141%;
   }
-  
-  
-  @media only screen and (max-device-width: 1000px) {
-    .SSSSeducacionFOTO {
-      background-position: left;
-  
-      /* background-size: 120%; */
-  
-      /* agrando un poco para ipad, a ver si no se rompe */
-      background-size: 141%;
-    }
-  }
-  
-  @media only screen and (max-device-width: 566px) {
-    .SSSSeducacionFOTO {
-      background-position: left;
-      background-size: 140%;
+}
 
-      /* ESTABA 25 */
-      min-height: 35em;
-    }
+@media only screen and (max-device-width: 566px) {
+  .educacionBanner {
+    background-position: left;
+    background-size: 140%;
+    min-height: 35em;
   }
-  
-  /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed
-    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_parallax_device
-     */
-  @media only screen and (max-device-width: 500px) {
-    .SSSSeducacionFOTO {
-      /* background-attachment: scroll;  no hace falta sacarlo!! ya aprendi a escalar con media queries :')  */
-  
-      background-position: left;
-      background-size: 210%;
-      /* elegir algo que no se vea mucho borde porque sino scroleas sobre vacio */
-      /* min-height: 20em; */
-    }
+}
+
+@media only screen and (max-device-width: 500px) {
+  .educacionBanner {
+    background-position: left;
+    background-size: 210%;
+    /* min-height: 20em; */
   }
+}
 
-
-  p{
-    color: var(--color-texto-medio-educacion);
-    /* color: var(--color-texto-medio); */
-    letter-spacing: 2px;
-
-  }
-  
-  /* fin EDUCACION ///////////////////////////////////////////////////////////
-  ////////////////////////////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////// */
-  
-  
+p {
+  color: var(--color-texto-medio-educacion);
+  /* color: var(--color-texto-medio); */
+  letter-spacing: 2px;
+}

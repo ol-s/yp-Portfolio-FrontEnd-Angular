@@ -1,30 +1,24 @@
-<section id="proyectos" class=" container-fluid proyectos-recientes  d-flex flex-column">
+<section id="proyectos" class=" container-fluid proyectos-seccion d-flex flex-column">
 
-    <!-- Galeria de Proyectos ARQ ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-    <div class="proyectos-contenedor seccion-clara pb-5">
+    <!-- Galeria de Proyectos ARQ ------------------------------------------------------------------------------------------------------------->
+    <div class="proyectos-contenedor seccion-clara">
         <div class="container-fluid proyectostitulo justify-content-start">
             <div class="text-end">
-                <!-- old modal solo add -->
-                <!-- <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalProyectosAdd">
-                    <i class="fa-solid fa-plus"></i>
-                </button> -->
                 <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
-                    data-bs-target="#modalItemsProyArq">
+                    data-bs-target="#modalItemsProyArq" *ngIf="modoEdit">
                     <i class="fa-solid fa-pen"></i>
                 </button>
             </div>
             <h2 class="seccion-titulo">Proyectos Arq</h2>
-            <p class="seccion-texto">Algunos proyectos de arquitectura y diseño en los que he trabajado recientemente
-            </p>
+            <p class="seccion-texto">Algunos proyectos de arquitectura y diseño en los que he trabajado recientemente</p>
         </div>
-
         <div class="row">
-            <!-- modulo proyectos arq -------------------------------------------------------------------->
+            <!-- modulo proyectos arq -------------------------------------------------------------->
             <div class="col-12 col-md-6 col-lg-4 mt-0 mb-0" *ngFor="let cadaProyectoArq of proyectosTodos">
                 <div class="proyecto">
-                    <!-- <img src="./assets/img/proyectos/proyecto2.jpg" alt="Proyecto 2"> -->
-                    <div > <!-- class="ms-2 me-2"-->
-                    <img [src]="cadaProyectoArq.imgPageProyecto" [alt]="cadaProyectoArq.imgPageAlt" alt="Proyecto Arq">
+                    <div> <!-- class="ms-2 me-2"-->
+                        <img [src]="cadaProyectoArq.imgPageProyecto" [alt]="cadaProyectoArq.imgPageAlt"
+                            alt="Proyecto Arq">
                     </div>
                     <div class="overlay">
                         <div class="iconos-contenedor">
@@ -41,29 +35,17 @@
                         <p class="skill-title">{{cadaProyectoArq.descripcion}}</p>
                     </div>
                 </div>
-                <!-- botones edit subseccion -->
-                <div class="text-end  pb-5">
-                    <!-- old botones add delete, ANDAN!!!  cambie cos dejo el unificado modal edit/add---------------------- -->
-                    <!-- <button type="button" class="botonEditSubseccion" data-bs-toggle="modal"
-                        data-bs-target="#modalProyectosEdit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-
-                    <button type="submit" class="botonEditSubseccion" (click)="deleteProyecto(cadaProyecto.id)">
-                        <i class="fa-solid fa-trash"></i>
-                    </button> -->
-                </div>
-            </div>          
+            </div>
         </div>
     </div>
 
 
-    <!-- Galeria de Proyectos WEB ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-    <div class="proyectos-contenedor seccion-oscura pb-5">
+    <!-- Galeria de Proyectos WEB ------------------------------------------------------------------------------------------------------------->
+    <div class="proyectos-contenedor seccion-oscura">
         <div class="container-fluid proyectostitulo justify-content-start">
             <div class="text-end">
                 <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                    data-bs-target="#modalItemsProyWeb">
+                    data-bs-target="#modalItemsProyWeb" *ngIf="modoEdit">
                     <i class="fa-solid fa-pen"></i>
                 </button>
             </div>
@@ -71,82 +53,41 @@
             <p class="seccion-texto">Comenzando esta etapa, algunos proyectos de desarrollo web</p>
         </div>
         <div class="row">
-            <!-- modulo proyectos web ----------------------------------------------------------------------->
+            <!-- modulo proyectos web ----------------------------------------------------------------->
             <div class="col-12 col-md-6 col-lg-4 mt-4 mb-0" *ngFor="let cadaProyecto of proyectosTodosWeb">
                 <div class="proyecto">
-
                     <!-- poniendo dentro del div dejaron de moverselos margenes laterales de la pagina en phone -->
-                    <div class=""> <!-- ms-1 me-1 -->
-                        <img [src]="cadaProyecto.imgPageProyecto" [alt]="cadaProyecto.imgPageAlt" class="pweb">
+                    <div class="">
+                        <img [src]="cadaProyecto.imgPageProyecto" [alt]="cadaProyecto.imgPageAlt"
+                        alt="Proyecto Web">
                     </div>
                     <div class="overlay">
-                        <div class="iconos-contenedor pb-4"> <!-- no puedo acomodarlos -->
-                            <!-- para que se ponga la manito antes hay que rodear todo con la etiqueta <a> -->
+                        <div class="iconos-contenedor pb-4">
+                            <!-- para que se ponga la manito antes rodear todo con la etiqueta <a> -->
                             <a [href]="cadaProyecto.hrefRepo" target="_blank" rel="noopener noreferrer"
-                                class="ps-3 pe-3">
+                                class="ps-3 pe-3" title="Repositorio">
                                 <i class="bi bi-github"></i>
                             </a>
                             <a [href]="cadaProyecto.hrefLive" target="_blank" rel="noopener noreferrer"
-                                class="ps-3 pe-3">
+                                class="ps-3 pe-3" title="Live">
                                 <i class="bi bi-laptop"></i>
                             </a>
                         </div>
                     </div>
                     <div class="ms-5 me-5 pt-2">
-                        <!-- string fecha, no quiero dia y mes y SI LIMITO A 4 CARACTERES NOPUEDO ESCRIBR '2023' '2022-2023', see... -->
                         <h6 class="skill-title">{{cadaProyecto.fecha}}. {{cadaProyecto.tituloProyecto}}</h6>
                     </div>
                     <div class="ms-5 me-5 pt-2">
                         <p class="skill-title pDescripcion">{{cadaProyecto.descripcion}}</p>
                     </div>
                 </div>
-
-                <!-- botones edit subseccion////DEJO TODO EN MODAL DOS PASOS -->
-                <div class="text-end">
-                    <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                        data-bs-target="#modalProyectosEdit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button> -->
-                    <!-- <button type="submit" class="botonEditSubseccionOscura" (click)="deleteProyectoW(cadaProyecto.id)">
-                        <i class="fa-solid fa-trash"></i>
-                    </button> -->
-                </div>
             </div>
-
         </div>
     </div>
 </section>
 
-
-<!-- llamo a modal, tendria que hacer dos mas para web? ver con el elejit rubro? creo que no va a salir eh -->
 <!-- <app-modal-proyectos-add></app-modal-proyectos-add> -->
 <app-modal-proyectos-edit></app-modal-proyectos-edit>
 
 <!-- <app-modal-proyectosweb-add></app-modal-proyectosweb-add> -->
 <app-modal-proyectosweb-edit></app-modal-proyectosweb-edit>
-
-
-
-
-
-
-<!-- modal eliminar, no se si ponerlo asi, aparte, uno para cada uno de los items(??) o donde -->
-<!-- <form class="modal fade" id="modalEliminarProyecto" tabindex="-1" aria-labelledby="exampleModalLabel2"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content ">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel2">Eliminar proyecto</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                </button>
-            </div>
-            <div class="modal-body p-5 pt-0">
-                <form class="">
-                    <button class="w-100 mb-2 mt-5 btn btn-lg rounded-0 btn-loginout3 " type="submit">
-                        Eliminar
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</form> -->

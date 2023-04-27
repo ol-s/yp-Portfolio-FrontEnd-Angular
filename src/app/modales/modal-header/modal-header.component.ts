@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/servicios/persona.service';
-//importo redes en el modal header para editar el 'red-component' dentro del modal
+//importo redes en el modal header para editar el 'red-component' dentro del modal header
 import { Red } from 'src/app/model/red';
 import { RedService } from 'src/app/servicios/red.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//solo por el limpiar() cos no validators here (?),,,lo saque nomas, error en ''form'' 
 
 @Component({
   selector: 'app-modal-header',
@@ -25,17 +24,10 @@ export class ModalHeaderComponent {
   persona: Persona[] = [];
   personaItems: any;
 
-
-  nombre: string = '';  //sin esto me da error el ngmodel en el html, dice angular  no hay q usar igual, captura los datos solo con formcontrolname?
-  apellido: string = '';//probar sacarlo igual,  A VER SI ANDA IGUAL,,en whatsapp lo ponian con databinding,ANDAN SIN NGMODEL
-  ocupacion: string = '';//sacar todo esto, NO VA EL NGMODEL
-
   constructor(
     private redServ: RedService,
     private persoServ: PersonaService,
     private formBuilder: FormBuilder
-    // private httpClient: HttpClient,
-    // private router: Router//era para navegar dentro de la pag, volver atras desde el modal, saque
   ) {
 
     this.persoForm = this.formBuilder.group({
@@ -43,19 +35,20 @@ export class ModalHeaderComponent {
       id: [''],
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
-      ocupacion: ['', [Validators.required]],//voy probando de a uno, antes no meguardaba cos una enieee en disenio y arq'' unSTRING era!!
+      ocupacion: ['', [Validators.required]],
 
       sobremi: [''],
       experienciasTexto: [''],
       cv: [''],
       email: [''],
+      clave: [''],
 
       bannerEntrada: [''],
       bannerAvatar: [''],
       bannerEducacion: [''],
       bannerSalida: [''],
 
-      subtitulo1: ['', [Validators.required]],
+      subtitulo1: ['', [Validators.required]], //para link brand
       subtitulo2: [''],
 
       servicios1: [''],
@@ -67,7 +60,6 @@ export class ModalHeaderComponent {
 
     }),
 
-      //NO SE SI PUEDO PONER DOS A LA VEZ? PROBEMOS
       this.redForm = this.formBuilder.group({
         id: [''],
         nombre: [''],
@@ -77,11 +69,10 @@ export class ModalHeaderComponent {
 
   }
 
-
-  //metodos p formularios reactivos 
-  //hago todo junto aca cos igual tengo que poner todos los metodos de redes aca adentro para que no de error el find/delete en el modal header html
-  get Red() { return this.redForm.get("url");}
-  get Icono() { return this.redForm.get("iconred");}
+  
+  //metodos p los form. en persona activo solo los que uso en este form
+  get Red() { return this.redForm.get("url"); }
+  get Icono() { return this.redForm.get("iconred"); }
   // get NombreValid() {return this.Nombre?.touched && !this.Nombre?.valid;}
   // get PorcentajeValid() {return this.Porcentaje?.touched && !this.Porcentaje?.valid;}
 
@@ -111,12 +102,12 @@ export class ModalHeaderComponent {
     this.listaRedes();
   }
 
-  //PERSONA***********************************************************
+  //persona------------------------------------------------------
   listaP(): void {
     this.persoServ.listaPersonas().subscribe({
       next: (data) => {
         this.personaItems = data;
-        console.log('Items cargados correctamente');
+        //console.log('Items cargados correctamente');
       },
       error: (e) => console.error(e),
       //complete: () => console.info('Completado')
@@ -164,29 +155,14 @@ export class ModalHeaderComponent {
     this.persoForm.reset();
   }
 
-  
-  /*
-  //no quiero delete nada so
-  deleteP(id: number) {
-    if (confirm("¿Querés eliminar este usuario? ❗❗")) {
-      this.persoServ.deletePersona(id).subscribe(data => { });
-      window.location.reload();
-      alert("Eliminado ✔️");
-    }
-  }*/
 
 
-
-
-  //REDES**********************************************************************
-  // listaRedes(): void {
-  //   this.redServ.listaRedes().subscribe(data => { this.redesTodas = data });}
-
+  //redes-------------------------------------------------------
   listaRedes(): void {
     this.redServ.listaRedes().subscribe({
       next: (data) => {
         this.redesTodas = data;
-        console.log('Redes cargadas correctamente');
+        //console.log('Redes cargadas correctamente');
       },
       error: (e) => console.error(e),
       //complete: () => console.info('Completado')
@@ -219,12 +195,12 @@ export class ModalHeaderComponent {
       alert("Red agregada ✔️");
       //alert("¡Red agregada! ✔️, click en 'Aceptar' para recargar la página.");
     } else {
-      this.redServ.updateRed(redesTodas.id, redesTodas).subscribe({   
+      this.redServ.updateRed(redesTodas.id, redesTodas).subscribe({
         next: (data) => {
           this.limpiarR();
         },
         error: (e) => console.error(e),
-        complete: () => console.info('Completado')
+        //complete: () => console.info('Completado')
       });
       window.location.reload();
       alert("Red editada ✔️");
@@ -245,63 +221,3 @@ export class ModalHeaderComponent {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*  ////ESTABA ASI ANTES DE INTENTAR QuE FUNCIONE EL EDIT
-
-import { Component, OnInit } from '@angular/core';
-import { Red } from 'src/app/model/red';
-import { RedService } from 'src/app/servicios/red.service';
-//importo redes en el modal para editar el 'red-component' dentro del modal
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//solo por el limpiar() cos no validators here (?),,,lo saque nomas, error en ''form'' 
-
-
-@Component({
-  selector: 'app-modal-header',
-  templateUrl: './modal-header.component.html',
-  styleUrls: ['./modal-header.component.css']
-})
-export class ModalHeaderComponent {
-
-  red: Red[] = [];
-  redesTodas: any = [];
-
-  constructor(private redServ: RedService) { }
-
-  ngOnInit(): void {
-    this.cargarRed(); //SOLAMENTE CARGA DATOS, NO EDITA/BORRA/NADA
-  }
-
-  cargarRed(): void {
-    this.redServ.listaRedes().subscribe(data => { this.redesTodas = data });
-
-  }
-
-
-  //para limpiar el form, ,,,lo saque nomas, error en ''form'' 
-  /*limpiar(): void {
-    this.form.reset();
-  }
-
-  //delete dentro del html (boton click delete) del modal header
-  deleteRed(id: number): void {
-    if (confirm("❗❗ ¿Querés eliminar esta red? ")) {
-      this.redServ.deleteRed(id).subscribe(data => { });
-      window.location.reload();
-
-      alert("Red eliminada ✔️. Click en 'Aceptar' para recargar la página.");
-    }
-  }
-
-}*/

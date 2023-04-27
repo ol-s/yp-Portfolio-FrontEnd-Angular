@@ -1,9 +1,6 @@
-///////////////////////////////////////////////////integrado al back, desde 9-4-23///////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//integrado al back. 9-4-23
 import { Component, OnInit } from '@angular/core';
-import { Red } from 'src/app/model/red';                         
+import { Red } from 'src/app/model/red';
 import { RedService } from 'src/app/servicios/red.service';
 
 @Component({
@@ -13,48 +10,19 @@ import { RedService } from 'src/app/servicios/red.service';
 })
 
 export class RedesComponent implements OnInit {
- 
-  red :Red [] = [];
-  redesTodas : any = [];
-  
+
+  red: Red[] = [];
+  redesTodas: any = [];
+
   constructor(private redServ: RedService) { }
 
-  ngOnInit(): void {  
-    this.cargarRed(); //SOLAMENTE CARGA DATOS, NO EDITA/BORRA/NADA
+  ngOnInit(): void {
+    this.cargarRed();
   }
-  
+
   cargarRed(): void {
     this.redServ.listaRedes().subscribe(data => { this.redesTodas = data });
-    
   }
-
-  //tenia esto asi antes pero ya no me acuerdo cuando lo hice :/  cos modal edit redes no tengo
-  /*
-  
-  ngOnInit(): void {  
-    this.cargarPersona(); //SOLAMENTE CARGA DATOS, NO EDITA/BORRA/NADA
-  } 
-  cargarPersona(): void {
-    this.redServ.listaRedes().subscribe(data => { this.redesTodas = data });
-    
-  } */
-  //listaredes()  es lo mismo que escribi en el redes.service.ts,,,,si tuviera algo entre parentsis aca lo pongo 
-  //'data' es alias
-  
-
-
-
-
-  //delete dentro del html (click)// creo que esto no va aca, va en ts del modal
-  /*
-  deleteRed(id: number): void {
-    if (confirm("❗❗ ¿Querés eliminar esta red? ")) {        
-      this.redServ.deleteRed(id).subscribe(data => { });
-      window.location.reload();
-      
-      alert("Red eliminada ✔️. Click en 'Aceptar' para recargar la página.");
-    }
-  }*/
 
 }
 
@@ -62,20 +30,7 @@ export class RedesComponent implements OnInit {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////CORRIENDO OK CON JSON ANGULAR HASTA 9-4-23/////////////////////////////////
-////////////////////si comento lo de arriba y descomento esto se ve como antes SIN CONECTAR CON NETB, TOMCAT ETC////////////////////////
-////////////////////////////prendo este para editar modales cos SE MUERE LA ASUS CON LOS DOS CORRIENDO A LAVEZ/////////////////////////
+//json angular hasta 9-4-23
 /*
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';

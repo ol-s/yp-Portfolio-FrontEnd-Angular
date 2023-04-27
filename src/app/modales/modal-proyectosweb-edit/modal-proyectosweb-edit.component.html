@@ -20,7 +20,6 @@
                     <div class="mt-4" *ngFor="let cadaProyW of proyectoWeb">
                         <div class="">
                             <!-- <p><b>ID: </b> {{cadaProyW.id}}</p> -->
-                            <!-- en phone el link largo no respeta cuerpo del modal ni padding ni margin, arreglado css 'break-word' -->
                             <p><b>Imagen Proyecto: </b>{{cadaProyW.imgPageProyecto}}</p>
                             <p><b>Link Repositorio: </b>{{cadaProyW.hrefRepo}}</p>
                             <p><b>Link Live: </b>{{cadaProyW.hrefLive}}</p>
@@ -60,10 +59,10 @@
                     <div>
                         <div class=" form-floating mb-4 mt-2">
                             <input type="text" formControlName="imgPageProyecto"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput35"
                                 placeholder="imgPageProyecto" [ngClass]="{'is-invalid': Img?.errors && Img?.touched, 
                                               'is-valid': !Img?.errors }">
-                            <label for="floatingInput">Imagen en página</label>
+                            <label for="floatingInput35">Imagen en página</label>
                         </div>
                         <div *ngIf="Img?.errors && Img?.touched">
                             <p *ngIf="Img?.hasError('required')" class="error2 text-start">
@@ -75,10 +74,10 @@
                     <div>
                         <div class=" form-floating mb-4">
                             <input type="text" formControlName="hrefRepo"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput36"
                                 placeholder="hrefRepo" [ngClass]="{'is-invalid': Repo?.errors && Repo?.touched, 
                                               'is-valid': !Repo?.errors}">
-                            <label for="floatingInput">Link repositorio</label>
+                            <label for="floatingInput36">Link repositorio</label>
                         </div>
                         <div *ngIf="Repo?.errors  && Repo?.touched">
                             <p *ngIf="Repo?.hasError('required')" class="error2 text-start">
@@ -90,10 +89,10 @@
                     <div>
                         <div class=" form-floating mb-4">
                             <input type="text" formControlName="hrefLive"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput37"
                                 placeholder="hrefLive" [ngClass]="{'is-invalid': Live?.errors && Live?.touched, 
                                               'is-valid': !Live?.errors }">
-                            <label for="floatingInput">Link Live</label>
+                            <label for="floatingInput37">Link Live</label>
                         </div>
                         <div *ngIf="Live?.errors && Live?.touched">
                             <p *ngIf="Live?.hasError('required')" class="error2 text-start">
@@ -105,9 +104,9 @@
                     <div>
                         <div class=" form-floating mb-4">
                             <input type="text" formControlName="fecha" class="form-control rounded-0 formulariosinput"
-                                id="floatingInput" placeholder="fecha" [ngClass]="{'is-invalid': Fecha?.errors && Fecha?.touched, 
+                                id="floatingInput38" placeholder="fecha" [ngClass]="{'is-invalid': Fecha?.errors && Fecha?.touched, 
                                               'is-valid': !Fecha?.errors }">
-                            <label for="floatingInput">Fecha</label>
+                            <label for="floatingInput38">Fecha</label>
                         </div>
                         <div *ngIf="Fecha?.errors && Fecha?.touched">
                             <p *ngIf="Fecha?.hasError('required')" class="error2 text-start">
@@ -119,10 +118,10 @@
                     <div>
                         <div class=" form-floating mb-4">
                             <input type="text" formControlName="tituloProyecto"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput39"
                                 placeholder="tituloProyecto" [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 
                                               'is-valid': !Titulo?.errors }">
-                            <label for="floatingInput">Título</label>
+                            <label for="floatingInput39">Título</label>
                         </div>
                         <div *ngIf="Titulo?.errors && Titulo?.touched">
                             <p *ngIf="Titulo?.hasError('required')" class="error2 text-start">
@@ -132,20 +131,13 @@
                     </div>
                     <!-- input descripcion ------------------------------------------------------------------------- -->
                     <div>
-                        <!-- <div class=" form-floating mb-4">
-                            <input type="text" formControlName="descripcion" class="form-control rounded-0 formulariosinput"
-                                id="floatingInput" placeholder="descripcion" 
-                                [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 
-                                              'is-valid': !Descripcion?.errors }">
-                            <label for="floatingInput">Descripción</label>
-                        </div> -->
                         <div class="form-floating mb-4">
                             <textarea type="text" formControlName="descripcion"
-                                class="form-control rounded-0 formulariosinput" id="floatingTextarea2" placeholder="descripcion"
+                                class="form-control rounded-0 formulariosinput" id="floatingTextarea28" placeholder="descripcion"
                                 style="height: 85px" 
                                 [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched,
                                               'is-valid': !Descripcion?.errors}"></textarea>
-                            <label for="floatingTextarea2">Descripción</label>
+                            <label for="floatingTextarea28">Descripción</label>
                         </div>
                         <div *ngIf="Descripcion?.errors  && Descripcion?.touched">
                             <p *ngIf="Descripcion?.hasError('required')" class="error2 text-start pt-3">

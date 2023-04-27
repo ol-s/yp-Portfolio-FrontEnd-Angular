@@ -46,10 +46,10 @@ export class ModalEducacionEditComponent implements OnInit {
     this.eduServ.listaEstudios().subscribe({
       next: (data) => {
         this.educacion = data;
-        console.log('Items cargados correctamente');
+        //console.log('Items cargados correctamente');
       },
       error: (e) => console.error(e),
-      complete: () => console.info('Completado')
+      //complete: () => console.info('Completado')
     })
   }
 
@@ -59,7 +59,7 @@ export class ModalEducacionEditComponent implements OnInit {
         this.eduForm.setValue(data);
       },
       error: (e) => console.error(e),
-      complete: () => console.info('Completado')
+      //complete: () => console.info('Completado')
     });
     //console.log("Item cargado correctamente");
     console.log('Estudio id = ' + id);
@@ -73,7 +73,7 @@ export class ModalEducacionEditComponent implements OnInit {
           this.limpiar();
         },
         error: (e) => console.error(e),
-        complete: () => console.info('Completado')
+        //complete: () => console.info('Completado')
       });
       window.location.reload();
       alert("Estudio creado ✔️");
@@ -83,7 +83,7 @@ export class ModalEducacionEditComponent implements OnInit {
           this.limpiar();
         },
         error: (e) => console.error(e),
-        complete: () => console.info('Completado')
+        //complete: () => console.info('Completado')
       });
       window.location.reload();
       alert("Estudio editado ✔️");
@@ -104,15 +104,4 @@ export class ModalEducacionEditComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
 

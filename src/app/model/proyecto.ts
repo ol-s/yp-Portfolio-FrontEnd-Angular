@@ -21,7 +21,6 @@ export class Proyecto {
         descripcion : string,
     ) {
 
-        //rubro como que deberia limpiar aca y en el java
         this.rubro = rubro;
         this.imgPageProyecto = imgPageProyecto;
         this.imgPageAlt = imgPageAlt;

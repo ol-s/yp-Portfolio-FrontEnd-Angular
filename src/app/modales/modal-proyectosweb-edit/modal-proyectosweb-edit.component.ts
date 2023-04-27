@@ -86,7 +86,7 @@ export class ModalProyectoswebEditComponent {
           this.limpiar();
         },
         error: (e) => console.error(e),
-        complete: () => console.info('Completado')
+        //complete: () => console.info('Completado')
       });
       window.location.reload();
       alert("Proyecto editado ✔️");

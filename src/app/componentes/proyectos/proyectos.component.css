@@ -1,4 +1,83 @@
 .proyectostitulo {
+    padding: 4em var(--padding-left) .5em var(--padding-left);
+}
+
+.proyectos-seccion img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+    display: block;
+    transition: all 0.2s ease;
+    opacity: 70%;
+    -webkit-filter: grayscale(10%);
+    filter: grayscale(50%);
+    border-left: 1px solid #ffc632;
+    /* background-color: var(--color-background-oscuro1); */
+}
+
+.proyectos-contenedor {
+    padding-bottom: 6em;
+    padding-top: .5em !important;
+}
+
+.overlay {
+    transition: all 0.2s ease;
+    /* icono al hover over imagen, cero cuando no */
+    opacity: 0;
+    position: absolute;
+    /* top: 50%; se iba para abajo c parrafos largos*/
+    margin-top: -8em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.proyecto {
+    position: relative;
+}
+
+.proyecto:hover img {
+    opacity: .2;
+    /* achicarse when hover */
+    transform: scale(0.97);
+}
+
+.proyecto:hover .overlay {
+    opacity: .9;
+}
+
+.overlay .iconos-contenedor {
+    display: flex;
+}
+
+/* color icono ovelay */
+.overlay i {
+    color: #a19484;
+    font-size: 2.3em;
+    /* padding-bottom: 2em; */
+    transition: all 0.1s ease-in;
+}
+
+.overlay i:hover {
+    color: var(--color-links-navbar);
+}
+
+p.seccion-texto {
+    font-size: 1.1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+.proyectostitulo {
     /* padding: 4em var(--padding-left) 2em var(--padding-left); */
     padding: 4em var(--padding-left) .5em var(--padding-left);
 
@@ -26,6 +105,7 @@
 
     border-left: 1px solid #ffc632;
 }
+
 /*no se si agregar el bordecito a arq tmb, quedaba feo, por eso hice una clase solo para los web*/
 .pweb {
     border-left: 1px solid #ffc632;
@@ -55,12 +135,12 @@
 
     /* bajo porque separe web y arq */
     /* padding-bottom: 8em; */
-     /* padding-bottom: 2em; */
+    /* padding-bottom: 2em; */
 }
 
 
 /* acomodar estooooooooooooooooooooooooooooomess  9-4-23 */
-.proyectos-recientes{
+.proyectos-recientes {
 
     /* saco porque puse oscura proyectos web */
     /* padding-bottom: 9em; */
@@ -76,7 +156,7 @@
      tambien arquitecto dinamico,,,color antes y color real when hove */
 .overlay {
     transition: all 0.2s ease;
-    
+
     /* icono al hover over imagen, cero cuando no */
     opacity: 0;
     position: absolute;
@@ -129,7 +209,7 @@
     /* padding-bottom: 2em; */
     transition: all 0.1s ease-in;
 
-   
+
 }
 
 
@@ -140,46 +220,5 @@
     /* tamanio ico href */
     /* font-size: 2.7em; */
     /* padding-bottom: 2em;  no lo toma*/
-    
+
 }
-
-
-
-/* ////////////////////////////////////////////////////////////ordenar esto, icozoom se puede poner en           overlay i:hover            */
-/*
-.icoZoom {
-    /* transition: transform .2s ease-out; 
-    transition: all 0.17s ease-in;
-}
-
-.icoZoom:hover {
-
-    /* habia puesto que se agrandara, pero pongo color mejor 
-    transform: scale(1.3);
-
-
-    /* no anda el color aca  9-4-23
-    /* color: red !important; 
-}
-
-*/
-
-
-
-/*
-.proyecto:hover i {
-    /* aca andael color y se pone rojo apenas haces hover sobretoda el area proyecto  9-4-23,,esigual que   overlay i 
-    color:var(--color-links-navbar);     en overlay anda when hover
-
-    /* este no anda aca 
-    /* transform: scale(1.3); 
-}*/
-
-
-
-
-
-
-
-
-

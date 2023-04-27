@@ -5,17 +5,7 @@
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="modalItemsSkillidiom">Idiomas</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
-                <div class="text-end">
-                    <!-- <button type="btn" class="btn btnEditModal" data-bs-toggle="modal" data-bs-target="#modalEditOrAddSkillWeb">
-                        <i class="fa-solid fa-plus"></i>
-                    </button> -->
-                    <!-- agregar e boton grande -ARRIBA- de close y sacar el add de aca? o dejar add solo en modal? ADD EN MODAL-->
-                    <!-- <button type="btn" class="btn" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button> -->
-                </div>
-            </div>
-            
+            </div>          
             <div class="modal-body">
                 <!-- agregar item -->
                 <div class="text-end">
@@ -59,23 +49,14 @@
             </div>
             <div class="modal-body text-center justify-content-between">
                 <form [formGroup]="siForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
-                    <!-- input id, editarlo? ------------------SACARLOS NGMODEL A VER SI FUNCIONAAA---saque del resto----[(ngModel)]="porcentaje"-------------------------------------- -->
-                    <!-- <div class=" form-floating mb-4">
-                        <input type="text" formControlName="id" [(ngModel)]="id"
-                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="id"
-                            [ngClass]="{'is-invalid': Id?.errors && Id?.touched, 
-                                          'is-valid': !Id?.errors }">
-                        <!--<input type="hidden" name="" id="id"> 
-                        <label for="floatingInput">Id</label>
-                    </div> -->
                     <!-- input nombre ------------------------------------------------------------------------- -->
                     <div>
                         <div class=" form-floating mb-4 mt-2">
                             <input type="text" formControlName="nombre" 
-                                class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="nombre"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput43" placeholder="nombre"
                                 [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 
                                               'is-valid': !Nombre?.errors }">
-                            <label for="floatingInput">Nombre Skill</label>
+                            <label for="floatingInput43">Nombre Skill</label>
                         </div>
                         <div *ngIf="Nombre?.errors  && Nombre?.touched">
                             <p *ngIf="Nombre?.hasError('required')" class="error2 text-start">
@@ -87,10 +68,10 @@
                     <div>
                         <div class=" form-floating mb-4">
                             <input type="number" min="0" max="100" formControlName="porcentaje" 
-                                class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="porcentaje"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput44" placeholder="porcentaje"
                                 [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched, 
                                               'is-valid': !Porcentaje?.errors}">
-                            <label for="floatingInput">% Skill (número de 0-100)</label>
+                            <label for="floatingInput44">% Skill (número de 0-100)</label>
                         </div>
                         <div *ngIf="Porcentaje?.errors  && Porcentaje?.touched">
                             <p *ngIf="Porcentaje?.hasError('required')" class="error2 text-start">
@@ -106,8 +87,7 @@
                     <hr class="w-75 m-auto mt-0 mb-4">
                     <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
                     <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="saveSi()"
-                        data-bs-dismiss="modal"[disabled]="siForm.invalid">
-                        <!-- data-bs-dismiss="modal" [disabled]="swForm.invalid"> p q no quede ==== -->
+                        data-bs-dismiss="modal"[disabled]="siForm.invalid"> <!-- no enviar if invalid -->
                         Guardar
                     </button>
                     <!--    <i class="bi bi-check2-circle"></i> -->

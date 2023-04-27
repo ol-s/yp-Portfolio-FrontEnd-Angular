@@ -1,8 +1,7 @@
-///////////////////////////////////////////////////integrado al back, desde 9-4-23///////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//integrado al back. 9-4-23
 import { Component, OnInit } from '@angular/core';
-import { Persona } from 'src/app/model/persona';                      
+//para editar logoBrand
+import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
@@ -15,15 +14,36 @@ export class NavbarComponent {
   persona: Persona[] = [];
   personaItems: any = [];
 
+  //para ver botones loginout when logueado  21-4-23 + modoedit en el html
+  personaLog: Persona = new Persona("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",);
+  modoEdit: any;
+
+
   constructor(private persoServ: PersonaService) { }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
     this.cargarPersona();
   }
 
   cargarPersona(): void {
     this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });
-    
+
+    //para ver botones loginout when logueado  21-4-23
+    if (sessionStorage.getItem('currentUser') == "null") {
+      this.modoEdit = false;
+    } else if (sessionStorage.getItem('currentUser') == null) {
+      this.modoEdit = false;
+    } else {
+      this.modoEdit = true;
+    }
+  }
+
+  cerrarSesion() {
+    sessionStorage.setItem('currentUser', "null");
+    this.modoEdit = false;
+    alert("Sesión cerrada ✔️");
+    window.location.reload();
+    return this.modoEdit;
   }
 
 
@@ -32,15 +52,7 @@ export class NavbarComponent {
 
 
 
-
-
-
-
-
-
-
-///////////////////////////////////////conectado a JSON nuevo PERSONA/logoBrand SOLO ////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//json angular + persona logo brand editable
 /*
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';

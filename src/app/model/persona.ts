@@ -8,7 +8,9 @@ export class Persona {
     sobremi: string;
     experienciasTexto: string;
     cv: string;
+    
     email: string;
+    clave: string; //p login
 
     bannerEntrada: string;
     bannerAvatar: string;
@@ -35,6 +37,7 @@ export class Persona {
         experienciasTexto: string,
         cv: string,
         email: string,
+        clave: string,
 
         bannerEntrada: string,
         bannerAvatar: string,
@@ -59,6 +62,7 @@ export class Persona {
         this.experienciasTexto = experienciasTexto;
         this.cv = cv;
         this.email = email;
+        this.clave = clave;
         this.bannerEntrada = bannerEntrada;
         this.bannerAvatar = bannerAvatar;
         this.bannerEducacion = bannerEducacion;

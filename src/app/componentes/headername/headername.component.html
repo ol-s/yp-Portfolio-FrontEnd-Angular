@@ -6,32 +6,14 @@
                 <div *ngFor="let itemPersona of personaItems">
                     <h1>{{itemPersona.nombre}}{{itemPersona.apellido}}</h1>
                     <h5>{{itemPersona.ocupacion}}</h5>
-                    <!-- cambie la | en el json por una mas larga,ver 
-
-                        arquitecta | programadora web fullstack jr
-                        arquitecta | programadora web fullstack jr|
-                        arquitecta • programadora web fullstack jr    ------volvi al original lol-->
                 </div>
                 <!-- componente redes-------------------------------->
                 <app-redes></app-redes>
                 <!-- botones edicion seccion------------------------->
-                <div class="divEditRight">
+                <div class="divEditRight" *ngIf='modoEdit'>
                     <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalHeader">
                         <i class="fa-solid fa-pen"></i>
                     </button>
-                    <!-- <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalAdd">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                    <button type="button" class="botonEditSeccion" data-bs-toggle="modal" data-bs-target="#modalDelete">
-                        <i class="fa-solifa-trash"></i>
-                    </button> -->
-
-
-                    <!-- add para redes, despues moverlo si se puede dentro del modalEditName, lISTOOOOOOOOOOOO 11-4-23-->
-                    <!-- <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
-                        data-bs-target="#modalRedAdd">
-                        <i class="fa-solid fa-plus"></i>
-                    </button> -->
                 </div>
             </div>
         </div>

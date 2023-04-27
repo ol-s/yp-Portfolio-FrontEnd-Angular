@@ -1,33 +1,18 @@
-<!-- banner entrada + modal edit todos los banners------------------------------------------------ -->
-<!-- 2dias despuessssssssssssssss ////////////////////4 dias para banners, 6 dias para btn edit////////////////////////////// -->
+<!-- banner entrada + modal edit todos los banners------------------------------------------------------------------>
 <div *ngFor="let itemPersona of personaItems" class="container-fluid">
-
     <div class="banner1" [ngStyle]="{'background-image': ' url(' + itemPersona.bannerEntrada + ')'}">
-
         <div class="text-end ">
-            <!-- MODAL EN DOS PASOS -->
-            <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                data-bs-target="#modalBanners">
-                DOS
-            </button> -->
-
-            <!-- MODAL EN UN CLICK, TRAYENDO LOS DATOS CON EL MODAL ACA ABAJO y en el ts todo lo que ponia en los modales-->
-            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+           <!-- modal en un paso/click aca abajo + ts lo que iba en los modales en dos pasos -->
+            <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal" *ngIf="modoEdit"
                 data-bs-target="#modalBannersInsideComponent" (click)="itemPersona.id? findPers(itemPersona.id): null">
                 <i class="fa-solid fa-pen"></i>
             </button>
         </div>
-
     </div>
 </div>
 
-<!-- llamo al modal,,,,,,, reemplace x modal en un click dentro del component-->
-<!-- <app-modal-banner-edit></app-modal-banner-edit> -->
 
-
-
-<!--Modal Edit BANNERS --------------------------------------------------------------------------------------------->
-    <!-- TIENE QUE ESTAR EL MODAL ACA ABAJO, SINO NO TRAE LOS DATOS*****************************-->
+<!--Modal Edit Banners --------------------------------------------------------------------------------------------->
 <div class="modal fade" id="modalBannersInsideComponent" tabindex="-1" aria-hidden="true"
     aria-labelledby="modalBannersInsideComponent">
     <div class="modal-dialog modal-dialog-centered">
@@ -39,7 +24,6 @@
             <div class="modal-body">
                 <p>*Reemplazar nombre del archivo o insertar desde una URL</p>
                 <hr class="w-75 m-auto mt-4 mb-4">
-
                 <form [formGroup]="persoForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
                     <!-- input ---- ------------------------------------------------------------------------- -->
                     <div>
@@ -47,11 +31,11 @@
                         <!--   <div class=" form-floating mb-4"> -->
                         <div class="mb-4">
                             <input type="text" formControlName="bannerEntrada"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput10"
                                 placeholder="" 
                                 [ngClass]="{'is-invalid': BannerEntrada?.errors && BannerEntrada?.touched,
                                               'is-valid': !BannerEntrada?.errors}">
-                            <!-- <label for="floatingInput">Reemplazar nombre del archivo o insertar desde una URL</label> -->
+                            <!-- <label for="floatingInput10">Reemplazar nombre del archivo o insertar desde una URL</label> -->
                         </div>
                         <div *ngIf="BannerEntrada?.errors  && BannerEntrada?.touched">
                             <p *ngIf="BannerEntrada?.hasError('required')" class="error2 text-start">
@@ -64,11 +48,11 @@
                         <h5>Banner Sobre Mi</h5>
                         <div class="mb-4">
                             <input type="text" formControlName="bannerAvatar"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput11"
                                 placeholder="" 
                                 [ngClass]="{'is-invalid': BannerAvatar?.errors && BannerAvatar?.touched,
                                               'is-valid': !BannerAvatar?.errors }">
-                            <!-- <label for="floatingInput">Reemplazar nombre del archivo o insertar desde una URL</label> -->
+                            <!-- <label for="floatingInput11">Reemplazar nombre del archivo o insertar desde una URL</label> -->
                         </div>
                         <div *ngIf="BannerAvatar?.errors  && BannerAvatar?.touched">
                             <p *ngIf="BannerAvatar?.hasError('required')" class="error2 text-start">
@@ -81,11 +65,11 @@
                         <h5>Banner Educación</h5>
                         <div class="mb-4">
                             <input type="text" formControlName="bannerEducacion"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput12"
                                 placeholder="" 
                                 [ngClass]="{'is-invalid': BannerEducacion?.errors && BannerEducacion?.touched,
                                               'is-valid': !BannerEducacion?.errors }">
-                            <!-- <label for="floatingInput">Reemplazar nombre del archivo o insertar desde una URL</label> -->
+                            <!-- <label for="floatingInput12">Reemplazar nombre del archivo o insertar desde una URL</label> -->
                         </div>
                         <div *ngIf="BannerEducacion?.errors  && BannerEducacion?.touched">
                             <p *ngIf="BannerEducacion?.hasError('required')" class="error2 text-start">
@@ -98,11 +82,11 @@
                         <h5>Banner Salida</h5>
                         <div class=" mb-4">
                             <input type="text" formControlName="bannerSalida"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput13"
                                 placeholder="" 
                                 [ngClass]="{'is-invalid': BannerSalida?.errors && BannerSalida?.touched,
                                               'is-valid': !BannerSalida?.errors }">
-                            <!-- <label for="floatingInput">Reemplazar nombre del archivo o insertar desde una URL</label> -->
+                            <!-- <label for="floatingInput13">Reemplazar nombre del archivo o insertar desde una URL</label> -->
                         </div>
                         <div *ngIf="BannerSalida?.errors  && BannerSalida?.touched">
                             <p *ngIf="BannerSalida?.hasError('required')" class="error2 text-start">
@@ -110,7 +94,7 @@
                             </p>
                         </div>
                     </div>
-                    <!-- guardar ------------------------------------------------------------------------------ -->
+                    <!-- guardar ---------------------------------------------------------------------------- -->
                     <div class="text-center justify-content-between">
                         <br class="pt-2 mb-0">
                         <hr class="w-75 m-auto mt-1 mb-4">
@@ -126,243 +110,3 @@
 
 
 
-<!--
-<div class=" ">
-     <p>Reemplazar el nombre de la imagen dentro de la carpeta
-        "../assets/banners/<b>nueva_imagen.png</b>", ó
-        reemplazar la ruta con una imagen online "<b>https://www.imgbb...</b>".</p> -->
-
-    <!-- arreglar esto, esta horrible*************************** 
-    <p>Reemplazar con el nombre de otra imagen dentro de la carpeta
-        "../assets/banners/<b>nueva_imagen.png</b>", ó insertar desde una url
-        "<b>https://www.imgbb.com/nueva_imagen</b>"</p>
-    <!-- <p>Cambiar nombre de imagen "../assets/banners/<b>nueva_imagen.png</b>", ó insertar una url "<b>https://www.imgbb.com/...</b>"</p> --
-    <!-- <hr class="w-75 m-auto mb-5 mt-4"> --
-</div>-->
-
-
-
-
-
-
-
-
-
-
-
-<!-- /////////////////////////////////////intentos de traer el banner/////////////////////////////////////////////////////////// -->
-
-<!-- <div class="banner1" [style.background-image]="itemPersona.bannerEntrada"> ESTE ANDABA PONIENDO 'url' EN EL TS Y FUERA DE 'persona'-->
-
-<!--  ///////////////////////////////////////////////////////////////////////////carga este pero una imagen online y poniendo 
-    this.bannerEntrada= "https://static.eldiario.es/clip/b75933f3-8399-4ddd-85ee-d73c86314089_16-9-discover-aspect-ratio_default_0.jpg";
- en el ts,,,o sea estoy accediendo mal al dato de la url? -->
-<!-- <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'"> -->
-
-
-
-
-
-<!-- tampoco anda, ero estoy accediendo mal a lista -->
-<!-- <div class="banner1"   [ngStyle]="{'background-image': 'url(' + persona[7].bannerEntrada + ')'}" > -->
-
-
-
-
-<!-- ////////////////////////////////////////////////////////////andaba desde el json,solo fuera de persona -->
-<!-- <div class="banner1" [style.background-image]="bannerEntrada"> -->
-
-<!-- <div class="banner1" [style.background-image]="'url(' + persona.bannerEntrada + ')'"> -->
-<!-- <div class="banner1" [style.background-image]="persona.bannerEntrada">  -->
-
-<!-- 88 -->
-<!-- <div class="banner1" [style.background-image]="banner">  -->
-
-<!-- 89 -->
-<!-- <div class="banner1" [style.background-image]="'url(' + banner + ')'"> -->
-<!-- 89 -->
-<!-- <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'"> -->
-
-
-
-<!-- <div class="banner1"   [ngStyle]="{'background-image': 'url(' + bannerEntrada + ')'}" > -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- le pongo 100vh altura en css, para que se adapte a cualquier pantalla y no quede truncado -->
-
-
-
-
-<!-- <div class="banner1" [style.background-image]= "url('bannerEntrada.persona')"> -->
-
-<!-- <div class="banner1" [style.background-image]= "bannerEntrada"> -->
-
-
-
-<!-- <div class="banner1" [ngStyle]="{'background-image': url(' + bannerEntrada + ')}"> -->
-
-
-
-
-<!-- via stakfnnvgfbfgn   COMPILA PERO NO CARGA NADA -->
-<!-- <div class="banner1" [ngStyle]="{'background':'url('+bannerEntrada+')'}"> -->
-
-<!--  COMPILA PERO NO CARGA NADA ,,,,,,,naadaaaaaaaaaaaaaaa anadaaaaaaaaaaaaaaaaaaaaaaaaa  LLORE ALL DAY ENTRE ESTO Y EL DELETE-->
-<!-- <div  class="banner1" [style.background-image]="bannerEntrada" >  -->
-
-
-<!-- <div class="banner1" [ngStyle]="{'background':'url(+bannerEntrada+)'}"> -->
-
-
-<!--  COMPILA PERO NO CARGA NADA -->
-<!-- <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'"> -->
-
-
-<!--  COMPILA PERO NO CARGA NADA -->
-<!-- <div class="banner1"   [ngStyle]= "{'background': 'bannerEntrada'}" > -->
-
-
-
-<!-- este no da error pero nocarga nada -->
-<!-- <div class="banner1" [ngStyle]="{'background-image': 'url(${bannerEntrada})'} "> -->
-
-<!-- <div class="banner1" [ngStyle]="{'background-image': '}url('${bannerEntrada}')'}"> -->
-<!-- <div class="banner1" [ngStyle]="{{background-image: 'url('${bannerEntrada}')}} "  > -->
-
-
-
-
-
-<!-- <div class="banner1" [style.background-image]="bannerEntrada"> -->
-
-
-
-
-
-<!-- <div class="banner1" [style.background-image]="'url(${bannerEntrada.persona})'">  -->
-
-
-<!-- <div class="banner1" [ngStyle]=" {'background-image':  url(${data.persona})} " > -->
-
-
-<!-- <div class="banner1" [ngStyle]="{'background': ' url(' + bannerEntrada + ')'}"> -->
-
-
-
-<!--  ///////////////////////////////////////////////////////////////////////////carga este pero una imagen online y poniendo 
-    this.bannerEntrada= "https://static.eldiario.es/clip/b75933f3-8399-4ddd-85ee-d73c86314089_16-9-discover-aspect-ratio_default_0.jpg";
- en el ts,,,o sea estoy accediendo mal al dato de la url? -->
-<!-- <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'"> -->
-
-
-
-
-<!-- tampoco anda, ero estoy accediendo mal a lista -->
-<!-- <div class="banner1"   [ngStyle]="{'background-image': 'url(' + persona[7].bannerEntrada + ')'}" > -->
-
-
-<!-- botones edicion seccion ---------------------------------------->
-<!-- no se como ponerlo abajo-->
-<!-- <div class="text-end ">
-                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                        data-bs-target="#modalBanner1"><i class="fa-solid fa-pen"></i></button>
-                 
-                    <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button>
-                </div>
-
-            </div>
-
-            <div class="">
-                <div class="">
-
-
-                    nada 
-                    <div class="banner1" [style.background-image]="personaItem.bannerEntrada"
-                        *ngFor="let personaItem of persona">
-
-                        <div class="banner1" [style.background-image]="bannerEntrada"></div>
-
-                    </div> -->
-
-
-<!-- <div class=" d-flex flex-row redes1">
-            <a class="pe-4 pt-3" [href]="cadaRed.url" target="_blank" *ngFor="let cadaRed of redesTodas">
-                <i [ngClass]="cadaRed.iconred"></i>
-            </a>
-        </div> -->
-<!-- </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ////////////////////////////OKOKO////////////////////////////////andaba desde el VIEJO json,solo fuera de persona -->
-<!-- <div class="banner1" [style.background-image]="bannerEntrada">
-
-
-    <div class="text-end ">
-        <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal" data-bs-target="#modalBanner1"><i
-                class="fa-solid fa-pen"></i></button>
-
-        <button type="button" class="botonEditSubseccionOscura"><i class="fa-solid fa-trash"></i></button>
-    </div>
-
-</div> -->
-
-<!-- ***************************************************************************
- *******************************************************************************
- *******************************************************************************
- *******************************************************************************
- *******************************************************************************-->

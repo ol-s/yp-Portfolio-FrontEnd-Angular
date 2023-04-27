@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+//import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para formularios reactivos
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; //login
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -42,6 +43,14 @@ import { ModalProyectoswebEditComponent } from './modales/modal-proyectosweb-edi
 //import { ModalRedEditComponent } from './modales/modal-red-edit/modal-red-edit.component';
 //import { ModalBannerEditComponent } from './modales/modal-banner-edit/modal-banner-edit.component';
 //import { PanelComponent } from './componentes/panel/panel.component';
+//import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
+import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
+
+//login 19-4-23
+import { PersonaService } from './servicios/persona.service';
+import { InterceptorService } from './servicios/interceptor.service';
+
+
 
 
 @NgModule({
@@ -81,6 +90,8 @@ import { ModalProyectoswebEditComponent } from './modales/modal-proyectosweb-edi
     //ModalSkillSoftAddComponent,
     ModalSkillSoftEditComponent,
     ModalProyectoswebEditComponent,
+    //ExperienciaComponent,
+    ModalExperienciaComponent,
     //ModalRedAddComponent,
     //ModalRedEditComponent,
     //ModalBannerEditComponent,
@@ -91,9 +102,13 @@ import { ModalProyectoswebEditComponent } from './modales/modal-proyectosweb-edi
     AppRoutingModule,
     HttpClientModule,
     FormsModule, //para formularios reactivos
-    ReactiveFormsModule //para formularios reactivos
+    ReactiveFormsModule //para formularios reactivos  
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  
+  providers: [PersonaService,
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
+
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

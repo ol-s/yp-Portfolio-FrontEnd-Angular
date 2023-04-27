@@ -1,68 +1,43 @@
- /* botones login logout -------------------------------------------*/
- .bi-box-arrow-in-right,
- .bi-box-arrow-right {
-   height: 1.5em;
-   opacity: 70%;
- }
-
-
-
-
-/* 
-https://platzi.com/comentario/1862661/
-https://platzi.com/comentario/1862689/  Es muy importante que en los estilos la clase .active esté pegada al andpersand (&).
-https://platzi.com/comentario/4510502/ 
-os dejo un aporte chulo de css
-
-.error {
-    color: darkred;
-    font-size: .8rem;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.messages {
-    opacity: 0;
-    transition: all 0.5s ease-in;
-    &.active {
-        opacity: 1;
-    }
+p {
+  font-size: .95em;
 }
 
-input {
-    border: 2px solid;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin: 0.25rem;
-    min-width: 125px;
-    padding: 0.5rem;
-    transition: background-color 0.5s ease-out;
-    &.is-invalid {
-        background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95%50%rgb(233, 103, 39);
-        background-size: 25px;
-    }
-    &.is-valid {
-        background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg") no-repeat 95%50% lightgreen;
-        background-size: 25px;
-    }
+.foot {
+  /* min-height: 2vh; */
+  /* border-top: 1px solid var(--color-texto-medio-oscuro); */
+  /* border-top: 1px solid #77777742; */
+  color: #515151e2;
+  font-size: 1em;
+  /* letter-spacing: 2px; */
+
 }
 
-
-
-
-input{
-  &.is-valid {
-    border: 2px solid green;
-  }
-  &.is-invalid {
-    border: 2px solid red;
-  }
+.bg-image {
+  background-image: url('../../../assets/img/banners/3educacion.jpg');
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.messages {
-  opacity: 0;
-  transition: all 0.5s ease-in;
-  &.active {
-      opacity: 1;
-  }
-  &strong {
-      color: darkred;
-  }
-} */
+
+.form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
+  height: 3.2em;
+}
+
+.form-floating>label {
+  padding: .75rem .75rem;
+}
+
+.body {
+  padding: 1.8rem 2.7rem 0.8rem 2.7rem;
+}
+
+/*html estaba style="background-image: url('../../../assets/img/banners/3educacion.jpg'); 
+height: 100vh; background-attachment: fixed; background-size: cover; background-position: center;
+  background-repeat: no-repeat;"*/

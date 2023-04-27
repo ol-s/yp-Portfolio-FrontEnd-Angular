@@ -1,48 +1,23 @@
   .banner1 {
     position: relative;
-    /* opacity: 0.65; */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-size: 100% 90%; */
-    /*  90% ANCHO LO APLASTA UN POCO  */
-  
-    /*background-image: url("../assets/img/banner/1banner.jpg");   
-    ASI CARGAGO DOS VECES BIEN, PERO DESPUES DE CARGAR MAL LA PRIMERA, NO SE PORQUE, 
-    dejo asi que es como me cargo el avatar sobremi*/
-
-
-
-    /* apago y dejo en []html  desde el json*/
+    /* apago y lo traigo desde el json en []html */
     /* background-image: url("/assets/img/banner/1banner.jpg"); */
-
-
-
-
-
     opacity: 0.95;
-  
-    /* min-height: 41em;   ajustando */
-    /* min-height: 45em;      el el ipad still para el orto */
-    /* min-height: 51em; */
-    /* ahi esta, pponiendo 100% no andaba, pero no es normal */
-  
-    /* para que tome el alto de la pantalla que tenga, dijo gaby
-       aaaaaaaaa, seajusta en todo los dispositivos, tables, etc, queda un poco ancho lode arriba tho, verrrrrrrrrrrrrrrrrrrrrrrrrr */
+    /* ajustable a cualquier pantalla */
     height: 100vh;
-  
     /* min-height: 51em; */
   }
-  
-  p{
+
+  p {
     font-size: 1em;
     /* color: var(--color-texto-header); */
   }
-  b{
+
+  b {
     font-weight: 600;
     /* color:var(--color-texto-medio); */
   }
-
-  
-  

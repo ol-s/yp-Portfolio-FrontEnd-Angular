@@ -20,8 +20,6 @@
                     <div class=" mt-4" *ngFor="let cadaEstudio of educacion">
                         <div class="">
                             <!-- <p><b>ID: </b> {{cadaEstudio.id}}</p> -->
-                            <!-- en phone el link largo no respeta cuerpo del modal ni padding ni margin, arreglado css 'break-word'
-                            ya habia escrito esto, no guardo???????????????????????  -->
                             <p><b>Logo Institución: </b>{{cadaEstudio.logoInstitucion}}</p>
                             <p><b>Año/Institución: </b>{{cadaEstudio.anioeInstitucion}}</p>
                             <p><b>Diploma: </b>{{cadaEstudio.titulo}}</p>
@@ -52,22 +50,19 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title fs-5" id="modalEditOrAddEducacion">Agregar/Editar Estudios</h5>
-                <!-- limpiar form al cerrar sin enviar/editar click limpiar, no funciona cerrando modal sin 'x' -->
+                <!-- limpiar form al cerrar sin enviar/editar click limpiar, no funciona cerrando modal sin 'x' ofc -->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
             </div>
-
             <div class="modal-body text-center justify-content-between">
                 <form [formGroup]="eduForm"> <!-- (ngSubmit)="onSubmit($event)" id="eduForm"    tiene el save abajo-->
-                    <!-- input logo ------------VER TAMANIOS DE IMAGENESSSSS, FOTO SE ADAPTA A CAJA, O ACLARAR EN IMPUT ANCHO ALTO MAX---------------------------------------------------- -->
+                    <!-- input logo --------------------------------------------------------------------------- -->
                     <div>
                         <div class=" form-floating mb-4 mt-2">
                             <input type="text" formControlName="logoInstitucion"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput30"
                                 placeholder="logoInstitucion" [ngClass]="{'is-invalid': Logo?.errors && Logo?.touched, 
                                               'is-valid': !Logo?.errors }">
-                            <label for="floatingInput">Logo de la Institución</label>
-                            <!--  Imagen ancho 470px, tendria que haber hecho una card fija p que la img se ajuste a ella y no al reves,
-                            proyectos esta igual -->
+                            <label for="floatingInput30">Logo de la Institución</label>
                         </div>
                         <div *ngIf="Logo?.errors && Logo?.touched">
                             <p *ngIf="Logo?.hasError('required')" class="error2 text-start">
@@ -79,10 +74,10 @@
                     <div>
                         <div class=" form-floating mb-4">
                             <input type="text" formControlName="anioeInstitucion"
-                                class="form-control rounded-0 formulariosinput" id="floatingInput"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput31"
                                 placeholder="anioeInstitucion" [ngClass]="{'is-invalid': AnioeInstitucion?.errors && AnioeInstitucion?.touched, 
                                               'is-valid': !AnioeInstitucion?.errors}">
-                            <label for="floatingInput">Año e Institución</label>
+                            <label for="floatingInput31">Año e Institución</label>
                         </div>
                         <div *ngIf="AnioeInstitucion?.errors  && AnioeInstitucion?.touched">
                             <p *ngIf="AnioeInstitucion?.hasError('required')" class="error2 text-start">
@@ -94,9 +89,9 @@
                     <div>
                         <div class=" form-floating mb-4">
                             <input type="text" formControlName="titulo" class="form-control rounded-0 formulariosinput"
-                                id="floatingInput" placeholder="titulo" [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 
+                                id="floatingInput32" placeholder="titulo" [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 
                                               'is-valid': !Titulo?.errors }">
-                            <label for="floatingInput">Título/diploma</label>
+                            <label for="floatingInput32">Título/diploma</label>
                         </div>
                         <div *ngIf="Titulo?.errors && Titulo?.touched">
                             <p *ngIf="Titulo?.hasError('required')" class="error2 text-start">
@@ -104,19 +99,6 @@
                             </p>
                         </div>
                     </div>
-                    <!-- input descripcion ------------------------------------------------------------------------- -->
-                    <!-- <div class=" form-floating mb-4">
-                        <input type="text" formControlName="descripcion"
-                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="descripcion"
-                            [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 
-                                          'is-valid': !Descripcion?.errors }">
-                        <label for="floatingInput">Descripcion</label>
-                    </div>
-                    <div *ngIf="Descripcion?.errors && Descripcion?.touched">
-                        <p *ngIf="Descripcion?.hasError('required')" class="error2 text-start">
-                            * Campo requerido
-                        </p>
-                    </div> -->
                     <!-- guardar--------------------------------------------------------------------------------- -->
                     <br class="pt-0 mb-0">
                     <hr class="w-75 m-auto mt-0 mb-4">
@@ -131,5 +113,4 @@
     </div>
 </div>
 
-<!--  este era el id oculto que decia h? -->
 <!-- <input type="hidden" formControlName="id" [(ngModel)]="estudiosTodos.id"> -->

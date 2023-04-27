@@ -17,9 +17,6 @@ export class ModalSkillSoftEditComponent {
   softSkill: any;
   id?: number;
 
-  nombre: string = '';  //sin esto me da error el ngmodel en el html, dice angular  no hay q usar igual, captura los datos solo con formcontrolname?
-  porcentaje: string = '';//probar sacarlo igual,  A VER SI ANDA IGUAL
-
   constructor(
     private ssServ: SkillSoftService,
     private formBuilder: FormBuilder,
@@ -116,28 +113,5 @@ export class ModalSkillSoftEditComponent {
     this.ssForm.reset();
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //agregado,,si saco el deshabilitar del boton abajo al enviar vacio dice'skil creada'
-  // y luego tira el error pero la crea vacia igual, so hay que poner el deshabilitado,no sirve
-  //ahi esta, saco el save del boton enviar, me dice fallo carga de datos pero me cierra el modl, so nope tampoco
- /* onSubmit(event: Event) {
-    event.preventDefault;
-    if (this.ssForm.invalid) {
-      alert("Falló la carga de datos ❌. Intente nuevamente.");      
-      this.ssForm.markAllAsTouched();
-    }
-  }*/
 
 }

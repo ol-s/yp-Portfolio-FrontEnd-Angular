@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router'; //provee el servicio de routeo
 import { IndexComponent } from './componentes/index/index.component';
+import { LoginComponent } from './componentes/login/login.component';
+//login 19-4-23
+import { GuardGuard } from './servicios/guard.guard';
+
 
 const routes: Routes = [
-  {path:'', component:IndexComponent},
 
-  //{path: 'educacion', component: EducacionComponent},        //no se bien para que se trae aca todavia
-  // {path: 'proyectos', component: ProyectosComponent},
-  // {path: '**', component: Pagina404Component} ,
+  { path: '', component: IndexComponent, canActivate: [GuardGuard] }, //pagina principal http://localhost:4200/
 
-  // {path: 'login', component: LoginComponent},       booooooooorrarrrrrrrrrrrrrrrr todo esto, 
-  // {path: 'aadmin', component:AadminComponent, canActivate:[GuardGuard]},   //, canActivate:[GuardGuard]
-  /* {path: '', redirectTo:'/index', pathMatch:'full'}, */
+  { path: 'login', component: LoginComponent }, //login http://localhost:4200/login
+
+  { path: '**', redirectTo: '/' },
 
 ];
 
@@ -19,7 +20,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 
 
 export class AppRoutingModule { }

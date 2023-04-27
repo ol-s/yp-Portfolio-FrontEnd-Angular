@@ -17,9 +17,6 @@ export class ModalSkillWebEditComponent {
   progrSkill: any;
   id?: number;
 
-  nombre: string = '';  //sin esto me da error el ngmodel en el html, dice angular  no hay q usar igual, captura los datos solo con formcontrolname?
-  porcentaje: string = '';//probar sacarlo igual,  A VER SI ANDA IGUAL
-
   constructor(
     private swServ: SkillWebService,
     private formBuilder: FormBuilder,
@@ -35,11 +32,6 @@ export class ModalSkillWebEditComponent {
 
 
   //metodos p formularios reactivos
-
-  //pruebo editar id  //me esta creando nuevos no editando, cuando quise cambiar id
-  // get Id() {
-  //   return this.swForm.get("id");
-  // }
   get Nombre() {
     return this.swForm.get("nombre");
   }
@@ -104,7 +96,7 @@ export class ModalSkillWebEditComponent {
     if (confirm("¿Querés eliminar ésta skill? ❗❗")) {
       this.swServ.deleteSkillW(id).subscribe(data => { });
       window.location.reload();
-      alert("Skill eliminada ✔️"); //si saco el alert no se elimina,,,,ok se elimino la segunda vez que le di eliminar,,,ahora anda, dejo el alert igual
+      alert("Skill eliminada ✔️");
     }
   }
 

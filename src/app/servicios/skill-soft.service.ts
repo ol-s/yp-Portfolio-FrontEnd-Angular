@@ -29,7 +29,7 @@ export class SkillSoftService {
   //   return this.httpClient.put<any>(this.url + 'update', SkillSoft);
   // }
   public updateSkillS(id:number, SkillSoft: SkillSoft): Observable<any> {
-    return this.httpClient.put<any>(this.url + `update/${id}`, SkillSoft);//COMO ANDABA ESTE CON '/UPDATE/ID' ???  PROBAR
+    return this.httpClient.put<any>(this.url + `update/${id}`, SkillSoft);
   }
 
   public deleteSkillS(id: number): Observable<any> {

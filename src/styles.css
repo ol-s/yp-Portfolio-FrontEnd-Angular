@@ -1551,14 +1551,17 @@ ver tmb el salto brusco de las letras rojas, se amplia el modal, aparece la barr
 }
 
 /* tmb deja de este color al loginout ACEPTAR,,y maybe a todos los botones OJOO */
-.btn:hover {
+/* .btn:hover {
   color: var(--color-links-navbar);
-}
+} */
 .btn:active{
   border: none;
 }
 .btn:focus{
   border: none;
+}
+.btn {
+  transition: all .12s ease-out;
 }
 
 
@@ -1581,3 +1584,24 @@ OJO QUE CORTA LAS PALABRAS A LA MITAD, MAYBE NO 'p' SINO UNA CLASE,,,SIP, YA SAQ
  p {
   overflow-wrap: break-word; 
 } 
+
+
+
+
+
+
+
+
+/* login */
+/*
+.secc-login {
+  /* position: relative; 
+  /* opacity: 0.65; 
+   background-attachment: fixed; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  background-image: url("/assets../assets/img/banner/1banner.jpg"); 
+}*/

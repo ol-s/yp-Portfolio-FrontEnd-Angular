@@ -1,271 +1,70 @@
-<!-- ///////////////////////////////////////login////////////////////////////////////////////// -->
+<div class=" container-fluid  bg-image">
+    <!-- login NO MODAL -->
+    <div class="row d-flex align-items-center justify-content-center h-100 ms-2 me-2">
+        <div class="col-lg-4 col-md-7 col-sm-5 col-xs-10 bg-light m-0">
+            <form class="" [formGroup]="loginForm" (ngSubmit)="onEnviar($event)">
+                <div class="modal-dialog modal-dialog-centered  ">
+                    <div class="modal-content ">
+                        <div class="modal-header pt-2 pb-2 ps-3 pe-3">
+                            <h1 class="modal-title fs-5 " id="exampleModalLabel">Login</h1>
+                            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            </button> -->
+                        </div>
+                        <!-- <div class="m-4 mb-4"> -->
+                        <div class="body mb-1">
+                            <!-- input mail ----------------------------------------------------------------- -->
+                            <div>
+                                <div class=" form-floating mb-3 mt-2"> <!-- [(ngModel)]="persona.email" -->
+                                    <input type="email" formControlName="email" pattern="[^ @]*@[^ @]*"                                      
+                                        class="form-control rounded-0 formulariosinput bg-light" id="floatingInput14"
+                                        placeholder="name@example.com"
+                                        [ngClass]="{'is-invalid': Mail?.errors && Mail?.touched, 'is-valid': !Mail?.errors }">
+                                    <label for="floatingInput14">Email</label>
+                                </div>
+                                <div *ngIf="Mail?.errors  && Mail?.touched">
+                                    <p *ngIf="Mail?.hasError('required')" class="error">
+                                        * El email es requerido
+                                    </p>
+                                    <p *ngIf="Mail?.hasError('email')" class="error">
+                                        * El formato del email debe ser válido
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- input password ------------------------------------------------------------ -->
+                            <div>
+                                <div class="form-floating mb-3 mt-4">
+                                    <input type="password" formControlName="clave"
+                                        class="form-control rounded-0 formulariosinput bg-light" id="floatingPassword"
+                                        placeholder="Password" [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 
+                                                          'is-valid': !Password?.errors}">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
 
-<div class="nav-item ">
-    <!-- button trigger modal login, esto no habia que dejarlo dentro de la navbar? probs-->
-    <button type="button" class="btn btn-outline-secondary p-0" data-bs-toggle="modal" data-bs-target="#modalLogin">
-        <!-- <i class="bi bi-box-arrow-in-right" style="font-size: 1.5em;"></i> -->
-        <!-- pongo svg porque no se ve offline sino -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-box-arrow-in-right"
-            viewBox="0 0 17 17">
-            <path fill-rule="evenodd"
-                d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
-            <path fill-rule="evenodd"
-                d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-        </svg>
-    </button>
-
-    <!--Modal login ------------------------------------------------------------------------------>
-    <!--  (ngSubmit)="onEnviar($event)"  ejecuta la funcion -->
-    <form class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-        [formGroup]="form" (ngSubmit)="onEnviar($event)">
-        <!-- agrego centered para q abra en el medio -->
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
+                                <div *ngIf="Password?.errors  && Password?.touched">
+                                    <p *ngIf="Password?.hasError('required')" class="error">
+                                        * El password es requerido
+                                    </p>
+                                    <p *ngIf="Password?.errors?.['minlength']" class="error">
+                                        * El password debe ser de 8 o más caracteres
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- boton iniciar sesion-------------------------------------------------------- -->
+                            <br class="">
+                            <hr class="w-75 m-auto mt-0 pb-4">
+                            <!-- <br class="pb-5 mb-4"> -->
+                            <!-- <button type="button" class="btn btn-ligth" >Limpiar</button> -->
+                            <button type="submit" class="w-100 mb-4 mt-3 btn btn-lg rounded-0 btn-loginout3">
+                                Iniciar Sesión
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body mb-4">
-
-                    <!-- input mail --------------------------------------------------------------- -->
-                    <div class=" form-floating mb-4">
-                        <input type="email" formControlName="email" class="form-control rounded-0 formulariosinput"
-                            id="floatingInput" placeholder="name@example.com"
-                            [ngClass]="{'is-invalid': Mail?.errors && Mail?.touched, 
-                                          'is-valid': !Mail?.errors }">
-                            <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
-                        <label for="floatingInput">Email</label>
-                    </div>
-                    <!-- 'Gracias al getter que configuramos en el controlador' (Mail, Password, etc inputs)-->
-                    <div *ngIf="Mail?.errors  && Mail?.touched">
-                        <p *ngIf="Mail?.hasError('required')" class="error">
-                            * El email es requerido
-                        </p>
-                        <p *ngIf="Mail?.hasError('email')" class="error">
-                            * El formato del email debe ser válido
-                        </p>
-                    </div>
-
-                    <!-- input password ------------------------------------------------------------ -->
-                    <div class="form-floating mb-4 mt-4">
-                        <input type="password" formControlName="password"
-                            class="form-control rounded-0 formulariosinput" id="floatingPassword" placeholder="Password"
-                            [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 
-                                          'is-valid': !Password?.errors}">
-                        <label for="floatingPassword">Password</label>
-                    </div>
-
-                    <div *ngIf="Password?.errors  && Password?.touched">
-                        <p *ngIf="Password?.hasError('required')" class="error">
-                            * El password es requerido
-                        </p>
-                        <p *ngIf="Password?.errors?.['minlength']" class="error">
-                            * El password debe ser de 8 o más caracteres
-                        </p>
-                    </div>
-                    <!-- boton iniciar sesion-------------------------------------------------------- -->
-                    <!-- <br class="my-4 p-3"> -->
-                    <!-- <br class="py-5 my-2"> -->
-                    <hr class="w-75 m-auto mt-5 pb-3">
-                    <br class="pb-5 mb-4">
-                    <!-- <button type="button" class="btn btn-ligth" >Limpiar</button> -->
-                    <button type="submit" class="w-100 mb-2 btn btn-lg rounded-0 btn-loginout3">
-                        Iniciar Sesión
-                    </button>
-                </div>
-            </div>
+            </form>
         </div>
-    </form>
-</div>
-
-
-
-<!-- ///////////////////////////////////////////////////original, solo se ponia rojo + coments//////////////////////////////////// -->
-<!-- <div class=" form-floating mb-4">
-    <input type="email" formControlName="email" class="form-control rounded-0 formulariosinput" id="floatingInput"
-        placeholder="name@example.com" [class.invalido]="MailValid">
-    <label for="floatingInput">Email</label>
-</div> -->
-
-<!-- 'Gracias al getter que configuramos en el controlador', esto no te lo dice el navegador ya si escribis mal? 
-si saco - && Mail?.touched- aparecela letrita -mail requerido-  sin haber tocado la casilla-->
-<!-- <div *ngIf="Mail?.errors  && Mail?.touched">
-    <p *ngIf="Mail?.hasError('required')" class="error">
-        * El email es requerido
-    </p>
-    <p *ngIf="Mail?.hasError('email')" class="error">
-        * El formato del email debe ser válido
-    </p>
-</div>
-
-<div class="form-floating mb-4">
-    <input type="password" formControlName="password" class="form-control rounded-0 formulariosinput"
-        id="floatingPassword" placeholder="Password" [class.invalido]="PasswordValid">
-    <label for="floatingPassword">Password</label>
-</div> -->
-
-<!-- si quisiera poner una clase ahi, databinding? se activa solo si el mail es invalido o password invalido, o mal escritos
- [class.border-danger]="MailValid" ----puse mi clase, no se cuando se activa el verde-->
-
-<!-- ''Gracias al getter que configuramos en el controlador'' -->
-<!-- <div *ngIf="Password?.errors  && Password?.touched">
-    <p *ngIf="Password?.hasError('required')" class="error">
-        * El password es requerido
-    </p> -->
-    <!-- en el stackblitz no daba error solo el .minlength, aca no compila, me pide "['minlength']" 
-    supuestamente para esto importamos los validators en el ts, tmb puede ser maxlength
-    https://www.youtube.com/watch?v=yKXoklM8m1g&list=PL1oXSbt2OIbG2ipcgJLQ8P64rwS-bz9tZ&ab_channel=ProgramaTK   min22'-->
-    <!-- <p *ngIf="Password?.errors?.['minlength']" class="error">
-        * El password debe ser de 8 o más caracteres
-    </p>
-</div> -->
-
-<!-- ///////////////////////////////////////////////////original, solo se ponia rojo//////////////////////////////////// -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- rejuntes////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
-
-
-
-
-
-
-
-
-                    <!-- g -->
-                    <!-- 
-                    <div class="form-floating mb-4">
-                        <input type="password" formControlName="password"
-                            class="form-control rounded-0 formulariosinput" id="floatingPassword" placeholder="Password"
-                            [class.invalido]="PasswordValid">
-                        <label for="floatingPassword">Password</label>
-                    </div>
-
-
-
-                    <div class="form-floating mb-4">
-                        <input type="password" id="Password"
-                            placeholder="Password" formcontrolname="url"
-                            class="form-control ng-untouched ng-pristine ng-invalid is-invalid rounded-0 "
-                            data-gtm-form-interact-field-id="2" [class.invalido]="PasswordValid">
-                        <label for="floatingPassword">Password</label>
-
-                        <div class="invalid-feedback mt-3">
-                            <div>Es preciso ingresar una URL</div>
-                        </div>
-                    </div> -->
-
-                    <!--  -h-->
-                    <!-- <div class="mb-3">
-                        <label for="educacionEstudio" class="form-label">Agregar Estudio</label>
-                        <input type="text" class="form-control"   formControlName="estudio" placeholder="Nombre nuevo"  [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
-                        <div *ngIf="Password?.errors && Password?.touched">    
-                          <p *ngIf="Password?.hasError('required')" class="text-danger">
-                            El estudio es requerido.
-                          </p>
-                        </div>
-                      </div> -->
-
-
-
-
-
-
-
-
-                    <!-- g -->
-                    <!-- <div class="modal-content">
-    <div class="modal-header">
-        <h1 id="editLoginModal" class="modal-title fs-5">Editar Login</h1><i data-bs-target="#loginModal" data-bs-toggle="modal" aria-label="Volver" class="fa-solid fa-rotate-left"></i>
-    </div>
-    <form novalidate="" class="ng-dirty ng-touched ng-valid" data-gtm-form-interact-id="0">
-        <div class="form-group">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12"><label for="url" class="form-label">Enlace</label><input type="text" id="url" placeholder="Login URL" formcontrolname="url" class="form-control ng-dirty ng-valid is-valid ng-touched" data-gtm-form-interact-field-id="0">
-                        <div id="urlHelp" class="form-text">Ingresar una URL</div>
-                    </div>
-                    <div class="col-12 mt-3"><label for="description" class="form-label">Descripción</label><input type="text" id="description" placeholder="Descripción de la imagen" formcontrolname="description" class="form-control ng-dirty ng-valid is-valid ng-touched" data-gtm-form-interact-field-id="1">
-                        <div id="descriptionHelp" class="form-text">Ingresar una descripción</div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer"><button data-bs-target="#loginModal" data-bs-toggle="modal" aria-label="Actualizar" class="btn btn-black-mini">Actualizar</button></div>
+        <!-- <section class="seccion-oscura foot" *ngFor="let itemPersona of personaItems"> -->
+        <div class="foot fixed-bottom mb-4">
+            <div class="copyrights text-center"> &#169; 2022-2023 Soledad Fretes</div>
         </div>
-    </form>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="form-floating mb-4">                        
-    <input type="text" class="form-control rounded-0 formulariosinput"  formControlName="estudio" placeholder="este texto"  id="floatingInput"
-    [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
-    <label for="floatingInput" class="">Agregar texto</label>
-    <div *ngIf="Password?.errors && Password?.touched">    
-      <p *ngIf="Password?.hasError('required')" class="text-danger">
-        este texto es requerido
-      </p>
     </div>
-  </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-    
-                    <div class="form-floating mb-4">
-                        <input type="password" id="url"
-                            placeholder="Banner URL" formcontrolname="url"
-                            class="form-control ng-untouched ng-pristine ng-invalid is-invalid rounded-0 "
-                            data-gtm-form-interact-field-id="2">
-                        <div id="urlHelp" class="form-text">
-                            Ingresar una URL
-                        </div>
-                        <div class="invalid-feedback">
-                            <div>Es preciso ingresar una URL</div>
-                        </div>
-                    </div>
- -->
+</div>

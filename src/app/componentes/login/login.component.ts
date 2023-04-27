@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// importamos las librerias de formulario que vamos a necesitar
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { Router } from '@angular/router';
+import { Persona } from 'src/app/model/persona';
 
 @Component({
   selector: 'app-login',
@@ -11,75 +12,56 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-  //'form' una variable, le ponemos el nombre nosotros? (h)
-  form: FormGroup;
+  loginForm: FormGroup;
 
-  // Inyectamos en el constructor el formBuilder, primer 'formBuilder' es un alias, elegimos nombre, No es el ''FormBuilder''
-  constructor(private formBuilder: FormBuilder) {
-    ///Creamos el grupo de controles para el formulario de login
-    this.form = this.formBuilder.group({
+  email = '';
+  clave = '';
+
+  persona: Persona = new Persona("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",);
+
+  constructor(private formBuilder: FormBuilder, private autenticacionServ: AutenticacionService, private router: Router) {
+
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],  //compila con la coma ahi...     
+      clave: ['', [Validators.required, Validators.minLength(4)]], //puse contrasenia 1333
     })
   }
 
-  ngOnInit() { }
+  ngOnInit(): void {
+    //sessionStorage.setItem('currentUser', "");  
+  }
 
   // metodos para el formulario
+  get Mail() { return this.loginForm.get("email"); }   //viene del html formControlName="email"
+  get Password() { return this.loginForm.get("clave"); }
 
-  get Mail() {
-    return this.form.get("email");   //viene del html formControlName="email", de ahi toma el dato
-  }
-
-  get Password() {
-    return this.form.get("password");    //viene del html formControlName="password", de ahi toma el dato
-  }
-
-  get MailValid() {
-    return this.Mail?.touched && !this.Mail?.valid;  //metodo de validacion de mail
-  }
-
-  get PasswordValid() {
-    return this.Password?.touched && !this.Password?.valid;  //metodo de validacion de password
-  }
+  get MailValid() { return this.Mail?.touched && !this.Mail?.valid; }  //metodo de validacion de mail 
+  get PasswordValid() { return this.Password?.touched && !this.Password?.valid; }
 
 
-
-
-
-
-
-
-
-//ESTE USE? AGREGUE POR ULTIMO, BORRAR>  corte luz
-  // get PasswordinValid() {
-  //   return this.Password?.touched && !this.Password?.invalid;  //metodo de validacion de password
-  // }
-
-
-
-
-
-
-
-  
-  //onenviar viene del html (ngSubmit)="onEnviar($event), podria cambiar a onIniciarSesion, compila ok
   onEnviar(event: Event) {
-    // Detenemos la propagación o ejecución del comportamiento submit de un form
     event.preventDefault;
-
-    if (this.form.valid) {
-      // Llamamos a nuestro servicio para enviar los datos al servidor
-      // También podríamos ejecutar alguna lógica extra
-      alert("Validaciones correctas, ¡Iniciar Sesión!")
+    if (this.loginForm.valid) {
+      //console.log(JSON.stringify(this.login_form.value));
+      this.autenticacionServ.loginPersona(this.loginForm.value).subscribe(data => {
+        console.log("DATA: " + JSON.stringify(data.id));
+        if (data.id) {
+          alert("Sesión iniciada ✔️");
+          //this.router.navigate(['portfolio']); 
+          this.router.navigate(['']);  //a la pagina principal http://localhost:4200/
+        } else { alert("Error al iniciar sesión. Credenciales no válidas."); } //esto no sale
+      }, error => {
+        alert("Error al iniciar sesión.");   //sale cuando el back is not running
+      })
     } else {
-      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
-      this.form.markAllAsTouched();
+      sessionStorage.setItem('currentUser', "");
+      alert("Error. Validaciones incorrectas.");    //sale solo si escribis mal el mail o contasenia y estan en rojo las validaciones 21.4.23
+      //this.router.navigate(['/']);
     }
-
   }
 
 
 }
 
-// https://stackblitz.com/edit/argentinaprograma-intro-formularios-awfgry?file=src%2Fapp%2Flogin%2Flogin.component.html
+
+

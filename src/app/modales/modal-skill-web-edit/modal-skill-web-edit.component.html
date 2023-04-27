@@ -5,19 +5,8 @@
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="modalItemsSkillWeb">Programación Web</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="text-end">
-                    <!-- <button type="btn" class="btn btnEditModal" data-bs-toggle="modal" data-bs-target="#modalEditOrAddSkillWeb">
-                        <i class="fa-solid fa-plus"></i>
-                    </button> -->
-                    <!-- agregar e boton grande -ARRIBA- de close y sacar el add de aca? o dejar add solo en modal? ADD EN MODAL-->
-                    <!-- <button type="btn" class="btn" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button> -->
-                </div>
-            </div>
-            
-            <div class="modal-body">
-                
+            </div>           
+            <div class="modal-body">               
                 <div class="text-end">
                     <!-- <h5 class="mt-2 pt-0">Agregar</h5> -->
                     <button data-bs-target="#modalEditOrAddSkillWeb" data-bs-toggle="modal" class="btn btnEditModal mt-2  mb-2">
@@ -25,12 +14,6 @@
                     </button>
                 </div>
                 <hr>
-                
-                <!-- <div class="d-flex justify-content-center">
-                    <h5 class="mt-2 pt-0">Editar</h5>
-                </div>
-                <hr> -->
-
                 <div class="container mb-1">
                     <!-- listado de items cargados (id saco) -->
                     <div class=" mt-4" *ngFor="let skillW of skillWeb">
@@ -66,23 +49,14 @@
             </div>
             <div class="modal-body text-center justify-content-between">
                 <form [formGroup]="swForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
-                    <!-- input id, editarlo? -----------SACARLOS NGMODEL A VER SI FUNCIONAAA-no van mas con formcontrolname dice angular-saque todo del resto de los forms------------------------------------------- -->
-                    <!-- <div class=" form-floating mb-4">
-                        <input type="text" formControlName="id" [(ngModel)]="id"
-                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="id"
-                            [ngClass]="{'is-invalid': Id?.errors && Id?.touched, 
-                                          'is-valid': !Id?.errors }">
-                        <!--<input type="hidden" name="" id="id"> 
-                        <label for="floatingInput">Id</label>
-                    </div> -->
                     <!-- input nombre ------------------------------------------------------------------------- -->
                     <div class=" form-floating mb-4 mt-2">
                         <!-- [(ngModel)]="nombre" -->
                         <input type="text" formControlName="nombre" 
-                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="nombre"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput47" placeholder="nombre"
                             [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 
                                           'is-valid': !Nombre?.errors }">
-                        <label for="floatingInput">Nombre Skill</label>
+                        <label for="floatingInput47">Nombre Skill</label>
                     </div>
                     <div *ngIf="Nombre?.errors  && Nombre?.touched">
                         <p *ngIf="Nombre?.hasError('required')" class="error2 text-start">
@@ -92,10 +66,10 @@
                     <!-- input porcentaje --------------------------------------------------------------------- -->
                     <div class=" form-floating mb-4">
                         <input type="number" min="0" max="100" formControlName="porcentaje" 
-                            class="form-control rounded-0 formulariosinput" id="floatingInput" placeholder="porcentaje"
+                            class="form-control rounded-0 formulariosinput" id="floatingInput52" placeholder="porcentaje"
                             [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched, 
                                           'is-valid': !Porcentaje?.errors}">
-                        <label for="floatingInput">% Skill (número de 0-100)</label>
+                        <label for="floatingInput52">% Skill (número de 0-100)</label>
                     </div>
                     <div *ngIf="Porcentaje?.errors  && Porcentaje?.touched">
                         <p *ngIf="Porcentaje?.hasError('required')" class="error2 text-start">
@@ -111,7 +85,6 @@
                     <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
                     <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="saveSw()"
                         data-bs-dismiss="modal" [disabled]="swForm.invalid">
-                        <!-- data-bs-dismiss="modal" [disabled]="swForm.invalid"> p q no quede ==== -->
                         Guardar
                     </button>
                     <!--    <i class="bi bi-check2-circle"></i> -->

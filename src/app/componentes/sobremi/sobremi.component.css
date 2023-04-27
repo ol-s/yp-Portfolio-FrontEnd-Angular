@@ -1,143 +1,102 @@
+.banneravatartexto {
+  background-color: var(--color-background-oscuro1);
+  background-attachment: fixed;
+  padding: 4em;
+  z-index: 4;
+}
 
-/* SOBRE MI + avatar con media queriesokokko///////////////////////////
-  /////////////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////// */
-  .banneravatartexto {
-    background-color: var(--color-background-oscuro1);
-    background-attachment: fixed;
-    padding: 4em;
-  
-    /* porque desaparecia cuando la foto estaba en paralax, poniendo esto aparecia, pero no podia hubicar la foto */
-    z-index: 4;
-  }
-  
-  .sobremi {
-    background-color: var(--color-background-oscuro1);
-    z-index: 1;
-    padding: 6em var(--padding-left) 6em var(--padding-left);
-    /* color: var(--color-links-navbar); */
-  
-    /* ver si no es mucho en pantalla grande */
-    /* min-height: 100vh; le falta 1mm noseporque */
-    min-height: 100.2vh;
-  }
-  
+.sobremi {
+  background-color: var(--color-background-oscuro1);
+  z-index: 1;
+  padding: 6em var(--padding-left) 6em var(--padding-left);
+  min-height: 100.2vh;
+}
+
+
+.avatarbanner {
+  background-color: var(--color-background-oscuro1);
+  z-index: 1;
+  min-height: 45em;
+  /* parallax */
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 80%;
+}
+
+/* MEDIA QUERIES banner avatar*/
+@media only screen and (max-device-width: 1000px) {
   .avatarbanner {
-    /* PONER ESTE CUANDO TERMINE DE AJUSTAR COLORES, ES LA PARTE DE ABAJO 
-      DEL HALF BANNER AVATAR QUE SE VE EN IPAD VERTICAL, ESTABA AZUL*/
-    background-color: var(--color-background-oscuro1);
-    /* background-color: rgb(51, 80, 153); */
-    z-index: 1;
-    /* padding: 2em; */
-  
-    /* me vuelve a dar error aca, a pesar que lo escribo bien como me dejo en el primer avatar
-    VER DE DEJAR /ASSETS/  O ../ASSETS/  QUE FUNCIONO EN EL PRIMER BANNER, EN ESTE NO FUNCIONA, SOLO SIN LOS PUNTOS */
-    /* background-image: url("/assets/img/banner/2banneravataralejado.jpg"); */
-  
-    /* min-height: 50em; */
-    /* background-repeat: no-repeat; */
-    /* background-size: 100%; */
-    /* background-size: cover; */
-    /* background-attachment: fixed; */
-    /* z-index: 1; */
-  
-    /* maso menos, en phone se hace cica y se mete al costado
-      igual esto es una chapuzaaaaaaaaaa!!!!!!!!!!!!
-      es la foto con bordes gigantes rosas */
-    min-height: 45em;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
     background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 80%;
+    background-size: 110%;
   }
-  
-  
-  
-  /* MEDIA QUERIES NO SE SI VAN ACA O EN LOS GLOBALES EH-------------------------------------- */
-  
-  /* EL SAMSUNG ACOSTADO EN 915PX SE CORTA TODO, VER DESSP SI ARREGLAS, NO MAS DE 3 MEDIA Q DICEN, EN EL IPHONE ACOSTADO TAMBIEN, QUEDA MUY PARA ARRIBA */
-  @media only screen and (max-device-width: 1000px) {
-    .avatarbanner {
-      background-position: right;
-      /* IPAD MINI QUEDA UN POQUITO ESTRECHADO PERO OK, VER DE HACER UN PNG TRANSPARENTES CON BORDEN TRANSPARENTES, PORQUE SINO EL ROSA SE VE DE A RATOS */
-      background-size: 110%;
-    }
+}
+
+@media only screen and (max-device-width: 566px) {
+  .avatarbanner {
+    background-position: right;
+    background-size: 140%;
+    min-height: 25em;
   }
-  
-  @media only screen and (max-device-width: 566px) {
-    .avatarbanner {
-      background-position: right;
-      background-size: 140%;
-  
-      /* surface duo, no tan alta la foto, queda abajo, en el ipad mini queda al costado y se angosta bastante, pero bue */
-      min-height: 25em;
-    }
+}
+
+@media only screen and (max-device-width: 500px) {
+  .avatarbanner {
+    background-position: right;
+    background-size: 210%;
   }
-  
-  /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed
-    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_parallax_device
-     */
-  @media only screen and (max-device-width: 500px) {
-    .avatarbanner {
-      /* background-attachment: scroll;  no hace falta sacarlo!! ya aprendi a escalar con media queries :')  */
-  
-      background-position: right;
-      background-size: 210%;
-    }
-  }
-  
+}
 
 
 
+.linkcv {
+  color: var(--color-texto-medio-oscuro);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  transition: all 0.09s ease-in;
+}
 
-  .linkcv{
-    /* text-decoration:underline; */
-    /* text-transform:lowercase; */
-    /* text-decoration: none !important; */
-    color:var(--color-texto-medio-oscuro);
-    font-size: 1em;
-    font-weight: 400;
-    letter-spacing: 0.1em;
+.linkcv:hover {
+  color: var(--color-links-navbar);
+  font-size: 1em;
+  font-weight: 300;
+}
 
-    /* transition: transform 5s ; */
-    transition: all 0.09s ease-in;
-    /* border-bottom: 1px solid var(--color-texto-medio-oscuro); */
-  }
-  .linkcv:hover {
-    /* text-decoration:underline; */
-    /* text-transform:lowercase; */
-    color:var(--color-links-navbar);
-    font-size: 1em;
-    font-weight: 300;
-    /* border-bottom: 1px solid var(--color-links-navbar); */
-  }
-  .linkcv:active {
-    color:var(--color-links-navbar);
-    font-size: 1em;
-    font-weight: 300;
-    /* border-bottom: 1px solid var(--color-links-navbar); */
-  }
-  /* .seccion-texto a{
-    text-decoration: none;
-    text-transform:none;
-  } */
- 
+.linkcv:active {
+  color: var(--color-links-navbar);
+  font-size: 1em;
+  font-weight: 300;
+}
 
 
 
-  
+/* con el avatar fotito */
+.img-fluid {
+  /* border-radius: 10%; */
+  border: 1px solid var(--color-links-navbar);
+  width: 10em;
+  margin-top: -18em;
+  transition: all 0.5s ease-out;
+}
+.img-fluid:hover {
+  transform: scale(1.3);
+}
 
-  /* con el avatar fotito */
-  .img-fluid{
-    /* border-radius: 10%; */
-    border: 1px solid var(--color-links-navbar);
-    width: 10em;
-    margin-top: -18em;
-    transition: all 0.5s ease-out;
-  }
-  .img-fluid:hover{
-    transform: scale(1.3);
-  }
+
+/* experiencias add */
+.moduloExp {
+  border-bottom: 1px solid #313131;
+  padding: 3em .5em 2em 0;
+}
+
+.logosExp {
+  width: 8em;
+}
+
+p {
+  /* color: var(--color-texto-medio-educacion); */
+  /* color: var(--color-texto-medio); */
+  letter-spacing: 2px;
+}

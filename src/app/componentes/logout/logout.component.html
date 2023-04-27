@@ -1,39 +1,65 @@
-  <!-- ////////////////////////////////logout//////////////////////////////////////////// -->
-  <div class="nav-item">
-    <!-- button trigger modal logout -->
-    <button type="button" class="btn btn-outline-secondary p-0" data-bs-toggle="modal"
-        data-bs-target="#modalLogout">
-        <!-- <i class="bi bi-box-arrow-right" style="font-size: 1.5em;"></i>  dejo svg-->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-            class="bi bi-box-arrow-right" viewBox="0 0 17 17">
-            <path fill-rule="evenodd"
-                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-            <path fill-rule="evenodd"
-                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-        </svg>
-    </button>
+  <!-- ////////////////anda el login con modal, use este component logout que ya no servia como login(BORRAR UNO!), pero anda bien 21-4-23///////////// -->
+  <!-- ////////////////////////////////logout/////////////ERA, LO USO PARA PROBAR LOGIN EN MODAL 21-4-23/////////////////////////////// -->
+  
+  
+  <form  [formGroup]="loginForm" (ngSubmit)="onEnviarModal($event)" class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel2"
+  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  ">
+        <div class="modal-content ">
+            <div class="modal-header pt-3 pb-3 ps-4 pe-4">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel">Login</h1>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button> -->
+            </div>
+            <div class="modal-body mb-4">
 
-    <!-- Modal logout, poner despues del footer-->
-    <form class="modal fade" id="modalLogout" tabindex="-1" aria-labelledby="exampleModalLabel2"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Logout</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close">
-                    </button>
+                <!-- input mail ----------------------------------------------------------------- -->
+                <div class=" form-floating mb-3 mt-2"> <!-- [(ngModel)]="persona.email"  -->
+                    <input type="email" formControlName="email" pattern="[^ @]*@[^ @]*"
+                        class="form-control rounded-0 formulariosinput bg-light"
+                        id="floatingInput15" placeholder="name@example.com" [ngClass]="{'is-invalid': Mail?.errors && Mail?.touched, 
+                                          'is-valid': !Mail?.errors }">
+                    <!-- 'is valid is invalid' son clases con el tick verde o rojo -->
+                    <label for="floatingInput15">Email</label>
                 </div>
-                <div class="modal-body p-5 pt-0">
-                    <form class="">
-                        <button class="w-100 mb-2 mt-5 btn btn-lg rounded-0 btn-loginout3 "
-                            type="submit">
-                            Cerrar Sesión
-                        </button>
-                    </form>
+                <!-- 'Gracias al getter que configuramos en el controlador' (Mail, Password, etc inputs)-->
+                <div *ngIf="Mail?.errors  && Mail?.touched">
+                    <p *ngIf="Mail?.hasError('required')" class="error">
+                        * El email es requerido
+                    </p>
+                    <p *ngIf="Mail?.hasError('email')" class="error">
+                        * El formato del email debe ser válido
+                    </p>
                 </div>
+
+                <!-- input password ------------------------------------------------------------ -->
+                <div class="form-floating mb-3 mt-4">
+                    <input type="password" formControlName="clave"
+                        class="form-control rounded-0 formulariosinput bg-light" id="floatingPassword"
+                        placeholder="Password" [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 
+                                          'is-valid': !Password?.errors}">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div *ngIf="Password?.errors  && Password?.touched">
+                    <p *ngIf="Password?.hasError('required')" class="error">
+                        * El password es requerido
+                    </p>
+                    <p *ngIf="Password?.errors?.['minlength']" class="error">
+                        * El password debe ser de 8 o más caracteres
+                    </p>
+                </div>
+                <!-- boton iniciar sesion-------------------------------------------------------- -->
+                <!-- <br class="my-4 p-3"> -->
+                <br class="">
+                <hr class="w-75 m-auto mt-0 pb-5">
+                <!-- <br class="pb-5 mb-4"> -->
+                <!-- <button type="button" class="btn btn-ligth" >Limpiar</button> -->
+                <button type="submit" class="w-100 mb-4 btn btn-lg rounded-0 btn-loginout3">
+                    Iniciar Sesión
+                </button>
             </div>
         </div>
-    </form>
-
-</div>
+    </div>
+</form>
+  

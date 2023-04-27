@@ -1,0 +1,160 @@
+<!-- modal con todos los items Experiencias----------------------------------------------------------------------------->
+<div class="modal fade" id="modalItemsEx" tabindex="-1" aria-hidden="true" aria-labelledby="modalItemsEx">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalItemsEx">Experiencia</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- agregar item -->
+                <div class="text-end">
+                    <button data-bs-target="#modalEditOrAddExp" data-bs-toggle="modal"
+                        class="btn btnEditModal mt-2 mb-2">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="container mb-1">
+                    <!-- listado de items cargados-->
+                    <div class=" mt-4" *ngFor="let exp of expTodas">
+                        <div class="">                            
+                            <p><b>Inicio. Año: </b>{{exp.fechaInicio}}</p>
+                            <p><b>Finalización. Año: </b>{{exp.fechaFin}}</p>
+                            <p><b>Logo Lugar: </b>{{exp.logoLugar}}</p>
+                            <p><b>Lugar: </b>{{exp.lugar}}</p>
+                            <p><b>Puesto: </b>{{exp.puesto}}</p>
+                            <p><b>Descripción: </b>{{exp.descripcion}}</p>                          
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btnEditModal" (click)="exp.id? findExp(exp.id): null"
+                                data-bs-toggle="modal" data-bs-target="#modalEditOrAddExp">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn btnEditModal" (click)="exp.id? deleteExp(exp.id): null">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Edit Or Add Estudios-------------------------------------------------------------------------------------->
+<div class="modal fade" id="modalEditOrAddExp" tabindex="-1" aria-hidden="true" aria-labelledby="modalEditOrAddExp">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="modalEditOrAddExp">Agregar/Editar Experiencias</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="limpiar()"></button>
+            </div>
+            <div class="modal-body text-center justify-content-between">
+                <form [formGroup]="expForm"> <!-- (ngSubmit)="onSubmit($event)" id="eduForm"    tiene el save abajo-->
+                    <!-- input inicio ------------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="fechaInicio"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput65" placeholder="fechaInicio"
+                                [ngClass]="{'is-invalid': Inicio?.errors && Inicio?.touched, 
+                                              'is-valid': !Inicio?.errors }">
+                            <label for="floatingInput65">Año inicio ('2005')</label>
+                        </div>
+                        <div *ngIf="Inicio?.errors && Inicio?.touched">
+                            <p *ngIf="Inicio?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input fin ------------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="fechaFin"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput66" placeholder="fechaFin"
+                                [ngClass]="{'is-invalid': Fin?.errors && Fin?.touched, 
+                                              'is-valid': !Fin?.errors }">
+                            <label for="floatingInput66">Año Finalización ('2010')</label>
+                        </div>
+                        <div *ngIf="Fin?.errors && Fin?.touched">
+                            <p *ngIf="Fin?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input logo --------------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4 mt-2">
+                            <input type="text" formControlName="logoLugar"
+                                class="form-control rounded-0 formulariosinput" id="floatingInput60" placeholder="logoLugar">
+                                <!--  [ngClass]="{'is-invalid': Logo?.errors && Logo?.touched, 
+                                              'is-valid': !Logo?.errors }" -->
+                            <label for="floatingInput60">Logo de la Empresa</label>
+                        </div>
+                        <!-- <div *ngIf="Logo?.errors && Logo?.touched">
+                            <p *ngIf="Logo?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div> -->
+                    </div>
+                    <!-- input lugar --------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="lugar" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput61" placeholder="lugar" 
+                                [ngClass]="{'is-invalid': Lugar?.errors && Lugar?.touched, 
+                                              'is-valid': !Lugar?.errors}">
+                            <label for="floatingInput61">Lugar/empresa</label>
+                        </div>
+                        <div *ngIf="Lugar?.errors  && Lugar?.touched">
+                            <p *ngIf="Lugar?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input puesto ------------------------------------------------------------------------- -->
+                    <div>
+                        <div class=" form-floating mb-4">
+                            <input type="text" formControlName="puesto" class="form-control rounded-0 formulariosinput"
+                                id="floatingInput62" placeholder="puesto" 
+                                [ngClass]="{'is-invalid': Puesto?.errors && Puesto?.touched, 
+                                              'is-valid': !Puesto?.errors }">
+                            <label for="floatingInput62">Puesto</label>
+                        </div>
+                        <div *ngIf="Puesto?.errors && Puesto?.touched">
+                            <p *ngIf="Puesto?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- input descripcion ------------------------------------------------------------------------- -->
+                     <div>
+                        <div class="form-floating mb-4">
+                            <textarea type="text" formControlName="descripcion"
+                                class="form-control rounded-0 formulariosinput" id="floatingTextarea58" placeholder="descripcion"
+                                style="height: 100px" 
+                                [ngClass]="{'is-invalid': Descr?.errors && Descr?.touched,
+                                              'is-valid': !Descr?.errors}"></textarea>
+                            <label for="floatingTextarea58">Descripción</label>
+                        </div>
+                        <div *ngIf="Descr?.errors && Descr?.touched">
+                            <p *ngIf="Descr?.hasError('required')" class="error2 text-start">
+                                * Campo requerido
+                            </p>
+                        </div>
+                    </div>
+                    <!-- guardar--------------------------------------------------------------------------------- -->
+                    <br class="pt-0 mb-0">
+                    <hr class="w-75 m-auto mt-0 mb-4">
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="saveExp()"
+                        data-bs-dismiss="modal" [disabled]="expForm.invalid">
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

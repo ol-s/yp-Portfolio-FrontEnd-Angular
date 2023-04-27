@@ -12,14 +12,13 @@
                         <!-- trigger modal items -->
                         <div class="text-end mb-3">
                             <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                                data-bs-target="#modalItemsSkillWeb">
+                                data-bs-target="#modalItemsSkillWeb" *ngIf="modoEdit">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
-                        <!-- titulo -->
+                        <!-- titulo skills-->
                         <h4>Programación web</h4>
                         <br>
-                        <!-- agrego mb-4 porque saque los botones de edit de cada skill mas el br que tenian -->
                         <div class="moduloSkill mb-4" *ngFor="let cadaSkillProgram of skillsTodasProgram">
                             <div class="d-flex justify-content-between skill-text">
                                 <h6 class="skill-title">{{cadaSkillProgram.nombre}}</h6>
@@ -29,24 +28,7 @@
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
                                         aria-valuemax="100" [style.width.%]="cadaSkillProgram.porcentaje"></div>
-                                </div>
-                                <!-- <div class="text-end">
-                                    <br>
-                                    <!-- trigger modal edit--
-                                    <!-- <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                                        data-bs-target="#modalSkillEdit">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                    <button type="button" class="botonEditSubseccionOscura" data-bs-toggle="modal"
-                                        data-bs-target="#modalEliminarSkill">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button> 
-                                     trigger delete con alert del browser
-                                    <button type="submit" class="botonEditSubseccionOscura"
-                                        (click)="deleteSkillW(cadaSkillProgram.id)">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button> --
-                                </div> -->
+                                </div>                               
                             </div>
                         </div>
                     </div>
@@ -54,9 +36,8 @@
                     <div class="col-md-6 p-4 mt-5">
                         <!-- trigger modal items -->
                         <div class="text-end mb-3">
-                            <!---13-4-22-- en vez de editar crea una skill nueva,,arreglao, faltaba update/id + 2 argumentos, tmb en java-->
                             <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                                data-bs-target="#modalItemsSkillArq">
+                                data-bs-target="#modalItemsSkillArq" *ngIf="modoEdit">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
@@ -72,11 +53,6 @@
                                         aria-valuemax="100" [style.width.%]="cadaSkillArq.porcentaje">
                                     </div>
                                 </div>
-                                <!-- <div class="text-end">
-                                    <br>
-
-                                    <!-- ////////////borro este espacio?  VER/////////borrar, puse margin bottom////////////// --
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -87,7 +63,7 @@
                         <!-- trigger modal items-->
                         <div class="text-end mb-3">
                             <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                                data-bs-target="#modalItemsSkillidiom">
+                                data-bs-target="#modalItemsSkillidiom" *ngIf="modoEdit">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
@@ -102,12 +78,6 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
                                         aria-valuemax="100" [style.width.%]="cadaSkillIdiom.porcentaje"></div>
                                 </div>
-
-                                <!-- <div class="text-end">
-                                    <br>
-
-
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -116,7 +86,7 @@
                         <!-- trigger modal items -->
                         <div class="text-end mb-3">
                             <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
-                                data-bs-target="#modalItemsSkillSoft">
+                                data-bs-target="#modalItemsSkillSoft" *ngIf="modoEdit">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
@@ -131,10 +101,6 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
                                         aria-valuemax="100" [style.width.%]="cadaSkillBland.porcentaje"></div>
                                 </div>
-
-                                <!-- <div class="text-end"  era espacio para botones edit/delete de cada skill>
-                                    <br>
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -144,18 +110,11 @@
     </div>
 </section>
 
-<!-- llamo a modales -->
-<!-- <app-modal-skill-edit></app-modal-skill-edit> --> <!-- estos dos sacar,ya lo dividi todo -->
-<!-- <app-modal-skill-add></app-modal-skill-add>  -->
 
-<!-- <app-modal-skill-arq-add></app-modal-skill-arq-add> -->
 <app-modal-skill-arq-edit></app-modal-skill-arq-edit>
 
-<!-- <app-modal-skill-idioma-add></app-modal-skill-idioma-add> -->
 <app-modal-skill-idioma-edit></app-modal-skill-idioma-edit>
 
-<!-- <app-modal-skill-soft-add></app-modal-skill-soft-add> -->
 <app-modal-skill-soft-edit></app-modal-skill-soft-edit>
 
-<!-- <app-modal-skill-web-add></app-modal-skill-web-add> -->
 <app-modal-skill-web-edit></app-modal-skill-web-edit>

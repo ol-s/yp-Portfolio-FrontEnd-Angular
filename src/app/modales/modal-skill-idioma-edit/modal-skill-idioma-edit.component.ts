@@ -17,9 +17,6 @@ export class ModalSkillIdiomaEditComponent {
   idiomaSkill: any;
   id?: number;
 
-  nombre: string = '';  //sin esto me da error el ngmodel en el html, dice angular  no hay q usar igual, captura los datos solo con formcontrolname?
-  porcentaje: string = '';//probar sacarlo igual,  A VER SI ANDA IGUAL
-
   constructor(
     private siServ: SkillIdiomaService,
     private formBuilder: FormBuilder,
@@ -96,7 +93,7 @@ export class ModalSkillIdiomaEditComponent {
   }
 
   deleteSi(id: number) {
-    if (confirm("¿Querés eliminar esta skill? ❗❗")) {
+    if (confirm("¿Querés eliminar esta skill? ❗❗")) { //if (id != undefined) { this.serv.delete(id).subscribe(data => {this.cargarListaItems()};)}}  }}
       this.siServ.deleteSkillD(id).subscribe(data => { });
       window.location.reload();
       alert("Skill eliminada ✔️");

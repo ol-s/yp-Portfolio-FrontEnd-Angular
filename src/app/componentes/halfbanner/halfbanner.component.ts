@@ -1,8 +1,10 @@
-///////////////////////////////////////////poniendo form en el component inicial a ver si me trae los datos al primer click, ANDUVO!
+//form en el component inicial para traer los datos al primer click
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/servicios/persona.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//para ocultar botones edit when no logueado
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-halfbanner',
@@ -16,10 +18,15 @@ export class HalfbannerComponent implements OnInit {
   persona: Persona[] = [];
   personaItems: any;
   bannerAvatar: string = '';
+ 
+//para ver botones edit when logueado  19-4-23
+  personaLog: Persona= new Persona("", "", "", "", "", "","", "", "", "", "", "","", "", "", "", "", "","", "", );
+  modoEdit: any;
 
-  constructor(private persoServ: PersonaService, private formBuilder: FormBuilder) {
+  constructor(private persoServ: PersonaService, private formBuilder: FormBuilder, autenticacionServ: AutenticacionService) {
     this.persoForm = this.formBuilder.group({
 
+      //poner todos los campos de la tabla para que traiga los datos, validators le pongo solo a los que uso en este formulario
       id: [''],
       nombre: [''],
       apellido: [''],
@@ -29,8 +36,8 @@ export class HalfbannerComponent implements OnInit {
       experienciasTexto: [''],
       cv: [''],
       email: [''],
-//ver si apago el resto anda igual , en este form solo cargo estos 4, 
-//NOPE, NO TRAE LOS DATOS SI APAGAS, TIENEN QUE ESTAR TODOS ACA, YO VALIDATORS LES PONGO SOLO A LOS QUE INCLUYO EN ESTE FORMULARIO
+      clave: [''], //p login 19-4-23
+
       bannerEntrada: ['', [Validators.required]],
       bannerAvatar:['', [Validators.required]],
       bannerEducacion: ['', [Validators.required]],
@@ -45,7 +52,6 @@ export class HalfbannerComponent implements OnInit {
       salida2: [''],
       copyrights: [''],
       logoBrand: ['']
-
     })
   }
 
@@ -70,18 +76,24 @@ export class HalfbannerComponent implements OnInit {
 
   ngOnInit(): void {
     this.listaP();
+
+    //para ver botones edit when logueado  19-4-23
+    if (sessionStorage.getItem('currentUser') == "null"){
+      this.modoEdit = false;
+    }else if (sessionStorage.getItem('currentUser') == null){
+      this.modoEdit = false;
+    }else {
+      this.modoEdit = true;
+    }
   }
 
-  // cargarPersona(): void {
-  //   this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });
-    
-  // }
-  //PERSONA***********************************************************
+  // cargarPersona(): void {this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });}
+
    listaP(): void {
      this.persoServ.listaPersonas().subscribe({
        next: (data) => {
          this.personaItems = data;
-         console.log('Items cargados correctamente');
+         //console.log('Items cargados correctamente');
        },
        error: (e) => console.error(e),
        //complete: () => console.info('Completado')
@@ -129,19 +141,13 @@ export class HalfbannerComponent implements OnInit {
     this.persoForm.reset();
   }
 
-
 }
 
 
 
 
 
-////////////////////////////////////////////********************************original sin form adentro 15-4-23
-///////////////////////////////////////////estoy tratando que me traiga los datos al primer click
-
-///////////////////////////////////////////////////integrado al back, desde 9-4-23///////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//original sin 'form' dentro. integrado al back 9-4-23
 /*
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/persona';                      
@@ -170,18 +176,13 @@ export class HalfbannerComponent implements OnInit {
     this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });
     
   }*/
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
+  
 
 
-
-
-
-////////////////////////////////////CON JSON NUEVO ENTIDAD PERSONA//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////CORRIENDO OK CON JSON ANGULAR HASTA 9-4-23///////////////////////////////////
-////////////////////si comento lo de arriba y descomento esto se ve como antes SIN CONECTAR CON NETB, TOMCAT ETC//////////////////////////
+//json nuevo angular, hasta 9-4-23
 /*
 
 import { Component, OnInit } from '@angular/core';
@@ -195,102 +196,20 @@ import {BrowserModule, DomSanitizer, SafeStyle} from '@angular/platform-browser'
 })
 export class HalfbannerComponent implements OnInit {              
 
-  //banner background fixed
-  //persona: any;
-  //bannerEntrada: string = '';
-  //personaItem : any =[];
-
-  //persona: any = [];
-  //estudios: Educacion[] = [];
-
-  //public bannerEntrada: SafeStyle | undefined;
-  //url: string = '';
-
-
-
-  //banner: string = '';
-
-  //personaItems : any =[];
-  
-
-
- //persona:persona;
-
-
   personaItems: any = [];
   bannerEntrada: string = '';
-
-
   
   constructor(private datos: DatosService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.datos.getDatos().subscribe(data => {
 
-
-        //this.personaItems = data.persona,   
-       //this.persona = data.persona
-
-       //this.persona = data,
-        //this.bannerEntrada = `url(${data.bannerEntrada})`   //background imagen
-
-        //this.bannerEntrada = `url(${this.bannerEntrada.persona})`,  
-        //this.bannerEntrada = DomSanitizer.bypassSecurityTrustStyle('url(http://www.freephotos.se/images/photos_medium/white-flower-4.jpg)');
-        //this.bannerEntrada = this.sanitizer.bypassSecurityTrustStyle('url(' + data.persona + ')');
-        //this.bannerEntrada = `url(${this.bannerEntrada})`
-
-        //this.bannerEntrada = this.persona[7],
-
-
-        ///////////////////////////////////////////////////////////////////////////
-        //this.bannerEntrada= "https://static.eldiario.es/clip/b75933f3-8399-4ddd-85ee-d73c86314089_16-9-discover-aspect-ratio_default_0.jpg";
-        //ni cragando la fuking url aca carga, o seaaaaaaa.
-        //CARGO ESTA IMAGEN ONLIneeeee CON  <div class="banner1" [style.background-image]="'url(' + bannerEntrada + ')'">    
-        //,,ESTOY ACCEDIENDO MAL AL DATO
-        ///////////////////////////////////////////////////////////
-
-        //no carga
-        //this.bannerEntrada = `url(${data.persona.bannerEntrada})`
-
-
-        //this.bannerEntrada = `url(${data.persona.bannerEntrada})`,
-
-
-        //this.personaItems = data.persona;
-
-        //this.bannerEntrada = `url(${data.persona})`;
-        //nada andaaaaaaaaaaaaaaaaaaaaaaaa this.bannerEntrada = `${data.persona}`;
-
-        // dejoooooooooooooooooooooooooooooooooooooooooooooooooooo  this.bannerEntrada = this.persona[7].bannerEntrada
-       
-
-
-        //88
-        //this.banner = `url(${data.persona.bannerEntrada})`
-
-        //89
-        //this.banner = this.persona.bannerEntrada;
-
-        //89
-       //this.bannerEntrada = data.persona;
-
-        //90  DIA DOS NADAAAAAAAAAAAAAAAA ANDAAAAAAAAAAAAAAAAAAAAAAAAAA
-        //this.banner = `url(${data.persona})`
-
-
-        this.personaItems = data.persona
-
-        //this.bannerEntrada= "https://static.eldiario.es/clip/b75933f3-8399-4ddd-85ee-d73c86314089_16-9-discover-aspect-ratio_default_0.jpg";
-        
-        //THISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
         this.bannerEntrada = `url(${data.persona})`
-
 
     });
 
   }
 }
-
 
 */
 
@@ -298,22 +217,7 @@ export class HalfbannerComponent implements OnInit {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////VIEJO JSON///////////andaba////////////// fuera de un array, ahora metiendolo dentro de persona NO ANDAAA///////////////////
+//////////////////VIEJO JSON///////////andaba////////////suelto, no dentro de una tabla
 /*
 
 import { Component, OnInit } from '@angular/core';

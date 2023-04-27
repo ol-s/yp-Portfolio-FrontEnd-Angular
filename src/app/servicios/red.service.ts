@@ -9,7 +9,7 @@ import { Red } from '../model/red';
 
 export class RedService {
 
-  url: string = "http://localhost:8080/red/";   //barra al final asi no va en cada uno abajo
+  url: string = "http://localhost:8080/red/"; 
 
   constructor(private httpClient: HttpClient) { }
 
@@ -21,7 +21,6 @@ export class RedService {
     return this.httpClient.get<Red>(this.url + `find/${id}`);
   }
 
-  //primer red es un alias, segundo es el red del model, o sea la entidad
   public saveRed(Red: Red): Observable<any> {
     return this.httpClient.post<any>(this.url + 'new', Red);
   }

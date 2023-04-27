@@ -10,7 +10,7 @@ import { SkillArq } from '../model/skill-arq';
 export class SkillArqService {
 
 
-  url: string = "http://localhost:8080/skillarq";   //barra al final asi no va en cada uno abajo, PUSE COMO EN JAVA BUR STILL NO ANDA EDIT
+  url: string = "http://localhost:8080/skillarq";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -26,19 +26,9 @@ export class SkillArqService {
     return this.httpClient.post<any>(this.url + '/new', SkillArq);
   }
 
-
-  //sin by id, MIO ORIGINAL
-  /*
-  public updateSkillA(SkillArq: SkillArq): Observable<any> {
-    return this.httpClient.put<any>(this.url + '/update', SkillArq);
-  }
-  */
-  //CON ID, YA LO CAMBIE EN JAVA PERO PARA EDITAR EN POSTMAN TODAVIA HAYQUE PONER EL ID EN EL CUERPO DEL JSON, SINO
-  //CREA SKILL NUEVA, COMO ME ESTA PASANDO
   public updateSkillA(id:number, SkillArq: SkillArq): Observable<any> {
     return this.httpClient.put<any>(this.url + `/update/${id}`, SkillArq);
   }
-
 
   public deleteSkillA(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.url + `/delete/${id}`);

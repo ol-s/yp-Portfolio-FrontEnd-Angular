@@ -11,18 +11,9 @@
                 <div class="container mb-1">
                     <!-- listado de items cargados-->
                     <div class="mt-0" *ngFor="let cadaPersona of personaItems">
-                        <!-- <div class="row me-2 mb-3">
-                            <h5 class="col-11 mt-2" id="">Editar Persona, todo es persona tho</h5>
-                            <div class="col-1">
-                                <button class="btn btnEditModal" data-bs-toggle="modal"
-                                    data-bs-target="#modalInsideCompHeaderEdit"
-                                    (click)="cadaPersona.id? findPers(cadaPersona.id): null">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
-                            </div>
-                        </div> -->
                         <div class="text-end">
-                            <button class="btn btnEditModal mt-3" data-bs-toggle="modal" data-bs-target="#modalInsideCompHeaderEdit"
+                            <button class="btn btnEditModal mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalInsideCompHeaderEdit"
                                 (click)="cadaPersona.id? findPers(cadaPersona.id): null">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
@@ -35,13 +26,6 @@
                             <p><b>Brand Logo: </b>{{cadaPersona.logoBrand}}</p>
                             <p><b>Brand Link: </b>{{cadaPersona.subtitulo1}}</p>
                         </div>
-                        <!-- <div class="text-end">
-                            <button class="btn btnEditModal mt-3" data-bs-toggle="modal"
-                                data-bs-target="#modalInsideCompHeaderEdit"
-                                (click)="cadaPersona.id? findPers(cadaPersona.id): null">
-                                <i class="fa-solid fa-pen"></i>
-                            </button>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -95,9 +79,9 @@
 
 
 
-
-<!--Modal Edit HEADER *************************************************************************************************-->
-<div class="modal fade" id="modalInsideCompHeaderEdit" tabindex="-1" aria-hidden="true" aria-labelledby="modalInsideCompHeaderEdit">
+<!--Modal Edit HEADER --------------------------------------------------------------------------------------------------------->
+<div class="modal fade" id="modalInsideCompHeaderEdit" tabindex="-1" aria-hidden="true"
+    aria-labelledby="modalInsideCompHeaderEdit">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -108,13 +92,12 @@
                 <form [formGroup]="persoForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
                     <!-- input ---- ------------------------------------------------------------------------- -->
                     <div class=" form-floating mb-4 mt-2">
-                        <!--  <input type="text" formControlName="nombre" [(ngModel)]="nombre" -->
                         <input type="text" formControlName="nombre" class="form-control rounded-0 formulariosinput"
-                            id="floatingInput" placeholder="nombre" [ngClass]="{'is-invalid': NombrePersona?.errors && NombrePersona?.touched,
+                            id="floatingInput1" placeholder="nombre" [ngClass]="{'is-invalid': NombrePersona?.errors && NombrePersona?.touched,
                                           'is-valid': !NombrePersona?.errors}">
                         <!-- <input type="text" formControlName="nombre" class="form-control rounded-0 formulariosinput"
                             [(ngModel)]="nombre" id="floatingInput" placeholder="nombre">-->
-                        <label for="floatingInput">Nombre</label>
+                        <label for="floatingInput1">Nombre</label>
                     </div>
                     <div *ngIf="NombrePersona?.errors  && NombrePersona?.touched">
                         <p *ngIf="NombrePersona?.hasError('required')" class="error2 text-start">
@@ -123,14 +106,11 @@
                     </div>
                     <!-- input -------------------------------------------------------------------------------- -->
                     <div class=" form-floating mb-4">
-                        <!--  <input type="text" formControlName="nombre" [(ngModel)]="nombre" no hace falta el ngmodel!!!-->
+                        <!--  <input type="text" formControlName="apellido" [(ngModel)]="apellido"-->
                         <input type="text" formControlName="apellido" class="form-control rounded-0 formulariosinput"
-                            id="floatingInput" placeholder="apellido" [ngClass]="{'is-invalid': ApellidoPersona?.errors && ApellidoPersona?.touched,
+                            id="floatingInput2" placeholder="apellido" [ngClass]="{'is-invalid': ApellidoPersona?.errors && ApellidoPersona?.touched,
                                           'is-valid': !ApellidoPersona?.errors }">
-                        <label for="floatingInput">Apellido</label>
-                        <!-- <input type="text" formControlName="apellido" class="form-control rounded-0 formulariosinput"
-                            [(ngModel)]="apellido" id="floatingInput" placeholder="apellido">
-                        <label for="floatingInput">Apellido</label> -->
+                        <label for="floatingInput2">Apellido</label>
                     </div>
                     <div *ngIf="ApellidoPersona?.errors  && ApellidoPersona?.touched">
                         <p *ngIf="ApellidoPersona?.hasError('required')" class="error2 text-start">
@@ -139,47 +119,45 @@
                     </div>
                     <!-- input nombre ------------------------------------------------------------------------- -->
                     <div class=" form-floating mb-4">
-                        <!--  <input type="text" formControlName="nombre" [(ngModel)]="ocupacion" -->
+                        <!--  <input type="text" formControlName="ocupacion" [(ngModel)]="ocupacion" -->
                         <input type="text" formControlName="ocupacion" class="form-control rounded-0 formulariosinput"
-                            id="floatingInput" placeholder="ocupacion" [ngClass]="{'is-invalid': Ocupacion?.errors && Ocupacion?.touched,
+                            id="floatingInput3" placeholder="ocupacion" 
+                            [ngClass]="{'is-invalid': Ocupacion?.errors && Ocupacion?.touched,
                                           'is-valid': !Ocupacion?.errors }">
-                        <label for="floatingInput">Ocupación</label>
-                        <!-- <input type="text" formControlName="ocupacion" class="form-control rounded-0 formulariosinput"
-                        id="floatingInput" placeholder="ocupacion" [(ngModel)]="ocupacion" >  anda igual sin el ngmodel
-                        <label for="floatingInput">Ocupacion</label> -->
+                        <label for="floatingInput3">Ocupación</label>
                     </div>
                     <div *ngIf="Ocupacion?.errors  && Ocupacion?.touched">
                         <p *ngIf="Ocupacion?.hasError('required')" class="error2 text-start">
                             * Campo requerido
                         </p>
                     </div>
-                    <!-- input --------------------ME FALTA ATRIBUTO PARA CAMBIAR EL LINK!!! SSSH------------------------ -->
+                    <!-- input ------------------------------------------------------------------------------------- -->
                     <div class=" form-floating mb-4">
                         <input type="text" formControlName="logoBrand" class="form-control rounded-0 formulariosinput"
-                            id="floatingInput" placeholder="logoBrand" [ngClass]="{'is-invalid': LogoBrand?.errors && LogoBrand?.touched,
+                            id="floatingInput4" placeholder="logoBrand" 
+                            [ngClass]="{'is-invalid': LogoBrand?.errors && LogoBrand?.touched,
                                           'is-valid': !LogoBrand?.errors }">
-                        <label for="floatingInput">Brand Logo</label>
+                        <label for="floatingInput4">Brand Logo</label>
                     </div>
                     <div *ngIf="LogoBrand?.errors  && LogoBrand?.touched">
                         <p *ngIf="LogoBrand?.hasError('required')" class="error2 text-start">
                             * Campo requerido
                         </p>
                     </div>
-                    <!-- input --------------------ME FALTA ATRIBUTO PARA CAMBIAR EL LINK!!! USO Subtitulo1!------------------------ -->
-                    <!-- ver si sacar igual, el link a yoprogramo no existe mas, habria que poner el link al home, 
-                        suelen tener algunas paginas, vuelve arriba, pero ya tengo 'home', ver , esta feo el modal -->
+                    <!-- input ------------------------------------------------------------------------------------- -->
                     <div class=" form-floating mb-4">
                         <input type="text" formControlName="subtitulo1" class="form-control rounded-0 formulariosinput"
-                            id="floatingInput" placeholder="subtitulo1" [ngClass]="{'is-invalid': Subtitulo1?.errors && Subtitulo1?.touched,
+                            id="floatingInput5" placeholder="subtitulo1" 
+                            [ngClass]="{'is-invalid': Subtitulo1?.errors && Subtitulo1?.touched,
                                           'is-valid': !Subtitulo1?.errors }">
-                        <label for="floatingInput">Brand Link</label>
+                        <label for="floatingInput5">Brand Link</label>
                     </div>
                     <div *ngIf="Subtitulo1?.errors  && Subtitulo1?.touched">
                         <p *ngIf="Subtitulo1?.hasError('required')" class="error2 text-start">
                             * Campo requerido
                         </p>
                     </div>
-
+                    <!-- guardar------------------------------------------------------------------------------------- -->
                     <br class="pt-0 mb-0">
                     <hr class="w-75 m-auto mt-0 mb-4">
                     <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()"></button>
@@ -193,23 +171,25 @@
 
 
 <!--Modal Add/Edit REDES, dentro de modal header -------------------------------------------------------------------------->
-<div class="modal fade" id="modalHeaderREDESedit" tabindex="-1" aria-hidden="true" aria-labelledby="modalHeaderREDESedit">
+<div class="modal fade" id="modalHeaderREDESedit" tabindex="-1" aria-hidden="true"
+    aria-labelledby="modalHeaderREDESedit">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title fs-5" id="modalHeaderREDESedit">Agregar / Editar Red</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiarR()"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="limpiarR()"></button>
             </div>
             <div class="modal-body text-center justify-content-between">
                 <form [formGroup]="redForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
                     <!-- input ------------------------------------------------------------------------ -->
                     <div>
                         <div class=" form-floating mb-4 mt-2">
-                            <!-- [(ngModel)]="url" NO HACE FALTA (?)-->
+                            <!-- [(ngModel)]="url"-->
                             <input type="text" formControlName="url" class="form-control rounded-0 formulariosinput"
-                                id="floatingInput" placeholder="url" [ngClass]="{'is-invalid': Red?.errors && Red?.touched, 
+                                id="floatingInput6" placeholder="url" [ngClass]="{'is-invalid': Red?.errors && Red?.touched, 
                                               'is-valid': !Red?.errors }">
-                            <label for="floatingInput">Link "https://www... "</label>
+                            <label for="floatingInput6">Link "https://www. "</label>
                         </div>
                         <div *ngIf="Red?.errors  && Red?.touched">
                             <p *ngIf="Red?.hasError('required')" class="error2 text-start">
@@ -220,11 +200,11 @@
                     <!-- input ------------------------------------------------------------------------ -->
                     <div>
                         <div class=" form-floating mb-4">
-                            <!-- [(ngModel)]="iconred" NO HACE FALTA-->
+                            <!-- [(ngModel)]="iconred"-->
                             <input type="text" formControlName="iconred" class="form-control rounded-0 formulariosinput"
-                                id="floatingInput" placeholder="iconred" [ngClass]="{'is-invalid': Icono?.errors && Icono?.touched, 
+                                id="floatingInput7" placeholder="iconred" [ngClass]="{'is-invalid': Icono?.errors && Icono?.touched, 
                                               'is-valid': !Icono?.errors}">
-                            <label for="floatingInput">Nombre del ícono de bootstrap/fontawesome</label>
+                            <label for="floatingInput7">Nombre del ícono de bootstrap/fontawesome</label>
                         </div>
                         <div *ngIf="Icono?.errors  && Icono?.touched">
                             <p *ngIf="Icono?.hasError('required')" class="error2 text-start">
@@ -235,18 +215,13 @@
                     <!-- guardar----------------------------------------------------------------------- -->
                     <!-- <br class="pt-0 mb-0"> -->
                     <hr class="w-75 m-auto mt-5 mb-3">
-                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right mb-3" (click)="limpiarR()"></button>
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right mb-3"
+                        (click)="limpiarR()"></button>
                     <button type="submit" class="w-100 mb-5 mt-0 btn btn-lg rounded-0 btn-loginout3" (click)="saveRed()"
                         data-bs-dismiss="modal" [disabled]="redForm.invalid">Guardar</button>
-                        <!-- class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" -->
+                    <!-- class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" -->
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-
-
-<!--AL FINAL PUSE EL MODAL ACA, ELIMINAR MODAL RED ADD Y EDIT
-<app-modal-red-add></app-modal-red-add>
-<app-modal-red-edit></app-modal-red-edit> -->

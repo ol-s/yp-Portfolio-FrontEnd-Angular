@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////integrado al back, desde 11-4-23///////////////////////////////////////
+//integrado al back. 11-4-23
 import { Component, OnInit } from '@angular/core';                  
 import { SkillArq } from 'src/app/model/skill-arq';
 import { SkillArqService } from 'src/app/servicios/skill-arq.service';
@@ -8,6 +8,8 @@ import { Skillidioma } from 'src/app/model/skill-idioma';
 import { SkillIdiomaService } from 'src/app/servicios/skill-idioma.service';
 import { SkillSoft } from 'src/app/model/skill-soft';
 import { SkillSoftService } from 'src/app/servicios/skill-soft.service';
+//para ver botones edit w logueado
+import { Persona } from 'src/app/model/persona';  
 
 @Component({
   selector: 'app-skills',
@@ -30,7 +32,10 @@ export class SkillsComponent implements OnInit {
   skillsTodasBlandas: any = [];
 
   id?: number;
-  //form: any;
+
+  //para ver botones edit when logueado  19-4-23
+  personaLog: Persona= new Persona("", "", "", "", "", "","", "", "", "", "", "","", "", "", "", "", "","", "", );
+  modoEdit: any;
 
   constructor(
     private saServ: SkillArqService, 
@@ -44,7 +49,15 @@ export class SkillsComponent implements OnInit {
     this.cargarSkillWeb();
     this.cargarSkillidioma();
     this.cargarSkillSoft();
-    //this.findSkillArq(this.skillsTodasArq.id);
+
+    //para ver botones edit when logueado  21-4-23
+    if (sessionStorage.getItem('currentUser') == "null"){
+      this.modoEdit = false;
+    }else if (sessionStorage.getItem('currentUser') == null){
+      this.modoEdit = false;
+    }else {
+      this.modoEdit = true; 
+    }
   }
 
   cargarSkillArq(): void {
@@ -63,79 +76,6 @@ export class SkillsComponent implements OnInit {
     this.ssServ.listaSkillsS().subscribe(data => { this.skillsTodasBlandas = data });   
   }
 
- 
-
-
-  //aww, bye, dejo modal en dos pasos
-  /*
-  deleteSkillA(id: number): void {
-    if (confirm("❗❗ ¿Querés eliminar este item?")) {        
-      this.saServ.deleteSkillA(id).subscribe(data => { });
-      window.location.reload();     
-      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
-    }
-  }
-
-  deleteSkillW(id: number): void {
-    if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
-      this.swServ.deleteSkillW(id).subscribe(data => { });
-      window.location.reload();     
-      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
-    }
-  }
-
-  deleteSkillD(id: number): void {
-    if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
-      this.siServ.deleteSkillD(id).subscribe(data => { });
-      window.location.reload();     
-      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
-    }
-  }
-
-  deleteSkillS(id: number): void {
-    if (confirm("❗❗ ¿Querés eliminar este item? ")) {        
-      this.ssServ.deleteSkillS(id).subscribe(data => { });
-      window.location.reload();     
-      alert ("¡Item eliminado! ✔️. Click en 'Aceptar' para recargar la página.");
-    }
-  }
-  */
-
-
-
-/*  error id
-  findSkillArq(): void {
-    this.saServ.findSkillA(id).subscribe(data => { this.skillsTodasArq = data });    
-  }*/
-/*
-//MIO//no encuentra  el id,,soloponiendo toda la ruta en el,  html routerlink, pero igual esta todo en rojo
-  findSkillArq(id: number){
-    this.saServ.findSkillA(this.skillsTodasArq.id).subscribe({  //pongoao asi largo porque me da error  el id ((((:   ta todo roto esto
-      next: (data) => {
-        //this.form.setValue(data); //era para dentro de unfrom, ofc no encontraba el id
-      },
-      error: (e) => console.error,  //console.error(e),  la (e) tiraba error en laconsola,,,y otros 200
-      complete: ()=> console.info('complete')
-    });
-    console.log("skill cargada correctamenteSSSSSSS");  //ESTE ME SALE AHORA EN CONSOLA, PERO SIN TOCAR NINGUN BOTON AL APENAS CARGAR
-  }*/
-
-
-
-
-
-  /*findSkillArq(id: number) {
-    this.saServ.findSkillA(id).subscribe({
-      next: (data) => {
-        this.form.setValue(data); //sip, form da error porque no es un form el html comun, entonces nunca encuentra el id
-      },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
-    });
-    //console.log("Estudios cargados correctamente");
-    console.log(id);
-  }*/
-
 }
 
 
@@ -143,20 +83,7 @@ export class SkillsComponent implements OnInit {
 
 
 
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////CON JSON NUEVO ENTIDAD PERSONA//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////CORRIENDO OK CON JSON ANGULAR HASTA 9-4-23///////////////////////////////////
-////////////////////si comento lo de arriba y descomento esto se ve como antes SIN CONECTAR CON NETB, TOMCAT ETC//////////////////////////
-
+//json angular hasta 9-1-23
 /*
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/servicios/datos.service';
@@ -169,10 +96,6 @@ import { DatosService } from 'src/app/servicios/datos.service';
 
 export class SkillsComponent implements OnInit {
 
-  //no se si dividir cada rubro skill aca tmb
-  //proyectosTodos : any = [];
-  //proyectosTodosWeb : any = [];
-
   skillsTodasProgram: any = [];
   skillsTodasArq: any = [];
   skillsTodasIdiom: any = [];
@@ -183,11 +106,8 @@ export class SkillsComponent implements OnInit {
   Todasrubr2: any = [];
   Todasrubr3: any = [];
 
-
-  //datos: tambien es un alias, nombrar como querramos
   constructor(private datos: DatosService) { }
 
-  //this 'datos' es el datos de la linea 14, el getDatos viene del datos.service.ts,  'data'  es otro alias que ponemos nosotros, puse los mismos alias que en educacion.ts
   ngOnInit(): void {
     this.datos.getDatos().subscribe(data => {
         this.skillsTodasProgram = data.skillsProgramacion,
@@ -200,7 +120,6 @@ export class SkillsComponent implements OnInit {
           this.Todasrubr2 = data.rubrosss[1].rubro2,
           this.Todasrubr3 = data.rubrosss[2].rubro3
     
-
     });
   }
 }

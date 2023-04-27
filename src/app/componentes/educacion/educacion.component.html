@@ -2,34 +2,28 @@
     <div class="container-fluid seccion-clara" id="educacion">
         <div class="container-fluid ">
             <div class="row">
-                <!-- banner educacion dentro de entidad persona, conectado al back -------------->
-                <div class="m-0 col-sm-4 order-sm-first order-last SSSSeducacionFOTO"
+                <!-- banner educacion dentro de entidad persona en el back -->
+                <div class="m-0 col-sm-4 order-sm-first order-last educacionBanner"
                     *ngFor="let itemPersona of personaItems"
                     [ngStyle]="{'background-image': ' url(' + itemPersona.bannerEducacion + ')'}">
-                    <div class=" ">
-                        <!-- <button type="button" class="botonEditSeccionOscura"><i class="fa-solid fa-pen"></i></button> -->
-                        <!-- dejo solo para editar //NOPE, EDITADO JUNTO CON TODOS LOS BANNERS ARRIBA-->
-                    </div>
+                    <!-- editable junto con todos los banners arriba -->
+                    <!-- <div class=" ">
+                        <button type="button" class="botonEditSeccionOscura"><i class="fa-solid fa-pen"></i></button>                       
+                    </div> -->
                 </div>
-                <div class="m-0 col-sm-8 border SSSSeducacion">
-                    <!-- titulo seccion --------------------------------------------------------->
+                <div class="m-0 col-sm-8 border seccionEducacion">
+                    <!-- titulo seccion -->
                     <div>
-                        <div class="text-end">                           
-                            <!-- ANDA PERO DEJO SOLO EL MODAL EN DOS PASOS -->
-                            <!-- <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
-                                data-bs-target="#modalEducacionAdd">
-                                <i class="fa-solid fa-plus"></i>
-                            </button> -->
-
-                            <!-- modal con items en dos pasos--------------------------------- -->
+                        <div class="text-end">
+                            <!-- modal con items en dos pasos -->
                             <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
-                                data-bs-target="#modalItemsEducacion">
+                                data-bs-target="#modalItemsEducacion" *ngIf="modoEdit">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
                         </div>
                         <h2 class="seccion-titulo">Educación</h2>
                     </div>
-                    <!-- modulo educacion --------------------------------------------------->
+                    <!-- modulo educacion -->
                     <div class="moduloEducacion" *ngFor="let estudio of estudiosTodos">
                         <div class=" w-l h-l mb-5  logoseducacion">
                             <img [src]="estudio.logoInstitucion" class="logoseducacion" [alt]="estudio.logoAlt">
@@ -38,18 +32,6 @@
                             <h5>{{estudio.anioeInstitucion}}</h5>
                         </div>
                         <p class="seccion-texto">{{estudio.titulo}}</p>
-
-                        <!-- botones edit subseccion -->
-                        <div class="text-end">
-                            
-                            <!-- SE PUEDE BORRAR TODO EL DIV, NO SACA NI AGREGA ESPACIO
-                                ////////////////////////////////////ANDA//////////dejo el modal endos pasos tho//////
-                                eladd se perdio por ahi////////////////////////////////////// -->
-                            <!-- <button type="submit" class="botonEditSubseccion" (click)="deleteEstudio(estudio.id)">
-                                <i class="fa-solid fa-trash"></i>
-                            </button> -->
-                            <!-- //////////////////////////OKOKOKO con PRIMER TS, IGUAL LO PASE TODO AL MODAL EN DOS PASOS,  -->
-                        </div>
                     </div>
                 </div>
             </div>
@@ -57,9 +39,6 @@
     </div>
 </section>
 
-
-
-<!-- llamo al modal ----------------------------->
+<!-- llamo al modal -->
 <!-- <app-modal-educacion-add></app-modal-educacion-add> -->
 <app-modal-educacion-edit></app-modal-educacion-edit>
-
