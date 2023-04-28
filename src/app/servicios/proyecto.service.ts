@@ -10,7 +10,7 @@ import { Proyecto } from '../model/proyecto';
 
 export class ProyectoService {
 
-  url: string = "http://localhost:8080/proyecto/";   //barra al final asi no va en cada uno abajo
+  url: string = "http://localhost:8080/proyecto/";  
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,7 +22,6 @@ export class ProyectoService {
     return this.httpClient.get<Proyecto>(this.url + `find/${id}`);
   }
 
-  //primer Proyecto es un alias, segundo es el Proyecto del model, o sea la entidad
   public saveProyecto(Proyecto: Proyecto): Observable<any> {
     return this.httpClient.post<any>(this.url + 'new', Proyecto);
   }

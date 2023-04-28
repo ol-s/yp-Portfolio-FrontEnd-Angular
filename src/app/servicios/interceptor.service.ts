@@ -16,7 +16,7 @@ export class InterceptorService implements HttpInterceptor {
     var currentUser = this.autenticacionServ.usuarioAutenticado;
     if (currentUser && currentUser.id) {
       request.clone({   
-        setHeaders:{    //''setear en el encabezado el token'' dice en la masterclass 8.2, if no token?  anywayyy
+        setHeaders:{    //''setear en el encabezado el token'' dice en la masterclass 8.2
           Authorization: `Bearer ${currentUser.id}` //devuelve los datos de la persona
         }
       })

@@ -25,8 +25,7 @@ export class SobremiComponent implements OnInit {
   modoEdit: any;
 
 
-  //inserto experiencias aca o en component aparte?  26-4-23
-  //exp_Form: FormGroup;
+  //traigo experiencias dentro del sobremi component
   experiencia: Experiencia[] = [];
   expTodas: any = [];
 
@@ -43,10 +42,9 @@ export class SobremiComponent implements OnInit {
       ocupacion: [''],
 
       sobremi: ['', [Validators.required]],
-
-      //NO LO HAGO REQUERIDO PARA pODERINSERTAR DESDE COMPONENTE EXPERIENCIASVACIO? EL TITULO ESTA FIJO THO :/ le pongo un plus al final to add
-      experienciasTexto: ['', [Validators.required]],
+      experienciasTexto: ['', [Validators.required]], //plus boton edit/add more
       cv: ['', [Validators.required]],
+
       email: [''],
       clave: [''],
 
@@ -157,7 +155,7 @@ export class SobremiComponent implements OnInit {
 
 
 
-  //exp-----------------------------------------
+  //exp----------------solo la lista, add/edit/delete en modal-experiencia-------------
   listaExperiencias(): void {
     this.expServ.listaExp().subscribe({
       next: (data) => {
@@ -171,6 +169,7 @@ export class SobremiComponent implements OnInit {
 
 
 }
+
 
 
 
@@ -211,22 +210,6 @@ export class SobremiComponent implements OnInit {
   }
 
 }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

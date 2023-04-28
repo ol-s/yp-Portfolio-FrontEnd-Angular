@@ -134,7 +134,7 @@
                         <div class="form-floating mb-4">
                             <textarea type="text" formControlName="descripcion"
                                 class="form-control rounded-0 formulariosinput" id="floatingTextarea28" placeholder="descripcion"
-                                style="height: 85px" 
+                                style="height: 120px" 
                                 [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched,
                                               'is-valid': !Descripcion?.errors}"></textarea>
                             <label for="floatingTextarea28">Descripción</label>
@@ -149,7 +149,7 @@
                     <!-- guardar--------------------------------------------------------------------------------- -->
                     <br class="pt-0 mb-0">
                     <hr class="w-75 m-auto mt-0 mb-4">
-                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()" title="Limpiar Formulario"></button>
                     <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
                         (click)="saveProyWeb()" data-bs-dismiss="modal" [disabled]="pwForm.invalid">
                         Guardar

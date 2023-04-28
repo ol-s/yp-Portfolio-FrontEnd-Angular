@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      clave: ['', [Validators.required, Validators.minLength(4)]], //puse contrasenia 1333
+      clave: ['', [Validators.required, Validators.minLength(8)]], 
     })
   }
 

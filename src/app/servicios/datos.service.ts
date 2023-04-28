@@ -18,7 +18,7 @@ export class DatosService {
   //httpcliente en un alias, lo ponemos nosotros, datos de json(?)
   constructor(private httpCliente:HttpClient) { }
 
-  // metodo  observable que devuelve datos, "getDatos getInfo" nombre de funcion, tmb lo ponemos nosobtros(?)
+  // metodo  observable que devuelve datos, "getDatos getInfo" nombre de funcion, tmb lo ponemos nosobtros
   getDatos():Observable<any>{
 
     //retorna datos via get httcliente que llama a la base de datos json o a una url , get('usar comillas simples')

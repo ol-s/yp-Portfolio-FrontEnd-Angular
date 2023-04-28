@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <!-- modulo proyectos arq -------------------------------------------------------------->
-            <div class="col-12 col-md-6 col-lg-4 mt-0 mb-0" *ngFor="let cadaProyectoArq of proyectosTodos">
+            <div class="col-12 col-md-6 col-lg-4 mt-0 mb-1" *ngFor="let cadaProyectoArq of proyectosTodos">
                 <div class="proyecto">
                     <div> <!-- class="ms-2 me-2"-->
                         <img [src]="cadaProyectoArq.imgPageProyecto" [alt]="cadaProyectoArq.imgPageAlt"
@@ -29,10 +29,10 @@
                         </div>
                     </div>
                     <div class="ms-5 me-5 pt-2">
-                        <h6 class="skill-title">{{cadaProyectoArq.tituloProyecto}}</h6>
+                        <h6 class="">{{cadaProyectoArq.tituloProyecto}}</h6>
                     </div>
                     <div class="ms-5 me-5 pt-2 pDescripcion">
-                        <p class="skill-title">{{cadaProyectoArq.descripcion}}</p>
+                        <p class="">{{cadaProyectoArq.descripcion}}</p>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="row">
             <!-- modulo proyectos web ----------------------------------------------------------------->
-            <div class="col-12 col-md-6 col-lg-4 mt-4 mb-0" *ngFor="let cadaProyecto of proyectosTodosWeb">
+            <div class="col-12 col-md-6 col-lg-4 mt-4 mb-1" *ngFor="let cadaProyecto of proyectosTodosWeb">
                 <div class="proyecto">
                     <!-- poniendo dentro del div dejaron de moverselos margenes laterales de la pagina en phone -->
                     <div class="">
@@ -74,11 +74,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="ms-5 me-5 pt-2">
-                        <h6 class="skill-title">{{cadaProyecto.fecha}}. {{cadaProyecto.tituloProyecto}}</h6>
+                    <div class="ms-5 me-5 pt-3">
+                        <h6 class="">{{cadaProyecto.fecha}}. {{cadaProyecto.tituloProyecto}}</h6>
                     </div>
                     <div class="ms-5 me-5 pt-2">
-                        <p class="skill-title pDescripcion">{{cadaProyecto.descripcion}}</p>
+                        <p class=" pDescripcion">{{cadaProyecto.descripcion}}</p>
                     </div>
                 </div>
             </div>

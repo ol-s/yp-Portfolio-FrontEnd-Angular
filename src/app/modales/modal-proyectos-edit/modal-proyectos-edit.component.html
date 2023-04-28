@@ -106,14 +106,14 @@
                         <div class=" form-floating mb-4">
                             <textarea type="text" formControlName="descripcion"
                                 class="form-control rounded-0 formulariosinput" placeholder="descripcion"
-                                id="floatingTextarea20" style="height: 85px" ></textarea>
+                                id="floatingTextarea20" style="height: 120px" ></textarea>
                             <label for="floatingTextarea20">Descripción</label>
                         </div>
                     </div>                   
                     <!-- guardar----------------------------------------------------------------------------------- -->
                     <br class="pt-0 mb-0">
                     <hr class="w-75 m-auto mt-0 mb-4">
-                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()"></button>
+                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()" title="Limpiar Formulario"></button>
                     <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="saveProyArq()"
                         data-bs-dismiss="modal" [disabled]="pForm.invalid">
                         Guardar

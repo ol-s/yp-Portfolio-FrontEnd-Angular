@@ -4,7 +4,7 @@ body {
 }
 
 p {
-  font-size: .95em;
+  font-size: .97em;
 }
 
 .foot {
@@ -35,9 +35,6 @@ p {
 }
 
 .body {
-  padding: 1.8rem 2.7rem 0.8rem 2.7rem;
+  padding: 1.8rem 2.7rem 1.2rem 2.7rem;
 }
 
-/*html estaba style="background-image: url('../../../assets/img/banners/3educacion.jpg'); 
-height: 100vh; background-attachment: fixed; background-size: cover; background-position: center;
-  background-repeat: no-repeat;"*/

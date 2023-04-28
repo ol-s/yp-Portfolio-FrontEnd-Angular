@@ -22,10 +22,10 @@
                                     <label for="floatingInput14">Email</label>
                                 </div>
                                 <div *ngIf="Mail?.errors  && Mail?.touched">
-                                    <p *ngIf="Mail?.hasError('required')" class="error">
+                                    <p *ngIf="Mail?.hasError('required')" class="error2">
                                         * El email es requerido
                                     </p>
-                                    <p *ngIf="Mail?.hasError('email')" class="error">
+                                    <p *ngIf="Mail?.hasError('email')" class="error2">
                                         * El formato del email debe ser válido
                                     </p>
                                 </div>
@@ -41,10 +41,10 @@
                                 </div>
 
                                 <div *ngIf="Password?.errors  && Password?.touched">
-                                    <p *ngIf="Password?.hasError('required')" class="error">
+                                    <p *ngIf="Password?.hasError('required')" class="error2">
                                         * El password es requerido
                                     </p>
-                                    <p *ngIf="Password?.errors?.['minlength']" class="error">
+                                    <p *ngIf="Password?.errors?.['minlength']" class="error2">
                                         * El password debe ser de 8 o más caracteres
                                     </p>
                                 </div>

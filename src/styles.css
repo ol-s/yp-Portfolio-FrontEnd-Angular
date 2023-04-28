@@ -1,88 +1,50 @@
 :root {
-  /* navbar offcanvas etc ,,,,,la dejo un poquiiiiito transparente VER-23-2-23*/
   /* --color-background-navbar: #ffffff; */
   --color-background-navbar: #ffffffe3;
-
-  /* --color-background-oscuro1: #0e0e0e; */
-  /* --color-background-oscuro1: #fd1414; */
-  /* --color-background-oscuro1: #272727; */
   --color-background-oscuro1: #191919;
   /* color de offscanvas y modales tambien, sin transparencia */
   --color-background-claro: #ffffff;
-
-  /* principal////////////////////////     --color-links-navbar: #edcca3; */
-  /* --color-links-navbar: rgb(191, 255, 0);  estaba en rgb cabie a # */
-  /* --color-links-navbar: rgb(161, 161, 161); */
-  /* --color-links-navbar: #6b5840; */
-  /* --color-links-navbar: rgb(191, 255, 0);  verdecito, mal contraste */
-  /* --color-links-navbar: #bfff00; verdecito */
+  /* one color */
   --color-links-navbar: #efc591;
-  /* lol  --color-links-navbar: #00ff11; */
-
-  /* solo mi nombre*/
+  /* nombre apellido */
   --color-texto-header: #b4b4b4;
-
   /* titulo cada skills */
-  /* --color-texto-medio: #9a9a9a; */
   --color-texto-medio: #7d7d7d;
-
-  /* titulo obtenido educacion */
+  /* diploma educacion */
   --color-texto-medio-educacion: #808080;
-
-  /* --color-texto-medio-navbar: #9a9a9aad;    
-      lo oscurezco un poco porque deje la nav a bit transparente*/
-  /* --color-texto-medio-navbar: #9a9a9a;
-  --color-texto-medio-navbar: #545454;  */
   --color-texto-medio-navbar: #6f6f6f;
-
-  /* nombre y otros importantes, lo ozcurezco un poquito 22-2-23
-      queda bien en educacion, mal en la portada principal ------------*/
+  /* nombre y otros importantes */
   --color-texto-grande: #9a9a9a;
-  /* --color-texto-grande: #606060; */
-
-  /* skills % y bg barra ------------------------------------------*/
-  /* --color-texto-medio-oscuro: #383838; */
+  /* skills % y bg barra */
   --color-texto-medio-oscuro: #424242;
-
   --padding-left: 3.5em;
-  /* --padding-left: 4em; */
-
-  /* botones edit --------------------------------------------------*/
+  /* botones edit --------------- */
   --color-botones-edit-bg-seccion: #5b5b5b;
   --color-botones-edit-bg-subseccion: #4e4e4e;
-  /* botones edit sombras ------------------------------------------*/
-  /* --edit-botones-box-shadow:0 .1em .5em .1em #b1b1b14e; */
-  /* --edit-botones-box-shadow:0 .1em .5em .1em #8181812b   acer 1; */
-  --edit-botones-box-shadow: 0 .1em .5em .1em #7f7f7f42;
-  /* --edit-botones-box-shadow: 0 .1em .5em .1em #7f7f7f26; */
-
+  /* botones edit sombras --------------- */
   /* --edit-botones-box-shadow: 0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020; */
-
   /* 26-3-23 */
   --edit-botones-box-shadow: 0 .25em 1em 0 #00000005, 0 .1em .2em 0 #86868624;
 
   --color-botones-edit-seccion: #616161;
   --color-botones-edit-subseccion: #d7d7d7;
-
   --color-botones-edit-seccion-oscura: #969696;
   /* --color-botones-edit-subseccion-oscura: #3f3f3f;   cambie por los banners oscuros*/
   --color-botones-edit-subseccion-oscura: #464646;
-  /* estaban en 2.5em, para la cajita no el icono */
+  /* cajita no el icono */
   --edit-botones-height: 2em;
   --edit-botones-width: 2em;
 
-  /* --color-reactivos-valid: #009202;  NO USADO */
+  /* form rectivos */
   --color-reactivos-novalid-letra: #ff4242;
-  /* --color-reactivos-novalid-borde: #ff8686;  NO USADO,,PUSE ICONITOS */
 
   /* cambia tamanio de encabezado y footer */
   /* --bs-body-font-size: 1rem; */
 
-
-  /* mostrar o no porcentajes skills ----------------------------------------*/
+  /* mostrar o no porcentajes skills */
   /* --skills-porcentajes-display: none; */
 
-  /* mostrar o no botones edicion -------------------------------------------*/
+  /* mostrar o no botones edicion */
   /* --edit-botones-display: none; */
 }
 
@@ -90,22 +52,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* hmmmmm porque le di a todo * margin y padding 0 aca??? */
-
-
-  /* 23-3-23--agregue esto cos al dia siguiente que no cargabien/luego cargaba bien bootstrap en chrome, volvio a cargar mal, desplazado hacia   el costado, while firefox cargba bien, con este ahora carga bie,  seguir monitoreando
-  hmmmmmm, se rompe todo en el nest hub y nest hub max, pero soloen chrome,,,lo saco y carga bien en phone que recien no cargaba, buncionan los dos con     max-width: 100%;  en el  body parece */
-  /* max-width: 100vh; */
-
-  /* overflow-y: hidden; este hace que no escroleee, NO */
-
-
-
-  /* padding-top: 2em; */
-
-  /* esto estaba en 1.5rem y hacia que las columnas no llegaran al borde nunca */
   --bs-gutter-x: 0rem !important;
-
   box-sizing: border-box;
 
   /* font-family: "Oswald", sans-serif;*/
@@ -119,30 +66,28 @@
   /* OKOK */
   /* font-family: 'MuseoModerno', cursive; */
 
-  /* hmmm, primera letra estilada, nope*/
+  /* primera letra estilada, no*/
   /*font-family: 'Major Mono Display', monospace; */
 
-  /* boring
+  /* no
       font-family: 'Roboto Flex', sans-serif; */
 
-  /* muy redondeada para dev web 
+  /* muy redondeada 
       font-family: 'Montserrat Alternates', sans-serif; */
 
-  /* cuadradita tecnica ok */
+  /* cuadradita tecnica */
   font-family: 'Rajdhani', sans-serif;
 
   /* font-family: "Century Gothic", 'Lato', sans-serif; */
-
-  /* LUX */
+  /* lux */
   /* font-family: 'Nunito Sans', sans-serif; */
 }
 
 body {
   /* margin: 0; 
-      padding: 0; /* no parece necesario aca tmb ,,, PROBAR CON ESTO TMB,, SINO DEJAR EL MAX WIDTH*/
+      padding: 0; */
   max-width: 100%;
-
-  /* para q no se vea borde claro en seccion oscura contra oscura, se ve de nuevo*/
+  /* borde seccion oscura contra oscura */
   background-color: #272727;
 }
 
@@ -156,7 +101,7 @@ a {
   font-size: 1.1em;
 }
 
-/* subtitulos, arq/programadora, nombre institucion educacion */
+/* subtitulos, ocupacion, nombre institucion educacion, etc */
 .h5,
 h5 {
   font-size: 1rem;
@@ -183,19 +128,13 @@ h6,
 .h6 {
   text-transform: uppercase;
   letter-spacing: 3px;
-  /*  em es un poquito mas*/
   /* letter-spacing: .2em; */
 }
 
-/* mi nombre en half banner */
+/* nombre encabezado */
 h1,
 .h1 {
   font-size: calc(1.325rem + 0.9vw);
-  /* font-size: 2.5rem; */
-  /* font-family: 'Rubik Dirt', cursive; */
-  /* font-family: 'Nova Round', cursive;
-    font-family: 'Nunito Sans', sans-serif;   color cambiar maybe */
-  /* font-weight: 600; */
 }
 
 h6,
@@ -213,7 +152,6 @@ h1,
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.2;
-  /* color: #1a1a1a; */
 }
 
 p {
@@ -221,12 +159,9 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 
-  /* sin espaciado en educacion (titulo) queda mejor, y en otros, maybe sacar, tenia 3px, lo achique,,,*/
-  letter-spacing: .1em;
+  /* letter-spacing: .1em; educacion */
   letter-spacing: .02em;
-  /* oscurecer el titulo o institucion en educacion, o mas negrita */
 }
-
 
 section {
   display: flex;
@@ -236,95 +171,14 @@ section {
 }
 
 .seccion-oscura {
-  /* color: rgb(251, 255, 0); */
   color: var(--color-texto-medio);
   background-color: var(--color-background-oscuro1);
-
 }
 
 .seccion-clara {
-  /* color: rgb(0, 21, 254); */
   color: var(--color-texto-medio);
   background-color: var(--color-background-claro);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* fin estilos globales//////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////////// */
-
-
-
-
-/* separar esto o dejarlo en estilos globales? */
-
-
-/* redes, creo que solo half banner arriba, ver como hacer un componente en angular, cada red capaz? pero se 
-arma lio al agruparlas, como lo cones en app root?////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////// */
-
-/* estas creo que son del footer, tamanio diferente verrrrrrrrrr*/
-.redes2:hover {
-  color: var(--color-links-navbar-hover) !important;
-  /* OJO QUE ESTOY MANDANDO IMPORTANT A LOS HOVER PRQUE DEBE HABER ALGO ABAJO QUE LOS ANULA */
-}
-
-.redes2 {
-  color: var(--color-links-navbar);
-  height: 2em;
-  padding-right: 1em;
-
-}
-
-/*  ahi esta, transicion */
-.redes2 a {
-  transition: all 0.1s ease-in;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* //////////////////////////estilos globales probs//////////////////////////////////////////// */
-
-
-/* ======================================================
-    =========================igualar paddings de secciones
-     y paddings de titulos en todas las secciones
-    ========================================================*/
-
 
 /* subrayado titulo, ANTES */
 /* .seccion-titulo:before {
@@ -348,42 +202,18 @@ arma lio al agruparlas, como lo cones en app root?////////////////////////////
 
 .seccion-titulo {
   font-size: 1.5rem;
-
-  /* saco padding por el formulario footer, ver como queda entodo el resto */
   padding: .9em 0 .5em 0;
-  /* padding-bottom:.5em; */
-  /* font-family: 'Rubik Dirt', cursive; */
   color: var(--color-links-navbar);
 }
 
-
+/* sobremi/exp/diploma textos */
 .seccion-texto {
   font-size: 1.2rem;
 }
 
-.btn-info {
-  font-size: 1.1rem;
-  margin: 1.5em;
-}
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* Adaptable (Responsivo)      VA EN NAVBAR O ESTILOS GLOBALES, VER
-    
-    estoooooooooooooooooooooooooooooooooooo SI LO BORRO ME APARECE EL LOGO AP EN PHONE CHIQUITO
-    SOLO NAVBRAN, EL RESTO BORRE, VER OVERLAY PROYECTOS
-    */
-
+/* navbar responsive. sin aparece logo en phone */
 @media screen and (max-width: 767px) {
   .navbar-brand {
     display: none;
@@ -394,126 +224,15 @@ arma lio al agruparlas, como lo cones en app root?////////////////////////////
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*============================================================================
-  ============================================================================
-  bue, me queda todo suelto ahi abajo botones y modales, 
-  meterlo todo en globales y listo? (: 
-  3.22 am 
-  OHHH FFSAKEEEEEEEE,,TMB QUEDA UN POCO DE NAVBAR, MAS BOTOSNES, H5 , P  Y NO SE QUE MAS 
-  HARTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  Y YA BORRE ALGO QUE ME ARRUINO TODOS LAS REDES DEL FOOTER
-  Y NO PUEDO RETROCEDERRRRRRRRRRRRRRRRRRRRR PORQUE ACTUALICE LA PAGINA CREYENDO QUE ERA EL PORTFOLIO, FFSAKEEEEEEEEEEEEEEEEEEEEEE*/
-
-/* =======cambiados los color link navbar====================================mio  botones loging logout*/
-.btn-outline-secondary {
-  /* font-size: 1.3rem;
-      padding: 0.1rem; */
-  border-radius: 0;
-  width: 3rem;
-  height: 3rem;
-  /* padding-top: 2em; */
-  /* padding-right: 10rem; */
-  border-color: transparent !important;
-
-
-  /* color: var(--color-links-navbar); */
-  color: var(--color-texto-medio);
-
-}
-
-.btn-outline-secondary:hover {
-  color: var(--color-links-navbar);
-  border-color: transparent;
-  background-color: transparent;
-}
-
-/* para que boton logging no muestre el fondo gris al activarlo */
-.btn-outline-secondary:active {
-  color: var(--color-links-navbar);
-
-  border: 2px solid var(--color-links-navbar);
-
-  /* border-color: transparent; */
-  background-color: transparent !important;
-  /* background-color: var(--color-links-navbar) !important;  saque porque los botones de edicion tienen solo borde*/
-  /* still feo, y transparente es muy meh */
-}
-
-/* ======================================================================= */
-
-
-
-
-
-
-
-
-/* modales------------------------------------------------ */
+/* modales------------------------------------------------------------------- */
 .modal-body {
   padding-top: 2rem;
   padding-right: 3rem;
-  /* le agregue margin bottom al boton aceptar, sino se alarga mucho */
-  /* padding-bottom: 3rem; */
   padding-left: 3rem;
-
 }
 
-/* no sacar esto, sin esto pasa eso de abajo, se paraliza
-   https://stackoverflow.com/questions/1791 bootstrap-modal-popping-up-but-has-a-tinted-page-and-cant-interact
-   */
-/*  estaba en 0, modal educacion quedaba bajo navbar, so le cambie aca
-body.modal-open div.modal-backdrop {
-  z-index: 0;
-} */
+/* bootstrap-modal-popping-up-but-has-a-tinted-page-and-cant-interact*/
+/* en 0 modal educacion quedaba bajo navbar */
 body.modal-open div.modal-backdrop {
   z-index: -1;
 }
@@ -521,6 +240,7 @@ body.modal-open div.modal-backdrop {
 body.navbar-expand-lg-open div.navbar-backdrop {
   z-index: 0;
 }
+
 
 .modal {
   --bs-modal-zindex: 1055;
@@ -532,7 +252,6 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   --bs-modal-bg: var(--color-background-claro);
   --bs-modal-border-color: var(--bs-border-color-translucent);
   --bs-modal-border-width: 1px;
-  /* tuve que mandar important ahi porque no se modificaba el redondeo */
   --bs-modal-border-radius: 0 !important;
   --bs-modal-box-shadow: 0 0.125rem 0.25remrgba(0, 0, 0, 0.075);
   /* --bs-modal-inner-border-radius: calc(0.5rem - 1px); */
@@ -557,15 +276,11 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
-
-
-  /* hahaha queda toda la pantalla con borde rojo, not bad eh!! */
+  /* toda la pantalla con borde color */
   /* border: 5px solid var(--color-links-navbar); */
 }
 
-
-/* modales sombra y colores etc //////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////// */
+/* modales sombra y colores */
 .modal-header {
   display: flex;
   flex-shrink: 0;
@@ -574,7 +289,7 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   padding: var(--bs-modal-header-padding);
   border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
   border-bottom: 0.1em solid #ced4da94;
-  /* borde bajo 'login'  en asus y w7 se ve bien 1px, en acer no cos es fhd y el pixel es diminuto */
+  /* borde bajo 'login' depende calidad [antalla se ve o no 1px, fhd no */
   border-top-left-radius: var(--bs-modal-inner-border-radius);
   border-top-right-radius: var(--bs-modal-inner-border-radius);
 }
@@ -589,33 +304,23 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   background-clip: padding-box;
   /* outline: 0; */
 
+  /* sombra sobre el fondo*/
 
-  /* sombra sobre el fondo--------------------------------*/
-  /* box-shadow: .2em .2em 1em .2em #6e6e6e3b; */
-
-  /* estuvo por meses, que mal sobre fondo blanco proyectos */
+  /* no se diferencia sobre fondo blanco proyectos */
   /* box-shadow: 0.1em 0.1em 1em 0.2em #00000054; */
 
-  /* con esta se oscurece todo el fondo pero no es parejo, es como centrada, y le haria falta unborde al modal */
-  box-shadow: 0.5em 0.5em 90em 9em #00000282;
+  /* oscurece todo el fondo pero no es parejo, centrada */
+  /* box-shadow: 0.5em 0.5em 90em 9em #00000282; */
 
   /* box-shadow: 0em 0em 2.2em 0.05em #0000004d; */
-  box-shadow: 0em 0em 2.2em 0.05em #0000008c;
-
-  /* con esta se oscurece todo el fondo 2- pero no es parejo,  */
+  /* box-shadow: 0em 0em 2.2em 0.05em #0000008c;
   box-shadow: 0em 0em 5em 10em #00000054;
-  box-shadow: 0em 0em 50em 50em #00000054;
+  box-shadow: 0em 0em 50em 50em #00000054; */
   box-shadow: 0em 0em 50em 50em #0000007c;
 
-
-  color: rgb(153, 153, 153);
-  /* PONER COLOR DE LINKS NAVBAR, GRISECITO
-        poner variable color de navbar links cuando esten grises */
+  color: #999999;
   border-color: var(--color-links-navbar);
-  border: var(--color-links-navbar);
-
-
-  /* no queda mal, pero maybe gris clarito nomas */
+  /* border: var(--color-links-navbar); */
   border: 2.5px solid var(--color-links-navbar);
   /* border: 2px solid var(--color-texto-medio); */
 }
@@ -624,49 +329,55 @@ body.navbar-expand-lg-open div.navbar-backdrop {
 
 
 
-/* boton X cerrar modales y offcanvas, saco borde sombra azul y redondeo---------- */
+/* botones-------------------------------------------------------------------- */
+.btn-info {
+  font-size: 1.1rem;
+  margin: 1.5em;
+}
+
+/* botones loging logout ? */
+.btn-outline-secondary {
+  border-radius: 0;
+  width: 3rem;
+  height: 3rem;
+  border-color: transparent !important;
+  /* color: var(--color-links-navbar); */
+  color: var(--color-texto-medio);
+}
+
+.btn-outline-secondary:hover {
+  color: var(--color-links-navbar);
+  border-color: transparent;
+  background-color: transparent;
+}
+
+/* btn login sin fondo gris al activarlo */
+.btn-outline-secondary:active {
+  color: var(--color-links-navbar);
+  border: 2px solid var(--color-links-navbar);
+  background-color: transparent !important;
+}
+
+/* boton X cerrar modales y offcanvas */
 .btn-close {
   border-radius: 0;
   transition: box-shadow 0.15s ease-in-out;
   opacity: 25%;
 }
 
+/* saco sombra */
 .btn-close:focus {
-  /* estee anda */
   box-shadow: 0em 0em 0em var(--color-background-claro);
 }
 
-/* fin modales sombra y colores etc ////////////////////////////////////// */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  BOTONES ///////////////////////////////////////////////////////////*/
-
 .btn {
-  /* para botones dentro modales, sin sombra */
-  /* --bs-btn-color: #212529; */
+  /* botones dentro modales, sin sombra */
   --bs-btn-color: var(--color-botones-edit-seccion);
-
   --bs-btn-border-radius: 0rem;
 }
 
-/* boton info modificado para el enviar mensaje del footer------------*/
-.btn-outline-info {
+/* boton footer form para el enviar mail directo -------- */
+.btn-footer {
   /* --bs-btn-color: transparent; */
   --bs-btn-color: var(--color-links-navbar);
   --bs-btn-border-color: transparent;
@@ -678,842 +389,33 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   --bs-btn-active-color: var(--color-links-navbar);
 }
 
-.btn-outline-info:hover {
+.btn-footer:hover {
   color: var(--color-texto-medio);
 }
 
-
 .btn-group-lg>.btn,
 .btn-lg {
-  /* PADDING DEL BOTON INICIAR SESION, NO LO MODIFIQUE PERO LO PONGO ACA ABAJO PORQUE AHI ARRIBA ALGO DE LO QUE TOQUETEE LO HACIA MAS CHICO */
+  /* padding btn iniciar sesion */
   --bs-btn-padding-y: 0.5rem;
-
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
   --bs-btn-border-radius: 0.5rem;
 }
 
 
-.btn-loginout {
-  /* height: calc(3.5rem + 2px);   alto de los de arriba, pero queda feo */
-  --bs-btn-color: var(--color-links-navbar);
-
-  /* aca no toma el espesor del borde como en el sector de arriba */
-  --bs-btn-border-color: var(--color-links-navbar) !important;
-  /* --bs-btn-border-color: 300px solid var(--color-links-navbar); lmao no anda */
-
-  /* color letra when hover */
-  --bs-btn-hover-color: #fff;
-
-  /* color fondo when hover dejar la variable cuando este grisecito */
-  /* --bs-btn-hover-bg: var(--color-links-navbar); */
-  --bs-btn-hover-bg: #d3d4d5;
-
-  --bs-btn-hover-border-color: transparent;
-  --bs-btn-focus-shadow-rgb: 220, 53, 69;
-
-  /* al pulsar, letra */
-  --bs-btn-active-color: #fff;
-  /* al pulsar, fondo */
-  --bs-btn-active-bg: #adadad;
-
-  --bs-btn-active-border-color: transparent;
-  --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: transparent;
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: transparent;
-  --bs-gradient: none;
-}
-
-/* VARIABLE LLENO EN GRIS CLARITO DE ENTRADA ALSO QUEDA BIEN */
-/* quedo mas lindo pero hay que hacer variable de colores, sino se pierde uno aca */
-.btn-loginout2 {
-  /* height: calc(3.5rem + 2px);   alto de los de arriba, pero queda feo */
-
-  /* letra */
-  --bs-btn-color: #ababab;
-
-  /* aca no toma el espesor del borde como en el sector de arriba */
-  --bs-btn-border-color: #ababab;
-  /* --bs-btn-border-color: 300px solid var(--color-links-navbar); lmao no anda */
-
-  /* color letra when hover */
-  --bs-btn-hover-color: #fff;
-
-  /* color fondo when hover dejar la variable cuando este grisecito */
-  /* --bs-btn-hover-bg: var(--color-links-navbar); */
-  --bs-btn-hover-bg: #d3d4d5;
-
-  --bs-btn-hover-border-color: transparent;
-  --bs-btn-focus-shadow-rgb: 220, 53, 69;
-
-  /* al pulsar, letra */
-  --bs-btn-active-color: #fff;
-  /* al pulsar, fondo */
-  --bs-btn-active-bg: #787878;
-
-  --bs-btn-active-border-color: transparent;
-  --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: transparent;
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: transparent;
-  --bs-gradient: none;
-}
-
-/* VARIABLE LLENO EN GRIS CLARITO DE ENTRADA ALSO QUEDA BIEN */
-.btn-loginout3 {
-  /* height: calc(3.5rem + 2px);   alto de los de arriba, pero queda feo */
-
-  /* letra */
-  --bs-btn-color: #fff;
-  /* fondo */
-  --bs-btn-bg: #ababab;
-
-  /* color letra when hover */
-  --bs-btn-hover-color: #fff;
-  /* color fondo when hover*/
-  --bs-btn-hover-bg: #787878;
-
-  --bs-btn-hover-border-color: transparent;
-  --bs-btn-focus-shadow-rgb: 220, 53, 69;
-
-  /* al pulsar, letra */
-  --bs-btn-active-color: #fff;
-  /* al pulsar, fondo */
-  /* --bs-btn-active-bg: var(--color-links-navbar); */
-  --bs-btn-active-bg: #ababab;
-
-  --bs-btn-active-border-color: transparent;
-  --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: transparent;
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: transparent;
-  --bs-gradient: none;
-}
-
-/* fin BOTONES ///////////////////////////////////////////////////*/
-
-
-
-
-
-
-
-
-
-
-
-
-/* //////////////////////////////////////////////////////////////////////////////////
-forms------------------si lo pongo en css de cada componente repito codigo yse enrieda todo, 
-es para todos los modales, excepto form input del footer que es oscuro y con borde inferior solo
-///////////////////////////////////////////////////////////////////////////////////--*/
-
-/* borde del recuadro para mail y pasword, maybe poner borde inferior nomas */
-.form-control {
-  background-color: var(--bs-offcanvas-bg);
-  /* color borde recuadro mail y password login */
-  border: 0.1em solid #77777742 !important;
-  color: var(--color-texto-header);
-}
-
-.formulariosinput {
-  transition: .5s border-color;
-  color: var(--color-texto-header);
-}
-
-.formulariosinput:focus {
-  /* espesor linea de color al hacer click en email o password */
-  border: .15em solid var(--color-links-navbar) !important;
-
-  /* tenia color bg navbar pero lo hice transparente y ya no cubre la sombra azul de bootstrap */
-  outline: 1em solid var(--bs-offcanvas-bg) !important;
-  /* outline: 1em ridge rgba(170, 50, 220, .6); */
-
-  /* el outline funciona para el modal login, no aca (modal header css, pero mejor ponerlo en los estilos globales), aca funciona el box-shadow, todo asi man */
-  box-shadow: 1em solid var(--bs-offcanvas-bg) !important;
-  color: var(--color-texto-header);
-}
-
-
-.textarea-modal {
-  border: .1em solid #77777742;
-  border-radius: 0;
-  transition: .5s border-color;
-  width: 100%;
-  color: var(--color-texto-header);
-}
-
-.textarea-modal:focus {
-  /* espesor linea de color al hacer click en email o password */
-  border: .15em solid var(--color-links-navbar) !important;
-
-  /* tenia color bg navbar pero lo hice transparente y ya no cubre la sombra azul de bootstrap */
-  outline: 1em solid var(--bs-offcanvas-bg) !important;
-  /* outline: 1em ridge rgba(170, 50, 220, .6); */
-
-  /* el outline funciona para el modal login, no aca (modal header css, pero mejor ponerlo en los estilos globales), aca funciona el box-shadow, todo asi man */
-  box-shadow: 1em solid var(--bs-offcanvas-bg) !important;
-  color: var(--color-texto-header);
-}
-
-
-/* no funcionaaaa
-https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery
-https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery
-https://www.google.com/search?q=make+placeholder+desapire+after+writing&rlz=1C1GGRV_enUS751US751&oq=make+placeholder+desapire+after+writing&aqs=chrome..69i57.33161j0j7&sourceid=chrome&ie=UTF-8
-https://www.google.com/search?q=make+placeholder+desapire+after+writing&rlz=1C1GGRV_enUS751US751&oq=make+placeholder+desapire+after+writing&aqs=chrome..69i57.33161j0j7&sourceid=chrome&ie=UTF-8 */
-/* input:focus::placeholder {
-  color: transparent !important;
-}
-input:active::placeholder {
-  color: transparent !important;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* /////////////////////////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////boton edit seccion////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-/* botones edit en half banner nombre y arq/programadora etc-------------------------------*/
-.divEditRight {
-  position: absolute;
-  right: 0;
-
-  /* para bajar los botones edit seccion al borde con el half banner */
-  top: 17.9em;
-}
-
-
-/* boton seccion -------------------------------------------------------------------------- */
-.botonEditSeccion {
-  /* border-radius: 40em;  */
-  border-radius: 0;
-  /* color: white;  */
-  color: var(--color-botones-edit-seccion);
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: var(--edit-botones-box-shadow);
-  height: var(--edit-botones-height);
-  width: var(--edit-botones-width);
-
-  /* para ocultar botones, 
-      el espacio desaparece, no queda un vacio digamos */
-  display: var(--edit-botones-display);
-}
-
-.botonEditSeccion:hover {
-  color: var(--color-links-navbar);
-}
-
-.botonEditSeccion:active {
-  color: var(--color-links-navbar);
-  border: 1px solid var(--color-links-navbar);
-}
-
-.botonEditSubseccion {
-  /* border-radius: 40em;  */
-  border-radius: 0;
-  /* color: white;  */
-  color: var(--color-botones-edit-subseccion);
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: var(--edit-botones-box-shadow);
-  height: var(--edit-botones-height);
-  width: var(--edit-botones-width);
-
-  /* para ocultar botones,
-      el espacio desaparece, no queda un vacio digamos */
-  display: var(--edit-botones-display);
-}
-
-.botonEditSubseccion:hover {
-  color: var(--color-links-navbar);
-}
-
-.botonEditSubseccion:active {
-  color: var(--color-links-navbar);
-  border: 1px solid var(--color-links-navbar);
-}
-
-/* boton subseccion -----------------------bue, esta todo mezclado Y SON LAS 2AM, Y IM SINGING HEATHER (((: ---------------------------------------------------------------------------- */
-.botonEditSeccionOscura {
-  /* border-radius: 40em;  */
-  border-radius: 0;
-  /* color: white;  */
-  color: var(--color-botones-edit-seccion-oscura);
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: var(--edit-botones-box-shadow);
-  height: var(--edit-botones-height);
-  width: var(--edit-botones-width);
-
-  /* para ocultar botones, 
-      el espacio desaparece, no queda un vacio digamos */
-  display: var(--edit-botones-display);
-}
-
-.botonEditSeccionOscura:hover {
-  color: var(--color-links-navbar);
-}
-
-.botonEditSeccionOscura:active {
-  color: var(--color-links-navbar);
-  border: 1px solid var(--color-links-navbar);
-}
-
-.botonEditSubseccionOscura {
-  /* border-radius: 40em;  */
-  border-radius: 0;
-  /* color: white;  */
-  color: var(--color-botones-edit-subseccion-oscura);
-
-  /* no se porque a los que estan en la seccion educacion no necesite ponerles esto, y tienen findo transparente alredy, A MESS TENGO ACA SE SU[ERPOSICIONES E IMPORTANTS ...NVM, LES SAQUE BTNY SE PUSO BORDE NEGRO*/
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: var(--edit-botones-box-shadow);
-  height: var(--edit-botones-height);
-  width: var(--edit-botones-width);
-
-  /* para ocultar botones,
-      el espacio desaparece, no queda un vacio digamos */
-  display: var(--edit-botones-display);
-}
-
-.botonEditSubseccionOscura:hover {
-  color: var(--color-links-navbar);
-}
-
-.botonEditSubseccionOscura:active {
-  color: var(--color-links-navbar);
-  border: 1px solid var(--color-links-navbar);
-}
-
-/* fin seleccion botones edit //////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////// //// */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* tamanio iconos redes      ver si puedo modificar solo para el footer,por ahora esta en componente redes1 1.2em */
-/* .bi::before,
-[class^="bi-"]::before,
-[class*=" bi-"]::before {
-  font-size: 1.2em;
-
-} */
-
-
-
-
-
-
-
-/* NOPE */
-/* .modal-open {
-   overflow-y: inherit;  
- } */
-
-
-/* https://stackoverflow.com/questions/52388273/background-images-jump-when-opening-modal */
-/* !!!!!!!!!!!!!! this works, 
- salta la navbar ahora oops, no, antes saltaba tmb pero poquito,
- ahhh, salta para acomodar la segunda barra lateral
- 
- ahora podes scrolear con el modal abierto, y como qu deja dos barras laterales, raro, pero mejor que antes*/
-/*.modal-open{
-
-  /* sin este se corren todas las letras en lugar de los banners */
-/* padding:0 !important; */
-
-/* scroll tmb funciona pero no usar dice ahi */
-/* overflow-y: scroll !important; */
-/* overflow-y: auto !important; */
-
-/* RESUMEN, ANDAN ESTOS DOS EN PC, PERO ENTABLET SE DESPLAZA TODO EL TOGLER Y O NAVBAR Y QUEDA ESPANTOSO */
-/* padding:0 !important;
-  overflow-y: auto !important; 
- }*/
-
-
-
-
-/*zzzzzzz, nope, se agranda y achica el offcanvas too, zzzzzzzzzz, Y SE MUEVE EL TOGGLER cuando esta cerrado el offcavnas :(  */
-/* todo ese desplazamiento es en pc nomas encima, en tablet y demas no porque no tiene la barra vertical de scroll al costado */
-
-
-
-
-
-
-
-
-/* CON ESTE SE MUEVEN O LAS LETRAS O EL BANNER, Y SE MUEVE EL BANNER CUANDO ABRIS EL OFFCANVAS, 
-LO SAQUE Y SE SIGUE MOVIENDO NOW, GREAT, AH SE MOVIADESDE ANTES, PERO NO SE NOTA EN HONE COS NO TIENE LA BARRA DE SCROLL  */
-/* body.modal-open {padding:0 !important;} */
-
-
-
-
-
-
-
-/*  esto lo aplica a un container y va bien, pero no para toda la pagina
-https://ed.team/blog/personaliza-el-scroll-de-tu-web-solo-con-css   */
-/* Estilos barra (thumb) de scroll */
-/* section::-webkit-scrollbar-thumb {
-  background: red;
-  border-radius: 4px;
-} */
-
-
-/* Estilos track de scroll */
-/* section::-webkit-scrollbar-track {
-  background: yellow;
-  border-radius: 4px;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* html,body{
-  overflow-y: hidden;  no podes scrolear con esto lmao
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* con esto salta todo cuando esta la nav offcanvas on, zzzzzzzzzz
-https://community.adobe.com/t5/dreamweaver-discussions/bootstrap-modal-causing-background-images-to-jump/td-p/9224307
-"What time a framework is supposedly meant to save is negated by all the time spent trying to find out the cause of the quirks."  exactly
-
-.modal-open {
-  padding-right: 0 !important;
-}
-html {
-  overflow-y: scroll !important;
-}
- */
-
-
-
-
-
-
-
-
-
-/* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
-
-/* ------------------------------------------------------------------------------
- ---------------------------------------------------------------------------------
- ESTE OCULTA LA BARRAS DE DESPLAZAMIENTO, MALA PRACTICA? PROBS? cels y tablets no tienen---------------------------------------------------------------------------
- https://es.stackoverflow.com/questions/56179/como-ocultar-el-scrollbar#:~:text=Puedes%20usar%20el%20atributo%20overflow,overflow%2Dy%3A%20hidden%3B%20. */
-
-
-/* jjjjjjjjjjjjjjjjjjjjjjjj buo este tampoco anda en firefox, ??!! 
- dejar los dos cos sin este no funciona en chrome, asi todo 
- //////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-*/
-/* ::-webkit-scrollbar {
-  display: none;
-}  */
-/* este funciona en firefox, dejar los dos 
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-*/
-/* * {
-  scrollbar-width: none;
-} */
-/* https://stackoverflow.com/questions/20997183/how-to-hide-scrollbar-in-firefox */
-
-
-
-
-
-
-
-
-
-/* ------------------casi imperceptible el desplazamiento del banner pero todavia ahi, 
-que linda la scrollbar tho ------------------------------------------------
-----------------------------------ojo, creo que no anda en firefox, 
---------------------------------------------YEP, NO ANDA EN FIREFOX
-
-personalizar barra , anda pero se sigue desplazando el banner 
-https://www.digitalocean.com/community/tutorials/css-scrollbars-es */
-
-/* VOLVER A ACTIVAR O VER COMO PERSONALIZAR PARA FIREFOX TOO, POR AHORA DEJO LA BARRA DESACTIVADA
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////*/
-
-/* con todo esto funciona en pagina, no cuando abre el madal, ahi se ve la barra comun gris ancha, 
-en firefox si la muestra, por los estilos de abajo */
-body::-webkit-scrollbar {
-  width: 0.2em;
-  /* O 3PX */
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--color-background-oscuro1);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--color-links-navbar);
-  border-radius: 0;
-  height: 6em;
-}
-
-
-/* Works on Firefox --------si pero solo colorea, no ancho personalizado, solo ''thin'' */
-* {
-  scrollbar-width: thin;
-  /* scrollbar-color: var(--color-links-navbar) var(--color-background-oscuro1); */
-  /* asi un poco transparente el color, sino es mucho porque es muy ancha */
-  scrollbar-color: #efc591cb #191919;
-}
-
-/*VOLVER A ACTIVAR O VER COMO PERSONALIZAR PARA FIREFOX TOO, POR AHORA DEJO LA BARRA DESACTIVADA
-//////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////// */
-/* no puedo estilizar la barra en chrome cuando el modal esta abierto, solo firefx lo hace con el codigo dearriba */
-/* .modal-body{
-  scrollbar-color: #efc591cb #191919;
-  scrollbar-width:thin;
-}  */
-
-/* agrega scrolls al modal solo (a cada cosa dentro de modal body, y yo tengo varios divs con esa clase, ojo} 
-queda horribleigual cos no puedo estilizar esa barra so*/
-/* .modal-body{
-  height: 95px;
-  width: 100%;
-  overflow-y: auto;
-} */
-
-
-
-
-
-/* con este sigue saltando el banner */
-/* body.modal-open {padding:0 !important;} */
-
-/* con este pasa a saltar la nav y el toggler, horrible queda, si pones none vuelve a saltar el banner
-con overflow-x: none;  salta todo menos los banners 
- */
-/* html {
-  overflow-y: scroll !important;
-} */
-
-/* oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
-
-
-
-
-
-
-
-
-
-/*  ----------------------------------------------------------------------------
-A continuación, se muestra un ejemplo que utiliza scrollbar-width, 
-scrollbar-color, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::webkit-scrollbar-thumb:
-
- Works on Firefox --------si pero solo colorea, no anchos ni nada
-* {
-  scrollbar-width: thin;
-  scrollbar-color: blue orange;
-}
-
- Works on Chrome, Edge, and Safari 
-*::-webkit-scrollbar {
-  width: 12px;
-}
-
-*::-webkit-scrollbar-track {
-  background: orange;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: blue;
-  border-radius: 20px;
-  border: 3px solid orange;
-}
-*/
-/* https://elcssar.com/css/webkit-scrollbar
-MAS AB FIREFOX  
-https://developer.mozilla.org/es/docs/Web/CSS/::-webkit-scrollbar
- */
-
-
-
-
-
-/* input file  estilos, desaparece asi amigo
-https://stackoverflow.com/questions/572768/styling-an-input-type-file-button
-no anda esto, fue */
-/* 
-input[type="file"] {
-  display: none;
-}
-.custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-} */
-
-
-
-
-
-
-
-/* por si se vuelve a correr, que parece que es problemas de chrome y edge f12, al activar y desactivar, poner esto, no se si funciona
-PEGUE DE LA PAGINA FUERA SERVICIO GOOGLE, VER SI NO SE MUEVE MAS PARA EL COSTADO TODO
-html {
-  display: block;
-
-  -webkit-text-size-adjust: 100%;----sacar
-  font-size: 125%; ------sacar
-  overflow-x: hidden;-----mio
-
-
-  y este???  aca o en el body
-  position:relative;
-}*/
-
-
-/*  por ahora con esto corre bien en opera,,,que tuve que instalar cos perdi todo el dia con chrome y su f12---28-3-23 */
-/* body {
-  position: relative;
-}
-
-html {
-  display: block;
-
-  position: relative;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-/* formularios reactivos-------------------------------------------------------------------------- */
-
-
- /* .error{
-    color:#dd0000;
-    text-transform:lowercase;
-    font-size: 2em;
-  } */
- /* .error {
-   color: #000000;
-   text-transform: lowercase;
-   font-size: 1.2em;
- } */
- .error {
-  /* color: #8b8b8b; */
-  /* color:#dd0000; */
-  color:var(--color-reactivos-novalid-letra);
-  text-transform: none;
-  font-size: 1.2em;
-  margin-top: -0.6em;
-  letter-spacing: 1px;
-  /* transition:5s;
-  transition-timing-function: ease-in; */
-}
-
-/* no se porque el modal educacion no me toma la otra clase error */
-.error2 {
-  color:var(--color-reactivos-novalid-letra);
-  text-transform: none;
-  font-size: 1em;
-  margin-top: -0.9em;   /* estaba -0.6 */
-  padding-bottom: 0.8em;
-  letter-spacing: 1px;
-  transition:5s;
-  transition-timing-function: ease-in;
-}
-
-
-
-
- /* .valido {
-   border: 0.1em solid var(--color-reactivos-valid) !important;
- } */
-
- /* .invalido {
-    border: 0.1em solid #dd0000 !important;
-   border: 0.1em solid var(--color-reactivos-novalid-borde) !important; 
-   transition: .7\5s border-color;
- } */
-
- /* le saco el borde color en formularios login/TODOS en caso de usar el rojo verde, solo en modal login/TODOS */
- .formulariosinput:focus {
-  /* border: 0.1em solid var(--color-texto-header) !important; */
-  border: 0.1em solid var(--color-texto-grande) !important;
- 
-}
-
-/* .is-invalid{    jajajja este es solo el iconito, entra en camara lenta
-  transition:5s;
-  transition-timing-function: ease-in;
-} */
-
-
-
-
-
-
-
-
-
-/* solo borde abajo , VER DESPUES EL FOOTER, NO SALE AHORA   5-4-23*/
-/* .form-control {
-  background-color: var(--bs-offcanvas-bg);
-  border: 3px solid var(--bs-offcanvas-bg);
-  color: var(--color-texto-header);
-  border-bottom: 0.05em solid grey;
-}
-
-.formulariosinput {
-  border: 3px solid var(--bs-offcanvas-bg);
-  border-bottom: 0.05em solid var(--color-texto-header) !important;
- 
-}
-.formulariosinput:focus {
-  border-bottom: 0.05em solid var(--color-texto-header) !important;
- 
-} 
-
-
-
-
-
-ver tmb el salto brusco de las letras rojas, se amplia el modal, aparece la barra vertial de scroll, por eso salta
-
- .is-invalid p{    
-  /* transition:5s;
-  transition-timing-function: ease-in;
-
-  transition: transform 3s;
-  transition: all 2s ease-in;
-} 
-
-
-
-.errorfloat{
-  transition: transform 3s;
-  transition: all 2s ease-in;
-}
-
-
-*/
-
-
-
-/* acomodar arriba, es para proyectos nombre, se iba unpoco a la derecha en phone */
-/* .skill-title{
-  margin-right: 2em !important;
-} */
-
-
-
-/* VER BOTON gRANDE ACEPTAR, LIMPIAR ARRIBA , ESTE ES CLARITO*/
+/* loginout/aceptar/guardar en modales */
 .btn-loginout3 {
   --bs-btn-color: #aaaaaa;
   --bs-btn-bg: #ededed;
-  
 
-  
-  --bs-btn-hover-color: #c2c2c2 !important; /* NO ANDA MAS COS LES PUSE HOVE COLOR links-navbar AL 'btn', no queda mal */
+  --bs-btn-hover-color: #c2c2c2 !important;
+  /* o btn:hover color links navbar */
   /* --bs-btn-hover-bg: #626262; */
-  --bs-btn-hover-bg: #191919;  /* background oscuro, maybe too much */
+  --bs-btn-hover-bg: #191919;
+  /* background oscuro, maybe too much */
 
   /* --bs-btn-hover-color: #929292;
   --bs-btn-hover-bg: #d9d9d9; */
-
-
 
   /* --bs-btn-active-bg: var(--color-links-navbar); */
   --bs-btn-active-color: #f3f3f3;
@@ -1522,13 +424,13 @@ ver tmb el salto brusco de las letras rojas, se amplia el modal, aparece la barr
   /* --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125); */
   --bs-btn-disabled-color: #aaaaaa;
   --bs-btn-disabled-bg: #eaeaeaa0;
-  /* --bs-btn-disabled-border-color: transparent; */
+  --bs-btn-disabled-border-color: transparent;
   /* --bs-gradient: none; */
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
 }
 
-
-/* pongo afuera cos 700 modales */
-
+/* plus/pen/trash */
 .btnEditModal {
   /* color:var(--color-texto-header) ; */
   color: #636262;
@@ -1541,7 +443,6 @@ ver tmb el salto brusco de las letras rojas, se amplia el modal, aparece la barr
 
 .btnEditModal:active {
   color: var(--color-links-navbar);
-  /* border: 1px solid var(--color-links-navbar); */
   border: 0;
 }
 
@@ -1550,58 +451,225 @@ ver tmb el salto brusco de las letras rojas, se amplia el modal, aparece la barr
   border: 0;
 }
 
-/* tmb deja de este color al loginout ACEPTAR,,y maybe a todos los botones OJOO */
+/* hace lo mismo en btn loginout3 hover */
 /* .btn:hover {
   color: var(--color-links-navbar);
 } */
-.btn:active{
+.btn:active {
   border: none;
 }
-.btn:focus{
+
+.btn:focus {
   border: none;
 }
+
 .btn {
   transition: all .12s ease-out;
 }
 
 
+/* botones edit encabezado*/
+.divEditRight {
+  position: absolute;
+  right: 0;
+  /* p bajar los botones edit seccion al borde con el half banner */
+  top: 17.9em;
+}
+
+
+/* botones edit, bi-pen------------------------------ */
+.botonEditSeccion {
+  /* border-radius: 40em;  */
+  border-radius: 0;
+  /* color: white;  */
+  color: var(--color-botones-edit-seccion);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: var(--edit-botones-box-shadow);
+  height: var(--edit-botones-height);
+  width: var(--edit-botones-width);
+  /* para ocultar botones, en root */
+  display: var(--edit-botones-display);
+}
+
+.botonEditSeccion:hover {
+  color: var(--color-links-navbar);
+}
+
+.botonEditSeccion:active {
+  color: var(--color-links-navbar);
+  border: 1px solid var(--color-links-navbar);
+}
+
+/* -------------------------------- */
+.botonEditSubseccion {
+  /* border-radius: 40em;  */
+  border-radius: 0;
+  /* color: white;  */
+  color: var(--color-botones-edit-subseccion);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: var(--edit-botones-box-shadow);
+  height: var(--edit-botones-height);
+  width: var(--edit-botones-width);
+  /* para ocultar botones */
+  display: var(--edit-botones-display);
+}
+
+.botonEditSubseccion:hover {
+  color: var(--color-links-navbar);
+}
+
+.botonEditSubseccion:active {
+  color: var(--color-links-navbar);
+  border: 1px solid var(--color-links-navbar);
+}
+
+/* -------------------------------- */
+.botonEditSeccionOscura {
+  /* border-radius: 40em;  */
+  border-radius: 0;
+  /* color: white;  */
+  color: var(--color-botones-edit-seccion-oscura);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: var(--edit-botones-box-shadow);
+  height: var(--edit-botones-height);
+  width: var(--edit-botones-width);
+  display: var(--edit-botones-display);
+}
+
+.botonEditSeccionOscura:hover {
+  color: var(--color-links-navbar);
+}
+
+.botonEditSeccionOscura:active {
+  color: var(--color-links-navbar);
+  border: 1px solid var(--color-links-navbar);
+}
+
+/* -------------------------------- */
+.botonEditSubseccionOscura {
+  /* border-radius: 40em;  */
+  border-radius: 0;
+  /* color: white;  */
+  color: var(--color-botones-edit-subseccion-oscura);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: var(--edit-botones-box-shadow);
+  height: var(--edit-botones-height);
+  width: var(--edit-botones-width);
+  display: var(--edit-botones-display);
+}
+
+.botonEditSubseccionOscura:hover {
+  color: var(--color-links-navbar);
+}
+
+.botonEditSubseccionOscura:active {
+  color: var(--color-links-navbar);
+  border: 1px solid var(--color-links-navbar);
+}
 
 
 
 
 
+/* forms----------------------------------------------------------------------------- */
+/* borde input */
+.form-control {
+  background-color: var(--bs-offcanvas-bg);
+  /* color borde input mail y password login etc */
+  border: 0.1em solid #77777742 !important;
+  color: var(--color-texto-header);
+}
+
+.formulariosinput {
+  transition: .5s border-color;
+  color: var(--color-texto-header);
+}
+
+.formulariosinput:focus {
+  /* espesor linea de color al hacer click sobre input */
+  border: .15em solid var(--color-links-navbar) !important;
+
+  /* sombra alrededor del input */
+  outline: 1em solid var(--bs-offcanvas-bg) !important;
+  /* outline: 1em ridge rgba(170, 50, 220, .6); */
+
+  /* el outline funciona para el modal login, aca funciona el box-shadow */
+  box-shadow: 1em solid var(--bs-offcanvas-bg) !important;
+  color: var(--color-texto-header);
+}
+
+.textarea-modal {
+  border: .1em solid #77777742;
+  border-radius: 0;
+  transition: .5s border-color;
+  width: 100%;
+  color: var(--color-texto-header);
+}
+
+.textarea-modal:focus {
+  /* espesor linea de color al hacer click en input */
+  border: .15em solid var(--color-links-navbar) !important;
+
+  /* borde sombra al hacer click en input */
+  outline: 1em solid var(--bs-offcanvas-bg) !important;
+  /* outline: 1em ridge rgba(170, 50, 220, .6); */
+
+  /* funciona outline o box-shadow, depende donde */
+  box-shadow: 1em solid var(--bs-offcanvas-bg) !important;
+  color: var(--color-texto-header);
+}
+
+
+/* formularios reactivos letra--------------------------- */
+.error2 {
+  color: var(--color-reactivos-novalid-letra);
+  text-transform: none;
+  font-size: 1em;
+  margin-top: -0.9em;
+  /* estaba -0.6 */
+  padding-bottom: 0.8em;
+  letter-spacing: 1px;
+  transition: 5s;
+  transition-timing-function: ease-in;
+}
+
+/* saco el borde color en formularios, es mucho con los valid/invalid  */
+.formulariosinput:focus {
+  border: 0.1em solid var(--color-texto-grande) !important;
+}
+
+/* links largos traidos con findById en los modales salian fuera del margin o padding del modal-body */
+p {
+  overflow-wrap: break-word;
+}
 
 
 
 
-/* para los links largos traidos con findbyid, en phone en los modales salian fuera de margin o padding del modal-body! 
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;   estos tres te lo dejan de un renglon + "..."   pero no sirve, no se lee el resto
 
-nnoooooooooooooooooo edite este que era lo de los link y donde esta lo de justify parrafo?????????
-OJO QUE CORTA LAS PALABRAS A LA MITAD, MAYBE NO 'p' SINO UNA CLASE,,,SIP, YA SAQUE EL P, sigue quedando mal, en phone sobre todo, saco*/
- p {
-  overflow-wrap: break-word; 
-} 
+/* background-images-jump-when-opening-modal--------cambio barra desplazamiento---------------------- */
 
+/* en pagina normal, no barra when modal open, no para firefox */
+body::-webkit-scrollbar {
+  width: 0.2em;
+}
 
+body::-webkit-scrollbar-track {
+  background: var(--color-background-oscuro1);
+}
 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-links-navbar);
+  border-radius: 0;
+  height: 6em;
+}
 
-
-
-
-
-/* login */
-/*
-.secc-login {
-  /* position: relative; 
-  /* opacity: 0.65; 
-   background-attachment: fixed; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-
-  background-image: url("/assets../assets/img/banner/1banner.jpg"); 
-}*/
+/* p firefox, solo colorea, no ancho personalizado, solo 'thin' */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #efc591cb #191919;
+}

@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'yp-Portfolio-FrontEnd-Angular';  //ver si se puedecambiar nombre
+  title = 'yp-Portfolio-FrontEnd-Angular';  //ver if cambiar nombre
   //title = 'yp-Portfolio-Angular';
   
-
 }
