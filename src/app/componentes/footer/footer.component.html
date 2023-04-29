@@ -28,36 +28,73 @@
                     <app-redes></app-redes>
                 </div>
             </div>
-            <!-- hacer reactivo-------ver que funcione--------------------------------------- -->
-            <form class="col-sm-6  ml-auto mr-auto p-5  ">
+
+            <!-- email directo, ver seguridad!!---------------------------------------- -->
+            <form class="col-sm-6  ml-auto mr-auto p-5" target="_blank"
+                action="https://formsubmit.co/myEmailAca@gmail.com" method="POST">
                 <div class="pt-4"></div>
                 <div class="input-group input-lg pt-5">
-                    <div class="input-group-prepend">
-                    </div>
-                    <input type="text" class="form-control-footer rounded-0 mb-3 bg-transparent"
-                        placeholder="Tu nombre...">
+                    <input type="text" name="name" class="form-control-footer rounded-0 mb-3 bg-transparent"
+                        placeholder="Tu nombre..." required>
                 </div>
                 <div class="input-group input-lg">
-                    <input type="text" class="form-control-footer rounded-0 mb-3 bg-transparent"
-                        placeholder="Tu email...">
+                    <input type="email" name="email" class="form-control-footer rounded-0 mb-3 bg-transparent"
+                        placeholder="Tu email..." required>
                 </div>
                 <div class="textarea-container">
-                    <textarea class="form-control-footer rounded-0  mb-3 bg-transparent" name="name" rows="6" cols="80"
-                        placeholder="Tu mensaje..."></textarea>
+                    <textarea name="message" class="form-control-footer rounded-0  mb-3 bg-transparent" name="name"
+                        rows="6" cols="80" placeholder="Tu mensaje..." required></textarea>
                 </div>
                 <div class="send-button text-end">
-                    <a href="#" class="btn btn-footer rounded-0 bg-transparent">Enviar</a>
+                    <a class="btn btn-footer rounded-0 bg-transparent"
+                        title="Ajustando...ver seguridad!">Enviar</a>
+                    <!-- <button type="submit" class="btn btn-footer rounded-0 bg-transparent"
+                        title="Ajustando...ver seguridad!">Enviar</button> -->
                 </div>
             </form>
         </div>
     </div>
 </section>
-
 <section class="seccion-oscura foot" *ngFor="let itemPersona of personaItems">
     <div class="copyrights text-center"> &#169; {{itemPersona.copyrights}}</div>
     <!-- <div class="copyrights text-center"> &#169; 2022-2023 Soledad Fretes</div> -->
 </section>
 
+
+
+<!-- sin el form,
+    <section id="contacto" class=" container-fluid seccion-oscura seccionContactame  m-0 pb-0 pt-5">
+    <div class="container" *ngFor="let itemPersona of personaItems">
+        <div class="row mt-3 ">
+            <div class="text-end pe-3 pt-3">               
+                <button type="button" class="botonEditSeccionOscura" data-bs-toggle="modal"
+                    data-bs-target="#modalContactoInsideComponent"
+                    (click)="itemPersona.id? findPers(itemPersona.id): null" *ngIf="modoEdit">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+            </div>
+            <div class="col-sm-6 pt-4 ps-5 pe-5 pb-0">
+                <h2 class="seccion-titulo ">Contactame</h2>
+                <div class="pt-4 pb-1">
+                    <p class="">• {{itemPersona.servicios1}}</p>
+                    <p class="pt-2 pb-2">• {{itemPersona.servicios2}}</p>
+                </div>               
+            </div>            
+            <!----------------------------------------- -
+            <div class="col-sm-6  ml-auto mr-auto p-5" >
+                <div class="pt-4"></div>
+                <div class="pt-5 cierre">
+                    <p>{{itemPersona.salida1}}</p>
+                    <p>{{itemPersona.salida2}}</p>
+                </div>
+                <!-- componente redes --
+                <div class="ps-1 mt-4 mb-2">
+                    <app-redes></app-redes>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
 
 
 
@@ -92,8 +129,8 @@
                     <div class="mb-1">
                         <h5>Servicios 2</h5>
                         <textarea type="text" formControlName="servicios2"
-                            class="form-control rounded-0 formulariosinput" id="t10" placeholder="" style="height: 120px"
-                            [ngClass]="{'is-invalid': Servicios2?.errors && Servicios2?.touched,
+                            class="form-control rounded-0 formulariosinput" id="t10" placeholder=""
+                            style="height: 120px" [ngClass]="{'is-invalid': Servicios2?.errors && Servicios2?.touched,
                                           'is-valid': !Servicios2?.errors}"></textarea>
                         <!-- <label for="floatingInput">Servicios1</label> -->
                     </div>
@@ -148,7 +185,8 @@
                     <div class="text-center justify-content-between">
                         <br class="pt-5 mb-0">
                         <hr class="w-75 m-auto mt-4 mb-4">
-                        <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()" title="Limpiar Formulario"></button>
+                        <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()"
+                            title="Limpiar Formulario"></button>
                         <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
                             (click)="savePers()" data-bs-dismiss="modal" [disabled]="persoForm.invalid">Guardar</button>
                     </div>
