@@ -4,8 +4,11 @@
             <div class="">
                 <!-- titulo seccion --------------------------------->
                 <div *ngFor="let itemPersona of personaItems">
-                    <h1>{{itemPersona.nombre}}{{itemPersona.apellido}}</h1>
+                    <!-- <h1>{{itemPersona.nombre}}{{itemPersona.apellido}}</h1> -->
+                    <h1><span class="name">{{itemPersona.nombre}}</span>{{itemPersona.apellido}}</h1>
                     <h5>{{itemPersona.ocupacion}}</h5>
+                    <!-- △ Arquitecta  ▷ Programadora web fullstack jr  -->
+                    <!-- <h5> <img src="../../../assets/img/svgarqBOXYSVG.svg" style="height:1em;"> {{itemPersona.ocupacion}} <img src="../../../assets/img/svgwebBOXYSVG.svg" style="height:1em;"></h5> -->
                 </div>
                 <!-- componente redes-------------------------------->
                 <app-redes></app-redes>

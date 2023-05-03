@@ -21,6 +21,10 @@
   color: var(--color-texto-medio-navbar);
   font-weight: 500;
   transition: all 0.1s ease-in;
+
+  /* 30-4 */
+  letter-spacing: 1.55px;  /* 1.2 */
+  margin-top: .05rem;
 }
 
 .navbar a:hover {
@@ -44,14 +48,14 @@
 
 /* opacidad logo AP */
 .navbar-brand img {
-  opacity: 65%;
+  opacity: 20%; /* 49 */
   padding-left: 1.5rem;
   padding-left: 2rem;
   height: 1.6em;
 }
 
 .navbar-brand img:hover {
-  opacity: 90%
+  opacity: 70%
 }
 
 .navbar .navbar-expand-md .navbar-light {
@@ -69,7 +73,28 @@
   --bs-navbar-toggler-focus-width: 0.001rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
   --bs-navbar-padding-x: 0;
+
+
+  /* desaparece el offcanvas w this on */
+   /* -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px); 
+  background-color: rgba(255, 255, 255, 0.657)!important; */
+
+  /* border-bottom: 1px solid rgba(0,0,0,.1); */
+  /* box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%); */
+  box-shadow: 0 2px 4px 0 rgba(253, 253, 253, 0.345);
+
+  /* transparencia */
+  /* background-color: rgba(255, 255, 255, 0.786) !important; */
 }
+/* https://github.com/twbs/bootstrap/issues/37085
+modal and offCanvas don't work when CSS backdrop-filter is used 
+css blur offcanvas bootstrap */
+
+
+
+
+
 
 /* navbar toggler, borde */
 .navbar-toggler:focus {
@@ -90,6 +115,7 @@
 /* separacion de links en navbar*/
 .nav-item {
   margin-right: .3rem;
+  /* margin-top: .05rem; */
 }
 
 

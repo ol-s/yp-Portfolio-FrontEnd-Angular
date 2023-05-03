@@ -21,9 +21,9 @@
                         <div class="">                            
                             <p><b>Inicio. Año: </b>{{exp.fechaInicio}}</p>
                             <p><b>Finalización. Año: </b>{{exp.fechaFin}}</p>
-                            <p><b>Logo Lugar: </b>{{exp.logoLugar}}</p>
-                            <p><b>Lugar: </b>{{exp.lugar}}</p>
-                            <p><b>Puesto: </b>{{exp.puesto}}</p>
+                            <p><b>Logo Lugar/Empresa: </b>{{exp.logoLugar}}</p>
+                            <p><b>Lugar/Empresa: </b>{{exp.lugar}}</p>
+                            <p><b>Puesto/Tarea: </b>{{exp.puesto}}</p>
                             <p><b>Descripción: </b>{{exp.descripcion}}</p>                          
                         </div>
                         <div class="text-end">
@@ -121,7 +121,7 @@
                                 id="floatingInput62" placeholder="puesto" 
                                 [ngClass]="{'is-invalid': Puesto?.errors && Puesto?.touched, 
                                               'is-valid': !Puesto?.errors }">
-                            <label for="floatingInput62">Puesto</label>
+                            <label for="floatingInput62">Puesto/Tarea</label>
                         </div>
                         <div *ngIf="Puesto?.errors && Puesto?.touched">
                             <p *ngIf="Puesto?.hasError('required')" class="error2 text-start">

@@ -25,29 +25,29 @@
                     <!-- descarga cv-----mal aca---------------------------------- -->
                     <!-- <br><div class=""><a target="_blank" class="linkcv " [href]="itemPersona.cv"> Ver Curriculum Vitae </a></div>-->
                     <!-- titulo experiencias ------------------------------------------------->
-                    <h2 class="seccion-titulo mt-5">Experiencia</h2>
+                    <h2 class="seccion-titulo mt-5 pt-5">Experiencia</h2>
                     <p class="seccion-texto">{{itemPersona.experienciasTexto}} </p>
                     <!-- add experiencias -->
-                    <div class=" pt-3 pb-4">
+                    <div class=" pt-0 pb-4">
                         <div>
                             <div class="text-end">
                                 <button type="button" class="botonEditSeccion" data-bs-toggle="modal"
-                                    data-bs-target="#modalItemsEx" *ngIf="modoEdit">
+                                    data-bs-target="#modalItemsEx" *ngIf="modoEdit" title="Agregar experiencias detalladas">
                                     <i class="fa-solid fa-pen"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="moduloExp" *ngFor="let exp of expTodas">
-                            <div class="mb-5 logosExp">
-                                <img [src]="exp.logoLugar" class="logosExp" alt="logo">
+                            <div class="mb-3 logosExp">
+                                <img [src]="exp.logoLugar" class="logosExp"> <!-- alt="logo" -->
                             </div>
                             <div>
-                                <h5>{{exp.fechaInicio}}-{{exp.fechaFin}}. <strong>{{exp.lugar}}</strong></h5>
+                                <h6>{{exp.fechaInicio}}-{{exp.fechaFin}}. <strong>{{exp.lugar}}</strong></h6>
                             </div>
                             <div>
-                                <h5>Puesto: <strong>{{exp.puesto}}</strong></h5>
+                                <h6>Puesto/Tarea: <strong>{{exp.puesto}}</strong></h6>
                             </div>
-                            <p class="seccion-texto">{{exp.descripcion}}</p>
+                            <p class="pExp">{{exp.descripcion}}</p>
                         </div>
                     </div>
                     <!-- descarga cv ---------------------------------------------------->
@@ -55,7 +55,7 @@
                 </div>
                 <!-- banner avatar--------------------------------------------------------------- -->
                 <div class="m-0 col-sm-4 avatarbanner"
-                    [ngStyle]="{'background-image': ' url(' + itemPersona.bannerAvatar + ')'}">
+                    [ngStyle]="{'background-image': ' url(' + itemPersona.bannerAvatar + ')'}" title="By Yaroslav Shuraev">
                 </div>
             </div>
         </div>
@@ -63,21 +63,6 @@
 </section>
 
 <app-modal-experiencia></app-modal-experiencia>
-
-<!-- about ME--------///////////////////////////////////////////////////////////////////////--------USAR COMPLETARRR
-Hola, soy sf
-Soy arquitecta y diseño y creo sitios web.
-Como desarrolladora fullstack, vigilo el diseño y la facilidad de uso de su sitio web.
-Me enfoco en presentar su contenido de una manera atractiva y optimizada para todos los dispositivos (teléfono inteligente, tableta, computadora de escritorio).
-
-Concedo gran importancia a un diseño claro y conciso. Cada uno de mis sitios web y proyectos de arquitectura está diseñado individualmente y optimizado para cada necesidad, no utilizo plantillas en ninguno de los casos.
-
-EXPERIENCIA
-Trabajo de manera particular(freelance) desde el anio 2017 realizando proyectos de arquitectura y disenio...
-
-SERVICIOS
-¿Necesitás un sitio web propio o para tu negocio o querés desarrollar de un proyecto de arquitectura en concreto? Entonces
-raelizame una consulta inicial gratuita ahora. -->
 
 
 <!--Modal sobremi, datos en un solo click----------------------------------------------------------------------------------------->

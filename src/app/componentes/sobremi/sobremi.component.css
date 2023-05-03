@@ -87,8 +87,8 @@
 
 /* experiencias add */
 .moduloExp {
-  border-bottom: 1px solid #313131;
-  padding: 3em .5em 2em 0;
+  border-bottom: 1px solid #3131319e;
+  padding: 2em .5em 2em 0; /* 3 .5 2 0 */
 }
 
 .logosExp {
@@ -98,5 +98,22 @@
 p {
   /* color: var(--color-texto-medio-educacion); */
   /* color: var(--color-texto-medio); */
-  letter-spacing: 2px;
+  letter-spacing: 1.66px; /* 2 */
+  font-size: 1.14em;
+}
+
+
+strong {
+  /* color: #414141d9; */
+  color: #5a5a5aee;
+  text-transform: uppercase;
+}
+
+h6 {
+  color: var(--color-texto-medio);
+}
+
+.pExp {
+  /* color: #5a5a5aee; */
+  font-size: 1.14rem;
 }

@@ -12,7 +12,8 @@
     opacity: 70%;
     -webkit-filter: grayscale(10%);
     filter: grayscale(50%);
-    border-left: 1px solid #ffc632;
+    /* border-left: 1px solid #ffc632; */
+    border-left: 1px solid #ffab61;
     /* background-color: var(--color-background-oscuro1); */
 }
 

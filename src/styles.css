@@ -1,18 +1,22 @@
 :root {
   /* --color-background-navbar: #ffffff; */
-  --color-background-navbar: #ffffffe3;
+  --color-background-navbar: #ffffffd1;
   --color-background-oscuro1: #191919;
   /* color de offscanvas y modales tambien, sin transparencia */
   --color-background-claro: #ffffff;
   /* one color */
   --color-links-navbar: #efc591;
   /* nombre apellido */
-  --color-texto-header: #b4b4b4;
+  /* --color-texto-header: #b4b4b4;  */
+  --color-texto-header: #a1a1a1;
   /* titulo cada skills */
   --color-texto-medio: #7d7d7d;
   /* diploma educacion */
   --color-texto-medio-educacion: #808080;
+
   --color-texto-medio-navbar: #6f6f6f;
+  --color-texto-medio-navbar: #6f6f6fae;
+
   /* nombre y otros importantes */
   --color-texto-grande: #9a9a9a;
   /* skills % y bg barra */
@@ -204,6 +208,16 @@ section {
   font-size: 1.5rem;
   padding: .9em 0 .5em 0;
   color: var(--color-links-navbar);
+
+  /* --------fuente = header---------------------------- */
+  /* font-family: 'Federo', sans-serif; */
+  /* font-family: 'Wire One', sans-serif;
+  font-weight: 600; */
+
+  /* font-family: 'Wire One', sans-serif;
+  font-weight: 600;
+  letter-spacing: 10px; */
+  font-family: 'Federo', sans-serif;
 }
 
 /* sobremi/exp/diploma textos */
@@ -408,7 +422,8 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   --bs-btn-color: #aaaaaa;
   --bs-btn-bg: #ededed;
 
-  --bs-btn-hover-color: #c2c2c2 !important;
+  /* --bs-btn-hover-color: #c2c2c2 !important; */
+  --bs-btn-hover-color: #a3a3a3;
   /* o btn:hover color links navbar */
   /* --bs-btn-hover-bg: #626262; */
   --bs-btn-hover-bg: #191919;
@@ -428,6 +443,7 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   /* --bs-gradient: none; */
   /* text-transform: uppercase; */
   letter-spacing: 1px;
+  font-size: 1.2em;
 }
 
 /* plus/pen/trash */
@@ -467,14 +483,6 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   transition: all .12s ease-out;
 }
 
-
-/* botones edit encabezado*/
-.divEditRight {
-  position: absolute;
-  right: 0;
-  /* p bajar los botones edit seccion al borde con el half banner */
-  top: 17.9em;
-}
 
 
 /* botones edit, bi-pen------------------------------ */
@@ -580,18 +588,22 @@ body.navbar-expand-lg-open div.navbar-backdrop {
 .form-control {
   background-color: var(--bs-offcanvas-bg);
   /* color borde input mail y password login etc */
-  border: 0.1em solid #77777742 !important;
+  border: 0.1em solid #77777736 !important;
+  /* border: 0.1em solid #e1e1e1 !important; */
   color: var(--color-texto-header);
 }
 
 .formulariosinput {
   transition: .5s border-color;
-  color: var(--color-texto-header);
+  /* color: var(--color-texto-header); toma el form-control color*/
 }
 
 .formulariosinput:focus {
   /* espesor linea de color al hacer click sobre input */
-  border: .15em solid var(--color-links-navbar) !important;
+  /* border: .15em solid var(--color-links-navbar) !important; */
+  /* saco el borde color en formularios, es mucho con los valid/invalid  */
+  /* border: 0.1em solid var(--color-texto-grande) !important; */
+  border: .1em solid #aeaeae !important;
 
   /* sombra alrededor del input */
   outline: 1em solid var(--bs-offcanvas-bg) !important;
@@ -635,11 +647,6 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   letter-spacing: 1px;
   transition: 5s;
   transition-timing-function: ease-in;
-}
-
-/* saco el borde color en formularios, es mucho con los valid/invalid  */
-.formulariosinput:focus {
-  border: 0.1em solid var(--color-texto-grande) !important;
 }
 
 /* links largos traidos con findById en los modales salian fuera del margin o padding del modal-body */
