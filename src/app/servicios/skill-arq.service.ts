@@ -10,7 +10,8 @@ import { SkillArq } from '../model/skill-arq';
 export class SkillArqService {
 
 
-  url: string = "http://localhost:8080/skillarq";
+  //url: string = "http://localhost:8080/skillarq";
+  url: string = "https://backols.onrender.com/skillarq";
 
   constructor(private httpClient: HttpClient) { }
 

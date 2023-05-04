@@ -8,7 +8,8 @@ import { SkillWeb } from '../model/skill-web';
 })
 export class SkillWebService {
 
-  url: string = "http://localhost:8080/skillweb/"; 
+  //url: string = "http://localhost:8080/skillweb/"; 
+  url: string = "https://backols.onrender.com/skillweb/";
 
   constructor(private httpClient: HttpClient) { }
 

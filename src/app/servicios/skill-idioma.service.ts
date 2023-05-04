@@ -9,7 +9,8 @@ import { Skillidioma } from '../model/skill-idioma';
 export class SkillIdiomaService {
 
 
-  url: string = "http://localhost:8080/skillidioma/"; 
+  //url: string = "http://localhost:8080/skillidioma/";
+  url: string = "https://backols.onrender.com/skillidioma/"; 
 
   constructor(private httpClient: HttpClient) { }
 

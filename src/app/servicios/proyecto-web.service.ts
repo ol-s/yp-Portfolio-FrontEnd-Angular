@@ -9,7 +9,8 @@ import { ProyectoWeb } from '../model/proyecto-web';
 
 export class ProyectoWebService {
 
-  url: string = "http://localhost:8080/proyectoweb/";   //barra al final asi no va en cada uno abajo
+  //url: string = "http://localhost:8080/proyectoweb/";   //barra al final asi no va en cada uno abajo
+  url: string = "https://backols.onrender.com/proyectoweb/";
 
   constructor(private httpClient: HttpClient) { }
 

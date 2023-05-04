@@ -9,7 +9,7 @@ import { Experiencia } from '../model/experiencia';
 
 export class ExperienciaService {
                                                                                     
-  url:string= "http://localhost:8080/experiencia/";      //"http://localhost:8080/experiencia"     
+  url:string= "https://backols.onrender.com/experiencia/";      //"http://localhost:8080/experiencia/"     
   
   constructor(private httpClient:HttpClient) { }                                
                                                       

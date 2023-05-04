@@ -9,7 +9,8 @@ import { Educacion } from '../model/educacion';
 
 export class EducacionService {
                                                                          
-  url:string= "http://localhost:8080/educacion/";     
+  //url:string= "http://localhost:8080/educacion/"; 
+  url:string= "https://backols.onrender.com/educacion/";    
   
   constructor(private httpClient:HttpClient) { }                               
                                                       

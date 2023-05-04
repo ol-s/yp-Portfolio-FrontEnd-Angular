@@ -8,7 +8,8 @@ import { Persona } from '../model/persona';
 })
 export class PersonaService {
 
-  url: string = "http://localhost:8080/persona/";   //barra al final asi no va en cada uno abajo
+  //url: string = "http://localhost:8080/persona/";   //barra al final asi no va en cada uno abajo
+  url: string = "https://backols.onrender.com/persona/";
 
   constructor(private httpClient: HttpClient) { }
 

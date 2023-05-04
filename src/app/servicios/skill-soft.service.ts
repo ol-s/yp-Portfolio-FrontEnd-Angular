@@ -9,7 +9,8 @@ import { SkillSoft } from '../model/skill-soft';
 export class SkillSoftService {
 
 
-  url: string = "http://localhost:8080/skillsoft/"; 
+  //url: string = "http://localhost:8080/skillsoft/"; 
+  url: string = "https://backols.onrender.com/skillsoft/";
 
   constructor(private httpClient: HttpClient) { }
 

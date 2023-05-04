@@ -10,8 +10,8 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 })
 export class AutenticacionService {
 
-  url = 'http://localhost:8080/persona/autenticacion/login';
-  //url = 'https://miportfolio.com/persona/autenticacion/login' //aca va el link de render creo
+  //url = 'http://localhost:8080/persona/autenticacion/login';
+  url = 'https://backols.onrender.com/persona/autenticacion/login' //aca va el link de render creo
 
   currentUserSubject: BehaviorSubject<any>;
 

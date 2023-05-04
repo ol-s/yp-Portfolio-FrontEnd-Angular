@@ -10,7 +10,8 @@ import { Proyecto } from '../model/proyecto';
 
 export class ProyectoService {
 
-  url: string = "http://localhost:8080/proyecto/";  
+  //url: string = "http://localhost:8080/proyecto/"; 
+  url: string = "https://backols.onrender.com/proyecto/"; 
 
   constructor(private httpClient: HttpClient) { }
 

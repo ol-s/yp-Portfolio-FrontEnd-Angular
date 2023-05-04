@@ -9,7 +9,8 @@ import { Red } from '../model/red';
 
 export class RedService {
 
-  url: string = "http://localhost:8080/red/"; 
+  //url: string = "http://localhost:8080/red/"; 
+  url: string = "https://backols.onrender.com/red/";
 
   constructor(private httpClient: HttpClient) { }
 
