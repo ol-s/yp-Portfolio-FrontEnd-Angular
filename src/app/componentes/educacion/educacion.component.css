@@ -14,7 +14,6 @@
   transform: scale(1.2);
 }
 
-/* cambiar nombre */
 .seccionEducacion {
   background-color: var(--color-background-claro);
   z-index: 1;
@@ -37,15 +36,16 @@
   background-size: 100%;
 }
 
-@media only screen and (max-device-width: 1000px) {
+
+/* corregido 4 8-5-23 */
+@media screen and (max-width: 1000px) {
   .educacionBanner {
     background-position: left;
-    /* agrando un poco para ipad */
     background-size: 141%;
   }
 }
 
-@media only screen and (max-device-width: 566px) {
+@media screen and (max-width: 566px) {
   .educacionBanner {
     background-position: left;
     background-size: 140%;
@@ -53,13 +53,14 @@
   }
 }
 
-@media only screen and (max-device-width: 500px) {
+@media screen and (max-width: 500px) {
   .educacionBanner {
     background-position: left;
-    background-size: 210%;
+    background-size: 215%;
     /* min-height: 20em; */
   }
 }
+
 
 p {
   color: var(--color-texto-medio-educacion);

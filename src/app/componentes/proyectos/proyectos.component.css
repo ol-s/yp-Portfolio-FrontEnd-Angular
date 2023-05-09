@@ -20,6 +20,7 @@
 .proyectos-contenedor {
     padding-bottom: 6em;
     padding-top: .5em !important;
+    width: 100%; /* 4-5-23 */
 }
 
 .overlay {
@@ -28,7 +29,7 @@
     opacity: 0;
     position: absolute;
     /* top: 50%; se iba para abajo c parrafos largos*/
-    margin-top: -8em;
+    margin-top: -7em;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;

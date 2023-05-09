@@ -56,14 +56,12 @@
             <!-- modulo proyectos web ----------------------------------------------------------------->
             <div class="col-12 col-md-6 col-lg-4 mt-4 mb-1" *ngFor="let cadaProyecto of proyectosTodosWeb">
                 <div class="proyecto">
-                    <!-- poniendo dentro del div dejaron de moverselos margenes laterales de la pagina en phone -->
                     <div class="">
                         <img [src]="cadaProyecto.imgPageProyecto" [alt]="cadaProyecto.imgPageAlt"
                         alt="Proyecto Web">
                     </div>
                     <div class="overlay">
-                        <div class="iconos-contenedor pb-4">
-                            <!-- para que se ponga la manito antes rodear todo con la etiqueta <a> -->
+                        <div class="iconos-contenedor"> <!-- pb-4 -->
                             <a [href]="cadaProyecto.hrefRepo" target="_blank" rel="noopener noreferrer"
                                 class="ps-3 pe-3" title="Repositorio">
                                 <i class="bi bi-github"></i>

@@ -15,72 +15,17 @@
   top: 18em; /* 16.9  con height:15 */
 }
 
+/* para ipad mini achico padding para q entre ocupacion entera en vertical - 4-5-23*/
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  {     
+  .headername {
+    padding: 11em 6.5em 8em 6.5em; 
+  }
+}
 
 
 h1 {
-  /* font-size: 2.9em;
-  letter-spacing: 10px; */
-
-  /* combo,,no convencida tho */
-  /* font-size: 2.7em;
-  letter-spacing: 6px;
-  font-family: 'Teko', sans-serif; */
-
-
-  /* font-family: 'Kufam', sans-serif; */
-
-  font-family: 'Baumans', cursive;
-  /* HMMM */
-  font-family: 'Michroma', sans-serif;
-  font-family: 'Khand', sans-serif;
-  font-family: 'Teko', sans-serif;
-  /*   font-family: 'Bruno Ace SC', cursive; */
-  /* hmm */
-  font-family: 'Exo 2', sans-serif;
-  /* maby mas negrita, medio muy diferente tho */
-  font-family: 'Oswald', sans-serif;
-
-  /* font-family: 'Architects Daughter', cursive; */
-  /* font-family: 'Swanky and Moo Moo', cursive;   */
-
-  /* font-family: 'Wire One', sans-serif;
-  font-weight: 600; */
- 
-
-  /* font-family: 'Wire One', sans-serif;
-  font-weight: 600 !important;
-  font-size: 2.2em;
-  letter-spacing: 10px;
-  color: #56565675; */
-
-  /* font-size: 1.2em;
-  letter-spacing: 2px; */
-  /* font-family: 'Rajdhani', sans-serif;
-  font-size: 1.6em;
-  letter-spacing: 0px;
-   */
-
-
-/* 77777777777777777777 */
-   /* font-family: 'Federo', sans-serif; */
-
-
-   /* grande */
-  /* font-size: 4rem; */
-   font-family: 'Federo', sans-serif;
-   
+   font-family: 'Federo', sans-serif;  
 }
-
-/* h5 {
-  font-family: 'Wire One', sans-serif;
-  font-weight: 600;
-  font-size: 1.3em;
-  letter-spacing: 7px;
-} */
-
-/* h5 {
-  font-size: 1.3em;
-} */
 
 
 /* subrayado titulo, ANTES */
@@ -105,46 +50,8 @@ h1 {
 } */
 
 .name {
-  /* color: var(--color-links-navbar); */
-  /* font-family: 'Wire One', sans-serif;
-  font-weight: 900; */
-  /* font-size: 1.7rem; */
-
-/* 7777777777777777777777777777 */
-  /* color: #9a9a9a58;
-  color: var(--color-links-navbar);
-
-  font-family: 'Federo', sans-serif;
-  letter-spacing: 1px; */
-
-
-/* grande */
   color: #9a9a9a88;
   font-family: 'Federo', sans-serif;
   letter-spacing: 1px;
-
 }
-
-
-
-
-
-
-
-
-
-/* amplio header en phone */
-/* @media only screen and (max-device-width: 500px) {
-  .headername {
-    height: 22em;
-  }
-}
-
-@media only screen and (max-device-width: 500px) {
-  .divEditRight {
-    position: absolute;
-    right: 0;
-    top: 19.9em;
-}
-} */
 

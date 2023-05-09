@@ -39,3 +39,8 @@ p {
   padding: 1.8rem 2.4rem 1rem 2.4rem;
 }
 
+/* transparencia background login */
+.bg-light {
+  opacity: 94%;  
+  background-color: #f6f6f6 !important;
+}

@@ -25,15 +25,23 @@
   background-size: 80%;
 }
 
-/* MEDIA QUERIES banner avatar*/
-@media only screen and (max-device-width: 1000px) {
+
+/* corregido 4-5-23 */
+@media screen and (max-width: 1000px) {
   .avatarbanner {
     background-position: right;
     background-size: 110%;
   }
 }
 
-@media only screen and (max-device-width: 566px) {
+@media screen and (max-width: 800px) { /* p ipad grande */
+  .avatarbanner {
+    background-position: right;
+    background-size: 105%;
+  }
+}
+
+@media screen and (max-width: 566px) {
   .avatarbanner {
     background-position: right;
     background-size: 140%;
@@ -41,12 +49,13 @@
   }
 }
 
-@media only screen and (max-device-width: 500px) {
+@media screen and (max-width: 500px) {
   .avatarbanner {
     background-position: right;
     background-size: 210%;
   }
 }
+
 
 
 

@@ -33,7 +33,6 @@
   --color-botones-edit-seccion: #616161;
   --color-botones-edit-subseccion: #d7d7d7;
   --color-botones-edit-seccion-oscura: #969696;
-  /* --color-botones-edit-subseccion-oscura: #3f3f3f;   cambie por los banners oscuros*/
   --color-botones-edit-subseccion-oscura: #464646;
   /* cajita no el icono */
   --edit-botones-height: 2em;
@@ -67,14 +66,11 @@
   /* OK */
   /* font-family: 'Nova Round', cursive; */
 
-  /* OKOK */
+  /* OK */
   /* font-family: 'MuseoModerno', cursive; */
 
   /* primera letra estilada, no*/
   /*font-family: 'Major Mono Display', monospace; */
-
-  /* no
-      font-family: 'Roboto Flex', sans-serif; */
 
   /* muy redondeada 
       font-family: 'Montserrat Alternates', sans-serif; */
@@ -209,14 +205,7 @@ section {
   padding: .9em 0 .5em 0;
   color: var(--color-links-navbar);
 
-  /* --------fuente = header---------------------------- */
-  /* font-family: 'Federo', sans-serif; */
-  /* font-family: 'Wire One', sans-serif;
-  font-weight: 600; */
-
-  /* font-family: 'Wire One', sans-serif;
-  font-weight: 600;
-  letter-spacing: 10px; */
+  /* --------fuente = header---------- */
   font-family: 'Federo', sans-serif;
 }
 
@@ -649,18 +638,22 @@ body.navbar-expand-lg-open div.navbar-backdrop {
   transition-timing-function: ease-in;
 }
 
+
 /* links largos traidos con findById en los modales salian fuera del margin o padding del modal-body */
 p {
   overflow-wrap: break-word;
+  /* 4-5-23 agrego para ix */
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 
 
 
 
-/* background-images-jump-when-opening-modal--------cambio barra desplazamiento---------------------- */
+/* background-images-jump-when-opening-modal---cambio barra desplazamiento */
 
-/* en pagina normal, no barra when modal open, no para firefox */
+/* en pagina normal, no barra c modal open, no para firefox */
 body::-webkit-scrollbar {
   width: 0.2em;
 }
