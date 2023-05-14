@@ -50,7 +50,7 @@ export class ModalSkillWebEditComponent {
         this.skillWeb = data;
         //console.log('Items cargados correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -60,7 +60,7 @@ export class ModalSkillWebEditComponent {
       next: (data) => {
         this.swForm.setValue(data);
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     });
     //console.log("Item cargado correctamente");
@@ -74,7 +74,7 @@ export class ModalSkillWebEditComponent {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -84,7 +84,7 @@ export class ModalSkillWebEditComponent {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();

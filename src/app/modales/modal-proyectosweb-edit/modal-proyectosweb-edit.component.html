@@ -1,9 +1,9 @@
 <!-- modal con todos los items PROYECTOS WEB----------------------------------------------------------------------------->
-<div class="modal fade" id="modalItemsProyWeb" tabindex="-1" aria-hidden="true" aria-labelledby="modalItemsProyWeb">
+<div class="modal fade" id="modalItemsProyWeb" tabindex="-1" aria-hidden="true" aria-labelledby="modal Items Proy Web">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalItemsProyWeb">Proyectos Web</h1>
+                <h1 class="modal-title fs-5">Proyectos Web</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -46,11 +46,11 @@
 
 <!--Modal Edit Or Add PROYECTOS WEB-------------------------------------------------------------------------------------->
 <div class="modal fade" id="modalEditOrAddProyWeb" tabindex="-1" aria-hidden="true"
-    aria-labelledby="modalEditOrAddProyWeb">
+    aria-labelledby="modal Edit Or Add Proy Web">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fs-5" id="modalEditOrAddProyWeb">Agregar/Editar Proyectos Web</h5>
+                <h5 class="modal-title fs-5">Agregar/Editar Proyectos Web</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
             </div>
             <div class="modal-body text-center justify-content-between">
@@ -149,8 +149,8 @@
                     <!-- guardar--------------------------------------------------------------------------------- -->
                     <br class="pt-0 mb-0">
                     <hr class="w-75 m-auto mt-0 mb-4">
-                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()" title="Limpiar Formulario"></button>
-                    <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()" title="Limpiar Formulario"></button>
+                    <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
                         (click)="saveProyWeb()" data-bs-dismiss="modal" [disabled]="pwForm.invalid">
                         Guardar
                     </button>

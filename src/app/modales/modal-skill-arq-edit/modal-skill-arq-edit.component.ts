@@ -49,7 +49,7 @@ export class ModalSkillArqEditComponent {
         this.skillArq = data;
         //console.log('Items cargados correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -59,7 +59,7 @@ export class ModalSkillArqEditComponent {
       next: (data) => {
         this.saForm.setValue(data);
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     });
     //console.log("Estudios cargados correctamente");
@@ -73,7 +73,7 @@ export class ModalSkillArqEditComponent {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -83,7 +83,7 @@ export class ModalSkillArqEditComponent {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();

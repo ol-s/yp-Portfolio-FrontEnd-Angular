@@ -18,7 +18,7 @@
                                     <input type="email" formControlName="email" pattern="[^ @]*@[^ @]*"                                      
                                         class="form-control rounded-0 formulariosinput bg-light" id="floatingInput14"
                                         placeholder="name@example.com"
-                                        [ngClass]="{'is-invalid': Mail?.errors && Mail?.touched, 'is-valid': !Mail?.errors }">
+                                        [ngClass]="{'is-invalid': Mail?.errors && Mail?.touched, 'is-valid': !Mail?.errors }" autocomplete="off">
                                     <label for="floatingInput14">Email</label>
                                 </div>
                                 <div *ngIf="Mail?.errors  && Mail?.touched">
@@ -36,7 +36,7 @@
                                     <input type="password" formControlName="clave"
                                         class="form-control rounded-0 formulariosinput bg-light" id="floatingPassword"
                                         placeholder="Password" [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 
-                                                          'is-valid': !Password?.errors}">
+                                                          'is-valid': !Password?.errors}" autocomplete="off">
                                     <label for="floatingPassword">Password</label>
                                 </div>
 

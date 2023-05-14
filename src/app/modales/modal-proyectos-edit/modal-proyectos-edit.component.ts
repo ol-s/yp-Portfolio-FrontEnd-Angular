@@ -51,7 +51,7 @@ export class  ModalProyectosEditComponent implements OnInit {
         this.proyectoArq = data;
         //console.log('Items cargados correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -61,7 +61,7 @@ export class  ModalProyectosEditComponent implements OnInit {
       next: (data) => {
         this.pForm.setValue(data);
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     });
     //console.log("Item cargado correctamente");
@@ -75,7 +75,7 @@ export class  ModalProyectosEditComponent implements OnInit {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -85,7 +85,7 @@ export class  ModalProyectosEditComponent implements OnInit {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();

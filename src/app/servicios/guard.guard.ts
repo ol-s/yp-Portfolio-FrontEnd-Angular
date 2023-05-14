@@ -19,10 +19,8 @@ export class GuardGuard implements CanActivate {
     if (currentUser && currentUser.id) {
       return true;
     } else {
-      //this.ruta.navigate(['/login']); //te lleva al login si o si
-      //this.ruta.navigate(['/']);  //se cuelga y no entra a ningun lado
-      return true;
-      //21-4-23 lo tenia en false por eso me iba para atras y veia sin loguearme los botones edit
+      //this.ruta.navigate(['/login']); //para que te lleve al login si o si, + return false abajo
+      return true;      
     }
   }
 

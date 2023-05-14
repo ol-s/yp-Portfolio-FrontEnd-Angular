@@ -44,3 +44,18 @@ p {
   opacity: 94%;  
   background-color: #f6f6f6 !important;
 }
+
+/* cambio colores para login */
+.btn-loginout3 {
+  --bs-btn-hover-color: #a3a3a3bd; 
+  --bs-btn-hover-bg: #0000001a; /* #0000007a; */
+  --bs-btn-color: #a3a3a3bd;
+  --bs-btn-bg: #191919;
+  --bs-btn-active-color: #f3f3f3;
+  --bs-btn-active-bg: #ededed;
+  --bs-btn-disabled-color: #aaaaaa;
+  --bs-btn-disabled-bg: #eaeaeaa0;
+  --bs-btn-disabled-border-color: transparent;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+}

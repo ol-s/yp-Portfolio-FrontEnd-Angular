@@ -52,3 +52,20 @@ app-redes {
 p {
   font-size: 1.04em;  /* 4-5-23 */
 }
+
+
+
+
+/* boton edit corrido al borde en phone 9-5-23 */
+@media only screen and (max-width: 780px)
+   { 
+    .botonEditSeccionOscura {
+      margin-right: .6em;
+    }
+}
+@media only screen and (max-width: 575px)  
+   { 
+    .botonEditSeccionOscura {
+      margin-right: 1.7em;
+    }
+}

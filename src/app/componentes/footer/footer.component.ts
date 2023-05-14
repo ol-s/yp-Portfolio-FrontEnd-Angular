@@ -89,7 +89,7 @@ export class FooterComponent implements OnInit {
         this.personaItems = data;
         //console.log('Items cargados correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -99,7 +99,7 @@ export class FooterComponent implements OnInit {
       next: (data) => {
         this.persoForm.setValue(data);
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     });
     console.log('Persona id ' + id);
@@ -112,7 +112,7 @@ export class FooterComponent implements OnInit {
         next: (data) => {
           this.limpiarP();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -122,7 +122,7 @@ export class FooterComponent implements OnInit {
         next: (data) => {
           this.limpiarP();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();

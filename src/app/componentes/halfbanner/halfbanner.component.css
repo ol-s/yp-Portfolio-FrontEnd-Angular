@@ -23,16 +23,21 @@
   }
 
 
-  /* 4-5-23 acomodando banner para ipad mini */
-  /* ipad grande  @media screen and (min-width: 768px) and (max-width: 1024px) */
-  @media screen and (min-width: 768px) and (max-width: 1180px) and (orientation: portrait)  {     
-    .banner1 {
-      background-size: 190%;
-    }
+/* correccion 10-5-23 */
+@media only screen and (max-device-width: 1000px) {
+  .banner1 {
+    background-size: 190%;
   }
-  /* iphone x */
-  @media screen and (min-width: 375px) and (max-width: 768px)  {   
-    .banner1 {
-       background-size: 230%;  
-    }
-  }
+}
+
+@media only screen and (max-device-width: 820px) {
+  .banner1 {
+    background-size: 210%;
+ }
+}
+
+@media only screen and (max-device-width: 575px) {
+  .banner1 {
+    background-size: 230%;  
+ }
+}

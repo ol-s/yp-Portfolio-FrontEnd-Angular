@@ -1,9 +1,9 @@
 <!-- modal header, incluye edit de persona y redes -------------------------------------------------------------------------->
-<div class="modal fade" id="modalHeader" tabindex="-1" aria-hidden="true" aria-labelledby="modalHeader">
+<div class="modal fade" id="modalHeader" tabindex="-1" aria-hidden="true" aria-labelledby="modal Header">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalHeader">Editar encabezado</h1>
+                <h1 class="modal-title fs-5">Editar encabezado</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <!-- persona--------------------------------------------------------------------------------- -->
@@ -35,7 +35,7 @@
             <div class="modal-body row  me-2">
                 <h5 class="col-11 mt-2" id="">Agregar / Editar redes</h5>
                 <div class="col-1">
-                    <button type="btn" class="btn btnEditModal" aria-label="" data-bs-target="#modalHeaderREDESedit"
+                    <button type="button" class="btn btnEditModal" aria-label="" data-bs-target="#modalHeaderREDESedit"
                         data-bs-toggle="modal">
                         <i class="fa-solid fa-plus"></i>
                     </button>
@@ -81,11 +81,11 @@
 
 <!--Modal Edit HEADER --------------------------------------------------------------------------------------------------------->
 <div class="modal fade" id="modalInsideCompHeaderEdit" tabindex="-1" aria-hidden="true"
-    aria-labelledby="modalInsideCompHeaderEdit">
+    aria-labelledby="modal Inside Comp Header Edit">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fs-5" id="modalInsideCompHeaderEdit">Editar Persona </h5>
+                <h5 class="modal-title fs-5">Editar Persona </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center justify-content-between">
@@ -160,7 +160,7 @@
                     <!-- guardar------------------------------------------------------------------------------------- -->
                     <br class="pt-0 mb-0">
                     <hr class="w-75 m-auto mt-0 mb-4">
-                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()" title="Limpiar Formulario"></button>
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()" title="Limpiar Formulario"></button>
                     <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
                         (click)="savePers()" data-bs-dismiss="modal" [disabled]="persoForm.invalid">Guardar</button>
                 </form>
@@ -172,11 +172,11 @@
 
 <!--Modal Add/Edit REDES, dentro de modal header -------------------------------------------------------------------------->
 <div class="modal fade" id="modalHeaderREDESedit" tabindex="-1" aria-hidden="true"
-    aria-labelledby="modalHeaderREDESedit">
+    aria-labelledby="modal Header REDES edit">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fs-5" id="modalHeaderREDESedit">Agregar / Editar Red</h5>
+                <h5 class="modal-title fs-5">Agregar / Editar Red</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                     (click)="limpiarR()"></button>
             </div>
@@ -215,7 +215,7 @@
                     <!-- guardar----------------------------------------------------------------------- -->
                     <!-- <br class="pt-0 mb-0"> -->
                     <hr class="w-75 m-auto mt-5 mb-3">
-                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right mb-3"
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right mb-3"
                         (click)="limpiarR()"  title="Limpiar Formulario"></button>
                     <button type="submit" class="w-100 mb-5 mt-0 btn btn-lg rounded-0 btn-loginout3" (click)="saveRed()"
                         data-bs-dismiss="modal" [disabled]="redForm.invalid">Guardar</button>

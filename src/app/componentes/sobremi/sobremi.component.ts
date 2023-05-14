@@ -130,7 +130,7 @@ export class SobremiComponent implements OnInit {
         next: (data) => {
           this.limpiarP();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -140,7 +140,7 @@ export class SobremiComponent implements OnInit {
         next: (data) => {
           this.limpiarP();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -162,7 +162,7 @@ export class SobremiComponent implements OnInit {
         this.expTodas = data;
         //console.log('Items cargados correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -177,39 +177,6 @@ export class SobremiComponent implements OnInit {
 
 
 
-
-
-/* //BEFORE TRAER COMPLETO PARA EDITAR EN UN SOLO CLICK 15-4-23
-import { Component, OnInit } from '@angular/core';
-import { Persona } from 'src/app/model/persona';
-import { PersonaService } from 'src/app/servicios/persona.service';
-
-@Component({
-  selector: 'app-sobremi',
-  templateUrl: './sobremi.component.html',
-  styleUrls: ['./sobremi.component.css']
-})
-
-export class SobremiComponent implements OnInit {
-
-  persona: Persona[] = [];
-  personaItems: any = [];
-
-  //bannerAvatar: string = '';
-
-  constructor(private persoServ: PersonaService) { }
-
-
-  ngOnInit(): void {
-    this.cargarPersona();
-  }
-
-  cargarPersona(): void {
-    this.persoServ.listaPersonas().subscribe(data => { this.personaItems = data });
-
-  }
-
-}*/
 
 
 

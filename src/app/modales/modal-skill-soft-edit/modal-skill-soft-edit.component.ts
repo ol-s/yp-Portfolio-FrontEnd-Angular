@@ -58,7 +58,7 @@ export class ModalSkillSoftEditComponent {
         this.skillSoft = data;
         //console.log('Items cargados correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -68,7 +68,7 @@ export class ModalSkillSoftEditComponent {
       next: (data) => {
         this.ssForm.setValue(data);
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     });
     //console.log("Item cargado correctamente");
@@ -82,7 +82,7 @@ export class ModalSkillSoftEditComponent {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -92,7 +92,7 @@ export class ModalSkillSoftEditComponent {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();

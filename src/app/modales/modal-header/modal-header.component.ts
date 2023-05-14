@@ -109,7 +109,7 @@ export class ModalHeaderComponent {
         this.personaItems = data;
         //console.log('Items cargados correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -119,7 +119,7 @@ export class ModalHeaderComponent {
       next: (data) => {
         this.persoForm.setValue(data);
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     });
     console.log('Persona id ' + id);
@@ -132,7 +132,7 @@ export class ModalHeaderComponent {
         next: (data) => {
           this.limpiarP();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -142,7 +142,7 @@ export class ModalHeaderComponent {
         next: (data) => {
           this.limpiarP();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -164,7 +164,7 @@ export class ModalHeaderComponent {
         this.redesTodas = data;
         //console.log('Redes cargadas correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -174,7 +174,7 @@ export class ModalHeaderComponent {
       next: (data) => {
         this.redForm.setValue(data);
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     });
     //console.log("Item cargado correctamente");
@@ -188,7 +188,7 @@ export class ModalHeaderComponent {
         next: (data) => {
           this.limpiarR();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -199,7 +199,7 @@ export class ModalHeaderComponent {
         next: (data) => {
           this.limpiarR();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();

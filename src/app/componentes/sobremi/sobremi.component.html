@@ -66,13 +66,12 @@
 
 
 <!--Modal sobremi, datos en un solo click----------------------------------------------------------------------------------------->
-<form class="modal fade" id="modalSobreMiInsideComponent" tabindex="-1" aria-labelledby="modalSobreMiInsideComponent"
+<form class="modal fade" id="modalSobreMiInsideComponent" tabindex="-1" aria-labelledby="modal Sobre Mi Inside Component"
     aria-hidden="true" [formGroup]="persoForm">
-    <!-- creo que me fata name="formSobremi"   etc en todos los forms? -->
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content ">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Sobre mi</h1>
+                <h1 class="modal-title fs-5">Editar Sobre mi</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
@@ -129,7 +128,7 @@
             <div class="modal-body text-center justify-content-between">
                 <!-- <br class="pt-0 mb-0"> -->
                 <hr class="w-75 m-auto mt-0 mb-4">
-                <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()" title="Limpiar Formulario"></button>
+                <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()" title="Limpiar Formulario"></button>
                 <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="savePers()"
                     data-bs-dismiss="modal" [disabled]="persoForm.invalid">Guardar</button>
             </div>

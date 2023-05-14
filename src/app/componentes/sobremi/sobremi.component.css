@@ -26,35 +26,32 @@
 }
 
 
-/* corregido 4-5-23 */
-@media screen and (max-width: 1000px) {
+/* corregido 10-5-23 */
+@media only screen and (max-device-width: 1000px) { 
   .avatarbanner {
     background-position: right;
     background-size: 110%;
+    /* min-height: 26em; */
   }
 }
 
-@media screen and (max-width: 800px) { /* p ipad grande */
-  .avatarbanner {
-    background-position: right;
-    background-size: 105%;
-  }
+@media only screen and (max-device-width: 820px) { 
+    .avatarbanner {
+      background-position: right;
+      background-size: 105%;
+      /* min-height: 26em; */
+    }
 }
 
-@media screen and (max-width: 566px) {
-  .avatarbanner {
-    background-position: right;
-    background-size: 140%;
-    min-height: 25em;
-  }
+@media only screen and (max-device-width: 575px)
+   { 
+    .avatarbanner {
+      background-position: right;
+      background-size: 220%;
+      min-height: 34em;
+    }
 }
 
-@media screen and (max-width: 500px) {
-  .avatarbanner {
-    background-position: right;
-    background-size: 210%;
-  }
-}
 
 
 

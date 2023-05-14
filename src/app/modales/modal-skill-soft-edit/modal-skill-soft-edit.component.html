@@ -1,9 +1,9 @@
 <!-- modal con todos los items y sus id (apagado)----------------------------------------------------------------------------->
-<div class="modal fade" id="modalItemsSkillSoft" tabindex="-1" aria-hidden="true" aria-labelledby="modalItemsSkillSoft" >
+<div class="modal fade" id="modalItemsSkillSoft" tabindex="-1" aria-hidden="true" aria-labelledby="modal Items Skill Soft" >
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalItemsSkillSoft">Habilidades Blandas</h1>
+                <h1 class="modal-title fs-5">Habilidades Blandas</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>            
             <div class="modal-body">
@@ -40,11 +40,11 @@
 </div>
 
 <!--Modal Edit Or Add Soft Skills-------------------------------------------------------------------------------------->
-<div class="modal fade" id="modalEditOrAddSkillSoft" tabindex="-1" aria-hidden="true" aria-labelledby="modalEditOrAddSkillSoft">
+<div class="modal fade" id="modalEditOrAddSkillSoft" tabindex="-1" aria-hidden="true" aria-labelledby="modal Edit Or Add Skill Soft">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fs-5" id="modalEditOrAddSkillSoft">Agregar/Editar Soft Skill</h5>
+                <h5 class="modal-title fs-5">Agregar/Editar Soft Skill</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
             </div>
             <div class="modal-body text-center justify-content-between">
@@ -82,8 +82,8 @@
                     <!-- guardar -------------------------------------------------------------------------------- -->
                     <br class="pt-0 mb-0">
                     <hr class="w-75 m-auto mt-0 mb-4">
-                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()" title="Limpiar Formulario"></button>
-                    <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="saveSs()"
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()" title="Limpiar Formulario"></button>
+                    <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3" (click)="saveSs()"
                         data-bs-dismiss="modal" [disabled]="ssForm.invalid">
                         Guardar
                     </button>

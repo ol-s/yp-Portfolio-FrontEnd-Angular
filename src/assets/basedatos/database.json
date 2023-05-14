@@ -1,7 +1,7 @@
 {
     "persona": [
         {
-            "id": "CAPAZ ESTE NO VA ACA COS UNA SOLA PERSONA",
+            "id": "000",
             "nombre": "soledad",
             "apellido": "fretes JSON 2",
             "ocupacion": "arquitecta | programadora web fullstack jr",
@@ -9,7 +9,7 @@
             "sobremi": "Nuevo json con entidad persona, ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
             "experienciasTexto": "Texto unico de experiencias en nuevo json, ver si hago toda la entidad experiencia aparteeee. Eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
             "cv": "../assets/cv/cv-SoledadFretes.pdf",
-            "email": "no use esto,,,,,,,",
+            "email": "000",
 
             "bannerEntrada": "../assets/img/banners/1banner.jpg",
             "bannerAvatar": "../assets/img/banners/2banneravataralejado.jpg",
@@ -56,7 +56,7 @@
     ],
 
 
-    "experienciasHACER LA ENDIDAD o NOO, YA DIVIDI PROYECTOS EN DOS, Y SKILLS EN 4444": "Lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
+    "experiencias000": "Lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donecet venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittisurna.",
     
     
     "estudios": [
@@ -296,7 +296,7 @@
             "imgPageProyecto": "../assets/img/proyectos/w2.jpg",
             "imgPageAlt": "web 2",
             "hrefTargetBlank": "",
-            "targetBlackAlt": "web 2---------------------------------------------esto no esta en java back eh",
+            "targetBlackAlt": "00",
             "hrefRepo": "https://github.com/ol-s",
             "hrefLive": "https://ponerdespues.com",
             "tituloProyecto": "Proyecto 2. *ilustrativo",
@@ -306,7 +306,7 @@
         {
             "id": 3,
             "imgPageProyecto": "../assets/img/proyectos/w3.jpg",
-            "imgPageAlt": "web 1-NO EN ANGULAR",
+            "imgPageAlt": "000",
             "hrefTargetBlank": "",
             "targetBlackAlt": "",
             "hrefRepo": "https://github.com/ol-s",
@@ -329,7 +329,7 @@
 
 
 
-    "rubrosss ****************pruebarubros***********sacar esto sino no anda************": [
+    "rubrosss ****************pruebarubros***********************": [
         {
             "rubro1": [
                 {

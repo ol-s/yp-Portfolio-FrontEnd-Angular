@@ -15,16 +15,16 @@
 
 <!--Modal Edit Banners --------------------------------------------------------------------------------------------->
 <div class="modal fade" id="modalBannersInsideComponent" tabindex="-1" aria-hidden="true"
-    aria-labelledby="modalBannersInsideComponent">
+    aria-labelledby="modal Banners Inside Component">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fs-5" id="modalBannersInsideComponent">Editar Banners</h5>
+                <h5 class="modal-title fs-5">Editar Banners</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <p>*Reemplazar nombre del archivo o insertar desde una URL</p>
-                <hr class="w-75 m-auto mt-4 mb-4">
+            <div class="modal-body mt-3">
+                <!-- <p>*Reemplazar nombre del archivo o insertar desde una URL</p>
+                <hr class="w-75 m-auto mt-4 mb-4"> -->
                 <form [formGroup]="persoForm"> <!-- (ngSubmit)="onSubmit($event)" id="swForm"    tiene el save abajo-->
                     <!-- input ---- ------------------------------------------------------------------------- -->
                     <div>
@@ -36,7 +36,6 @@
                                 placeholder="" 
                                 [ngClass]="{'is-invalid': BannerEntrada?.errors && BannerEntrada?.touched,
                                               'is-valid': !BannerEntrada?.errors}">
-                            <!-- <label for="floatingInput10">Reemplazar nombre del archivo o insertar desde una URL</label> -->
                         </div>
                         <div *ngIf="BannerEntrada?.errors  && BannerEntrada?.touched">
                             <p *ngIf="BannerEntrada?.hasError('required')" class="error2 text-start">
@@ -99,7 +98,7 @@
                     <div class="text-center justify-content-between">
                         <br class="pt-2 mb-0">
                         <hr class="w-75 m-auto mt-1 mb-4">
-                        <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()" title="Limpiar Formulario"></button>
+                        <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiarP()" title="Limpiar Formulario"></button>
                         <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
                             (click)="savePers()" data-bs-dismiss="modal" [disabled]="persoForm.invalid">Guardar</button>
                     </div>

@@ -1,9 +1,9 @@
 <!--Modal Edit Or Add SKILLS ARQ-------------------------------------------------------------------------------------->
-<div class="modal fade" id="modalItemsSkillArq" aria-hidden="true" aria-labelledby="modalItemsSkillArq" tabindex="-1">
+<div class="modal fade" id="modalItemsSkillArq" aria-hidden="true" aria-labelledby="modal Items Skill Arq" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalItemsSkillArq">Diseño y Arquitectura</h1>
+                <h1 class="modal-title fs-5">Diseño y Arquitectura</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div class="modal-body">
@@ -41,11 +41,11 @@
 
 
 <!--Modal Edit Or Add SKILLS ARQ-------------------------------------------------------------------------------------->
-<div class="modal fade" id="modalEditOrAddSkillsArq" tabindex="-1" aria-labelledby="modalEditOrAddSkillsArq" aria-hidden="true">
+<div class="modal fade" id="modalEditOrAddSkillsArq" tabindex="-1" aria-labelledby="modal Edit Or Add Skills Arq" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fs-5" id="modalEditOrAddSkillsArqLabel">Agregar/Editar Skill Arq</h5>
+                <h5 class="modal-title fs-5">Agregar/Editar Skill Arq</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button> <!-- limpiar form al salir -->
             </div>
             <div class="modal-body text-center justify-content-between">
@@ -88,8 +88,8 @@
                     <!-- guardar----------------------------------------------------------------------------------- -->
                     <br class="pt-0 mb-0">
                     <hr class="w-75 m-auto mt-0 mb-4">
-                    <button type="btn" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()" title="Limpiar Formulario"></button>
-                    <button type="btn" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
+                    <button type="button" class="btn btn-ligth fa-solid fa-rotate-right" (click)="limpiar()" title="Limpiar Formulario"></button>
+                    <button type="submit" class="w-100 mb-5 mt-3 btn btn-lg rounded-0 btn-loginout3"
                         (click)="saveSkillArq()" data-bs-dismiss="modal" [disabled]="saForm.invalid">
                         Guardar
                     </button>

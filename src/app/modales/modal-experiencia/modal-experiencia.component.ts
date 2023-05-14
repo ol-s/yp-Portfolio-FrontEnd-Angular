@@ -68,7 +68,7 @@ export class ModalExperienciaComponent {
         this.expTodas = data;
         //console.log('Items cargados correctamente');
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     })
   }
@@ -78,7 +78,7 @@ export class ModalExperienciaComponent {
       next: (data) => {
         this.expForm.setValue(data);
       },
-      error: (e) => console.error(e),
+      //error: (e) => console.error(e),
       //complete: () => console.info('Completado')
     });
     console.log('Exp id ' + id);
@@ -91,7 +91,7 @@ export class ModalExperienciaComponent {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
@@ -101,7 +101,7 @@ export class ModalExperienciaComponent {
         next: (data) => {
           this.limpiar();
         },
-        error: (e) => console.error(e),
+        //error: (e) => console.error(e),
         //complete: () => console.info('Completado')
       });
       window.location.reload();
